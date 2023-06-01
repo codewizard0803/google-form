@@ -1,8 +1,8 @@
 import React, { useEffect, useReducer } from 'react'
 import * as XLSX from 'xlsx'
 import axios from 'axios'
-import InitialCard from './initialCard'
-
+import InitialCard from './InitialCard.js'
+import SectionCard from './SectionCard.js';
 
 
 const GoogleForm = () => {
@@ -52,14 +52,17 @@ const GoogleForm = () => {
 
   useEffect(() => {
     fetchData(dispatch);
-
-    console.log('Fields', state.formFields)
   }, []);
 
   return (
     <>
       <div className="container mx-auto">
-        {state.loading ? <div>Loading...</div> :<InitialCard title={ state.formFields[0]?.A} />}
+        {state.loading ? <div>Loading...</div> :
+          <div>
+            <InitialCard title={state.formFields[0]?.A} />
+            <SectionCard data={ state.formFields.slice(2)} />
+          </div>
+        }
       </div>
     </>
   );
