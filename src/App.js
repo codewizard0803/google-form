@@ -1,12 +1,18 @@
 import './App.css';
+import { Suspense, lazy } from 'react';
 
+// const GoogleForm = lazy(() => import('./component/GoogleForm'))
 import GoogleForm from './component/GoogleForm'
+
 
 function App() {
   return (
-    <div className="App">
-      <GoogleForm />
-    </div>
+    <Suspense fallback={<div>Loading....</div> }>
+      <div className="App">
+        <GoogleForm />
+      </div>
+    </Suspense>
+
   );
 }
 
