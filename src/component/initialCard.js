@@ -10,7 +10,7 @@ const InitialCard = (props) => {
           <p className="h-3 bg-green-400 w-100"></p>
           <CardContent>
             <Typography sx={{ fontSize: 30, textAlign: 'left' }}>
-              {props.title}
+              Initial Intake Form
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
 
