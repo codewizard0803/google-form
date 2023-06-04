@@ -70,6 +70,20 @@ const GlobalContextProvider = ({ children }) => {
     currentlyWorkSalary: "",
     currentlyWorkLikeThisJob: "",
   });
+
+  const [physicalInjury, setPhysicalInjury] = useState({
+    firstSymptoms: "",
+    firstTreatment: "",
+    restYourTreatment: "",
+    doctorsList: "",
+    receivedSurgery: "",
+    surgeryList: "",
+    medicationList: "",
+    treatmentsHelped: "",
+    stillWorking: "",
+    leavingReason: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -79,6 +93,8 @@ const GlobalContextProvider = ({ children }) => {
         setEmploymentInjuryPhysical,
         currentEmployer,
         setCurrentEmployer,
+        physicalInjury,
+        setPhysicalInjury,
       }}
     >
       {children}

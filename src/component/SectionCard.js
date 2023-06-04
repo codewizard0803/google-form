@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Button } from "@mui/material";
 import DemographicInformation from "./sections/DemographicInformation";
 import EmploymentInjuryPhysical from "./sections/EmploymentInjuryPhysical";
 import CurrentEmployer from "./sections/CurrentEmployer";
+import PhysicalInjury from "./sections/physicalInjury";
 
 const SectionCard = (props) => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -21,13 +21,13 @@ const SectionCard = (props) => {
       currentSection={currentSection}
       setCurrentSection={setCurrentSection}
     />,
+    <PhysicalInjury
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
   ];
 
-  return (
-    <div className="mt-4">
-      {sections[currentSection]}
-    </div>
-  );
+  return <div className="mt-4">{sections[currentSection]}</div>;
 };
 
 export default SectionCard;
