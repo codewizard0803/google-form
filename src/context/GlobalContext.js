@@ -84,6 +84,15 @@ const GlobalContextProvider = ({ children }) => {
     leavingReason: "",
   });
 
+  const [chiefComplaint, setChiefComplaint] = useState({
+    mostBothered: "",
+    currentlyExperiencingSymptom: "",
+    currentEpisodeDate: "",
+    specificStressfulSymptom: "",
+    specificStressfulEvent: "",
+    stressFollowing: [],
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -95,6 +104,8 @@ const GlobalContextProvider = ({ children }) => {
         setCurrentEmployer,
         physicalInjury,
         setPhysicalInjury,
+        chiefComplaint,
+        setChiefComplaint,
       }}
     >
       {children}

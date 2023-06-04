@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Typography, CardContent, Button } from "@mui/material";
-import classnames from "classnames";
-
+import { Button } from "@mui/material";
 import TextField from "../common/TextField";
 import useGlobalContext from "../../hooks/useGlobalContext";
 import CardField from "../common/CardField";
@@ -72,10 +70,11 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validatePhysicalInjury(physicalInjuryValue);
     setErrors(errors);
 
-    if (isValid) {
-      setPhysicalInjury(physicalInjuryValue);
-      setCurrentSection(currentSection + 1);
-    }
+    // if (isValid) {
+    //   setPhysicalInjury(physicalInjuryValue);
+    //   setCurrentSection(currentSection + 1);
+    // }
+    setCurrentSection(currentSection + 1);
   };
 
   return (
