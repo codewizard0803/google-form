@@ -35,40 +35,72 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
     {
       label: "American Indian or Alaska Native",
       value: "American Indian or Alaska Native",
-      name: "American Indian or Alaska Native"
+      name: "American Indian or Alaska Native",
     },
-    { label: "Southeast Asian", value: "Southeast Asian", name: "Southeast Asian" },
-    { label: "Black or African American", value: "Black or African American", name: "Black or African American" },
+    {
+      label: "Southeast Asian",
+      value: "Southeast Asian",
+      name: "Southeast Asian",
+    },
+    {
+      label: "Black or African American",
+      value: "Black or African American",
+      name: "Black or African American",
+    },
     {
       label: "Native Hawaiian or Other Pacific Islander",
       value: "Native Hawaiian or Other Pacific Islander",
-      name: "Native Hawaiian or Other Pacific Islander"
+      name: "Native Hawaiian or Other Pacific Islander",
     },
-    { label: "White or Caucasian", value: "White or Caucasian", name: "White or Caucasian" },
+    {
+      label: "White or Caucasian",
+      value: "White or Caucasian",
+      name: "White or Caucasian",
+    },
     {
       label: "Hispanic or Latino or Spanish Origin",
       value: "Hispanic or Latino or Spanish Origin",
-      name: "Hispanic or Latino or Spanish Origin"
+      name: "Hispanic or Latino or Spanish Origin",
     },
     { label: "East Indian", value: "East Indian", name: "East Indian" },
-    { label: "Prefer not to answer", value: "Prefer not to answer", name: "Prefer not to answer" },
+    {
+      label: "Prefer not to answer",
+      value: "Prefer not to answer",
+      name: "Prefer not to answer",
+    },
     { label: "Other", value: "Other", name: "Other" },
   ];
 
   const radioFemalePregnantOptions = [
     { label: "Yes", value: "Yes", name: "radioFemalePregnantOptionsYes" },
     { label: "No", value: "No", name: "radioFemalePregnantOptionsNo" },
-    { label: "I don't know/I'm not sure", value: "I don't know/I'm not sure", name: "I don't know/I'm not sure" },
+    {
+      label: "I don't know/I'm not sure",
+      value: "I don't know/I'm not sure",
+      name: "I don't know/I'm not sure",
+    },
   ];
 
   const radioPreferPronounOptions = [
     { label: "He/him/his", value: "He/him/his", name: "PreferPronounHim" },
     { label: "She/her/hers", value: "She/her/hers", name: "PreferPronounHer" },
-    { label: "They/them/theirs", value: "They/them/theirs", name: "PreferPronounThem" },
+    {
+      label: "They/them/theirs",
+      value: "They/them/theirs",
+      name: "PreferPronounThem",
+    },
     { label: "Ze", value: "Ze", name: "PreferPronounZe" },
     { label: "Hir", value: "Hir", name: "PreferPronounHir" },
-    { label: "Other non-binary", value: "Other non-binary", name: "PreferPronounOther" },
-    { label: "Prefer not to say", value: "Prefer not to say", name: "PreferPronounNotSay" },
+    {
+      label: "Other non-binary",
+      value: "Other non-binary",
+      name: "PreferPronounOther",
+    },
+    {
+      label: "Prefer not to say",
+      value: "Prefer not to say",
+      name: "PreferPronounNotSay",
+    },
   ];
 
   const maritalStatusOptions = [
@@ -76,13 +108,17 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
     { label: "Married", value: "Married", name: "maritalStatusMarried" },
     { label: "Divorced", value: "Divorced", name: "maritalStatusDivorced" },
     { label: "Separated", value: "Separated", name: "maritalStatusSeparated" },
-    { label: "Widowed", value: "Widowed" , name: "maritalStatusWidowed"},
-    { label: "Living together", value: "Living together" , name: "maritalStatusLivingTogether"},
+    { label: "Widowed", value: "Widowed", name: "maritalStatusWidowed" },
+    {
+      label: "Living together",
+      value: "Living together",
+      name: "maritalStatusLivingTogether",
+    },
   ];
 
   useEffect(() => {
     setDemographicInformationValue(demographicInformation);
-  }, []);
+  }, [demographicInformation]);
 
   const handleCheckboxEthnicityChange = (event) => {
     const itemName = event.target.name;
@@ -229,8 +265,16 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
                       />
                       Female
                     </label>
-                    {demographicInformationValue?.radioSexItem === "Female" ? <RadioFollowUp title="Are you pregnant, planning on getting pregnant, or
-                          breastfeeding?" options={radioFemalePregnantOptions} onChange={handlePregnantChange} error={errors.pregnant} checked={demographicInformationValue?.pregnant} /> : null}
+                    {demographicInformationValue?.radioSexItem === "Female" ? (
+                      <RadioFollowUp
+                        title="Are you pregnant, planning on getting pregnant, or
+                          breastfeeding?"
+                        options={radioFemalePregnantOptions}
+                        onChange={handlePregnantChange}
+                        error={errors.pregnant}
+                        checked={demographicInformationValue?.pregnant}
+                      />
+                    ) : null}
                   </div>
                   <div className="text-left">
                     <label>

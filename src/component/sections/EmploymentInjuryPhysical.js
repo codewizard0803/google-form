@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
 
@@ -9,59 +9,63 @@ import RadioFollowUp from "../common/RadioFollowUp";
 import useGlobalContext from "../../hooks/useGlobalContext";
 
 const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
-  const { employmentInjuryPhysical, setEmploymentInjuryPhysical } =
-    useGlobalContext();
+  const {
+    employmentInjuryPhysical,
+    setEmploymentInjuryPhysical,
+  } = useGlobalContext();
 
   const [errors, setErrors] = useState({});
 
-  const [employmentInjuryPhysicalValue, setEmploymentInjuryPhysicalValue] =
-    useState({
-      currentEmployerName: "",
-      businessNature: "",
-      jobBeganDate: "",
-      jobLastDate: "",
-      employmentDuty: "",
-      startedJobTitle: "",
-      currentTitle: "",
-      typicalWorkSchedule: "",
-      salary: "",
-      hourlyRate: "",
-      overtimeRate: "",
-      likeJob: "",
-      notLikeJob: "",
-      radioPhysicalConditionBeforeInjuryItem: "",
-      radioMentalConditionBeforeInjuryItem: "",
-      radioEmotionalSymptomsBeforeInjuryItem: "",
-      describeMedicalCondition: "",
-      injuryDate: "",
-      describeInjuryOccurred: "",
-      radioMedicationsBeforeInjuryItem: "",
-      radioMedicationsNameBeforeInjuryItem: "",
-      radioDisabilityConnectionClaimItem: "",
-      currentDisability: "",
-      radioContinuedWorkingItem: "",
-      radioCurrentlyWorkingItem: "",
-      radioConflictsItem: "",
-      conflictsCount: "",
-      eachConflicts: "",
-      conflictsRate: "",
-      relationShipLikeManagement: "",
-      immediateSupervisorName: "",
-      relationshipImmediateSupervisor: "",
-      explainSuperVisorReason: "",
-      performanceAppraisals: "",
-      explainPerformanceAppraisals: "",
-      relationshipCoWorkers: "",
-      explainRelationshipCoWorkers: "",
-      verbalWarning: "",
-      verbalWarningDateReason: "",
-      lastStraw: "",
-      explainLastStraw: "",
-    });
+  const [
+    employmentInjuryPhysicalValue,
+    setEmploymentInjuryPhysicalValue,
+  ] = useState({
+    currentEmployerName: "",
+    businessNature: "",
+    jobBeganDate: "",
+    jobLastDate: "",
+    employmentDuty: "",
+    startedJobTitle: "",
+    currentTitle: "",
+    typicalWorkSchedule: "",
+    salary: "",
+    hourlyRate: "",
+    overtimeRate: "",
+    likeJob: "",
+    notLikeJob: "",
+    radioPhysicalConditionBeforeInjuryItem: "",
+    radioMentalConditionBeforeInjuryItem: "",
+    radioEmotionalSymptomsBeforeInjuryItem: "",
+    describeMedicalCondition: "",
+    injuryDate: "",
+    describeInjuryOccurred: "",
+    radioMedicationsBeforeInjuryItem: "",
+    radioMedicationsNameBeforeInjuryItem: "",
+    radioDisabilityConnectionClaimItem: "",
+    currentDisability: "",
+    radioContinuedWorkingItem: "",
+    radioCurrentlyWorkingItem: "",
+    radioConflictsItem: "",
+    conflictsCount: "",
+    eachConflicts: "",
+    conflictsRate: "",
+    relationShipLikeManagement: "",
+    immediateSupervisorName: "",
+    relationshipImmediateSupervisor: "",
+    explainSuperVisorReason: "",
+    performanceAppraisals: "",
+    explainPerformanceAppraisals: "",
+    relationshipCoWorkers: "",
+    explainRelationshipCoWorkers: "",
+    verbalWarning: "",
+    verbalWarningDateReason: "",
+    lastStraw: "",
+    explainLastStraw: "",
+  });
 
   useEffect(() => {
     setEmploymentInjuryPhysicalValue(employmentInjuryPhysical);
-  }, []);
+  }, [employmentInjuryPhysical]);
 
   const physicalConditionOptions = [
     { label: "Yes", value: "Yes", name: "physicalConditionYes" },
@@ -286,7 +290,6 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
     //   setCurrentSection(currentSection + 1);
     // }
     setCurrentSection(currentSection + 1);
-
   };
 
   return (
