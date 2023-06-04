@@ -93,6 +93,21 @@ const GlobalContextProvider = ({ children }) => {
     stressFollowing: [],
   });
 
+  const [longitudinalHistory, setLongitudinalHistory] = useState({
+    emotionEpisodeBegan: "",
+    emotionSymptom: "",
+    mostWorstSymptom: "",
+    emotionalSymptomBecome: "",
+    feelEmotion: "",
+    explainFeelEmotion: "",
+    depressiveSymptom: "0",
+    anxietySymptom: "0",
+    postTraumaSymptom: "0",
+    compareEmotionalSymptom: "",
+    symptomsAffectedJob: "",
+    describeSymptomsAffectedJob: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -106,6 +121,8 @@ const GlobalContextProvider = ({ children }) => {
         setPhysicalInjury,
         chiefComplaint,
         setChiefComplaint,
+        longitudinalHistory,
+        setLongitudinalHistory,
       }}
     >
       {children}

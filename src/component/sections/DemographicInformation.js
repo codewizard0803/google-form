@@ -228,7 +228,7 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
 
           <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
             <CardContent>
-              <Typography sx={{ fontSize: 25, textAlign: "left" }}>
+              <Typography sx={{ fontSize: 20, textAlign: "left" }}>
                 What sex was assigned to you at birth?
               </Typography>
               <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>

@@ -79,7 +79,7 @@ const CurrentEmployer = ({ currentSection, setCurrentSection }) => {
       <form>
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
-            <Typography sx={{ fontSize: 25, textAlign: "left" }}>
+            <Typography sx={{ fontSize: 20, textAlign: "left" }}>
               Do you currently work for the same employer where the above injury
               occurred?
             </Typography>

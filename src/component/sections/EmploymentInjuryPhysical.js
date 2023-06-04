@@ -541,7 +541,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
 
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
-            <Typography sx={{ fontSize: 25, textAlign: "left" }}>
+            <Typography sx={{ fontSize: 20, textAlign: "left" }}>
               Do You Currently Receive Disability In Connection With Your Claim?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
@@ -624,7 +624,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
 
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
-            <Typography sx={{ fontSize: 25, textAlign: "left" }}>
+            <Typography sx={{ fontSize: 20, textAlign: "left" }}>
               Have you had any Conflicts with Anyone at Work
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
@@ -793,7 +793,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
 
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
-            <Typography sx={{ fontSize: 25, textAlign: "left" }}>
+            <Typography sx={{ fontSize: 20, textAlign: "left" }}>
               Relationship with Immediate Supervisor?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
@@ -894,7 +894,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
 
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
-            <Typography sx={{ fontSize: 25, textAlign: "left" }}>
+            <Typography sx={{ fontSize: 20, textAlign: "left" }}>
               How Were Your Performance Appraisals?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
@@ -995,7 +995,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
 
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
-            <Typography sx={{ fontSize: 25, textAlign: "left" }}>
+            <Typography sx={{ fontSize: 20, textAlign: "left" }}>
               Have You Ever Received Verbal or Written Warnings?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
@@ -1076,7 +1076,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
 
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
-            <Typography sx={{ fontSize: 25, textAlign: "left" }}>
+            <Typography sx={{ fontSize: 20, textAlign: "left" }}>
               Working Relationship with Co-Workers?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
@@ -1178,7 +1178,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
 
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
-            <Typography sx={{ fontSize: 25, textAlign: "left" }}>
+            <Typography sx={{ fontSize: 20, textAlign: "left" }}>
               Was There a "Last Straw" Event Near the Last Day of Work?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>

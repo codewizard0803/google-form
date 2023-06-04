@@ -4,6 +4,7 @@ import EmploymentInjuryPhysical from "./sections/EmploymentInjuryPhysical";
 import CurrentEmployer from "./sections/CurrentEmployer";
 import PhysicalInjury from "./sections/physicalInjury";
 import ChiefComplaint from "./sections/ChiefComplaint";
+import LongitudinalHistory from "./sections/LongitudinalHistory";
 
 const SectionCard = (props) => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -27,6 +28,10 @@ const SectionCard = (props) => {
       setCurrentSection={setCurrentSection}
     />,
     <ChiefComplaint
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <LongitudinalHistory
       currentSection={currentSection}
       setCurrentSection={setCurrentSection}
     />,

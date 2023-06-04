@@ -4,7 +4,7 @@ import classnames from "classnames";
 const TextFollowUp = ({ title, onChange, error, value, name }) => {
   return (
     <div className="w-[95%] mx-auto p-3  shadow-lg ">
-      <p className="text-left text-[23px] mt-2">{title}</p>
+      <p className="text-left text-[20px] mt-2">{title}</p>
       <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
       <div className="mt-5 p-2">
         <input

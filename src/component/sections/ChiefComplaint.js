@@ -230,10 +230,11 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateChiefComplaint(chiefComplaintValue);
     setErrors(errors);
 
-    if (isValid) {
-      setChiefComplaint(chiefComplaintValue);
-      setCurrentSection(currentSection + 1);
-    }
+    // if (isValid) {
+    //   setChiefComplaint(chiefComplaintValue);
+    //   setCurrentSection(currentSection + 1);
+    // }
+    setCurrentSection(currentSection + 1);
   };
 
   return (
@@ -275,7 +276,7 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
 
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
-            <Typography sx={{ fontSize: 25, textAlign: "left" }}>
+            <Typography sx={{ fontSize: 20, textAlign: "left" }}>
               Have you experienced any of your above emotional symptoms in
               response to a specific stressful event in your life?
             </Typography>
