@@ -2,7 +2,6 @@ const ValidateDemoGraphic = (value) => {
   let isValid = true;
   let errors = {};
 
-  console.log("value, isValid", value, isValid);
   if (!value.fullName.trim()) {
     errors.name = "Full Name is required.";
     isValid = false;
