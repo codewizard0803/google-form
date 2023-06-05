@@ -108,6 +108,38 @@ const GlobalContextProvider = ({ children }) => {
     describeSymptomsAffectedJob: "",
   });
 
+  const [PHQ9, setPHQ9] = useState({
+    interestThing: "",
+    previouslyEnjoyable: "",
+    feelingDepressed: "",
+    duringFeelingDepressed: "",
+    depressiveSymptomsImproved: "",
+    oftenFeelDepressed: "",
+    experienceDepression: "",
+    troubleFallingAsleep: "",
+    fallAsleepLong: "",
+    wakeUpTimes: "",
+    stayAwakeLong: "",
+    awakeSleepReason: "",
+    totalSleepTimes: "",
+    feelingEnergy: "",
+    poorAppetite: "",
+    recentlyWeightPounds: "",
+    weightGainLostLong: "",
+    yourselfFeelingBad: "",
+    troubleConCentratingThing: "",
+    fidgetyMoving: "",
+    betterOffDeadYourself: "",
+    deadWishWakeUp: "",
+    killingYourself: "",
+    killMethod: "",
+    actingIntention: "",
+    killIntentionCarryout: "",
+    preparedAnythingEndYourlife: "",
+    hurtingAnyone: "",
+    currentDepressiveSymptoms: "0",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -123,6 +155,8 @@ const GlobalContextProvider = ({ children }) => {
         setChiefComplaint,
         longitudinalHistory,
         setLongitudinalHistory,
+        PHQ9,
+        setPHQ9,
       }}
     >
       {children}
