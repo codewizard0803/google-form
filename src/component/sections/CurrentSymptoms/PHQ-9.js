@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
-import classnames from "classnames";
 
 import CardField from "../../common/CardField";
 import RadioFollowUp from "../../common/RadioFollowUp";
 import useGlobalContext from "../../../hooks/useGlobalContext";
-import TextField from "../../common/TextField";
 import validatePHQ from "../../../validation/validatePHQ";
 import TextFollowUp from "../../common/TextFollowUp";
 
@@ -823,15 +821,27 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     setPHQValue({
       ...PHQValue,
       killingYourself: event.target.value,
+      killMethod: "",
+      actingIntention: "",
+      killIntentionCarryout: "",
     });
   };
 
   const handleKillMethodChange = (event) => {
-    setPHQValue({ ...PHQValue, killMethod: event.target.value });
+    setPHQValue({
+      ...PHQValue,
+      killMethod: event.target.value,
+      actingIntention: "",
+      killIntentionCarryout: "",
+    });
   };
 
   const handleActingIntentionChange = (event) => {
-    setPHQValue({ ...PHQValue, actingIntention: event.target.value });
+    setPHQValue({
+      ...PHQValue,
+      actingIntention: event.target.value,
+      killIntentionCarryout: "",
+    });
   };
 
   const handleKillIntentionCarryoutChange = (event) => {
@@ -872,11 +882,11 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validatePHQ(PHQValue);
     setErrors(errors);
 
-    if (isValid) {
-      setPHQ9(PHQValue);
-      setCurrentSection(currentSection + 1);
-    }
-    // setCurrentSection(currentSection + 1);
+    // if (isValid) {
+    //   setPHQ9(PHQValue);
+    //   setCurrentSection(currentSection + 1);
+    // }
+    setCurrentSection(currentSection + 1);
   };
 
   return (
@@ -886,6 +896,9 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
       </p>
       <p className="bg-blue-400 w-[65%] mx-auto p-1 text-lg text-white rounded-lg mt-3 shadow-lg">
         PHQ-9
+      </p>
+      <p className="bg-lime-400 w-[65%] mx-auto p-1 text-lg text-white rounded-lg mt-3 shadow-lg">
+        How often have you been bothered by the following over the past 2 weeks?
       </p>
 
       <form>

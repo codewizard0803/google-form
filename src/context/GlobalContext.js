@@ -140,6 +140,30 @@ const GlobalContextProvider = ({ children }) => {
     currentDepressiveSymptoms: "0",
   });
 
+  const [GAD7, setGAD7] = useState({
+    feelingNervous: "",
+    feltAnxiousLong: "",
+    feelAnxiousOften: "",
+    stopControlWorring: "",
+    worringDifferentThing: "",
+    worringThing: "",
+    describeWorringThing: "",
+    specificAnxietyWorse: "",
+    troubleRelaxing: "",
+    restlessSitHard: "",
+    easilyAnnoyed: "",
+    feelingAfraidAwfulThing: "",
+    currentAnxietySymptoms: "0",
+    panicAttacks: "",
+    panicPhysicalSymptoms: "",
+    panicAttacksLastLong: "",
+    panicAttacksList: "",
+    panicAttacksSpontaneous: "",
+    pastTraumaticEvents: "",
+    traumaticEventExperience: "",
+    describeTraumaticExperience: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -157,6 +181,8 @@ const GlobalContextProvider = ({ children }) => {
         setLongitudinalHistory,
         PHQ9,
         setPHQ9,
+        GAD7,
+        setGAD7,
       }}
     >
       {children}

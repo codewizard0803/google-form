@@ -6,6 +6,7 @@ import PhysicalInjury from "./sections/physicalInjury";
 import ChiefComplaint from "./sections/ChiefComplaint";
 import LongitudinalHistory from "./sections/LongitudinalHistory";
 import PHQ from "./sections/CurrentSymptoms/PHQ-9";
+import GAD from "./sections/CurrentSymptoms/GAD-7";
 
 const SectionCard = (props) => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -37,6 +38,10 @@ const SectionCard = (props) => {
       setCurrentSection={setCurrentSection}
     />,
     <PHQ
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <GAD
       currentSection={currentSection}
       setCurrentSection={setCurrentSection}
     />,
