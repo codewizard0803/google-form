@@ -164,6 +164,33 @@ const GlobalContextProvider = ({ children }) => {
     describeTraumaticExperience: "",
   });
 
+  const [PCL5, setPCL5] = useState({
+    stressfulExperienceMemories: "",
+    stressfulExperience: "",
+    disturbingDreamsOccur: "",
+    suddenlyStressfulExperience: "",
+    veryUpsetStressfulExperience: "",
+    strongPhysicalReactionStressfulExperience: "",
+    avoidingMemories: "",
+    avoidingExternalReminders: "",
+    describeSituations: "",
+    avoidActivities: "",
+    troubleStressfulExperience: "",
+    strongNegativeBeliefs: "",
+    stressfulExperienceBlaming: "",
+    strongNegativefeelings: "",
+    lossInterestActivity: "",
+    feelingDistantPeople: "",
+    troubleExperiencePositiveFeeling: "",
+    irritableBehavior: "",
+    manyRisksThing: "",
+    beingWatchful: "",
+    easilyStartled: "",
+    difficultyConcentrating: "",
+    troubleFallingAsleep: "",
+    currentRelatedSymptoms: "0",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -183,6 +210,8 @@ const GlobalContextProvider = ({ children }) => {
         setPHQ9,
         GAD7,
         setGAD7,
+        PCL5,
+        setPCL5,
       }}
     >
       {children}

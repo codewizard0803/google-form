@@ -679,11 +679,11 @@ const GAD = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateGAD(GADValue);
     setErrors(errors);
 
-    if (isValid) {
-      setGAD7(GADValue);
-      setCurrentSection(currentSection + 1);
-    }
-    // setCurrentSection(currentSection + 1);
+    // if (isValid) {
+    //   setGAD7(GADValue);
+    //   setCurrentSection(currentSection + 1);
+    // }
+    setCurrentSection(currentSection + 1);
   };
 
   return (
@@ -832,7 +832,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
             <div className="mt-5">
               <div className="flex mt-2">
                 <select
-                  id="depressive-Symptom"
+                  id="currentAnxietySymptoms"
                   className="w-[85%] ml-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 focus: outline-none"
                   value={GADValue?.currentAnxietySymptoms}
                   onChange={handleCurrentAnxietySymptomsSelect}
