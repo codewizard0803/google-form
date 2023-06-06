@@ -8,10 +8,11 @@ import LongitudinalHistory from "./sections/LongitudinalHistory";
 import PHQ from "./sections/CurrentSymptoms/PHQ-9";
 import GAD from "./sections/CurrentSymptoms/GAD-7";
 import PCL from "./sections/CurrentSymptoms/PCL-5";
+import CurrentTreatment from "./sections/CurrentTreatment";
 
 const SectionCard = (props) => {
   const [currentSection, setCurrentSection] = useState(0);
-  const totalSection = 2;
+  // const totalSection = 2;
 
   const sections = [
     <DemographicInformation
@@ -47,6 +48,10 @@ const SectionCard = (props) => {
       setCurrentSection={setCurrentSection}
     />,
     <PCL
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <CurrentTreatment
       currentSection={currentSection}
       setCurrentSection={setCurrentSection}
     />,

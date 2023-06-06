@@ -191,6 +191,24 @@ const GlobalContextProvider = ({ children }) => {
     currentRelatedSymptoms: "0",
   });
 
+  const [globalCurrentTreatment, setGlobalCurrentTreatment] = useState({
+    currentlyPsychiatricMedications: "",
+    medicationList: "",
+    medicationLong: "",
+    medicationReason: [],
+    describeMedicationReason: "",
+    medicationsEffectYourCondition: [],
+    medicationAsPrescribed: "",
+    experiencedSideEffects: [],
+    describeSideEffect: "",
+    recentTreatmentProvider: "",
+    currentlyPsychotherapyTreatment: "",
+    recentPsychotherapyBegin: "",
+    recentPsychotherapySession: "",
+    psychotherapySessionsDate: "",
+    psychotherapistTreatmentProvider: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -212,6 +230,8 @@ const GlobalContextProvider = ({ children }) => {
         setGAD7,
         PCL5,
         setPCL5,
+        globalCurrentTreatment,
+        setGlobalCurrentTreatment,
       }}
     >
       {children}

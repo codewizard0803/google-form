@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
-import classnames from "classnames";
 
 import CardField from "../../common/CardField";
 import RadioFollowUp from "../../common/RadioFollowUp";
 import useGlobalContext from "../../../hooks/useGlobalContext";
-import TextField from "../../common/TextField";
 import TextFollowUp from "../../common/TextFollowUp";
 import validatePCL from "../../../validation/validatePCL";
 
@@ -818,11 +816,11 @@ const PCL = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validatePCL(PCLValue);
     setErrors(errors);
 
-    if (isValid) {
-      setPCL5(PCLValue);
-      setCurrentSection(currentSection + 1);
-    }
-    // setCurrentSection(currentSection + 1);
+    // if (isValid) {
+    //   setPCL5(PCLValue);
+    //   setCurrentSection(currentSection + 1);
+    // }
+    setCurrentSection(currentSection + 1);
   };
 
   return (

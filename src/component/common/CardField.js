@@ -32,7 +32,7 @@ const CardCheckField = ({
                   className="mr-2"
                   checked={
                     type === "checkbox"
-                      ? checked.includes(item.label)
+                      ? checked?.includes(item.label)
                       : checked === item.value
                   }
                   onChange={onChange}
