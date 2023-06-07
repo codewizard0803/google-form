@@ -11,6 +11,7 @@ import PCL from "./sections/CurrentSymptoms/PCL-5";
 import CurrentTreatment from "./sections/CurrentTreatment";
 import PastHistroy from "./sections/PastHistory";
 import SubstanceUse from "./sections/SubstanceUse";
+import MedicalHistory from "./sections/MedicalHistory";
 
 const SectionCard = (props) => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -62,6 +63,10 @@ const SectionCard = (props) => {
       setCurrentSection={setCurrentSection}
     />,
     <SubstanceUse
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <MedicalHistory
       currentSection={currentSection}
       setCurrentSection={setCurrentSection}
     />,

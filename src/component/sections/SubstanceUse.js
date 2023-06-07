@@ -5,8 +5,6 @@ import classnames from "classnames";
 import CardField from "../common/CardField";
 import RadioFollowUp from "../common/RadioFollowUp";
 import useGlobalContext from "../../hooks/useGlobalContext";
-import TextField from "../common/TextField";
-import validatePHQ from "../../validation/validatePHQ";
 import TextFollowUp from "../common/TextFollowUp";
 import CardCheckFollowUp from "../common/CardCheckFollowUp";
 import validateSubstanceUse from "../../validation/validateSubstanceUse";
@@ -848,11 +846,11 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     setErrors(errors);
     setTextErrors(textErrors);
 
-    if (isValid) {
-      setGlobalSubStanceUse(substanceUseValue);
-      setCurrentSection(currentSection + 1);
-    }
-    // setCurrentSection(currentSection + 1);
+    // if (isValid) {
+    //   setGlobalSubStanceUse(substanceUseValue);
+    //   setCurrentSection(currentSection + 1);
+    // }
+    setCurrentSection(currentSection + 1);
   };
 
   return (
