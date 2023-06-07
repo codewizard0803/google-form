@@ -267,6 +267,26 @@ const GlobalContextProvider = ({ children }) => {
     physicialAltercationsMany: "",
   });
 
+  const [globalMedicalHistory, setGlobalMedicalHistory] = useState({
+    diagnosedHealthcareProvider: [],
+    otherMedicalCondition: "",
+    pregnantPlanning: "",
+    plannedPregnancyProvider: "",
+    physicalHealthMedicationsLists: "",
+    surgeries: "",
+    surgeriesDateList: "",
+    medicationsSideEffect: "",
+    futureMedicalPlan: "",
+    futureMedicalPlanList: "",
+    currentPrimarycarePractitioner: "",
+    pastprimarycarePractitioner: "",
+    periodReceiveProvider: "",
+    hospitalListEverBeen: "",
+    medicationsListTaking: "",
+    allergiesMedication: "",
+    allergiesList: "",
+  });
+
   const [globalSubStanceUse, setGlobalSubStanceUse] = useState({
     followingSubstances: [],
     currentlySubstance: [],
@@ -311,6 +331,8 @@ const GlobalContextProvider = ({ children }) => {
         setGlobalPastHistory,
         globalSubStanceUse,
         setGlobalSubStanceUse,
+        globalMedicalHistory,
+        setGlobalMedicalHistory,
       }}
     >
       {children}

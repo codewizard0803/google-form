@@ -186,6 +186,8 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
     //   setDemographicInformation(demographicInformationValue);
     //   setCurrentSection(currentSection + 1);
     // }
+    setDemographicInformation(demographicInformationValue);
+
     setCurrentSection(currentSection + 1);
   };
 
