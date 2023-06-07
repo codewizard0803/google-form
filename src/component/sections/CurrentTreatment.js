@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Card, Typography, CardContent, Button } from "@mui/material";
-import classnames from "classnames";
+import { Button } from "@mui/material";
 
 import CardField from "../common/CardField";
 import RadioFollowUp from "../common/RadioFollowUp";
 import useGlobalContext from "../../hooks/useGlobalContext";
-import TextField from "../common/TextField";
 import TextFollowUp from "../common/TextFollowUp";
 import validateCurrentTreatment from "../../validation/validateCurrentTreatment";
 import CardCheckFollowUp from "../common/CardCheckFollowUp";
@@ -393,15 +391,14 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
 
   const handleNextClick = (event) => {
     event.preventDefault();
-
     const { isValid, errors } = validateCurrentTreatment(currentTreatmentValue);
     setErrors(errors);
 
-    if (isValid) {
-      setGlobalCurrentTreatment(currentTreatmentValue);
-      setCurrentSection(currentSection + 1);
-    }
-    // setCurrentSection(currentSection + 1);
+    // if (isValid) {
+    //   setGlobalCurrentTreatment(currentTreatmentValue);
+    //   setCurrentSection(currentSection + 1);
+    // }
+    setCurrentSection(currentSection + 1);
   };
 
   return (

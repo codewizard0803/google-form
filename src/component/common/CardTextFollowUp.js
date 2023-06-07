@@ -2,16 +2,17 @@ import React from "react";
 import { Card, Typography, CardContent } from "@mui/material";
 import classnames from "classnames";
 
-const CardCheckFollowUp = ({
+const CardTextFollowUp = ({
   title,
   options,
-  options2,
+  name,
   errors,
   checked,
   onChange,
-  onChange2,
-  type2,
+  title2,
   errors2,
+  onChange2,
+  value,
   type,
 }) => {
   return (
@@ -35,47 +36,43 @@ const CardCheckFollowUp = ({
                   value={item.value}
                   className="mr-2"
                   checked={
-                    checked?.filter((p) => p.condition === item.value).length >
-                    0
+                    type === "checkbox"
+                      ? checked?.filter((p) => p.condition === item.value)
+                          .length > 0
+                      : checked === item.value
                   }
                   onChange={onChange}
                 />
                 {item.label}
               </label>
-              {((Array.isArray(checked) &&
+              {(Array.isArray(checked) &&
                 checked?.filter((p) => p.condition === item.value).length >
                   0) ||
-                checked === item.value) &&
-              options2 ? (
-                <div className="flex justify-between p-4">
-                  {options2?.map((item2, index2) => (
-                    <div className="" key={index2}>
-                      <label key={item2.value}>
-                        <input
-                          type={type2}
-                          name={item.name}
-                          value={item2.value}
-                          checked={
-                            checked?.filter(
-                              (p) =>
-                                p.effect === item2.value &&
-                                p.condition === item.label
-                            ).length > 0
-                          }
-                          className="mr-2"
-                          onChange={onChange2}
-                        />
-                        {item2.label}
-                      </label>
+              checked === item.value ? (
+                <div className="w-[95%] mx-auto p-3  shadow-lg ">
+                  <p className="text-left text-[20px] mt-2">{title2}</p>
+                  <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
+                  <div className="mt-5 p-2">
+                    <input
+                      type="text"
+                      className={classnames(
+                        "mt-2 border-b-2 border-b-gray-300 w-full focus:outline-none focus:border-b-green-400 form-control form-control-lg",
+                        { "border-b-red-500": errors2 }
+                      )}
+                      name={name}
+                      value={value}
+                      onChange={onChange2}
+                      placeholder="Your answer"
+                    />
+                  </div>
+
+                  {errors2 && (
+                    <div className="text-red-500 text-left text-[12px] mt-2">
+                      {errors2}
                     </div>
-                  ))}
+                  )}
                 </div>
               ) : null}
-              {errors2 && (
-                <div className="text-red-500 text-left text-[12px] mt-2">
-                  {errors2}
-                </div>
-              )}
             </div>
           ))}
         </div>
@@ -89,4 +86,4 @@ const CardCheckFollowUp = ({
   );
 };
 
-export default CardCheckFollowUp;
+export default CardTextFollowUp;
