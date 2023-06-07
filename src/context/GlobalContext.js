@@ -304,6 +304,13 @@ const GlobalContextProvider = ({ children }) => {
     previouslyDescribedPsychiatricClean: "",
   });
 
+  const [globalFamilyHistory, setGlobalFamilyHistory] = useState({
+    familyPsychiatricConditions: "",
+    psychiatricConditionsList: "",
+    psychiatricConditionsTreatment: [],
+    familyAttemptedSuicide: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -333,6 +340,8 @@ const GlobalContextProvider = ({ children }) => {
         setGlobalSubStanceUse,
         globalMedicalHistory,
         setGlobalMedicalHistory,
+        globalFamilyHistory,
+        setGlobalFamilyHistory,
       }}
     >
       {children}
