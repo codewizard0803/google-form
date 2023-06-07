@@ -47,7 +47,7 @@ const CardCheckFollowUp = ({
                   0) ||
                 checked === item.value) &&
               options2 ? (
-                <div className="flex justify-between p-4">
+                <div className="flex justify-between  flex-wrap	 p-4">
                   {options2?.map((item2, index2) => (
                     <div className="" key={index2}>
                       <label key={item2.value}>

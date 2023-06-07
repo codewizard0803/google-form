@@ -267,6 +267,23 @@ const GlobalContextProvider = ({ children }) => {
     physicialAltercationsMany: "",
   });
 
+  const [globalSubStanceUse, setGlobalSubStanceUse] = useState({
+    followingSubstances: [],
+    currentlySubstance: [],
+    eachSubstanceList: [],
+    eachSubstanceListStartedOld: [],
+    toleranceFollowingSubstances: [],
+    withdrawalFollowingSubstances: [],
+    regardingAlcoholAnyFollowing: [],
+    enrolledTreatmentProgram: "",
+    completeTreatmentProgram: "",
+    treatmentLastedDateFrom: "",
+    treatmentLastedDateTo: "",
+    remainedTreatmentClean: "",
+    remainedTreatmentCleanLongest: "",
+    previouslyDescribedPsychiatricClean: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -292,6 +309,8 @@ const GlobalContextProvider = ({ children }) => {
         setGlobalCurrentTreatment,
         globalPastHistory,
         setGlobalPastHistory,
+        globalSubStanceUse,
+        setGlobalSubStanceUse,
       }}
     >
       {children}

@@ -729,6 +729,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
 
   useEffect(() => {
     setPastHistoryValue(globalPastHistory);
+    console.log("global", globalPastHistory);
   }, [globalPastHistory]);
 
   const handlePreviouslyExperiencedSymptomchange = (event) => {
@@ -892,6 +893,13 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     setPastHistoryValue({
       ...pastHistoryValue,
       pastPsychiatricMedication: newCheckedItems,
+    });
+  };
+
+  const handleSymtomsChange = (event) => {
+    setPastHistoryValue({
+      ...pastHistoryValue,
+      describeSymptoms: event.target.value,
     });
   };
 
@@ -1091,9 +1099,8 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
           checked={pastHistoryValue?.previouslyExperiencedSymptom}
           errors={errors.previouslyExperiencedSymptom}
           title2="Please describe your symptoms at that time:"
-          onChange2={handleChange}
-          name="describeSymptoms"
-          value={pastHistoryValue.describeSymptoms}
+          value={pastHistoryValue?.describeSymptoms}
+          onChange2={handleSymtomsChange}
           errors2={errors.describeSymptoms}
         />
 
@@ -1151,7 +1158,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
               <div>
                 <div className="w-[68%] mx-auto mt-3">
                   <TextFollowUp
-                    title="Please list the name, dose, and how often you take this medication."
+                    title="Please describe your mood here."
                     onChange={handleChange}
                     name="describeMood"
                     value={pastHistoryValue?.describeMood}
@@ -1161,6 +1168,14 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
               </div>
             ) : null}
 
+            <CardField
+              title="During this high energy time did you engage in any high-risk behaviors?XXX"
+              type="radio"
+              options={HighEnergyTimeOptions}
+              onChange={handleHighEnergyTimechange}
+              checked={pastHistoryValue?.highEnergyTime}
+              errors={errors.highEnergyTime}
+            />
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
                 title="During this time, did you drink alcohol or use any other substances?"
@@ -1170,15 +1185,6 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
                 error={errors.alcoholSubstances}
               />
             </div>
-
-            <CardField
-              title="During this high energy time did you engage in any high-risk behaviors?XXX"
-              type="radio"
-              options={HighEnergyTimeOptions}
-              onChange={handleHighEnergyTimechange}
-              checked={pastHistoryValue?.highEnergyTime}
-              errors={errors.highEnergyTime}
-            />
           </div>
         ) : null}
 
