@@ -10,6 +10,7 @@ import GAD from "./sections/CurrentSymptoms/GAD-7";
 import PCL from "./sections/CurrentSymptoms/PCL-5";
 import CurrentTreatment from "./sections/CurrentTreatment";
 import PastHistroy from "./sections/PastHistory";
+import SubstanceUse from "./sections/SubstanceUse";
 
 const SectionCard = (props) => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -57,6 +58,10 @@ const SectionCard = (props) => {
       setCurrentSection={setCurrentSection}
     />,
     <PastHistroy
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <SubstanceUse
       currentSection={currentSection}
       setCurrentSection={setCurrentSection}
     />,

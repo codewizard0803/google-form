@@ -54,6 +54,16 @@ const validatePastHistory = (value) => {
   if (value?.experienceFollowing.length === 0) {
     errors.experienceFollowing = "Your Field is required.";
     isValid = false;
+  } else if (value.experienceFollowing.length > 0) {
+    if (value?.recurrentRituals === "") {
+      errors.recurrentRituals = "Your Field is required.";
+      isValid = false;
+    }
+
+    if (value?.symptomsDrinkingAlcohol === "") {
+      errors.symptomsDrinkingAlcohol = "Your Field is required.";
+      isValid = false;
+    }
   } else {
     errors.experienceFollowing = "";
   }

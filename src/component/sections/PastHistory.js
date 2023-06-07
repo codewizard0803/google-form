@@ -24,6 +24,8 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     describeMood: "",
     alcoholSubstances: "",
     experienceFollowing: [],
+    recurrentRituals: "",
+    symptomsDrinkingAlcohol: "",
     harmKillYourSelf: "",
     highEnergyTime: "",
     emotionalSymptomsRelationShip: "",
@@ -176,6 +178,12 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   const AlcoholSubstancesOptions = [
     { label: "Yes", value: "Yes", name: "AlcoholSubstancesOptionsYes" },
     { label: "No", value: "No", name: "AlcoholSubstancesOptionsNo" },
+  ];
+
+  const SymptomsDrinkingAlcoholOptions = [
+    { label: "Yes", value: "Yes", name: "SymptomsDrinkingAlcoholOptionsYes" },
+    { label: "No", value: "No", name: "SymptomsDrinkingAlcoholOptionsNo" },
+    { label: "N/A", value: "N/A", name: "SymptomsDrinkingAlcoholOptionsN/A" },
   ];
 
   const ExperienceFollowingOptions = [
@@ -804,6 +812,8 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     setPastHistoryValue({
       ...pastHistoryValue,
       experienceFollowing: newCheckedItems,
+      recurrentRituals: "",
+      symptomsDrinkingAlcohol: "",
     });
   };
 
@@ -950,6 +960,13 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     });
   };
 
+  const handleSymptomsDrinkingAlcoholChange = (event) => {
+    setPastHistoryValue({
+      ...pastHistoryValue,
+      symptomsDrinkingAlcohol: event.target.value,
+    });
+  };
+
   const handleAdmittedPsychiatricHospitalchange = (event) => {
     setPastHistoryValue({
       ...pastHistoryValue,
@@ -1052,11 +1069,11 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validatePastHistory(pastHistoryValue);
     setErrors(errors);
 
-    if (isValid) {
-      setGlobalPastHistory(pastHistoryValue);
-      setCurrentSection(currentSection + 1);
-    }
-    // setCurrentSection(currentSection + 1);
+    // if (isValid) {
+    //   setGlobalPastHistory(pastHistoryValue);
+    //   setCurrentSection(currentSection + 1);
+    // }
+    setCurrentSection(currentSection + 1);
   };
 
   return (
@@ -1173,6 +1190,30 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
           checked={pastHistoryValue?.experienceFollowing}
           errors={errors.experienceFollowing}
         />
+
+        {pastHistoryValue?.experienceFollowing.length > 0 ? (
+          <div>
+            <div className="w-[68%] mx-auto mt-3">
+              <TextFollowUp
+                title="If you have thoughts, behaviors, or rituals that are recurrent, what thoughts, behaviors, or rituals are you having?"
+                onChange={handleChange}
+                name="recurrentRituals"
+                value={pastHistoryValue?.recurrentRituals}
+                error={errors.recurrentRituals}
+              />
+            </div>
+
+            <div className="w-[68%] mx-auto mt-3">
+              <RadioFollowUp
+                title="When experiencing these symptoms, were you drinking alcohol or using any substances?"
+                options={SymptomsDrinkingAlcoholOptions}
+                onChange={handleSymptomsDrinkingAlcoholChange}
+                checked={pastHistoryValue?.symptomsDrinkingAlcohol}
+                error={errors.symptomsDrinkingAlcohol}
+              />
+            </div>
+          </div>
+        ) : null}
 
         <CardField
           title="Recently, have you been thinking about how you might harm or kill yourself?"
