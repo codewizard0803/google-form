@@ -173,40 +173,14 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
 
   const ChildrenHealthIssuesOptions = [
     {
-      label: "Excellent",
-      value: "Excellent",
-      name: "ChildrenHealthIssuesOptionsExcellent",
+      label: "Yes",
+      value: "Yes",
+      name: "ChildrenHealthIssuesOptionsYes",
     },
     {
-      label: "Good",
-      value: "Good",
-      name: "ChildrenHealthIssuesOptionsGood",
-    },
-    {
-      label: "Bad",
-      value: "Bad",
-      name: "ChildrenHealthIssuesOptionsBad",
-    },
-    {
-      label: "OK, but having some struggles",
-      value: "OK, but having some struggles",
-      name: "ChildrenHealthIssuesOptionsOK, but having some struggles",
-    },
-    {
-      label: "having a lot of conflict",
-      value: "having a lot of conflict",
-      name: "ChildrenHealthIssuesOptionshaving a lot of conflict",
-    },
-    {
-      label: "nonexistant, we don't speak",
-      value: "nonexistant, we don't speak",
-      name: "ChildrenHealthIssuesOptionsnonexistant, we don't speak",
-    },
-    {
-      label: "good with some but strained with others",
-      value: "good with some but strained with others",
-      name:
-        "ChildrenHealthIssuesOptionsgood with some but strained with others",
+      label: "No",
+      value: "No",
+      name: "ChildrenHealthIssuesOptionsNo",
     },
   ];
 
