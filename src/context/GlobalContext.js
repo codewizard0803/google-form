@@ -366,6 +366,27 @@ const GlobalContextProvider = ({ children }) => {
     collegeMajor: "",
   });
 
+  const [globalSocialHistory, setGlobalSocialHistory] = useState({
+    barriersReceivingHealthcare: "",
+    selectbarriersHealthcare: [],
+    describeCurrentLivingSituation: "",
+    livesYourHome: [],
+    residedCurrentHomeLong: "",
+    ownYourHome: "",
+    describeAdditionalStressors: "",
+    presentTimeDanger: "",
+    describeFeelDanger: "",
+    allStressorsPastYear: "",
+    stressorsAffect: "",
+    eachStressorsAffect: "",
+    otherStressorsBesides: "",
+    explainAllStressors: "",
+    affectEmotionalSymptoms: "",
+    eachAffectEmotionalSymptoms: "",
+    otherStressorsExperience: "",
+    explainStressorsExperience: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -403,6 +424,10 @@ const GlobalContextProvider = ({ children }) => {
         setGlobalEmploymentHistory,
         globalEducationHistory,
         setGlobalEducationHistory,
+        globalSocialHistory,
+        setGlobalSocialHistory,
+        globalSocialHistory,
+        setGlobalSocialHistory,
       }}
     >
       {children}
