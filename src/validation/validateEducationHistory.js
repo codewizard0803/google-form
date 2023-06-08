@@ -38,7 +38,7 @@ const validateEducationHistory = (value) => {
     isValid = false;
   } else if (value.graduateHighSchool === "Yes") {
     if (!value.graduateOnTime.trim()) {
-      value.graduateOnTime = "Your Field is required.";
+      errors.graduateOnTime = "Your Field is required.";
       isValid = false;
     }
   } else {
@@ -50,17 +50,17 @@ const validateEducationHistory = (value) => {
     isValid = false;
   } else if (value.goToCollege === "Yes") {
     if (!value.completeYourDegree.trim()) {
-      value.completeYourDegree = "Your Field is required.";
+      errors.completeYourDegree = "Your Field is required.";
       isValid = false;
     }
 
     if (!value.collegeName.trim()) {
-      value.collegeName = "Your Field is required.";
+      errors.collegeName = "Your Field is required.";
       isValid = false;
     }
 
     if (!value.collegeMajor.trim()) {
-      value.collegeMajor = "Your Field is required.";
+      errors.collegeMajor = "Your Field is required.";
       isValid = false;
     }
   } else {
