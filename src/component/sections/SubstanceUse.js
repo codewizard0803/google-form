@@ -28,14 +28,17 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     remainedTreatmentClean: "",
     remainedTreatmentCleanLongest: "",
     previouslyDescribedPsychiatricClean: "",
+    toleranceDefinedFollowing: "",
+    withdrawalEitherFollowing: "",
   });
 
   const [errors, setErrors] = useState({});
   const [textErrors, setTextErrors] = useState({});
 
   useEffect(() => {
-    setSubstanceUseValue(globalSubStanceUse);
-  }, [globalSubStanceUse]);
+    console.log("subStanceValue", substanceUseValue);
+    // setSubstanceUseValue(globalSubStanceUse);
+  }, [substanceUseValue]);
 
   const FollowingSubstancesOptions = [
     {
@@ -462,18 +465,14 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
         "RegardingAlcoholAnyFollowingOptionsalcohol or substance use is continued despite knowledge of having a persistent or recurrent physical or psychological problem that is likely to have been caused or exacerbated by alcohol or substance",
     },
     {
-      label:
-        "Tolerance as defined by either of the following: a) a need for markedly increased amounts of alcohol to achieve intoxication or desired effect, b) a markedly diminished effect with continued use of the same amount of alcohol or substances",
-      value:
-        "Tolerance as defined by either of the following: a) a need for markedly increased amounts of alcohol to achieve intoxication or desired effect, b) a markedly diminished effect with continued use of the same amount of alcohol or substances",
+      label: "Tolerance as defined by either of the following:",
+      value: "Tolerance as defined by either of the following:",
       name:
         "RegardingAlcoholAnyFollowingOptionsTolerance as defined by either of the following: a) a need for markedly increased amounts of alcohol to achieve intoxication or desired effect, b) a markedly diminished effect with continued use of the same amount of alcohol or substances",
     },
     {
-      label:
-        "Withdrawal as manifested by either of the following: a) the characteristic withdrawal syndrome for alcohol or substances, b) alcohol or substances (or a closely related substance, such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms",
-      value:
-        "Withdrawal as manifested by either of the following: a) the characteristic withdrawal syndrome for alcohol or substances, b) alcohol or substances (or a closely related substance, such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms",
+      label: "Withdrawal as manifested by either of the following:",
+      value: "Withdrawal as manifested by either of the following:",
       name:
         "RegardingAlcoholAnyFollowingOptionsWithdrawal as manifested by either of the following: a) the characteristic withdrawal syndrome for alcohol or substances, b) alcohol or substances (or a closely related substance, such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms",
     },
@@ -787,6 +786,61 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     setSubstanceUseValue({
       ...substanceUseValue,
       regardingAlcoholAnyFollowing: newCheckedItems,
+      toleranceDefinedFollowing:
+        itemValue === "Tolerance as defined by either of the following:" &&
+        isChecked === false
+          ? ""
+          : substanceUseValue.toleranceDefinedFollowing,
+      withdrawalEitherFollowing:
+        itemValue === "Withdrawal as manifested by either of the following:" &&
+        isChecked === false
+          ? ""
+          : substanceUseValue.withdrawalEitherFollowing,
+    });
+  };
+
+  const handleToleranceDefinedFollowingChange = (event) => {
+    let isChecked = event.target.checked;
+    let newItem = [...substanceUseValue.regardingAlcoholAnyFollowing];
+
+    if (isChecked) {
+      if (
+        newItem.filter(
+          (item) => item === "Tolerance as defined by either of the following:"
+        ).length >
+          0 ===
+        false
+      ) {
+        newItem.push("Tolerance as defined by either of the following:");
+      }
+    }
+    setSubstanceUseValue({
+      ...substanceUseValue,
+      regardingAlcoholAnyFollowing: newItem,
+      toleranceDefinedFollowing: event.target.value,
+    });
+  };
+
+  const handleWithdrawalEitherFollowingChange = (event) => {
+    let isChecked = event.target.checked;
+    let newItem = [...substanceUseValue.regardingAlcoholAnyFollowing];
+
+    if (isChecked) {
+      if (
+        newItem.filter(
+          (item) =>
+            item === "Withdrawal as manifested by either of the following:"
+        ).length >
+          0 ===
+        false
+      ) {
+        newItem.push("Withdrawal as manifested by either of the following:");
+      }
+    }
+    setSubstanceUseValue({
+      ...substanceUseValue,
+      regardingAlcoholAnyFollowing: newItem,
+      withdrawalEitherFollowing: event.target.value,
     });
   };
 
@@ -931,14 +985,124 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
               onChange2={handleWithdrawalChange}
             />
 
-            <CardField
-              title="Regarding your alcohol or substance use, have you experienced any of the following (check all that apply)?"
-              type="checkbox"
-              options={RegardingAlcoholAnyFollowingOptions}
-              onChange={handleRegardingAlcoholAnyFollowingchange}
-              checked={substanceUseValue?.regardingAlcoholAnyFollowing}
-              errors={errors.regardingAlcoholAnyFollowing}
-            />
+            <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: 20, textAlign: "left" }}>
+                  Regarding your alcohol or substance use, have you experienced
+                  any of the following (check all that apply)?
+                </Typography>
+                <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
+                <div
+                  className={classnames("mt-5 p-2", {
+                    "border-red-500 border":
+                      errors.regardingAlcoholAnyFollowing,
+                  })}
+                >
+                  {RegardingAlcoholAnyFollowingOptions.map((item, index) => (
+                    <div className="text-left" key={index}>
+                      <label key={item.value}>
+                        <input
+                          type="checkbox"
+                          name={item.name}
+                          value={item.value}
+                          className="mr-2"
+                          checked={
+                            substanceUseValue?.regardingAlcoholAnyFollowing?.filter(
+                              (p) => p === item.value
+                            ).length > 0
+                          }
+                          onChange={handleRegardingAlcoholAnyFollowingchange}
+                        />
+                        {item.label}
+                      </label>
+                      {item.label ===
+                      "Tolerance as defined by either of the following:" ? (
+                        <div className="px-5">
+                          <div className="text-left my-3">
+                            <label>
+                              <input
+                                type="radio"
+                                value="increasedAlcohol"
+                                className="mr-2"
+                                checked={
+                                  substanceUseValue?.toleranceDefinedFollowing ===
+                                  "increasedAlcohol"
+                                }
+                                onChange={handleToleranceDefinedFollowingChange}
+                              />
+                              a need for markedly increased amounts of alcohol
+                              to achieve intoxication or desired effect
+                            </label>
+                          </div>
+
+                          <div className="text-left">
+                            <label>
+                              <input
+                                type="radio"
+                                value="alcoholAmount"
+                                className="mr-2"
+                                checked={
+                                  substanceUseValue?.toleranceDefinedFollowing ===
+                                  "alcoholAmount"
+                                }
+                                onChange={handleToleranceDefinedFollowingChange}
+                              />
+                              a markedly diminished effect with continued use of
+                              the same amount of alcohol or substances
+                            </label>
+                          </div>
+                        </div>
+                      ) : null}
+
+                      {item.label ===
+                      "Withdrawal as manifested by either of the following:" ? (
+                        <div className="px-5">
+                          <div className="text-left my-3">
+                            <label>
+                              <input
+                                type="radio"
+                                value="characteristicWithdrawal"
+                                className="mr-2"
+                                checked={
+                                  substanceUseValue?.withdrawalEitherFollowing ===
+                                  "characteristicWithdrawal"
+                                }
+                                onChange={handleWithdrawalEitherFollowingChange}
+                              />
+                              the characteristic withdrawal syndrome for alcohol
+                              or substances
+                            </label>
+                          </div>
+
+                          <div className="text-left">
+                            <label>
+                              <input
+                                type="radio"
+                                value="alcoholWithdrawalSymptoms"
+                                className="mr-2"
+                                checked={
+                                  substanceUseValue?.withdrawalEitherFollowing ===
+                                  "alcoholWithdrawalSymptoms"
+                                }
+                                onChange={handleWithdrawalEitherFollowingChange}
+                              />
+                              alcohol or substances (or a closely related
+                              substance, such as a benzodiazepine) is taken to
+                              relieve or avoid withdrawal symptoms
+                            </label>
+                          </div>
+                        </div>
+                      ) : null}
+                    </div>
+                  ))}
+                </div>
+                {errors.regardingAlcoholAnyFollowing && (
+                  <div className="text-red-500 text-left text-[12px] mt-2">
+                    {errors.regardingAlcoholAnyFollowing}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
           </div>
         ) : null}
 

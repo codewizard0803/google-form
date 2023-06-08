@@ -15,7 +15,7 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
   const [socialHistoryValue, setSocialHistoryValue] = useState({
     barriersReceivingHealthcare: "",
     selectbarriersHealthcare: [],
-    describeCurrentLivingSituation: "",
+    describeCurrentLivingSituation: [],
     livesYourHome: [],
     residedCurrentHomeLong: "",
     ownYourHome: "",
@@ -228,8 +228,9 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
   ];
 
   useEffect(() => {
-    setSocialHistoryValue(globalSocialHistory);
-  }, [globalSocialHistory]);
+    console.log("socialHistoryValue", socialHistoryValue);
+    // setSocialHistoryValue(globalSocialHistory);
+  }, [socialHistoryValue]);
 
   const handleBarriersReceivingHealthcarechange = (event) => {
     setSocialHistoryValue({
@@ -265,16 +266,36 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
   };
 
   const handleDescribeCurrentLivingSituationchange = (event) => {
+    let itemValue = event.target.value;
+    let isChecked = event.target.checked;
+
+    let newCheckedItems = [
+      ...socialHistoryValue.describeCurrentLivingSituation,
+    ];
+
+    if (isChecked) {
+      newCheckedItems.push(itemValue);
+    } else {
+      newCheckedItems = newCheckedItems.filter((item) => item !== itemValue);
+    }
+
     setSocialHistoryValue({
       ...socialHistoryValue,
-      describeCurrentLivingSituation: event.target.value,
-      livesYourHome: [],
+      describeCurrentLivingSituation: newCheckedItems,
+      livesYourHome:
+        itemValue !== "Homeless" && itemValue !== "Other"
+          ? socialHistoryValue.livesYourHome
+          : [],
       residedCurrentHomeLong:
-        event.target.value !== "Homeless" && event.target.value !== "Other"
-          ? "1"
+        itemValue !== "Homeless" && itemValue !== "Other" ? "1" : "",
+      ownYourHome:
+        itemValue !== "Homeless" && itemValue !== "Other"
+          ? socialHistoryValue.ownYourHome
           : "",
-      ownYourHome: "",
-      describeAdditionalStressors: "",
+      describeAdditionalStressors:
+        itemValue !== "Homeless" && itemValue !== "Other"
+          ? socialHistoryValue.describeAdditionalStressors
+          : "",
     });
   };
 
@@ -399,17 +420,23 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="Please describe your current living situation:"
-          type="radio"
+          title="Please describe your current living situation(select all that apply):"
+          type="checkbox"
           options={DescribeCurrentLivingSituationOptions}
           onChange={handleDescribeCurrentLivingSituationchange}
           checked={socialHistoryValue?.describeCurrentLivingSituation}
           errors={errors.describeCurrentLivingSituation}
         />
 
-        {socialHistoryValue?.describeCurrentLivingSituation !== "" &&
-        socialHistoryValue?.describeCurrentLivingSituation !== "Homeless" &&
-        socialHistoryValue?.describeCurrentLivingSituation !== "Other" ? (
+        {console.log(
+          !socialHistoryValue?.describeCurrentLivingSituation.filter(
+            (item) => item === "Homeless" || item === "Other"
+          ).length > 0
+        )}
+        {socialHistoryValue?.describeCurrentLivingSituation.length !== 0 &&
+        !socialHistoryValue?.describeCurrentLivingSituation.filter(
+          (item) => item === "Homeless" || item === "Other"
+        ).length > 0 ? (
           <div>
             <CardField
               title="Who else lives in your home with you?"
