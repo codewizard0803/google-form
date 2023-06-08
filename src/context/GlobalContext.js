@@ -311,6 +311,25 @@ const GlobalContextProvider = ({ children }) => {
     familyAttemptedSuicide: "",
   });
 
+  const [globalRelationshipHistory, setGlobalRelationshipHistory] = useState({
+    currentlyIntimateRelationship: "",
+    currentlyMarried: "",
+    currentlyUnit: "weeks",
+    currentRelationshipInvolve: "",
+    describeIntimateRelationship: "",
+    PartnerOccupation: "",
+    marriedNumber: "",
+    intimateRelationshipTimes: "1",
+    longTermRelationshipsLast: "",
+    reasonPreviousRelationships: "",
+    domesticViolence: "",
+    haveChildren: "",
+    childrenNumberAndAge: "",
+    childrenDoingSchool: "",
+    relationshipChildren: "",
+    childrenHealthIssues: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -342,6 +361,8 @@ const GlobalContextProvider = ({ children }) => {
         setGlobalMedicalHistory,
         globalFamilyHistory,
         setGlobalFamilyHistory,
+        globalRelationshipHistory,
+        setGlobalRelationshipHistory,
       }}
     >
       {children}

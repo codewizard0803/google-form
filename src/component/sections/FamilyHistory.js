@@ -160,11 +160,11 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateFamilyHistory(familyHistoryValue);
     setErrors(errors);
 
-    if (isValid) {
-      setGlobalFamilyHistory(familyHistoryValue);
-      setCurrentSection(currentSection + 1);
-    }
-    // setCurrentSection(currentSection + 1);
+    // if (isValid) {
+    //   setGlobalFamilyHistory(familyHistoryValue);
+    //   setCurrentSection(currentSection + 1);
+    // }
+    setCurrentSection(currentSection + 1);
   };
 
   return (
