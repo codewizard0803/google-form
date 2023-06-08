@@ -3,7 +3,6 @@ import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
 
 import CardField from "../common/CardField";
-import RadioFollowUp from "../common/RadioFollowUp";
 import useGlobalContext from "../../hooks/useGlobalContext";
 import TextField from "../common/TextField";
 import TextFollowUp from "../common/TextFollowUp";
@@ -264,11 +263,11 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
     );
     setErrors(errors);
 
-    if (isValid) {
-      setGlobalEmploymentHistory(employmentHistoryValue);
-      setCurrentSection(currentSection + 1);
-    }
-    // setCurrentSection(currentSection + 1);
+    // if (isValid) {
+    //   setGlobalEmploymentHistory(employmentHistoryValue);
+    //   setCurrentSection(currentSection + 1);
+    // }
+    setCurrentSection(currentSection + 1);
   };
 
   return (

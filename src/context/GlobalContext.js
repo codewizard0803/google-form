@@ -352,6 +352,20 @@ const GlobalContextProvider = ({ children }) => {
     otherEmploymentList: "",
   });
 
+  const [globalEducationHistory, setGlobalEducationHistory] = useState({
+    highestLevelEducation: "",
+    currentlyEnrolledEducation: "",
+    mostlyReceiveGrade: [],
+    learningDisability: "",
+    describeLearningDifficulties: "",
+    graduateHighSchool: "",
+    graduateOnTime: "",
+    goToCollege: "",
+    completeYourDegree: "",
+    collegeName: "",
+    collegeMajor: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -387,6 +401,8 @@ const GlobalContextProvider = ({ children }) => {
         setGlobalRelationshipHistory,
         globalEmploymentHistory,
         setGlobalEmploymentHistory,
+        globalEducationHistory,
+        setGlobalEducationHistory,
       }}
     >
       {children}
