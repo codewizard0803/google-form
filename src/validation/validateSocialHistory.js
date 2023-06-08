@@ -14,12 +14,13 @@ const validateSocialHistory = (value) => {
     errors.barriersReceivingHealthcare = "";
   }
 
-  if (!value.describeCurrentLivingSituation.trim()) {
+  if (value.describeCurrentLivingSituation.length === 0) {
     errors.describeCurrentLivingSituation = "Your Field is required.";
     isValid = false;
   } else if (
-    value?.describeCurrentLivingSituation !== "Homeless" &&
-    value?.describeCurrentLivingSituation !== "Other"
+    value?.describeCurrentLivingSituation.filter(
+      (item) => item !== "Homeless" && item !== "Other"
+    ).length > 0
   ) {
     if (value.livesYourHome.length === 0) {
       errors.livesYourHome = "Your Field is required.";
@@ -28,6 +29,11 @@ const validateSocialHistory = (value) => {
 
     if (!value.ownYourHome.trim()) {
       errors.ownYourHome = "Your Field is required.";
+      isValid = false;
+    }
+
+    if (!value.describeAdditionalStressors.trim()) {
+      errors.describeAdditionalStressors = "Your Field is required.";
       isValid = false;
     }
   } else {

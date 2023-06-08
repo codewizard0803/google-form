@@ -232,11 +232,10 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
     );
     setErrors(errors);
 
-    // if (isValid) {
-    //   setGlobalMedicalHistory(medicalHistoryValue);
-    //   setCurrentSection(currentSection + 1);
-    // }
-    setCurrentSection(currentSection + 1);
+    if (isValid) {
+      setGlobalMedicalHistory(medicalHistoryValue);
+      setCurrentSection(currentSection + 1);
+    }
   };
 
   return (

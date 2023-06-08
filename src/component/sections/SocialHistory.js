@@ -228,9 +228,8 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
   ];
 
   useEffect(() => {
-    console.log("socialHistoryValue", socialHistoryValue);
-    // setSocialHistoryValue(globalSocialHistory);
-  }, [socialHistoryValue]);
+    setSocialHistoryValue(globalSocialHistory);
+  }, [globalSocialHistory]);
 
   const handleBarriersReceivingHealthcarechange = (event) => {
     setSocialHistoryValue({
@@ -387,7 +386,6 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
       setGlobalSocialHistory(socialHistoryValue);
       setCurrentSection(currentSection + 1);
     }
-    // setCurrentSection(currentSection + 1);
   };
 
   return (

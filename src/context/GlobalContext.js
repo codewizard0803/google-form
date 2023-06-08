@@ -302,6 +302,8 @@ const GlobalContextProvider = ({ children }) => {
     remainedTreatmentClean: "",
     remainedTreatmentCleanLongest: "",
     previouslyDescribedPsychiatricClean: "",
+    toleranceDefinedFollowing: "",
+    withdrawalEitherFollowing: "",
   });
 
   const [globalFamilyHistory, setGlobalFamilyHistory] = useState({
@@ -369,7 +371,7 @@ const GlobalContextProvider = ({ children }) => {
   const [globalSocialHistory, setGlobalSocialHistory] = useState({
     barriersReceivingHealthcare: "",
     selectbarriersHealthcare: [],
-    describeCurrentLivingSituation: "",
+    describeCurrentLivingSituation: [],
     livesYourHome: [],
     residedCurrentHomeLong: "",
     ownYourHome: "",
@@ -385,6 +387,13 @@ const GlobalContextProvider = ({ children }) => {
     eachAffectEmotionalSymptoms: "",
     otherStressorsExperience: "",
     explainStressorsExperience: "",
+  });
+
+  const [globalCriminalHistory, setGlobalCriminalHistory] = useState({
+    arrested: "",
+    charges: "",
+    everIncarcerated: "",
+    currentlyParole: "",
   });
 
   return (
@@ -426,8 +435,8 @@ const GlobalContextProvider = ({ children }) => {
         setGlobalEducationHistory,
         globalSocialHistory,
         setGlobalSocialHistory,
-        globalSocialHistory,
-        setGlobalSocialHistory,
+        globalCriminalHistory,
+        setGlobalCriminalHistory,
       }}
     >
       {children}

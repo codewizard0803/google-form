@@ -729,7 +729,6 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
 
   useEffect(() => {
     setPastHistoryValue(globalPastHistory);
-    console.log("global", globalPastHistory);
   }, [globalPastHistory]);
 
   const handlePreviouslyExperiencedSymptomchange = (event) => {
@@ -1077,11 +1076,10 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validatePastHistory(pastHistoryValue);
     setErrors(errors);
 
-    // if (isValid) {
-    //   setGlobalPastHistory(pastHistoryValue);
-    //   setCurrentSection(currentSection + 1);
-    // }
-    setCurrentSection(currentSection + 1);
+    if (isValid) {
+      setGlobalPastHistory(pastHistoryValue);
+      setCurrentSection(currentSection + 1);
+    }
   };
 
   return (

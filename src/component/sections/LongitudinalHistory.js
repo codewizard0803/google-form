@@ -128,11 +128,10 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
     );
     setErrors(errors);
 
-    // if (isValid) {
-    //   setLongitudinalHistory(longitudinalHistoryValue);
-    //   setCurrentSection(currentSection + 1);
-    // }
-    setCurrentSection(currentSection + 1);
+    if (isValid) {
+      setLongitudinalHistory(longitudinalHistoryValue);
+      setCurrentSection(currentSection + 1);
+    }
   };
 
   return (

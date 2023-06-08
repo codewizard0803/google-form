@@ -816,11 +816,10 @@ const PCL = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validatePCL(PCLValue);
     setErrors(errors);
 
-    // if (isValid) {
-    //   setPCL5(PCLValue);
-    //   setCurrentSection(currentSection + 1);
-    // }
-    setCurrentSection(currentSection + 1);
+    if (isValid) {
+      setPCL5(PCLValue);
+      setCurrentSection(currentSection + 1);
+    }
   };
 
   return (

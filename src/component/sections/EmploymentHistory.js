@@ -263,11 +263,10 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
     );
     setErrors(errors);
 
-    // if (isValid) {
-    //   setGlobalEmploymentHistory(employmentHistoryValue);
-    //   setCurrentSection(currentSection + 1);
-    // }
-    setCurrentSection(currentSection + 1);
+    if (isValid) {
+      setGlobalEmploymentHistory(employmentHistoryValue);
+      setCurrentSection(currentSection + 1);
+    }
   };
 
   return (

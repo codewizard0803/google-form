@@ -297,11 +297,10 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
     );
     setErrors(errors);
 
-    // if (isValid) {
-    //   setGlobalRelationshipHistory(relationshipHistoryValue);
-    //   setCurrentSection(currentSection + 1);
-    // }
-    setCurrentSection(currentSection + 1);
+    if (isValid) {
+      setGlobalRelationshipHistory(relationshipHistoryValue);
+      setCurrentSection(currentSection + 1);
+    }
   };
 
   return (

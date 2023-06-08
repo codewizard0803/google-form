@@ -679,11 +679,10 @@ const GAD = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateGAD(GADValue);
     setErrors(errors);
 
-    // if (isValid) {
-    //   setGAD7(GADValue);
-    //   setCurrentSection(currentSection + 1);
-    // }
-    setCurrentSection(currentSection + 1);
+    if (isValid) {
+      setGAD7(GADValue);
+      setCurrentSection(currentSection + 1);
+    }
   };
 
   return (

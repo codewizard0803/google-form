@@ -230,11 +230,10 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateChiefComplaint(chiefComplaintValue);
     setErrors(errors);
 
-    // if (isValid) {
-    //   setChiefComplaint(chiefComplaintValue);
-    //   setCurrentSection(currentSection + 1);
-    // }
-    setCurrentSection(currentSection + 1);
+    if (isValid) {
+      setChiefComplaint(chiefComplaintValue);
+      setCurrentSection(currentSection + 1);
+    }
   };
 
   return (

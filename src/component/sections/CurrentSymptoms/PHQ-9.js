@@ -882,11 +882,10 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validatePHQ(PHQValue);
     setErrors(errors);
 
-    // if (isValid) {
-    //   setPHQ9(PHQValue);
-    //   setCurrentSection(currentSection + 1);
-    // }
-    setCurrentSection(currentSection + 1);
+    if (isValid) {
+      setPHQ9(PHQValue);
+      setCurrentSection(currentSection + 1);
+    }
   };
 
   return (

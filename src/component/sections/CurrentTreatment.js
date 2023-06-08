@@ -394,11 +394,10 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateCurrentTreatment(currentTreatmentValue);
     setErrors(errors);
 
-    // if (isValid) {
-    //   setGlobalCurrentTreatment(currentTreatmentValue);
-    //   setCurrentSection(currentSection + 1);
-    // }
-    setCurrentSection(currentSection + 1);
+    if (isValid) {
+      setGlobalCurrentTreatment(currentTreatmentValue);
+      setCurrentSection(currentSection + 1);
+    }
   };
 
   return (

@@ -285,11 +285,10 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
     );
     setErrors(errors);
 
-    // if (isValid) {
-    //   setEmploymentInjuryPhysical(employmentInjuryPhysicalValue);
-    //   setCurrentSection(currentSection + 1);
-    // }
-    setCurrentSection(currentSection + 1);
+    if (isValid) {
+      setEmploymentInjuryPhysical(employmentInjuryPhysicalValue);
+      setCurrentSection(currentSection + 1);
+    }
   };
 
   return (

@@ -36,9 +36,8 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
   const [textErrors, setTextErrors] = useState({});
 
   useEffect(() => {
-    console.log("subStanceValue", substanceUseValue);
-    // setSubstanceUseValue(globalSubStanceUse);
-  }, [substanceUseValue]);
+    setSubstanceUseValue(globalSubStanceUse);
+  }, [globalSubStanceUse]);
 
   const FollowingSubstancesOptions = [
     {
@@ -900,11 +899,10 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     setErrors(errors);
     setTextErrors(textErrors);
 
-    // if (isValid) {
-    //   setGlobalSubStanceUse(substanceUseValue);
-    //   setCurrentSection(currentSection + 1);
-    // }
-    setCurrentSection(currentSection + 1);
+    if (isValid) {
+      setGlobalSubStanceUse(substanceUseValue);
+      setCurrentSection(currentSection + 1);
+    }
   };
 
   return (

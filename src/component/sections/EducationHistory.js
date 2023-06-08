@@ -215,11 +215,10 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateEducationHistory(educationHistoryValue);
     setErrors(errors);
 
-    // if (isValid) {
-    //   setGlobalEducationHistory(educationHistoryValue);
-    //   setCurrentSection(currentSection + 1);
-    // }
-    setCurrentSection(currentSection + 1);
+    if (isValid) {
+      setGlobalEducationHistory(educationHistoryValue);
+      setCurrentSection(currentSection + 1);
+    }
   };
 
   return (
