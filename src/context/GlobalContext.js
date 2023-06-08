@@ -396,6 +396,16 @@ const GlobalContextProvider = ({ children }) => {
     currentlyParole: "",
   });
 
+  const [globalViolenceHistory, setGlobalViolenceHistory] = useState({
+    physicalAltercations: "",
+    altercationsTimes: "",
+    circumstancesSurrounding: "",
+    thoughtsHurtAnyone: "",
+    explainAccomplishingHurt: "",
+    victimViolence: "",
+    currentlyDangerViolence: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -437,6 +447,8 @@ const GlobalContextProvider = ({ children }) => {
         setGlobalSocialHistory,
         globalCriminalHistory,
         setGlobalCriminalHistory,
+        globalViolenceHistory,
+        setGlobalViolenceHistory,
       }}
     >
       {children}

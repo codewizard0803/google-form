@@ -804,11 +804,12 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
 
     if (isChecked) {
       if (
-        newItem.filter(
-          (item) => item === "Tolerance as defined by either of the following:"
-        ).length >
-          0 ===
-        false
+        !(
+          newItem.filter(
+            (item) =>
+              item === "Tolerance as defined by either of the following:"
+          ).length > 0
+        )
       ) {
         newItem.push("Tolerance as defined by either of the following:");
       }
@@ -826,12 +827,12 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
 
     if (isChecked) {
       if (
-        newItem.filter(
-          (item) =>
-            item === "Withdrawal as manifested by either of the following:"
-        ).length >
-          0 ===
-        false
+        !(
+          newItem.filter(
+            (item) =>
+              item === "Withdrawal as manifested by either of the following:"
+          ).length > 0
+        )
       ) {
         newItem.push("Withdrawal as manifested by either of the following:");
       }
