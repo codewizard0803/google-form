@@ -5,7 +5,6 @@ import classnames from "classnames";
 import CardField from "../common/CardField";
 import RadioFollowUp from "../common/RadioFollowUp";
 import useGlobalContext from "../../hooks/useGlobalContext";
-import TextField from "../common/TextField";
 import TextFollowUp from "../common/TextFollowUp";
 import validateRelationshipHistory from "../../validation/validateRelationshipHistory";
 
@@ -298,11 +297,11 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
     );
     setErrors(errors);
 
-    if (isValid) {
-      setGlobalRelationshipHistory(relationshipHistoryValue);
-      setCurrentSection(currentSection + 1);
-    }
-    // setCurrentSection(currentSection + 1);
+    // if (isValid) {
+    //   setGlobalRelationshipHistory(relationshipHistoryValue);
+    //   setCurrentSection(currentSection + 1);
+    // }
+    setCurrentSection(currentSection + 1);
   };
 
   return (

@@ -14,6 +14,7 @@ import SubstanceUse from "./sections/SubstanceUse";
 import MedicalHistory from "./sections/MedicalHistory";
 import FamilyHistory from "./sections/FamilyHistory";
 import RelationshipHistory from "./sections/RelationshipHistory";
+import EmploymentHistory from "./sections/EmploymentHistory";
 
 const SectionCard = (props) => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -77,6 +78,10 @@ const SectionCard = (props) => {
       setCurrentSection={setCurrentSection}
     />,
     <RelationshipHistory
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <EmploymentHistory
       currentSection={currentSection}
       setCurrentSection={setCurrentSection}
     />,

@@ -330,6 +330,28 @@ const GlobalContextProvider = ({ children }) => {
     childrenHealthIssues: "",
   });
 
+  const [globalEmploymentHistory, setGlobalEmploymentHistory] = useState({
+    currentEmploymentStatus: "",
+    employerName: "",
+    employmentTitle: "",
+    pastEmployerName: "",
+    jobDuties: "",
+    jobTitle: "",
+    pastEmploymentBegan: "",
+    pastEmploymentEnd: "",
+    pastEmploymentEndReason: "",
+    difficultyJobDuties: "",
+    pastImmediatelyEmployerName: "",
+    pastWorkplaceInjuries: "",
+    injuriesOccurTime: "",
+    injuryNature: "",
+    workerCompensationClaim: "",
+    placedDisability: "",
+    receivedNegativeWork: "",
+    currentSourcesIncome: "",
+    otherEmploymentList: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -363,6 +385,8 @@ const GlobalContextProvider = ({ children }) => {
         setGlobalFamilyHistory,
         globalRelationshipHistory,
         setGlobalRelationshipHistory,
+        globalEmploymentHistory,
+        setGlobalEmploymentHistory,
       }}
     >
       {children}
