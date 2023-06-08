@@ -406,6 +406,14 @@ const GlobalContextProvider = ({ children }) => {
     currentlyDangerViolence: "",
   });
 
+  const [globalMilitaryHistory, setGlobalMilitaryHistory] = useState({
+    enrolledMilitary: "",
+    branchMilitary: "",
+    militaryDates: "",
+    militaryJob: "",
+    dischargeStatus: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -449,6 +457,8 @@ const GlobalContextProvider = ({ children }) => {
         setGlobalCriminalHistory,
         globalViolenceHistory,
         setGlobalViolenceHistory,
+        globalMilitaryHistory,
+        setGlobalMilitaryHistory,
       }}
     >
       {children}

@@ -19,6 +19,7 @@ import EducationHistory from "./sections/EducationHistory";
 import SocialHistory from "./sections/SocialHistory";
 import CriminalHistory from "./sections/CriminalHistory";
 import ViolenceHistory from "./sections/ViolenceHistory";
+import MilitaryHistory from "./sections/MilitaryHistory";
 
 const SectionCard = (props) => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -102,6 +103,10 @@ const SectionCard = (props) => {
       setCurrentSection={setCurrentSection}
     />,
     <ViolenceHistory
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <MilitaryHistory
       currentSection={currentSection}
       setCurrentSection={setCurrentSection}
     />,
