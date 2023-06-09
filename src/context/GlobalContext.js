@@ -414,6 +414,37 @@ const GlobalContextProvider = ({ children }) => {
     dischargeStatus: "",
   });
 
+  const [
+    globalCurrentDailyActivities,
+    setGlobalCurrentDailyActivities,
+  ] = useState({
+    awakenTimeWorkDays: "",
+    awakenTimeNotWorkDays: "",
+    goToBed: "",
+    fallAsleepTime: "",
+    do6am: "",
+    do8am: "",
+    do10am: "",
+    do12pm: "",
+    do2pm: "",
+    do4pm: "",
+    do6pm: "",
+    do8pm: "",
+    do10pm: "",
+    do12p6am: "",
+    leisureActivities: "",
+    comprehendingInstructions: "",
+    performingRepetitiveTasks: "",
+    maintaininPace: "",
+    performingComplexTasks: "",
+    relatingReceivingInstructions: "",
+    makingGeneralizations: "",
+    acceptingResponsibility: "",
+    dailyLivingFollowing: [],
+    difficultAmount: [],
+    anyActivitiesListBefore: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -459,6 +490,8 @@ const GlobalContextProvider = ({ children }) => {
         setGlobalViolenceHistory,
         globalMilitaryHistory,
         setGlobalMilitaryHistory,
+        globalCurrentDailyActivities,
+        setGlobalCurrentDailyActivities,
       }}
     >
       {children}

@@ -282,17 +282,31 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
       ...socialHistoryValue,
       describeCurrentLivingSituation: newCheckedItems,
       livesYourHome:
-        itemValue !== "Homeless" && itemValue !== "Other"
+        newCheckedItems.length !== 0 &&
+        newCheckedItems.filter(
+          (item) => item !== "Homeless" && item !== "Other"
+        ).length > 0
           ? socialHistoryValue.livesYourHome
           : [],
       residedCurrentHomeLong:
-        itemValue !== "Homeless" && itemValue !== "Other" ? "1" : "",
+        newCheckedItems.length !== 0 &&
+        newCheckedItems.filter(
+          (item) => item !== "Homeless" && item !== "Other"
+        ).length > 0
+          ? "1"
+          : "",
       ownYourHome:
-        itemValue !== "Homeless" && itemValue !== "Other"
+        newCheckedItems.length !== 0 &&
+        newCheckedItems.filter(
+          (item) => item !== "Homeless" && item !== "Other"
+        ).length > 0
           ? socialHistoryValue.ownYourHome
           : "",
       describeAdditionalStressors:
-        itemValue !== "Homeless" && itemValue !== "Other"
+        newCheckedItems.length !== 0 &&
+        newCheckedItems.filter(
+          (item) => item !== "Homeless" && item !== "Other"
+        ).length > 0
           ? socialHistoryValue.describeAdditionalStressors
           : "",
     });
@@ -426,14 +440,9 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
           errors={errors.describeCurrentLivingSituation}
         />
 
-        {console.log(
-          !socialHistoryValue?.describeCurrentLivingSituation.filter(
-            (item) => item === "Homeless" || item === "Other"
-          ).length > 0
-        )}
         {socialHistoryValue?.describeCurrentLivingSituation.length !== 0 &&
-        !socialHistoryValue?.describeCurrentLivingSituation.filter(
-          (item) => item === "Homeless" || item === "Other"
+        socialHistoryValue?.describeCurrentLivingSituation.filter(
+          (item) => item !== "Homeless" && item !== "Other"
         ).length > 0 ? (
           <div>
             <CardField
