@@ -20,9 +20,9 @@ const validateSubstanceUse = (value) => {
       isValid = false;
     } else {
       const cond = value.eachSubstanceList?.filter(
-        (item) => item.amount === ""
+        (item) => item.effect === ""
       );
-      if (cond.length > 0) {
+      if (cond.length === 0) {
         cond.map((item) => {
           textErrors?.eachSubstanceListAmount.push({
             [item.condition]: "Your Field is required",
@@ -37,7 +37,7 @@ const validateSubstanceUse = (value) => {
       isValid = false;
     } else {
       const cond = value.eachSubstanceListStartedOld?.filter(
-        (item) => item.age === ""
+        (item) => item.effect === ""
       );
       if (cond.length > 0) {
         cond.map((item) => {

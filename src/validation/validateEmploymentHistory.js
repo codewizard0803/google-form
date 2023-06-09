@@ -70,8 +70,7 @@ const validateEmploymentHistory = (value) => {
   if (!value.pastWorkplaceInjuries.trim()) {
     errors.pastWorkplaceInjuries = "Your Field is required.";
     isValid = false;
-  } else {
-    errors.pastWorkplaceInjuries = "";
+  } else if (value.pastWorkplaceInjuries === "Yes") {
     if (!value.injuriesOccurTime.trim()) {
       errors.injuriesOccurTime = "Your Field is required.";
       isValid = false;
@@ -81,6 +80,8 @@ const validateEmploymentHistory = (value) => {
       errors.injuryNature = "Your Field is required.";
       isValid = false;
     }
+  } else {
+    errors.pastWorkplaceInjuries = "";
   }
 
   if (!value.workerCompensationClaim.trim()) {
@@ -108,7 +109,7 @@ const validateEmploymentHistory = (value) => {
     errors.currentSourcesIncome = "Your Field is required.";
     isValid = false;
   } else if (value.currentSourcesIncome !== "") {
-    if (value.otherEmploymentList === "") {
+    if (!value.otherEmploymentList.trim()) {
       errors.otherEmploymentList = "Your Field is required.";
       isValid = false;
     }

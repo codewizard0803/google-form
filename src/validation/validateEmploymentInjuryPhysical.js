@@ -171,16 +171,10 @@ const validateEmploymentInjuryPhysical = (value) => {
   ) {
     errors.conflictsCount = "Your Field is required.";
     isValid = false;
-  } else if (
-    value.radioConflictsItem === "Yes" &&
-    value.eachConflicts === ""
-  ) {
+  } else if (value.radioConflictsItem === "Yes" && value.eachConflicts === "") {
     errors.eachConflicts = "Your Field is required.";
     isValid = false;
-  } else if (
-    value.radioConflictsItem === "Yes" &&
-    value.conflictsRate === ""
-  ) {
+  } else if (value.radioConflictsItem === "Yes" && value.conflictsRate === "") {
     errors.conflictsRate = "Your Field is required.";
     isValid = false;
   } else {
@@ -204,7 +198,10 @@ const validateEmploymentInjuryPhysical = (value) => {
   if (!value.relationshipImmediateSupervisor.trim()) {
     errors.relationshipImmediateSupervisor = "Your Field is required.";
     isValid = false;
-  } else if(value.relationshipImmediateSupervisor === "Poor" && value.explainSuperVisorReason === "") {
+  } else if (
+    value.relationshipImmediateSupervisor === "Poor" &&
+    value.explainSuperVisorReason === ""
+  ) {
     errors.explainSuperVisorReason = "Your Field is required.";
     isValid = false;
   } else {
@@ -214,7 +211,10 @@ const validateEmploymentInjuryPhysical = (value) => {
   if (!value.performanceAppraisals.trim()) {
     errors.performanceAppraisals = "Your Field is required.";
     isValid = false;
-  } else if(value.performanceAppraisals === "Poor" && value.explainSuperVisorReason === "") {
+  } else if (
+    value.performanceAppraisals === "Poor" &&
+    value.explainSuperVisorReason === ""
+  ) {
     errors.explainPerformanceAppraisals = "Your Field is required.";
     isValid = false;
   } else {
@@ -224,7 +224,10 @@ const validateEmploymentInjuryPhysical = (value) => {
   if (!value.relationshipCoWorkers.trim()) {
     errors.relationshipCoWorkers = "Your Field is required.";
     isValid = false;
-  } else if(value.relationshipCoWorkers === "Poor" && value.explainSuperVisorReason === "") {
+  } else if (
+    value.relationshipCoWorkers === "Poor" &&
+    value.explainSuperVisorReason === ""
+  ) {
     errors.explainRelationshipCoWorkers = "Your Field is required.";
     isValid = false;
   } else {
@@ -234,7 +237,10 @@ const validateEmploymentInjuryPhysical = (value) => {
   if (!value.verbalWarning.trim()) {
     errors.verbalWarning = "Your Field is required.";
     isValid = false;
-  } else if(value.verbalWarning === "Yes" && value.explainSuperVisorReason === "") {
+  } else if (
+    value.verbalWarning === "Yes" &&
+    value.explainSuperVisorReason === ""
+  ) {
     errors.verbalWarningDateReason = "Your Field is required.";
     isValid = false;
   } else {
@@ -244,13 +250,12 @@ const validateEmploymentInjuryPhysical = (value) => {
   if (!value.lastStraw.trim()) {
     errors.lastStraw = "Your Field is required.";
     isValid = false;
-  } else if(value.lastStraw === "Yes" && value.explainSuperVisorReason === "") {
+  } else if (value.lastStraw === "Yes" && value.explainLastStraw === "") {
     errors.explainLastStraw = "Your Field is required.";
     isValid = false;
   } else {
     errors.lastStraw = "";
   }
-
 
   return {
     isValid,

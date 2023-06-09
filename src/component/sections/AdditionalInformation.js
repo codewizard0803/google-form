@@ -65,6 +65,33 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
     if (isValid) {
       setGlobalAdditionalInformation(additionalValue);
     }
+    console.log(
+      "Data",
+      demographicInformation,
+      currentEmployer,
+      physicalInjury,
+      chiefComplaint,
+      longitudinalHistory,
+      PHQ9,
+      GAD7,
+      PCL5,
+      globalCurrentTreatment,
+      globalPastHistory,
+      globalSubStanceUse,
+      globalMedicalHistory,
+      globalFamilyHistory,
+      globalRelationshipHistory,
+      globalEmploymentHistory,
+      globalEducationHistory,
+      globalSocialHistory,
+      globalCriminalHistory,
+      globalViolenceHistory,
+      globalMilitaryHistory,
+      globalCurrentDailyActivities,
+      globalDevelopmentalHistory,
+      globalAdditionalInformation,
+      setGlobalAdditionalInformation
+    );
   };
 
   return (

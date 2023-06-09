@@ -30,16 +30,15 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     previouslyDescribedPsychiatricClean: "",
     toleranceDefinedFollowing: "",
     withdrawalEitherFollowing: "",
+    amountValue: "",
   });
 
   const [errors, setErrors] = useState({});
   const [textErrors, setTextErrors] = useState({});
 
   useEffect(() => {
-    console.log("substanceValue", substanceUseValue);
-    // setSubstanceUseValue(globalSubStanceUse);
-    // console.log("globalSubstanceUse", globalSubStanceUse, substanceUseValue);
-  }, [substanceUseValue]);
+    setSubstanceUseValue(globalSubStanceUse);
+  }, [globalSubStanceUse]);
 
   const FollowingSubstancesOptions = [
     {
@@ -623,7 +622,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     if (isChecked) {
       newCheckedItems.push({
         condition: itemValue,
-        amount: "",
+        effect: "",
       });
     } else {
       newCheckedItems = newCheckedItems.filter(
@@ -637,7 +636,6 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
   };
 
   const handleAmountChange = (event) => {
-    console.log("event", event.target.value);
     const itemName = event.target.name;
 
     const condition = EachSubstanceListOptions.filter(
@@ -648,9 +646,10 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       ...substanceUseValue,
       eachSubstanceList: substanceUseValue.eachSubstanceList.map((item) =>
         item.condition === condition[0].value
-          ? { ...item, amount: event.target.value }
+          ? { ...item, effect: event.target.value }
           : item
       ),
+      amountValue: event.target.value,
     });
   };
 
@@ -703,7 +702,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     if (isChecked) {
       newCheckedItems.push({
         condition: itemValue,
-        age: "",
+        effect: "",
       });
     } else {
       newCheckedItems = newCheckedItems.filter(
@@ -728,7 +727,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       eachSubstanceListStartedOld: substanceUseValue.eachSubstanceListStartedOld.map(
         (item) =>
           item.condition === condition[0].value
-            ? { ...item, age: event.target.value }
+            ? { ...item, effect: event.target.value }
             : item
       ),
     });

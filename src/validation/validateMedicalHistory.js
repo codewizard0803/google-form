@@ -1,5 +1,5 @@
 const validateMedicalHistory = (value, global) => {
-  let isValid = false;
+  let isValid = true;
   let errors = {};
 
   if (value?.diagnosedHealthcareProvider.length === 0) {
@@ -7,6 +7,7 @@ const validateMedicalHistory = (value, global) => {
     isValid = false;
   } else if (
     value?.diagnosedHealthcareProvider?.filter((item) => item === "Other")
+      .length > 0
   ) {
     if (!value?.otherMedicalCondition.trim()) {
       errors.otherMedicalCondition = "Your Field is required.";

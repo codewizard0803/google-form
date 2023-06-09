@@ -26,7 +26,6 @@ import AdditinalInformation from "./sections/AdditionalInformation";
 
 const SectionCard = (props) => {
   const [currentSection, setCurrentSection] = useState(0);
-  // const totalSection = 2;
 
   const sections = [
     <DemographicInformation

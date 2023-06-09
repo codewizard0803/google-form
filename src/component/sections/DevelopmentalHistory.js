@@ -448,6 +448,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
           errors={errors.raisedChilhood}
           title2="Please describe your relationship with the person who primarily raised you during your childhood:"
           onChange2={handleDescribeRelationChange}
+          value={developmentalValue.describeRelationshipPerson}
           errors2={errors.describeRelationshipPerson}
         />
 

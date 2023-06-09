@@ -192,7 +192,6 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
       employerName: "",
       employmentTitle: "",
       jobDuties: "",
-      pastEmployerName: "",
       difficultyJobDuties: "",
     });
   };
@@ -336,7 +335,8 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              How many long term intimate relationships have you had?
+              What is the name of your past employer immediately prior to any
+              current job you may have?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">

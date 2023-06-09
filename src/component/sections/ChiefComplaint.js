@@ -180,15 +180,25 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
   };
 
   const handleStressFollowChange = (event) => {
-    const itemName = event.target.name;
+    const itemValue = event.target.value;
     const isChecked = event.target.checked;
 
     let newCheckedItems = [...chiefComplaintValue?.stressFollowing];
 
     if (isChecked) {
-      newCheckedItems.push(itemName);
+      if (itemValue === "None of the above") {
+        newCheckedItems = ["None of the above"];
+      } else {
+        if (
+          newCheckedItems.filter((item) => item === "None of the above")
+            .length > 0
+        ) {
+          newCheckedItems = [];
+        }
+        newCheckedItems.push(itemValue);
+      }
     } else {
-      newCheckedItems = newCheckedItems.filter((item) => item !== itemName);
+      newCheckedItems = newCheckedItems.filter((item) => item !== itemValue);
     }
     setChiefComplaintValue({
       ...chiefComplaintValue,
