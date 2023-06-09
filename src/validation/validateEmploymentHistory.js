@@ -34,8 +34,6 @@ const validateEmploymentHistory = (value) => {
     errors.currentEmploymentStatus = "";
   }
 
-  console.log("valuetrim", value.pastEmployerName);
-
   if (!value?.pastEmployerName?.trim()) {
     errors.pastEmployerName = "Your Field is required.";
     isValid = false;

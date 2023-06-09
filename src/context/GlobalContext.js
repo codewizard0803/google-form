@@ -476,6 +476,14 @@ const GlobalContextProvider = ({ children }) => {
     enjoyActivitiesChild: "",
   });
 
+  const [
+    globalAdditionalInformation,
+    setGlobalAdditionalInformation,
+  ] = useState({
+    evaluatingClinician: "",
+    yourAdditionalInformation: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -525,6 +533,8 @@ const GlobalContextProvider = ({ children }) => {
         setGlobalCurrentDailyActivities,
         globalDevelopmentalHistory,
         setGlobalDevelopmentalHistory,
+        globalAdditionalInformation,
+        setGlobalAdditionalInformation,
       }}
     >
       {children}

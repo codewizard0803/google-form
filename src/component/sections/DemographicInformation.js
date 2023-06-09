@@ -117,9 +117,8 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
   ];
 
   useEffect(() => {
-    console.log("demograph", demographicInformationValue);
-    // setDemographicInformationValue(demographicInformation);
-  }, [demographicInformationValue]);
+    setDemographicInformationValue(demographicInformation);
+  }, [demographicInformation]);
 
   const handleCheckboxEthnicityChange = (event) => {
     const itemName = event.target.name;

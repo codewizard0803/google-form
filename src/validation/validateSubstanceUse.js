@@ -39,7 +39,6 @@ const validateSubstanceUse = (value) => {
       const cond = value.eachSubstanceListStartedOld?.filter(
         (item) => item.age === ""
       );
-      console.log("cond", cond);
       if (cond.length > 0) {
         cond.map((item) => {
           textErrors?.eachSubstanceListStartedOldAge.push({

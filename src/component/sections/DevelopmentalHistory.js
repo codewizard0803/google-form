@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
-import classnames from "classnames";
 
 import CardField from "../common/CardField";
-import RadioFollowUp from "../common/RadioFollowUp";
 import useGlobalContext from "../../hooks/useGlobalContext";
 import TextField from "../common/TextField";
-import TextFollowUp from "../common/TextFollowUp";
 import validateDevelopmentalHistory from "../../validation/validateDevelopmentalHistory";
 import CardTextFollowUp from "../common/CardTextFollowUp";
 
