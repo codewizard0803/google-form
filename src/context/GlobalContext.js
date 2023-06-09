@@ -445,6 +445,37 @@ const GlobalContextProvider = ({ children }) => {
     anyActivitiesListBefore: "",
   });
 
+  const [globalDevelopmentalHistory, setGlobalDevelopmentalHistory] = useState({
+    bornPlace: "",
+    primarilyRaised: "",
+    raisedChilhood: "",
+    describeRelationshipPerson: "",
+    primaryAdultsRelationship: "",
+    haveSiblings: "",
+    siblingsMany: "",
+    siblingsRaised: "",
+    relationshipSiblings: [],
+    experienceAbuseChildhood: [],
+    parentsMarried: "",
+    parentsRemainMarried: "",
+    parentsDivorce: "",
+    yourOldParentsDivorced: "",
+    motherWork: "",
+    motherJob: "",
+    motherStillWork: "",
+    motherCurrentLiving: "",
+    diedMotherOld: "",
+    whatDiedMother: "",
+    fatherWork: "",
+    fatherJob: "",
+    fatherStillWork: "",
+    fatherCurrentLiving: "",
+    diedFatherOld: "",
+    whatDiedFather: "",
+    bestDescribesSocialLifeChild: "",
+    enjoyActivitiesChild: "",
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -492,6 +523,8 @@ const GlobalContextProvider = ({ children }) => {
         setGlobalMilitaryHistory,
         globalCurrentDailyActivities,
         setGlobalCurrentDailyActivities,
+        globalDevelopmentalHistory,
+        setGlobalDevelopmentalHistory,
       }}
     >
       {children}

@@ -58,13 +58,14 @@ const CardTextFollowUp = ({
                       className={classnames(
                         "mt-2 border-b-2 border-b-gray-300 w-full focus:outline-none focus:border-b-green-400 form-control form-control-lg",
                         {
-                          "border-b-red-500":
-                            errors2?.find(
-                              (error) => Object.keys(error)[0] === item.label
-                            ) !== undefined &&
-                            errors2?.find(
-                              (error) => Object.keys(error)[0] === item.label
-                            )[item.label] !== "",
+                          "border-b-red-500": Array.isArray(errors2)
+                            ? errors2?.find(
+                                (error) => Object.keys(error)[0] === item.label
+                              ) !== undefined &&
+                              errors2?.find(
+                                (error) => Object.keys(error)[0] === item.label
+                              )[item.label] !== ""
+                            : errors2,
                         }
                       )}
                       name={item.name}
@@ -74,23 +75,23 @@ const CardTextFollowUp = ({
                     />
                   </div>
 
-                  {console.log(
-                    "errors2",
+                  {Array.isArray(errors2) ? (
                     errors2?.find(
                       (error) => Object.keys(error)[0] === item.label
-                    )
-                  )}
-                  {errors2?.find(
-                    (error) => Object.keys(error)[0] === item.label
-                  ) === undefined
-                    ? null
-                    : errors2?.find(
+                    ) === undefined ? null : (
+                      errors2?.find(
                         (error) => Object.keys(error)[0] === item.label
                       )[item.label] !== "" && (
                         <div className="text-red-500 text-left text-[12px] mt-2">
                           Your Field is required
                         </div>
-                      )}
+                      )
+                    )
+                  ) : (
+                    <div className="text-red-500 text-left text-[12px] mt-2">
+                      {errors2}
+                    </div>
+                  )}
                 </div>
               ) : null}
             </div>

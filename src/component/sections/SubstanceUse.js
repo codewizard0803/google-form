@@ -37,6 +37,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
 
   useEffect(() => {
     setSubstanceUseValue(globalSubStanceUse);
+    console.log("globalSubstanceUse", globalSubStanceUse, substanceUseValue);
   }, [globalSubStanceUse]);
 
   const FollowingSubstancesOptions = [
@@ -635,6 +636,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
   };
 
   const handleAmountChange = (event) => {
+    console.log("event", event.target.value);
     const itemName = event.target.name;
 
     const condition = EachSubstanceListOptions.filter(
@@ -950,7 +952,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
 
             <CardTextFollowUp
               type="checkbox"
-              title="Please list how much you use of each substance."
+              title="Please list how old you were when you started using each substance."
               options={EachSubstanceListStartedOldOptions}
               onChange={handleEachSubstanceListStartedOldchange}
               checked={substanceUseValue?.eachSubstanceListStartedOld}
