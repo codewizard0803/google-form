@@ -902,7 +902,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="Little interest or pleasure in doing things?"
+          title="63. Little interest or pleasure in doing things?"
           type="radio"
           options={InterestThingOptions}
           onChange={handleInterestThingChange}
@@ -924,7 +924,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="Feeling down, depressed, or hopeless?"
+          title="64. Feeling down, depressed, or hopeless?"
           type="radio"
           options={FeelingDepressedOptions}
           onChange={handleFeelingDepressedChange}
@@ -975,7 +975,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="Trouble falling or staying asleep, or sleeping too much?"
+          title="65. Trouble falling or staying asleep, or sleeping too much?"
           type="radio"
           options={TroubleFallingAsleepOptions}
           onChange={handleTroubleFallingAsleepChange}
@@ -1035,7 +1035,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="Feeling tired or having little energy?"
+          title="66. Feeling tired or having little energy?"
           type="radio"
           options={FeelingEnergyOptions}
           onChange={handleFeelingEnergyChange}
@@ -1044,7 +1044,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Poor appetite or overeating?"
+          title="67. Poor appetite or overeating?"
           type="radio"
           options={PoorAppetiteOptions}
           onChange={handlePoorAppetiteChange}
@@ -1076,7 +1076,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="Feeling bad about yourself — or that you are a failure or have let yourself or your family down?"
+          title="68. Feeling bad about yourself — or that you are a failure or have let yourself or your family down?"
           type="radio"
           options={YourselfFeelingBadOptions}
           onChange={handleYourselfFeelingBadChange}
@@ -1085,7 +1085,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Trouble concentrating on things, such as reading the newspaper or watching television?"
+          title="69. Trouble concentrating on things, such as reading the newspaper or watching television?"
           type="radio"
           options={TroubleConCentratingThingOptions}
           onChange={handleTroubleConCentratingThingChange}
@@ -1094,7 +1094,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Moving or speaking so slowly that other people could have noticed? Or so fidgety or restless that you have been moving a lot more than usual?"
+          title="70. Moving or speaking so slowly that other people could have noticed? Or so fidgety or restless that you have been moving a lot more than usual?"
           type="radio"
           options={FidgetyMovingOptions}
           onChange={handleFidgetyMovingChange}
@@ -1103,7 +1103,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Thoughts that you would be better off dead, or thoughts of hurting yourself in some way?"
+          title="71. Thoughts that you would be better off dead, or thoughts of hurting yourself in some way?"
           type="radio"
           options={BetterOffDeadYourselfOptions}
           onChange={handleBetterOffDeadYourselfChange}
@@ -1112,7 +1112,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="In the past month, have you wished you were dead or wished you could go to sleep and not wake up?"
+          title="72. In the past month, have you wished you were dead or wished you could go to sleep and not wake up?"
           type="radio"
           options={DeadWishWakeUpOptions}
           onChange={handleDeadWishWakeUpChange}
@@ -1121,7 +1121,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="In the past month, have you had any actual thoughts of killing yourself?"
+          title="73. In the past month, have you had any actual thoughts of killing yourself?"
           type="radio"
           options={KillingYourselfOptions}
           onChange={handleKillingYourselfChange}
@@ -1170,7 +1170,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="Have you ever done anything, started to do anything, or prepared to do anything to end your life?"
+          title="74. Have you ever done anything, started to do anything, or prepared to do anything to end your life?"
           type="radio"
           options={PreparedAnythingEndYourlifeOptions}
           onChange={handlePreparedAnythingEndYourlifeChange}
@@ -1179,7 +1179,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Do you have thoughts of hurting anyone else?"
+          title="75. Do you have thoughts of hurting anyone else?"
           type="radio"
           options={HurtingAnyoneOptions}
           onChange={handleHurtingAnyoneChange}
@@ -1190,8 +1190,8 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              With zero to 1 equaling no or minimal symptoms and 10 equaling the
-              most severe symptoms possible, how do you rate your current
+              76. With zero to 1 equaling no or minimal symptoms and 10 equaling
+              the most severe symptoms possible, how do you rate your current
               depressive symptoms?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>

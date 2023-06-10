@@ -73,15 +73,15 @@ const CurrentEmployer = ({ currentSection, setCurrentSection }) => {
   return (
     <div className="mt-4">
       <p className="bg-green-400 w-[65%] mx-auto p-3 text-xl text-white rounded-lg mt-5 shadow-lg">
-        Current Employer (If Different Than Above)
+        39. Current Employer (If Different Than Above)
       </p>
 
       <form>
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              Do you currently work for the same employer where the above injury
-              occurred?
+              40. Do you currently work for the same employer where the above
+              injury occurred?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">

@@ -843,7 +843,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="Repeated, disturbing, and unwanted memories of the stressful experience?"
+          title="87. Repeated, disturbing, and unwanted memories of the stressful experience?"
           type="radio"
           options={StressfulExperienceMemoriesOptions}
           onChange={handleStressfulExperienceMemoriesChange}
@@ -852,7 +852,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Repeated, disturbing dreams of the stressful experience?"
+          title="88. Repeated, disturbing dreams of the stressful experience?"
           type="radio"
           options={StressfulExperienceOptions}
           onChange={handleStressfulExperienceChange}
@@ -876,7 +876,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="Suddenly feeling or acting as if the stressful experience were actually happening again (as if you were actually back there reliving it)?"
+          title="89. Suddenly feeling or acting as if the stressful experience were actually happening again (as if you were actually back there reliving it)?"
           type="radio"
           options={SuddenlyStressfulExperienceOptions}
           onChange={handleSuddenlyStressfulExperienceChange}
@@ -885,7 +885,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Feeling very upset when something reminded you of the stressful experience?"
+          title="90. Feeling very upset when something reminded you of the stressful experience?"
           type="radio"
           options={VeryUpsetStressfulExperienceOptions}
           onChange={handleVeryUpsetStressfulExperienceChange}
@@ -894,7 +894,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Having strong physical reactions when something reminded you of the stressful experience (for example, heart pounding, trouble breathing, sweating)?"
+          title="91. Having strong physical reactions when something reminded you of the stressful experience (for example, heart pounding, trouble breathing, sweating)?"
           type="radio"
           options={StrongPhysicalReactionStressfulExperienceOptions}
           onChange={handleStrongPhysicalReactionStressfulExperienceChange}
@@ -903,7 +903,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Avoiding memories, thoughts, or feelings related to the stressful experience?"
+          title="92. Avoiding memories, thoughts, or feelings related to the stressful experience?"
           type="radio"
           options={AvoidingMemoriesOptions}
           onChange={handleAvoidingMemoriesChange}
@@ -912,7 +912,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Avoiding external reminders of the stressful experience (for example, people, places, conversations, activities, objects, or situations)?"
+          title="93. Avoiding external reminders of the stressful experience (for example, people, places, conversations, activities, objects, or situations)?"
           type="radio"
           options={AvoidingExternalRemindersOptions}
           onChange={handleAvoidingExternalRemindersChange}
@@ -944,7 +944,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="Trouble remembering important parts of the stressful experience? "
+          title="94. Trouble remembering important parts of the stressful experience? "
           type="radio"
           options={TroubleStressfulExperienceOptions}
           onChange={handleTroubleStressfulExperienceChange}
@@ -953,7 +953,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Having strong negative beliefs about yourself, other people, or the world (for example, having thoughts such as: I am bad, there is something seriously wrong with me, no one can be trusted, the world is completely dangerous)?"
+          title="95. Having strong negative beliefs about yourself, other people, or the world (for example, having thoughts such as: I am bad, there is something seriously wrong with me, no one can be trusted, the world is completely dangerous)?"
           type="radio"
           options={StrongNegativeBeliefsOptions}
           onChange={handleStrongNegativeBeliefsChange}
@@ -962,7 +962,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Blaming yourself or someone else for the stressful experience or what happened after it?"
+          title="96. Blaming yourself or someone else for the stressful experience or what happened after it?"
           type="radio"
           options={StressfulExperienceBlamingOptions}
           onChange={handleStressfulExperienceBlamingChange}
@@ -971,7 +971,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Having strong negative feelings such as fear, horror, anger, guilt, or shame?"
+          title="97. Having strong negative feelings such as fear, horror, anger, guilt, or shame?"
           type="radio"
           options={StrongNegativefeelingsOptions}
           onChange={handleStrongNegativefeelingsChange}
@@ -980,7 +980,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Loss of interest in activities that you used to enjoy (although this is a repeat question, please answer again)?"
+          title="98. Loss of interest in activities that you used to enjoy (although this is a repeat question, please answer again)?"
           type="radio"
           options={LossInterestActivityOptions}
           onChange={handleLossInterestActivityChange}
@@ -989,7 +989,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Feeling distant or cut off from other people?"
+          title="99. Feeling distant or cut off from other people?"
           type="radio"
           options={FeelingDistantPeopleOptions}
           onChange={handleFeelingDistantPeopleChange}
@@ -998,7 +998,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Trouble experiencing positive feelings (for example, being unable to feel happiness or have loving feelings for people close to you)?"
+          title="100. Trouble experiencing positive feelings (for example, being unable to feel happiness or have loving feelings for people close to you)?"
           type="radio"
           options={TroubleExperiencePositiveFeelingOptions}
           onChange={handleTroubleExperiencePositiveFeelingChange}
@@ -1007,7 +1007,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Irritable behavior, angry outbursts, or acting aggressively?"
+          title="101. Irritable behavior, angry outbursts, or acting aggressively?"
           type="radio"
           options={IrritableBehaviorOptions}
           onChange={handleIrritableBehaviorChange}
@@ -1016,7 +1016,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Taking too many risks or doing things that could cause you
+          title="102. Taking too many risks or doing things that could cause you
           harm?"
           type="radio"
           options={ManyRisksThingOptions}
@@ -1026,7 +1026,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Feeling distant or cut off from other people?"
+          title="103. Feeling distant or cut off from other people?"
           type="radio"
           options={BeingWatchfulOptions}
           onChange={handleBeingWatchfulChange}
@@ -1035,7 +1035,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Being “superalert” or watchful or on guard?"
+          title="104. Being “superalert” or watchful or on guard?"
           type="radio"
           options={EasilyStartledOptions}
           onChange={handleEasilyStartledChange}
@@ -1044,7 +1044,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Feeling jumpy or easily startled?"
+          title="105. Feeling jumpy or easily startled?"
           type="radio"
           options={DifficultyConcentratingOptions}
           onChange={handleDifficultyConcentratingChange}
@@ -1053,7 +1053,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Having difficulty concentrating (although this is a repeat question, please answer again)?"
+          title="106. Having difficulty concentrating (although this is a repeat question, please answer again)?"
           type="radio"
           options={TroubleFallingAsleepOptions}
           onChange={handleTroubleFallingAsleepChange}
@@ -1064,9 +1064,9 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              With zero to 1 equaling no or minimal symptoms and 10 equaling the
-              most severe symptoms possible, how do you rate your current post
-              trauma related symptoms?
+              107. With zero to 1 equaling no or minimal symptoms and 10
+              equaling the most severe symptoms possible, how do you rate your
+              current post trauma related symptoms?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">

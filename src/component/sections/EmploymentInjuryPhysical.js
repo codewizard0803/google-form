@@ -299,7 +299,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <TextField
-          title="Name of Current Employer:"
+          title="9. Name of Current Employer:"
           type="text"
           name="currentEmployerName"
           value={employmentInjuryPhysicalValue?.currentEmployerName}
@@ -309,7 +309,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="Nature of Business:"
+          title="10. Nature of Business:"
           type="text"
           name="businessNature"
           value={employmentInjuryPhysicalValue?.businessNature}
@@ -319,7 +319,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="Date This Job Began:"
+          title="11. Date This Job Began:"
           type="text"
           name="jobBeganDate"
           value={employmentInjuryPhysicalValue?.jobBeganDate}
@@ -329,7 +329,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="What was the last day you worked at this job?"
+          title="12. What was the last day you worked at this job?"
           type="text"
           name="jobLastDate"
           value={employmentInjuryPhysicalValue?.jobLastDate}
@@ -339,7 +339,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="Your Job Title When You Started This Employment:"
+          title="13. Your Job Title When You Started This Employment:"
           type="text"
           name="startedJobTitle"
           value={employmentInjuryPhysicalValue?.startedJobTitle}
@@ -349,7 +349,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="Your Current Title or Title When You Ended This Employment:"
+          title="14. Your Current Title or Title When You Ended This Employment:"
           type="text"
           name="currentTitle"
           value={employmentInjuryPhysicalValue?.currentTitle}
@@ -359,7 +359,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="Your Employment Duties:"
+          title="15. Your Employment Duties:"
           type="text"
           name="employmentDuty"
           value={employmentInjuryPhysicalValue?.employmentDuty}
@@ -369,7 +369,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="Your Typical Work Schedule (Hours Worked Per Day, Week, or Month):"
+          title="16. Your Typical Work Schedule (Hours Worked Per Day, Week, or Month):"
           type="text"
           name="typicalWorkSchedule"
           value={employmentInjuryPhysicalValue?.typicalWorkSchedule}
@@ -381,7 +381,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              Your Salary:
+              17. Your Salary:
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="form-group">
@@ -434,7 +434,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <TextField
-          title="What Do You Like About This Job?"
+          title="18. What Do You Like About This Job?"
           type="text"
           name="likeJob"
           value={employmentInjuryPhysicalValue?.likeJob}
@@ -444,7 +444,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="What Do You Not Like About This Job?"
+          title="19. What Do You Not Like About This Job?"
           type="text"
           name="notLikeJob"
           value={employmentInjuryPhysicalValue?.notLikeJob}
@@ -454,7 +454,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="BEFORE The Injury, Were You Being Treated for Any Physical or Medical Condition(s)?"
+          title="20. BEFORE The Injury, Were You Being Treated for Any Physical or Medical Condition(s)?"
           type="radio"
           options={physicalConditionOptions}
           onChange={handlephysicalConditionChange}
@@ -465,7 +465,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="BEFORE The Injury, Were You Being Treated for Any Mental or Emotional Condition(s)?"
+          title="21. BEFORE The Injury, Were You Being Treated for Any Mental or Emotional Condition(s)?"
           type="radio"
           options={mentalConditionOptions}
           onChange={handleMentalConditionChange}
@@ -476,7 +476,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="BEFORE The Injury, Were You Experiencing Any Emotional Symptoms?"
+          title="22. BEFORE The Injury, Were You Experiencing Any Emotional Symptoms?"
           type="radio"
           options={emotionalSymptomsOptions}
           onChange={handleEmotionalSymptomsChange}
@@ -487,7 +487,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="Describe These Medical or Emotional Conditions or Symptoms BEFORE The Injury:"
+          title="23. Describe These Medical or Emotional Conditions or Symptoms BEFORE The Injury:"
           type="text"
           name="describeMedicalCondition"
           value={employmentInjuryPhysicalValue?.describeMedicalCondition}
@@ -497,7 +497,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Were you taking any Medications BEFORE The Injury?"
+          title="24. Were you taking any Medications BEFORE The Injury?"
           type="radio"
           options={medicationsBeforeInjuryOptions}
           onChange={handleMedicationsBeforeInjuryChange}
@@ -508,7 +508,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="What Medications Were You Taking BEFORE The Injury?"
+          title="25. What Medications Were You Taking BEFORE The Injury?"
           type="radio"
           options={medicationsNameBeforeInjuryOptions}
           onChange={handleMedicationsNameBeforeInjuryChange}
@@ -519,7 +519,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="Date of Your Injury (if more than one, list each):"
+          title="26. Date of Your Injury (if more than one, list each):"
           type="text"
           name="injuryDate"
           value={employmentInjuryPhysicalValue?.injuryDate}
@@ -529,7 +529,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="Describe the Injury That Occurred (provide as many details as you can):"
+          title="27. Describe the Injury That Occurred (provide as many details as you can):"
           type="text"
           name="describeInjuryOccurred"
           value={employmentInjuryPhysicalValue?.describeInjuryOccurred}
@@ -541,7 +541,8 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              Do You Currently Receive Disability In Connection With Your Claim?
+              28. Do You Currently Receive Disability In Connection With Your
+              Claim?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">
@@ -604,7 +605,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <CardField
-          title="Would You Have Continued Working If Not Injured?"
+          title="29. Would You Have Continued Working If Not Injured?"
           type="radio"
           options={continuedWorkingOptions}
           onChange={handleContinuedWorkingChange}
@@ -613,7 +614,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Are you currently working"
+          title="30. Are you currently working"
           type="radio"
           options={currentlyWorkingOptions}
           onChange={handleCurrentlyWorkingChange}
@@ -624,7 +625,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              Have you had any Conflicts with Anyone at Work
+              31. Have you had any Conflicts with Anyone at Work
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">
@@ -771,7 +772,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <TextField
-          title="What Was/Is Your Working Relationship Like With Management or Supervisors in General?"
+          title="32. What Was/Is Your Working Relationship Like With Management or Supervisors in General?"
           type="text"
           name="relationShipLikeManagement"
           value={employmentInjuryPhysicalValue?.relationShipLikeManagement}
@@ -781,7 +782,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="Name of Your Immediate Supervisor:"
+          title="33. Name of Your Immediate Supervisor:"
           type="text"
           name="immediateSupervisorName"
           value={employmentInjuryPhysicalValue?.immediateSupervisorName}
@@ -793,7 +794,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              Relationship with Immediate Supervisor?
+              34. Relationship with Immediate Supervisor?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">
@@ -894,7 +895,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              How Were Your Performance Appraisals?
+              35. How Were Your Performance Appraisals?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">
@@ -995,7 +996,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              Have You Ever Received Verbal or Written Warnings?
+              36. Have You Ever Received Verbal or Written Warnings?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">
@@ -1076,7 +1077,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              Working Relationship with Co-Workers?
+              37. Working Relationship with Co-Workers?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">
@@ -1178,7 +1179,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              Was There a "Last Straw" Event Near the Last Day of Work?
+              38. Was There a "Last Straw" Event Near the Last Day of Work?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">

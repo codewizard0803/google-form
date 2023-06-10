@@ -700,7 +700,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="Feeling nervous, anxious, or on edge"
+          title="77. Feeling nervous, anxious, or on edge"
           type="radio"
           options={FeelingNervousOptions}
           onChange={handleFeelingNervousChange}
@@ -732,7 +732,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="Not being able to stop or control worrying"
+          title="78. Not being able to stop or control worrying"
           type="radio"
           options={StopControlWorringOptions}
           onChange={handleStopControlWorringChange}
@@ -741,7 +741,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Worrying too much about different things"
+          title="79. Worrying too much about different things"
           type="radio"
           options={WorringDifferentThingOptions}
           onChange={handleWorringDifferentThingChange}
@@ -785,7 +785,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="Trouble relaxing"
+          title="80. Trouble relaxing"
           type="radio"
           options={TroubleRelaxingOptions}
           onChange={handleTroubleRelaxingChange}
@@ -794,7 +794,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Being so restless that it's hard to sit still"
+          title="81. Being so restless that it's hard to sit still"
           type="radio"
           options={RestlessSitHardOptions}
           onChange={handleRestlessSitHardChange}
@@ -803,7 +803,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Becoming easily annoyed or irritable"
+          title="82. Becoming easily annoyed or irritable"
           type="radio"
           options={EasilyAnnoyedOptions}
           onChange={handleEasilyAnnoyedChange}
@@ -812,7 +812,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Feeling afraid as if something awful might happen"
+          title="83. Feeling afraid as if something awful might happen"
           type="radio"
           options={FeelingAfraidAwfulThingOptions}
           onChange={handleFeelingAfraidAwfulThingChange}
@@ -823,8 +823,8 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              With zero to 1 equaling no or minimal symptoms and 10 equaling the
-              most severe symptoms possible, how do you rate your current
+              84. With zero to 1 equaling no or minimal symptoms and 10 equaling
+              the most severe symptoms possible, how do you rate your current
               anxiety symptoms?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
@@ -848,7 +848,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <CardField
-          title="Do you experience panic attacks, in which your heart races, you feel like you can't breathe, you shake or sweat?"
+          title="85. Do you experience panic attacks, in which your heart races, you feel like you can't breathe, you shake or sweat?"
           type="radio"
           options={PanicAttacksOptions}
           onChange={handlePanicAttacksChange}
@@ -897,7 +897,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="Have you experienced past traumatic event(s)"
+          title="86. Have you experienced past traumatic event(s)"
           type="radio"
           options={PastTraumaticEventsOptions}
           onChange={handlePastTraumaticEventsChange}

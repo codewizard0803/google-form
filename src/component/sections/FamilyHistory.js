@@ -174,7 +174,7 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="Do any of your family members suffer from the following psychiatric conditions?"
+          title="139. Do any of your family members suffer from the following psychiatric conditions?"
           type="radio"
           options={FamilyPsychiatricConditionsOptions}
           onChange={handleFamilyPsychiatricConditionschange}
@@ -205,7 +205,7 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="Have any of your family members attempted or committed suicide?"
+          title="140. Have any of your family members attempted or committed suicide?"
           type="radio"
           options={FamilyAttemptedSuicideOptions}
           onChange={handleFamilyAttemptedSuicidechange}

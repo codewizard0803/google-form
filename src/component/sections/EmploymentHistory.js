@@ -276,7 +276,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="What is your current employment status?"
+          title="145. What is your current employment status?"
           type="radio"
           options={CurrentEmploymentStatusOptions}
           onChange={handleCurrentEmploymentStatuschange}
@@ -335,8 +335,8 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              What is the name of your past employer immediately prior to any
-              current job you may have?
+              146. What is the name of your past employer immediately prior to
+              any current job you may have?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">
@@ -395,7 +395,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <TextField
-          title="What is the name of your past employer immediately prior to the job described above?"
+          title="147. What is the name of your past employer immediately prior to the job described above?"
           type="text"
           name="pastImmediatelyEmployerName"
           value={employmentHistoryValue?.pastImmediatelyEmployerName}
@@ -405,7 +405,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Have you had any past workplace injuries?"
+          title="148. Have you had any past workplace injuries?"
           type="radio"
           options={PastWorkplaceInjuriesOptions}
           onChange={handlePastWorkplaceInjurieschange}
@@ -438,7 +438,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="Have you ever submitted a Workers’ Compensation claim"
+          title="149. Have you ever submitted a Workers’ Compensation claim"
           type="radio"
           options={WorkerCompensationClaimOptions}
           onChange={handleWorkerCompensationClaimchange}
@@ -447,7 +447,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Have you ever been placed on disability?"
+          title="150. Have you ever been placed on disability?"
           type="radio"
           options={PlacedDisabilityOptions}
           onChange={handlePlacedDisabilitychange}
@@ -456,7 +456,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Have you ever received negative work evaluations, been terminated from a position, or received disciplinary action?"
+          title="151. Have you ever received negative work evaluations, been terminated from a position, or received disciplinary action?"
           type="radio"
           options={ReceivedNegativeWorkOptions}
           onChange={handleReceivedNegativeWorkchange}
@@ -465,7 +465,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="List All of Your Current Sources of Income."
+          title="152. List All of Your Current Sources of Income."
           type="radio"
           options={CurrentSourcesIncomeOptions}
           onChange={handleCurrentSourcesIncomechange}
@@ -474,7 +474,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="Please describe the other employment you listed in the previous question:"
+          title="153. Please describe the other employment you listed in the previous question:"
           type="text"
           name="otherEmploymentList"
           value={employmentHistoryValue?.otherEmploymentList}

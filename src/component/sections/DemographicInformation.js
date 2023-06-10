@@ -197,7 +197,7 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
 
         <form>
           <TextField
-            title="What is your full name?"
+            title="1. What is your full name?"
             type="text"
             name="fullName"
             value={demographicInformationValue?.fullName}
@@ -207,7 +207,7 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
           />
 
           <TextField
-            title=" What is your date of birth?"
+            title="2. What is your date of birth?"
             type="text"
             name="birth"
             value={demographicInformationValue?.birth}
@@ -217,7 +217,7 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
           />
 
           <CardField
-            title="Please select any of the following that represent your race or ethnicity. You may select more than one."
+            title="3. Please select any of the following that represent your race or ethnicity. You may select more than one."
             type="checkbox"
             options={checkedEthnicityOptions}
             onChange={handleCheckboxEthnicityChange}
@@ -228,7 +228,7 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
           <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
             <CardContent>
               <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-                What sex was assigned to you at birth?
+                4. What sex was assigned to you at birth?
               </Typography>
               <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
               <div className="mt-5">
@@ -315,7 +315,7 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
           </Card>
 
           <CardField
-            title=" What pronoun do you currently prefer?"
+            title="5. What pronoun do you currently prefer?"
             type="radio"
             options={radioPreferPronounOptions}
             onChange={handleRadioPreferPronounChange}
@@ -324,7 +324,7 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
           />
 
           <CardField
-            title="What is your marital status?"
+            title="6. What is your marital status?"
             type="radio"
             options={maritalStatusOptions}
             onChange={handleRadioMaritalStatusChange}
@@ -334,7 +334,7 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
 
           <TextField
             type="text"
-            title="What is your email?"
+            title="7. What is your email?"
             name="email"
             value={demographicInformationValue?.email}
             placeholder="Your answer..."
@@ -343,7 +343,7 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
           />
 
           <TextField
-            title="What is your phone number?"
+            title="8. What is your phone number?"
             type="text"
             name="phoneNumber"
             value={demographicInformationValue?.phoneNumber}

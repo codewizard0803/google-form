@@ -84,7 +84,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <TextField
-          title="If Your Injury Was Initially Physical, Describe the First Symptoms (Pain) You Experienced:"
+          title="41. If Your Injury Was Initially Physical, Describe the First Symptoms (Pain) You Experienced:"
           placeholder="Your answer"
           name="firstSymptoms"
           value={physicalInjuryValue.firstSymptoms}
@@ -93,7 +93,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="If Your Injury Was Initially Physical, Describe the First Treatment You Received Following This Injury(Medical, Chiropractic, Physical Therapy PT, Injections):"
+          title="42. If Your Injury Was Initially Physical, Describe the First Treatment You Received Following This Injury(Medical, Chiropractic, Physical Therapy PT, Injections):"
           placeholder="Your answer"
           name="firstTreatment"
           value={physicalInjuryValue.firstTreatment}
@@ -102,7 +102,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="If Your Injury Was Initially Physical, Describe the Rest of Your Treatment (Medical, Chiropractic, PT)"
+          title="43. If Your Injury Was Initially Physical, Describe the Rest of Your Treatment (Medical, Chiropractic, PT)"
           placeholder="Your answer"
           name="restYourTreatment"
           value={physicalInjuryValue.restYourTreatment}
@@ -111,7 +111,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="List the Doctors You Have Seen For This Physical Injury:"
+          title="44. List the Doctors You Have Seen For This Physical Injury:"
           placeholder="Your answer"
           name="doctorsList"
           value={physicalInjuryValue.doctorsList}
@@ -120,7 +120,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="BEFORE The Injury, Were You Being Treated for Any Mental or Emotional Condition(s)?"
+          title="45. BEFORE The Injury, Were You Being Treated for Any Mental or Emotional Condition(s)?"
           type="radio"
           options={receivedSurgeryOptions}
           onChange={handleReceivedSurgeryChange}
@@ -129,7 +129,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="List the Surgeries You Have Received for This Physical Injury:"
+          title="46. List the Surgeries You Have Received for This Physical Injury:"
           placeholder="Your answer"
           name="surgeryList"
           value={physicalInjuryValue.surgeryList}
@@ -138,7 +138,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="List the Medications You Have Received for This Physical Injury:"
+          title="47. List the Medications You Have Received for This Physical Injury:"
           placeholder="Your answer"
           name="medicationList"
           value={physicalInjuryValue.medicationList}
@@ -147,7 +147,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="Have Any of the Above Treatments Helped Relieve Your Pain?"
+          title="48. Have Any of the Above Treatments Helped Relieve Your Pain?"
           placeholder="Your answer"
           name="treatmentsHelped"
           value={physicalInjuryValue.treatmentsHelped}
@@ -156,7 +156,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="Are You Still Working?"
+          title="49. Are You Still Working?"
           type="radio"
           options={stillWorkingOptions}
           onChange={handleStillWorkingChange}
@@ -165,7 +165,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="If Not Working, Reason for Leaving?"
+          title="50. If Not Working, Reason for Leaving?"
           placeholder="Your answer"
           name="leavingReason"
           value={physicalInjuryValue.leavingReason}
