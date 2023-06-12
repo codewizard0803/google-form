@@ -217,6 +217,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
 
     if (isValid) {
       setGlobalEducationHistory(educationHistoryValue);
+
       setCurrentSection(currentSection + 1);
     }
   };
@@ -229,7 +230,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="154. What is your highest level of education?"
+          title="153. What is your highest level of education?"
           type="radio"
           options={HighestLevelEducationOptions}
           onChange={handleHighestLevelEducationchange}
@@ -253,7 +254,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="155. What Grades Did You Mostly Receive During Your Education (choose all that apply)?"
+          title="154. What Grades Did You Mostly Receive During Your Education (choose all that apply)?"
           type="checkbox"
           options={MostlyReceiveGradeOptions}
           onChange={handleMostlyReceiveGradechange}
@@ -262,7 +263,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="156. Were you ever identified as having a learning disability, or placed in any special education classes?"
+          title="155. Were you ever identified as having a learning disability, or placed in any special education classes?"
           type="radio"
           options={LearningDisabilityOptions}
           onChange={handleLearningDisabilitychange}
@@ -285,7 +286,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="157. Did You Graduate High School?"
+          title="156. Did You Graduate High School?"
           type="radio"
           options={GraduateHighSchoolOptions}
           onChange={handleGraduateHighSchoolchange}
@@ -307,7 +308,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="158. Did You Go To College"
+          title="157. Did You Go To College"
           type="radio"
           options={GoToCollegeOptions}
           onChange={handleGoToCollegechange}
@@ -318,7 +319,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
         {educationHistoryValue?.goToCollege === "Yes" ? (
           <div>
             <CardField
-              title="(if so, did you complete your degree?)"
+              title="if so, did you complete your degree?"
               type="radio"
               options={CompleteYourDegreeOptions}
               onChange={handleCompleteYourDegreechange}

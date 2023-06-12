@@ -5,10 +5,14 @@ import useGlobalContext from "../../hooks/useGlobalContext";
 import TextField from "../common/TextField";
 
 import validateAdditionalInformation from "../../validation/validateAdditionalInformation";
+import axios from "axios";
 
 const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
+  const APP_URL = process.env.REACT_APP_API_BASE_URL;
+
   const {
     demographicInformation,
+    employmentInjuryPhysical,
     currentEmployer,
     physicalInjury,
     chiefComplaint,
@@ -62,36 +66,42 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateAdditionalInformation(additionalValue);
     setErrors(errors);
 
+    console.log(globalAdditionalInformation);
     if (isValid) {
       setGlobalAdditionalInformation(additionalValue);
+      const data = {
+        demographicInformation: demographicInformation,
+        employmentInjuryPhysicalValue: employmentInjuryPhysical,
+        currentEmployerValue: currentEmployer,
+        physicalInjuryValue: physicalInjury,
+        chiefComplaintValue: chiefComplaint,
+        longitudinalHistoryValue: longitudinalHistory,
+        PHQValue: PHQ9,
+        GADValue: GAD7,
+        PCLValue: PCL5,
+        currentTreatmentValue: globalCurrentTreatment,
+        pastHistoryValue: globalPastHistory,
+        substanceUseValue: globalSubStanceUse,
+        medicalHistoryValue: globalMedicalHistory,
+        familyHistoryValue: globalFamilyHistory,
+        relationshipHistoryValue: globalRelationshipHistory,
+        employmentHistoryValue: globalEmploymentHistory,
+        educationHistoryValue: globalEducationHistory,
+        socialHistoryValue: globalSocialHistory,
+        criminalHistoryValue: globalCriminalHistory,
+        violenceHistoryValue: globalViolenceHistory,
+        militaryHistoryValue: globalMilitaryHistory,
+        currentDailyActivitiesValue: globalCurrentDailyActivities,
+        developmentalValue: globalDevelopmentalHistory,
+        additionalValue: additionalValue,
+      };
+      axios
+        .post(`${APP_URL}/api/generateDoc`, data)
+        .then((res) => {
+          console.log("res", res);
+        })
+        .catch((err) => console.log(err));
     }
-    console.log(
-      "Data",
-      demographicInformation,
-      currentEmployer,
-      physicalInjury,
-      chiefComplaint,
-      longitudinalHistory,
-      PHQ9,
-      GAD7,
-      PCL5,
-      globalCurrentTreatment,
-      globalPastHistory,
-      globalSubStanceUse,
-      globalMedicalHistory,
-      globalFamilyHistory,
-      globalRelationshipHistory,
-      globalEmploymentHistory,
-      globalEducationHistory,
-      globalSocialHistory,
-      globalCriminalHistory,
-      globalViolenceHistory,
-      globalMilitaryHistory,
-      globalCurrentDailyActivities,
-      globalDevelopmentalHistory,
-      globalAdditionalInformation,
-      setGlobalAdditionalInformation
-    );
   };
 
   return (
@@ -102,7 +112,7 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <TextField
-          title="192. Is there anything else you would like to share with the evaluating clinician before your visit begins?"
+          title="191. Is there anything else you would like to share with the evaluating clinician before your visit begins?"
           placeholder="Your answer"
           name="evaluatingClinician"
           value={additionalValue?.evaluatingClinician}
@@ -111,7 +121,7 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="193. Please Provide Any Additional Information I Should Know About You:"
+          title="192. Please Provide Any Additional Information I Should Know About You:"
           placeholder="Your answer"
           name="yourAdditionalInformation"
           value={additionalValue?.yourAdditionalInformation}

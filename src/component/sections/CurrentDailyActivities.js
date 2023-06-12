@@ -183,7 +183,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <TextField
-          title="170. Time You Awaken- On Work Days:"
+          title="169. Time You Awaken- On Work Days:"
           type="text"
           name="awakenTimeWorkDays"
           value={currentDailyActivitiesValue?.awakenTimeWorkDays}
@@ -193,7 +193,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="171. Time You Awaken- On Not Work Days:"
+          title="170. Time You Awaken- On Not Work Days:"
           type="text"
           name="awakenTimeNotWorkDays"
           value={currentDailyActivitiesValue?.awakenTimeNotWorkDays}
@@ -203,7 +203,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="172. Time You Go To Bed:"
+          title="171. Time You Go To Bed:"
           type="text"
           name="goToBed"
           value={currentDailyActivitiesValue?.goToBed}
@@ -213,7 +213,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="173. Time Fall Asleep:"
+          title="172. Time Fall Asleep:"
           type="text"
           name="fallAsleepTime"
           value={currentDailyActivitiesValue?.fallAsleepTime}
@@ -225,7 +225,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              174. Describe All of the Activities You Do From the Time You Wake
+              173. Describe All of the Activities You Do From the Time You Wake
               Up Until You Go To Bed at Night:
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
@@ -315,7 +315,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <TextField
-          title="175. What Are Your Leisure Activities or Hobbies?"
+          title="174. What Are Your Leisure Activities or Hobbies?"
           type="text"
           name="leisureActivities"
           value={currentDailyActivitiesValue?.leisureActivities}
@@ -327,7 +327,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              176. Do You Have Any Trouble With the Following?
+              175. Do You Have Any Trouble With the Following?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
 
@@ -394,7 +394,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <TableCheckBox
-          title="177. Activities of Daily Living Worksheet. Please put a mark in the box that describes your ability to carry out the following:"
+          title="176. Activities of Daily Living Worksheet. Please put a mark in the box that describes your ability to carry out the following:"
           thead={dailyLivingThead}
           tbody={dailyLivingTbody}
           checked={currentDailyActivitiesValue?.dailyLivingFollowing}
@@ -402,7 +402,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         />
 
         <TableCheckBox
-          title="178. Please rate the amount of difficulty you have with the following:"
+          title="177. Please rate the amount of difficulty you have with the following:"
           thead={difficultAmouhtThead}
           tbody={difficultAmouhtTbody}
           checked={currentDailyActivitiesValue?.difficultAmount}
@@ -410,7 +410,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="179. Please List Any Activities Not Included Above That You Used To Do But Are Unable To Do Or Don't Do Because Of Your Condition And Explain Why"
+          title="178. Please List Any Activities Not Included Above That You Used To Do But Are Unable To Do Or Don't Do Because Of Your Condition And Explain Why"
           type="text"
           name="anyActivitiesListBefore"
           value={currentDailyActivitiesValue?.anyActivitiesListBefore}

@@ -254,7 +254,7 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <TextField
-          title="51. I am most bothered on this day by the following:"
+          title="50. I am most bothered on this day by the following:"
           placeholder="Your answer"
           name="mostBothered"
           value={chiefComplaintValue.mostBothered}
@@ -263,7 +263,7 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="52. What emotional symptoms are you currently experiencing or recently experienced?"
+          title="51. What emotional symptoms are you currently experiencing or recently experienced?"
           type="radio"
           options={currentlyExperiencingSymptomsOptions}
           onChange={handleCurrentlyExperiencingSymptomChange}
@@ -286,7 +286,7 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              53. Have you experienced any of your above emotional symptoms in
+              52. Have you experienced any of your above emotional symptoms in
               response to a specific stressful event in your life?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
@@ -361,7 +361,7 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <CardField
-          title="54. Do you have stress from any of the following?"
+          title="53. Do you have stress from any of the following?"
           type="checkbox"
           options={stressFollowingOptions}
           onChange={handleStressFollowChange}

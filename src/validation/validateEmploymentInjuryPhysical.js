@@ -226,7 +226,7 @@ const validateEmploymentInjuryPhysical = (value) => {
     isValid = false;
   } else if (
     value.relationshipCoWorkers === "Poor" &&
-    value.explainSuperVisorReason === ""
+    value.explainRelationshipCoWorkers === ""
   ) {
     errors.explainRelationshipCoWorkers = "Your Field is required.";
     isValid = false;

@@ -1091,7 +1091,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
       <form>
         <CardTextFollowUp
           type="radio"
-          title="110. Have you ever previously experienced any of the following symptoms"
+          title="109. Have you ever previously experienced any of the following symptoms"
           options={PreviouslyExperiencedSymptomOptions}
           onChange={handlePreviouslyExperiencedSymptomchange}
           checked={pastHistoryValue?.previouslyExperiencedSymptom}
@@ -1103,7 +1103,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="111. Have you ever experienced having so much energy that you do not need to sleep for several days or a week at a time?"
+          title="110. Have you ever experienced having so much energy that you do not need to sleep for several days or a week at a time?"
           type="radio"
           options={experienceMuchEnergyOptions}
           onChange={handleExperienceMuchEnergychange}
@@ -1167,7 +1167,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
             ) : null}
 
             <CardField
-              title="During this high energy time did you engage in any high-risk behaviors?XXX"
+              title="During this high energy time did you engage in any high-risk behaviors?"
               type="radio"
               options={HighEnergyTimeOptions}
               onChange={handleHighEnergyTimechange}
@@ -1187,7 +1187,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="112. Have you ever experienced any of the following?"
+          title="111. Have you ever experienced any of the following?"
           type="checkbox"
           options={ExperienceFollowingOptions}
           onChange={handleExperienceFollowingchange}
@@ -1220,7 +1220,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="113. Recently, have you been thinking about how you might harm or kill yourself?"
+          title="112. Recently, have you been thinking about how you might harm or kill yourself?"
           type="radio"
           options={HarmKillYourSelfOptions}
           onChange={handleHarmKillYourSelfchange}
@@ -1229,7 +1229,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="114. Have any of your emotional symptoms (sadness, depression, anxiety) had a negative effect upon your work, school, or relationships?"
+          title="113. Have any of your emotional symptoms (sadness, depression, anxiety) had a negative effect upon your work, school, or relationships?"
           type="radio"
           options={EmotionalSymptomsRelationShipOptions}
           onChange={handleEmotionalSymptomsRelationShipchange}
@@ -1238,7 +1238,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="115. If you have ever experienced symptoms of depression, when did you first feel depressed?"
+          title="114. If you have ever experienced symptoms of depression, when did you first feel depressed?"
           type="text"
           name="firstFeelDepressed"
           value={pastHistoryValue?.firstFeelDepressed}
@@ -1248,7 +1248,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="116. If you have ever experienced symptoms of anxiety, when did you first feel high levels of anxiety?"
+          title="115. If you have ever experienced symptoms of anxiety, when did you first feel high levels of anxiety?"
           type="text"
           name="feelHighLevelAnxiety"
           value={pastHistoryValue?.feelHighLevelAnxiety}
@@ -1258,7 +1258,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="117. Have you ever been diagnosed by a healthcare provider with any of the following mental health conditions?"
+          title="116. Have you ever been diagnosed by a healthcare provider with any of the following mental health conditions?"
           type="checkbox"
           options={DiagnosedMentalHealthOptions}
           onChange={handleDiagnosedMentalHealthchange}
@@ -1283,7 +1283,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="118. Have you ever taken any other medications in the past for a psychiatric or mental health condition, not listed above? This may include medications that did not work well or that were discontinued for other reasons."
+          title="117. Have you ever taken any other medications in the past for a psychiatric or mental health condition, not listed above? This may include medications that did not work well or that were discontinued for other reasons."
           type="radio"
           options={OtherMedicationsOptions}
           onChange={handleOtherMedicationschange}
@@ -1407,7 +1407,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="119. Have you ever previously received psychotherapy (talk therapy/counseling)?"
+          title="118. Have you ever previously received psychotherapy (talk therapy/counseling)?"
           type="radio"
           options={PreviouslyReceivedPsychotherapyOptions}
           onChange={handlePreviouslyReceivedPsychotherapychange}
@@ -1470,7 +1470,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="120. Have you ever been admitted to a psychiatric hospital?"
+          title="119. Have you ever been admitted to a psychiatric hospital?"
           type="radio"
           options={AdmittedPsychiatricHospitalOptions}
           onChange={handleAdmittedPsychiatricHospitalchange}
@@ -1523,7 +1523,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="121. Have you ever experienced suicidal ideation?"
+          title="120. Have you ever experienced suicidal ideation?"
           type="radio"
           options={SuicidalIdeationOptions}
           onChange={handleSuicidalIdeationchange}
@@ -1532,7 +1532,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="122. Have you ever made a suicide attempt?"
+          title="121. Have you ever made a suicide attempt?"
           type="radio"
           options={SuicideAttemptOptions}
           onChange={handleSuicideAttemptchange}
@@ -1590,7 +1590,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="123. Have you ever experienced any other psychiatric symptoms that are not described above"
+          title="122. Have you ever experienced any other psychiatric symptoms that are not described above"
           type="radio"
           options={OtherPsychiatricSymptomsOptions}
           onChange={handleOtherPsychiatricSymptomschange}
@@ -1613,7 +1613,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="124. Have you received any other psychotherapy or psychiatric medication treatment besides that described above?"
+          title="123. Have you received any other psychotherapy or psychiatric medication treatment besides that described above?"
           type="radio"
           options={OtherPsychotherapyTreatmentOptions}
           onChange={handleOtherPsychotherapyTreatmentchange}
@@ -1636,7 +1636,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="125. Have you ever been evaluated otherwise by psychiatrists or psychologists for any other purpose?"
+          title="124. Have you ever been evaluated otherwise by psychiatrists or psychologists for any other purpose?"
           type="radio"
           options={EvaluatedOtherwisePsychiatristsOptions}
           onChange={handleEvaluatedOtherwisePsychiatristschange}
@@ -1679,7 +1679,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="126. Have you ever been involved in physical altercations or violence?"
+          title="125. Have you ever been involved in physical altercations or violence?"
           type="radio"
           options={PhysicalAltercationsOptions}
           onChange={handlePhysicalAltercationschange}

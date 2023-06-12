@@ -142,7 +142,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <TextField
-          title="55. When did this episode of your depression, anxiety, or post-trauma emotions start?"
+          title="54. When did this episode of your depression, anxiety, or post-trauma emotions start?"
           placeholder="Your answer"
           name="emotionEpisodeBegan"
           value={longitudinalHistoryValue?.emotionEpisodeBegan}
@@ -151,7 +151,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="56. Describe the Emotional/Psychiatric Symptoms You Have Experienced"
+          title="55. Describe the Emotional/Psychiatric Symptoms You Have Experienced"
           placeholder="Your answer"
           name="emotionSymptom"
           value={longitudinalHistoryValue?.emotionSymptom}
@@ -160,7 +160,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="57. During this current or most recent symptom episode, when were your symptoms the worst?"
+          title="56. During this current or most recent symptom episode, when were your symptoms the worst?"
           placeholder="Your answer"
           name="mostWorstSymptom"
           value={longitudinalHistoryValue?.mostWorstSymptom}
@@ -169,7 +169,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="58. Have Your Emotional Symptoms Become Worse Or Better Since They Started Or Since A Specific Date Or Event?"
+          title="57. Have Your Emotional Symptoms Become Worse Or Better Since They Started Or Since A Specific Date Or Event?"
           placeholder="Your answer"
           name="emotionalSymptomBecome"
           value={longitudinalHistoryValue?.emotionalSymptomBecome}
@@ -178,7 +178,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="59. How Often Do You Feel the Above Emotions?"
+          title="58. How Often Do You Feel the Above Emotions?"
           type="radio"
           options={feelEmotionOptions}
           onChange={handleFeelEmotionChange}
@@ -200,7 +200,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              60. With zero to 1 equaling no or minimal symptoms and 10 equaling
+              59. With zero to 1 equaling no or minimal symptoms and 10 equaling
               the most severe symptoms possible, how would you rate your
               depressive, anxiety, or post trauma symptoms when they were most
               severe?
@@ -259,7 +259,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              61. Currently, how do your current emotional symptoms compare to
+              60. Currently, how do your current emotional symptoms compare to
               when they were most severe?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
@@ -298,7 +298,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              62. Have Your Emotional Symptoms Affected Your Ability to Do Your
+              61. Have Your Emotional Symptoms Affected Your Ability to Do Your
               Job?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>

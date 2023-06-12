@@ -124,7 +124,7 @@ const ViolenceHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="166. Have you ever been arrested?"
+          title="165. Have you ever been arrested?"
           type="radio"
           options={PhysicalAltercationsOptions}
           onChange={handlePhysicalAltercationschange}
@@ -172,7 +172,7 @@ const ViolenceHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="167. Do you currently or have you recently had thoughts of wanting to hurt anyone?"
+          title="166. Do you currently or have you recently had thoughts of wanting to hurt anyone?"
           type="radio"
           options={ThoughtsHurtAnyoneOptions}
           onChange={handleThoughtsHurtAnyonechange}
@@ -195,7 +195,7 @@ const ViolenceHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="168. Have you ever been the victim of violence?"
+          title="167. Have you ever been the victim of violence?"
           type="radio"
           options={VictimViolenceOptions}
           onChange={handleVictimViolencechange}
