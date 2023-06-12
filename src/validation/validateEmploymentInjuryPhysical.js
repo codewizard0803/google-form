@@ -213,7 +213,7 @@ const validateEmploymentInjuryPhysical = (value) => {
     isValid = false;
   } else if (
     value.performanceAppraisals === "Poor" &&
-    value.explainSuperVisorReason === ""
+    value.explainPerformanceAppraisals === ""
   ) {
     errors.explainPerformanceAppraisals = "Your Field is required.";
     isValid = false;
@@ -239,7 +239,7 @@ const validateEmploymentInjuryPhysical = (value) => {
     isValid = false;
   } else if (
     value.verbalWarning === "Yes" &&
-    value.explainSuperVisorReason === ""
+    value.verbalWarningDateReason === ""
   ) {
     errors.verbalWarningDateReason = "Your Field is required.";
     isValid = false;

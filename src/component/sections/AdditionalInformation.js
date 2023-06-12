@@ -66,7 +66,6 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateAdditionalInformation(additionalValue);
     setErrors(errors);
 
-    console.log(globalAdditionalInformation);
     if (isValid) {
       setGlobalAdditionalInformation(additionalValue);
       const data = {

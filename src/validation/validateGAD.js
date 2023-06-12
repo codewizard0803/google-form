@@ -105,11 +105,11 @@ const GAD = (value) => {
     errors.pastTraumaticEvents = "Your Field is required.";
     isValid = false;
   } else if (value.pastTraumaticEvents === "Yes") {
-    if (value.panicPhysicalSymptoms === "") {
+    if (value.traumaticEventExperience === "") {
       errors.traumaticEventExperience = "Your Field is required.";
       isValid = false;
     }
-    if (value.panicAttacksLastLong === "") {
+    if (value.describeTraumaticExperience === "") {
       errors.describeTraumaticExperience = "Your Field is required.";
       isValid = false;
     }
