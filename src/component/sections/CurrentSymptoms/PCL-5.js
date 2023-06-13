@@ -36,6 +36,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
     difficultyConcentrating: "",
     troubleFallingAsleep: "",
     currentRelatedSymptoms: "0",
+    PCLScore: "0",
   });
 
   useEffect(() => {
@@ -797,6 +798,28 @@ const PCL = ({ currentSection, setCurrentSection }) => {
     });
   };
 
+  const eachCalculateScore = (value) => {
+    let eachScore = 0;
+    switch (value) {
+      case "Not at all":
+        eachScore = 0;
+        break;
+      case "Several Days":
+        eachScore = 1;
+        break;
+      case "More than half the days":
+        eachScore = 2;
+        break;
+      case "Nearly every day":
+        eachScore = 3;
+        break;
+      default:
+        break;
+    }
+
+    return eachScore;
+  };
+
   const handleChange = (event) => {
     setPCLValue({
       ...PCLValue,
@@ -817,7 +840,36 @@ const PCL = ({ currentSection, setCurrentSection }) => {
     setErrors(errors);
 
     if (isValid) {
-      setPCL5(PCLValue);
+      const updatedPCLScore = {
+        ...PCLValue,
+        PCLScore:
+          eachCalculateScore(PCLValue.stressfulExperienceMemories) +
+          eachCalculateScore(PCLValue.stressfulExperience) +
+          eachCalculateScore(PCLValue.suddenlyStressfulExperience) +
+          eachCalculateScore(PCLValue.veryUpsetStressfulExperience) +
+          eachCalculateScore(
+            PCLValue.strongPhysicalReactionStressfulExperience
+          ) +
+          eachCalculateScore(PCLValue.avoidingMemories) +
+          eachCalculateScore(PCLValue.avoidingExternalReminders) +
+          eachCalculateScore(PCLValue.troubleStressfulExperience) +
+          eachCalculateScore(PCLValue.strongNegativeBeliefs) +
+          eachCalculateScore(PCLValue.stressfulExperienceBlaming) +
+          eachCalculateScore(PCLValue.strongNegativefeelings) +
+          eachCalculateScore(PCLValue.lossInterestActivity) +
+          eachCalculateScore(PCLValue.feelingDistantPeople) +
+          eachCalculateScore(PCLValue.troubleExperiencePositiveFeeling) +
+          eachCalculateScore(PCLValue.irritableBehavior) +
+          eachCalculateScore(PCLValue.manyRisksThing) +
+          eachCalculateScore(PCLValue.beingWatchful) +
+          eachCalculateScore(PCLValue.irritableBehavior) +
+          eachCalculateScore(PCLValue.easilyStartled) +
+          eachCalculateScore(PCLValue.difficultyConcentrating) +
+          eachCalculateScore(PCLValue.troubleFallingAsleep),
+      };
+
+      setPCLValue(updatedPCLScore);
+      setPCL5(updatedPCLScore);
       setCurrentSection(currentSection + 1);
     }
   };
@@ -1025,7 +1077,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="102. Feeling distant or cut off from other people?"
+          title="102. Being “superalert” or watchful or on guard?"
           type="radio"
           options={BeingWatchfulOptions}
           onChange={handleBeingWatchfulChange}
@@ -1034,7 +1086,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="103. Being “superalert” or watchful or on guard?"
+          title="103. Feeling jumpy or easily startled?"
           type="radio"
           options={EasilyStartledOptions}
           onChange={handleEasilyStartledChange}
@@ -1043,7 +1095,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="104. Feeling jumpy or easily startled?"
+          title="104. Having difficulty concentrating (although this is a repeat question, please answer again)?"
           type="radio"
           options={DifficultyConcentratingOptions}
           onChange={handleDifficultyConcentratingChange}
@@ -1052,7 +1104,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="105. Having difficulty concentrating (although this is a repeat question, please answer again)?"
+          title="105. Trouble falling or staying asleep (although this is a repeat question, please answer again)?"
           type="radio"
           options={TroubleFallingAsleepOptions}
           onChange={handleTroubleFallingAsleepChange}

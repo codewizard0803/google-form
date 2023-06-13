@@ -41,6 +41,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     preparedAnythingEndYourlife: "",
     hurtingAnyone: "",
     currentDepressiveSymptoms: "0",
+    phqScore: "0",
   });
 
   useEffect(() => {
@@ -658,6 +659,28 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     { label: "No", value: "No", name: "HurtingAnyoneOptionsNo" },
   ];
 
+  const eachCalculateScore = (value) => {
+    let eachScore = 0;
+    switch (value) {
+      case "Not at all":
+        eachScore = 0;
+        break;
+      case "Several Days":
+        eachScore = 1;
+        break;
+      case "More than half the days":
+        eachScore = 2;
+        break;
+      case "Nearly every day":
+        eachScore = 3;
+        break;
+      default:
+        break;
+    }
+
+    return eachScore;
+  };
+
   const handleInterestThingChange = (event) => {
     setPHQValue({
       ...PHQValue,
@@ -883,7 +906,21 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     setErrors(errors);
 
     if (isValid) {
-      setPHQ9(PHQValue);
+      const updatedPHQScore = {
+        ...PHQValue,
+        phqScore:
+          eachCalculateScore(PHQValue?.interestThing) +
+          eachCalculateScore(PHQValue?.feelingDepressed) +
+          eachCalculateScore(PHQValue?.troubleFallingAsleep) +
+          eachCalculateScore(PHQValue?.feelingEnergy) +
+          eachCalculateScore(PHQValue?.poorAppetite) +
+          eachCalculateScore(PHQValue?.yourselfFeelingBad) +
+          eachCalculateScore(PHQValue?.troubleConCentratingThing) +
+          eachCalculateScore(PHQValue?.fidgetyMoving) +
+          eachCalculateScore(PHQValue?.betterOffDeadYourself),
+      };
+      setPHQValue(updatedPHQScore);
+      setPHQ9(updatedPHQScore);
       setCurrentSection(currentSection + 1);
     }
   };

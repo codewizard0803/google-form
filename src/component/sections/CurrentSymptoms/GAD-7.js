@@ -34,6 +34,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
     pastTraumaticEvents: "",
     traumaticEventExperience: "",
     describeTraumaticExperience: "",
+    gadScore: "0",
   });
 
   useEffect(() => {
@@ -533,6 +534,28 @@ const GAD = ({ currentSection, setCurrentSection }) => {
     },
   ];
 
+  const eachCalculateScore = (value) => {
+    let eachScore = 0;
+    switch (value) {
+      case "Not at all":
+        eachScore = 0;
+        break;
+      case "Several Days":
+        eachScore = 1;
+        break;
+      case "More than half the days":
+        eachScore = 2;
+        break;
+      case "Nearly every day":
+        eachScore = 3;
+        break;
+      default:
+        break;
+    }
+
+    return eachScore;
+  };
+
   const handleChange = (event) => {
     setGADValue({ ...GADValue, [event.target.name]: event.target.value });
   };
@@ -680,7 +703,19 @@ const GAD = ({ currentSection, setCurrentSection }) => {
     setErrors(errors);
 
     if (isValid) {
-      setGAD7(GADValue);
+      const updatedGADScore = {
+        ...GADValue,
+        gadScore:
+          eachCalculateScore(GADValue?.feelingNervous) +
+          eachCalculateScore(GADValue?.stopControlWorring) +
+          eachCalculateScore(GADValue?.worringDifferentThing) +
+          eachCalculateScore(GADValue?.troubleRelaxing) +
+          eachCalculateScore(GADValue?.restlessSitHard) +
+          eachCalculateScore(GADValue?.easilyAnnoyed) +
+          eachCalculateScore(GADValue?.feelingAfraidAwfulThing),
+      };
+      setGADValue(updatedGADScore);
+      setGAD7(updatedGADScore);
       setCurrentSection(currentSection + 1);
     }
   };

@@ -138,6 +138,7 @@ const GlobalContextProvider = ({ children }) => {
     preparedAnythingEndYourlife: "",
     hurtingAnyone: "",
     currentDepressiveSymptoms: "0",
+    phqScore: "0",
   });
 
   const [GAD7, setGAD7] = useState({
@@ -162,6 +163,7 @@ const GlobalContextProvider = ({ children }) => {
     pastTraumaticEvents: "",
     traumaticEventExperience: "",
     describeTraumaticExperience: "",
+    gadScore: "0",
   });
 
   const [PCL5, setPCL5] = useState({
@@ -189,6 +191,7 @@ const GlobalContextProvider = ({ children }) => {
     difficultyConcentrating: "",
     troubleFallingAsleep: "",
     currentRelatedSymptoms: "0",
+    PCLScore: "0",
   });
 
   const [globalCurrentTreatment, setGlobalCurrentTreatment] = useState({
@@ -304,6 +307,11 @@ const GlobalContextProvider = ({ children }) => {
     previouslyDescribedPsychiatricClean: "",
     toleranceDefinedFollowing: "",
     withdrawalEitherFollowing: "",
+    amountValue: "",
+    eachSubstanceLast: [],
+    eachSubstanceLastDate: "",
+    cleanSoberLastedFrom: "",
+    cleanSoberLastedTo: "",
   });
 
   const [globalFamilyHistory, setGlobalFamilyHistory] = useState({

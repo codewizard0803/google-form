@@ -31,6 +31,10 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     toleranceDefinedFollowing: "",
     withdrawalEitherFollowing: "",
     amountValue: "",
+    eachSubstanceLast: [],
+    eachSubstanceLastDate: "",
+    cleanSoberLastedFrom: "",
+    cleanSoberLastedTo: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -272,6 +276,60 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       label: "LSD or other hallucinogens",
       value: "LSD or other hallucinogens",
       name: "EachSubstanceListStartedOldOptionsLSD or other hallucinogens",
+    },
+  ];
+
+  const EachSubstanceLastOptions = [
+    {
+      label: "Caffeine (coffee, pills, soft drinks, etc)",
+      value: "Caffeine (coffee, pills, soft drinks, etc)",
+      name:
+        "EachSubstanceLastOptionsCaffeine (coffee, pills, soft drinks, etc)",
+    },
+    {
+      label: "Alcohol",
+      value: "Alcohol",
+      name: "EachSubstanceLastOptionsAlcohol",
+    },
+    {
+      label: "Tobaco or nicotine products",
+      value: "Tobaco or nicotine products",
+      name: "EachSubstanceLastOptionsTobaco or nicotine products",
+    },
+    {
+      label: "Cocaine",
+      value: "Cocaine",
+      name: "EachSubstanceLastOptionsCocaine",
+    },
+    {
+      label: "Heroin",
+      value: "Heroin",
+      name: "EachSubstanceLastOptionsHeroin",
+    },
+    {
+      label: "Prescription pain medications",
+      value: "Prescription pain medications",
+      name: "EachSubstanceLastOptionsPrescription pain medications",
+    },
+    {
+      label: "Marijuana",
+      value: "Marijuana",
+      name: "EachSubstanceLastOptionsMarijuana",
+    },
+    {
+      label: "Methamphetamine or other stimulants",
+      value: "Methamphetamine or other stimulants",
+      name: "EachSubstanceLastOptionsMethamphetamine or other stimulants",
+    },
+    {
+      label: "MDMA, PCP, or other club drugs",
+      value: "MDMA, PCP, or other club drugs",
+      name: "EachSubstanceLastOptionsMDMA, PCP, or other club drugs",
+    },
+    {
+      label: "LSD or other hallucinogens",
+      value: "LSD or other hallucinogens",
+      name: "EachSubstanceLastOptionsLSD or other hallucinogens",
     },
   ];
 
@@ -733,6 +791,45 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     });
   };
 
+  const handleEachSubstanceLastchange = (event) => {
+    const itemValue = event.target.value;
+    const isChecked = event.target.checked;
+
+    let newCheckedItems = [...substanceUseValue?.eachSubstanceLast];
+
+    if (isChecked) {
+      newCheckedItems.push({
+        condition: itemValue,
+        effect: "",
+      });
+    } else {
+      newCheckedItems = newCheckedItems.filter(
+        (item) => item.condition !== itemValue
+      );
+    }
+    setSubstanceUseValue({
+      ...substanceUseValue,
+      eachSubstanceLast: newCheckedItems,
+    });
+  };
+
+  const handleLastDateChange = (event) => {
+    const itemName = event.target.name;
+
+    const condition = EachSubstanceLastOptions.filter(
+      (item) => item.name === itemName
+    );
+
+    setSubstanceUseValue({
+      ...substanceUseValue,
+      eachSubstanceLast: substanceUseValue.eachSubstanceLast.map((item) =>
+        item.condition === condition[0].value
+          ? { ...item, effect: event.target.value }
+          : item
+      ),
+    });
+  };
+
   const handleWithdrawalFollowingSubstancesChange = (event) => {
     const itemValue = event.target.value;
     const isChecked = event.target.checked;
@@ -960,6 +1057,17 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
               title2="Age(1-100)"
               onChange2={handleAgeChange}
               errors2={textErrors?.eachSubstanceListStartedOldAge}
+            />
+
+            <CardTextFollowUp
+              type="checkbox"
+              title="When did you last use each of these substances?"
+              options={EachSubstanceLastOptions}
+              onChange={handleEachSubstanceLastchange}
+              checked={substanceUseValue?.eachSubstanceLast}
+              errors={errors.eachSubstanceLast}
+              onChange2={handleLastDateChange}
+              errors2={textErrors?.eachSubstanceLastDate}
             />
 
             <CardCheckFollowUp
@@ -1192,6 +1300,62 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
                 value={substanceUseValue?.remainedTreatmentClean}
                 error={errors.remainedTreatmentClean}
               />
+            </div>
+
+            <div className="w-[68%] mx-auto mt-3">
+              <div className="w-[95%] mx-auto p-3  shadow-lg ">
+                <p className="text-left text-[20px] mt-2">
+                  This clean and sober period lasted from when to when?
+                </p>
+                <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
+                <div className="mt-5 p-2 flex justify-between wrap-flex">
+                  <div>
+                    <div className="flex">
+                      <label htmlFor="from">From:</label>
+                      <input
+                        id="from"
+                        type="date"
+                        className={classnames(
+                          "border-b-2 ml-2 border-b-gray-300 w-full focus:outline-none focus:border-b-green-400 form-control form-control-lg",
+                          { "border-b-red-500": errors.cleanSoberLastedFrom }
+                        )}
+                        name="cleanSoberLastedFrom"
+                        value={substanceUseValue?.cleanSoberLastedFrom}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    {errors.cleanSoberLastedFrom && (
+                      <div className="text-red-500 text-left text-[12px] mt-2 block ml-11">
+                        {errors.cleanSoberLastedFrom}
+                      </div>
+                    )}
+                  </div>
+
+                  <div>
+                    <div className="flex">
+                      <label htmlFor="to">To:</label>
+                      <input
+                        id="to"
+                        type="date"
+                        className={classnames(
+                          "border-b-2 ml-2 border-b-gray-300 w-full focus:outline-none focus:border-b-green-400 form-control form-control-lg",
+                          { "border-b-red-500": errors.cleanSoberLastedTo }
+                        )}
+                        name="cleanSoberLastedTo"
+                        value={substanceUseValue?.cleanSoberLastedTo}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    {errors.cleanSoberLastedTo && (
+                      <div className="text-red-500 text-left text-[12px] mt-2 ml-6">
+                        {errors.cleanSoberLastedTo}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="w-[68%] mx-auto mt-3">

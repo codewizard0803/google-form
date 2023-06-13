@@ -4,6 +4,7 @@ const validateSubstanceUse = (value) => {
   let textErrors = {
     eachSubstanceListAmount: [],
     eachSubstanceListStartedOldAge: [],
+    eachSubstanceLastDate: [],
   };
 
   if (value.followingSubstances.length === 0) {
@@ -22,7 +23,7 @@ const validateSubstanceUse = (value) => {
       const cond = value.eachSubstanceList?.filter(
         (item) => item.effect === ""
       );
-      if (cond.length === 0) {
+      if (cond.length > 0) {
         cond.map((item) => {
           textErrors?.eachSubstanceListAmount.push({
             [item.condition]: "Your Field is required",
@@ -42,6 +43,23 @@ const validateSubstanceUse = (value) => {
       if (cond.length > 0) {
         cond.map((item) => {
           textErrors?.eachSubstanceListStartedOldAge.push({
+            [item.condition]: "Your Field is required",
+          });
+          isValid = false;
+        });
+      }
+    }
+
+    if (value.eachSubstanceLast.length === 0) {
+      errors.eachSubstanceLast = "Your Field is required.";
+      isValid = false;
+    } else {
+      const cond = value.eachSubstanceLast?.filter(
+        (item) => item.effect === ""
+      );
+      if (cond.length > 0) {
+        cond.map((item) => {
+          textErrors?.eachSubstanceLastDate.push({
             [item.condition]: "Your Field is required",
           });
           isValid = false;
@@ -97,6 +115,27 @@ const validateSubstanceUse = (value) => {
         isValid = false;
       } else {
         errors.treatmentLastedDateTo = "";
+      }
+    }
+
+    if (!value.cleanSoberLastedFrom.trim()) {
+      errors.cleanSoberLastedFrom = "Your Field is required.";
+      isValid = false;
+    }
+
+    if (!value.cleanSoberLastedTo.trim()) {
+      errors.cleanSoberLastedTo = "Your Field is required.";
+      isValid = false;
+    }
+
+    if (value.cleanSoberLastedTo.trim() && value.cleanSoberLastedFrom.trim()) {
+      const d1 = new Date(value.cleanSoberLastedFrom);
+      const d2 = new Date(value.cleanSoberLastedTo);
+      if (d1 > d2) {
+        errors.cleanSoberLastedTo = "This Date is invalid.";
+        isValid = false;
+      } else {
+        errors.cleanSoberLastedTo = "";
       }
     }
 

@@ -37,6 +37,11 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
     { label: "No", value: "No", name: "stillWorkingNo" },
   ];
 
+  const treatmentsHelpedOptions = [
+    { label: "Yes", value: "Yes", name: "treatmentsHelpedOptionsYes" },
+    { label: "No", value: "No", name: "treatmentsHelpedOptionsNo" },
+  ];
+
   const handleChange = (event) => {
     setPhysicalInjuryValue({
       ...physicalInjuryValue,
@@ -48,6 +53,13 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
     setPhysicalInjuryValue({
       ...physicalInjuryValue,
       receivedSurgery: event.target.value,
+    });
+  };
+
+  const handleTreatmentsHelpedChange = (event) => {
+    setPhysicalInjuryValue({
+      ...physicalInjuryValue,
+      treatmentsHelped: event.target.value,
     });
   };
 
@@ -120,7 +132,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="44. BEFORE The Injury, Were You Being Treated for Any Mental or Emotional Condition(s)?"
+          title="44. Did you receive surgery for this injury?"
           type="radio"
           options={receivedSurgeryOptions}
           onChange={handleReceivedSurgeryChange}
@@ -146,12 +158,12 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
           error={errors.medicationList}
         />
 
-        <TextField
+        <CardField
           title="47. Have Any of the Above Treatments Helped Relieve Your Pain?"
-          placeholder="Your answer"
-          name="treatmentsHelped"
-          value={physicalInjuryValue.treatmentsHelped}
-          onChange={handleChange}
+          type="radio"
+          options={treatmentsHelpedOptions}
+          checked={physicalInjuryValue.treatmentsHelped}
+          onChange={handleTreatmentsHelpedChange}
           error={errors.treatmentsHelped}
         />
 

@@ -32,6 +32,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
     hourlyRate: "",
     overtimeRate: "",
     likeJob: "",
+    receiveOvertimePay: "",
     notLikeJob: "",
     radioPhysicalConditionBeforeInjuryItem: "",
     radioMentalConditionBeforeInjuryItem: "",
@@ -94,6 +95,11 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
   const continuedWorkingOptions = [
     { label: "Yes", value: "Yes", name: "continuedWorkingYes" },
     { label: "No", value: "No", name: "continuedWorkingNo" },
+  ];
+
+  const OvertiemPayOptions = [
+    { label: "Yes", value: "Yes", name: "OvertiemPayOptionsYes" },
+    { label: "No", value: "No", name: "OvertiemPayOptionsNo" },
   ];
 
   const medicationsNameBeforeInjuryOptions = [
@@ -162,6 +168,14 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
     setEmploymentInjuryPhysicalValue({
       ...employmentInjuryPhysicalValue,
       radioMentalConditionBeforeInjuryItem: event.target.value,
+    });
+  };
+
+  const handleOvertiemPayChange = (event) => {
+    setEmploymentInjuryPhysicalValue({
+      ...employmentInjuryPhysicalValue,
+      receiveOvertimePay: event.target.value,
+      overtimeRate: "",
     });
   };
 
@@ -416,22 +430,31 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
                   onChange={handleChange}
                 />
               </div>
-
-              <div className="flex mt-3">
-                <label htmlFor="overtimePay">Overtime Pay: </label>
-                <input
-                  type="text"
-                  id="overtimePay"
-                  className="border-b-2 border-b-gray-300 ml-3 w-[85%] focus:outline-none focus:border-b-green-400 form-control form-control-lg"
-                  placeholder="Your answer..."
-                  name="overtimeRate"
-                  value={employmentInjuryPhysicalValue.overtimeRate}
-                  onChange={handleChange}
-                />
-              </div>
             </div>
           </CardContent>
         </Card>
+
+        <CardField
+          title="Do you receive overtime pay?"
+          type="radio"
+          options={OvertiemPayOptions}
+          onChange={handleOvertiemPayChange}
+          checked={employmentInjuryPhysicalValue?.receiveOvertimePay}
+          errors={errors.receiveOvertimePay}
+        />
+        {employmentInjuryPhysicalValue?.receiveOvertimePay === "Yes" ? (
+          <div>
+            <TextField
+              title="How much overtime pay do you typically receive?"
+              type="text"
+              name="overtimeRate"
+              value={employmentInjuryPhysicalValue?.overtimeRate}
+              placeholder="Your answer..."
+              onChange={handleChange}
+              error={errors.overtimeRate}
+            />
+          </div>
+        ) : null}
 
         <TextField
           title="18. What Do You Like About This Job?"
