@@ -101,7 +101,7 @@ const ViolenceHistory = ({ currentSection, setCurrentSection }) => {
 
   const handleBackClick = (event) => {
     event.preventDefault();
-    setGlobalViolenceHistory(globalViolenceHistory);
+    setGlobalViolenceHistory(violenceHistoryValue);
     setCurrentSection(currentSection - 1);
   };
 
@@ -112,7 +112,7 @@ const ViolenceHistory = ({ currentSection, setCurrentSection }) => {
     setErrors(errors);
 
     if (isValid) {
-      setGlobalViolenceHistory(globalViolenceHistory);
+      setGlobalViolenceHistory(violenceHistoryValue);
       setCurrentSection(currentSection + 1);
     } else {
       toast.error("Please fill in all fields correctly!", {
