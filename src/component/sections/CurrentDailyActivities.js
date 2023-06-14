@@ -32,16 +32,10 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
     do10pm: "",
     do12p6am: "",
     leisureActivities: "",
-    comprehendingInstructions: "",
-    performingRepetitiveTasks: "",
-    maintaininPace: "",
-    performingComplexTasks: "",
-    relatingReceivingInstructions: "",
-    makingGeneralizations: "",
-    acceptingResponsibility: "",
     dailyLivingFollowing: [],
     difficultAmount: [],
     anyActivitiesListBefore: "",
+    troubleFollowing: [],
   });
   const [errors, setErrors] = useState({});
 
@@ -74,6 +68,18 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
     "Driving",
     " Managing Finances",
     "Recreation",
+  ];
+
+  const troubleFollowingThead = ["Function", "Yes", "No"];
+
+  const troubleFollowingTbody = [
+    "Comprehending and following instructions",
+    "Performing simple and repetitive tasks",
+    "Maintaining a work pace appropriate to a given work load",
+    "Performing complex or varied tasks",
+    "Relating to other people beyond giving and receiving instructions",
+    "Making generalizations, evaluations or decisions without immediate supervision",
+    "Accepting and carrying out responsibility for direction, control, and planning",
   ];
 
   const difficultAmouhtThead = [
@@ -119,6 +125,32 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
     setCurrentDailyActivitiesValue({
       ...currentDailyActivitiesValue,
       dailyLivingFollowing: newItem,
+    });
+  };
+
+  const handleTroubleFollwingChange = (event) => {
+    const itemValue = event.target.value;
+
+    let newItem = [...currentDailyActivitiesValue.troubleFollowing];
+
+    if (
+      newItem.filter(
+        (item) =>
+          Object.keys(item).filter((p) => p === event.target.name).length !== 0
+      ).length === 0
+    ) {
+      newItem.push({ [event.target.name]: itemValue });
+    } else {
+      newItem = newItem.map((item) =>
+        Object.keys(item).filter((p) => p === event.target.name).length === 1
+          ? { ...item, [event.target.name]: itemValue }
+          : item
+      );
+    }
+
+    setCurrentDailyActivitiesValue({
+      ...currentDailyActivitiesValue,
+      troubleFollowing: newItem,
     });
   };
 
@@ -324,74 +356,13 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
           error={errors.leisureActivities}
         />
 
-        <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
-          <CardContent>
-            <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              175. Do You Have Any Trouble With the Following?
-            </Typography>
-            <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
-
-            <div>
-              <TextFollowUp
-                title="Comprehending and following instructions"
-                onChange={handleChange}
-                name="comprehendingInstructions"
-                value={currentDailyActivitiesValue.comprehendingInstructions}
-                error={errors.comprehendingInstructions}
-              />
-
-              <TextFollowUp
-                title="Performing simple and repetitive tasks"
-                onChange={handleChange}
-                name="performingRepetitiveTasks"
-                value={currentDailyActivitiesValue.performingRepetitiveTasks}
-                error={errors.performingRepetitiveTasks}
-              />
-
-              <TextFollowUp
-                title="Maintaining a work pace appropriate to a given work load"
-                onChange={handleChange}
-                name="maintaininPace"
-                value={currentDailyActivitiesValue.maintaininPace}
-                error={errors.maintaininPace}
-              />
-
-              <TextFollowUp
-                title="Performing complex or varied tasks"
-                onChange={handleChange}
-                name="performingComplexTasks"
-                value={currentDailyActivitiesValue.performingComplexTasks}
-                error={errors.performingComplexTasks}
-              />
-
-              <TextFollowUp
-                title="Relating to other people beyond giving and receiving instructions"
-                onChange={handleChange}
-                name="relatingReceivingInstructions"
-                value={
-                  currentDailyActivitiesValue.relatingReceivingInstructions
-                }
-                error={errors.relatingReceivingInstructions}
-              />
-
-              <TextFollowUp
-                title="Making generalizations, evaluations or decisions without immediate supervision"
-                onChange={handleChange}
-                name="makingGeneralizations"
-                value={currentDailyActivitiesValue.makingGeneralizations}
-                error={errors.makingGeneralizations}
-              />
-
-              <TextFollowUp
-                title="Accepting and carrying out responsibility for direction, control, and planning"
-                onChange={handleChange}
-                name="acceptingResponsibility"
-                value={currentDailyActivitiesValue.acceptingResponsibility}
-                error={errors.acceptingResponsibility}
-              />
-            </div>
-          </CardContent>
-        </Card>
+        <TableCheckBox
+          title="175. Do You Have Any Trouble With the Following?"
+          thead={troubleFollowingThead}
+          tbody={troubleFollowingTbody}
+          checked={currentDailyActivitiesValue?.troubleFollowing}
+          onChange={handleTroubleFollwingChange}
+        />
 
         <TableCheckBox
           title="176. Activities of Daily Living Worksheet. Please put a mark in the box that describes your ability to carry out the following:"

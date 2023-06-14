@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
+import classnames from "classnames";
 
 import CardField from "../common/CardField";
 import useGlobalContext from "../../hooks/useGlobalContext";
@@ -15,7 +16,8 @@ const MilitaryHistory = ({ currentSection, setCurrentSection }) => {
   const [militaryHistoryValue, setMilitaryHistoryValue] = useState({
     enrolledMilitary: "",
     branchMilitary: "",
-    militaryDates: "",
+    militaryDatesFrom: "",
+    militaryDatesTo: "",
     militaryJob: "",
     dischargeStatus: "",
   });
@@ -161,15 +163,61 @@ const MilitaryHistory = ({ currentSection, setCurrentSection }) => {
               errors={errors.branchMilitary}
             />
 
-            <TextField
-              title="What dates were you in the military?"
-              type="date"
-              name="militaryDates"
-              value={militaryHistoryValue?.militaryDates}
-              placeholder="Your answer..."
-              onChange={handleChange}
-              error={errors.militaryDates}
-            />
+            <div className="w-[68%] mx-auto mt-3">
+              <div className="w-[95%] mx-auto p-3  shadow-lg ">
+                <p className="text-left text-[20px] mt-2">
+                  What dates were you in the military?
+                </p>
+                <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
+                <div className="mt-5 p-2 flex justify-between wrap-flex">
+                  <div>
+                    <div className="flex">
+                      <label htmlFor="from">From:</label>
+                      <input
+                        id="from"
+                        type="date"
+                        className={classnames(
+                          "border-b-2 ml-2 border-b-gray-300 w-full focus:outline-none focus:border-b-green-400 form-control form-control-lg",
+                          { "border-b-red-500": errors.militaryDatesFrom }
+                        )}
+                        name="militaryDatesFrom"
+                        value={militaryHistoryValue?.militaryDatesFrom}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    {errors.militaryDatesFrom && (
+                      <div className="text-red-500 text-left text-[12px] mt-2 block ml-11">
+                        {errors.militaryDatesFrom}
+                      </div>
+                    )}
+                  </div>
+
+                  <div>
+                    <div className="flex">
+                      <label htmlFor="to">To:</label>
+                      <input
+                        id="to"
+                        type="date"
+                        className={classnames(
+                          "border-b-2 ml-2 border-b-gray-300 w-full focus:outline-none focus:border-b-green-400 form-control form-control-lg",
+                          { "border-b-red-500": errors.militaryDatesTo }
+                        )}
+                        name="militaryDatesTo"
+                        value={militaryHistoryValue?.militaryDatesTo}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    {errors.militaryDatesTo && (
+                      <div className="text-red-500 text-left text-[12px] mt-2 ml-6">
+                        {errors.militaryDatesTo}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <TextField
               title="What was your job in the military?"

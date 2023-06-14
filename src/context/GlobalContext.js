@@ -417,7 +417,8 @@ const GlobalContextProvider = ({ children }) => {
   const [globalMilitaryHistory, setGlobalMilitaryHistory] = useState({
     enrolledMilitary: "",
     branchMilitary: "",
-    militaryDates: "",
+    militaryDatesFrom: "",
+    militaryDatesTo: "",
     militaryJob: "",
     dischargeStatus: "",
   });
@@ -441,16 +442,10 @@ const GlobalContextProvider = ({ children }) => {
     do10pm: "",
     do12p6am: "",
     leisureActivities: "",
-    comprehendingInstructions: "",
-    performingRepetitiveTasks: "",
-    maintaininPace: "",
-    performingComplexTasks: "",
-    relatingReceivingInstructions: "",
-    makingGeneralizations: "",
-    acceptingResponsibility: "",
     dailyLivingFollowing: [],
     difficultAmount: [],
     anyActivitiesListBefore: "",
+    troubleFollowing: [],
   });
 
   const [globalDevelopmentalHistory, setGlobalDevelopmentalHistory] = useState({
@@ -481,6 +476,7 @@ const GlobalContextProvider = ({ children }) => {
     diedFatherOld: "",
     whatDiedFather: "",
     bestDescribesSocialLifeChild: "",
+    relationshipPrimaryAdults: [],
     enjoyActivitiesChild: "",
   });
 

@@ -94,6 +94,7 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
         developmentalValue: globalDevelopmentalHistory,
         additionalValue: additionalValue,
       };
+
       axios
         .post(`${APP_URL}/api/generateDoc`, data)
         .then((res) => {

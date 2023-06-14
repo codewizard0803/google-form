@@ -107,62 +107,6 @@ const validateCurrentDailyActivites = (value) => {
     errors.leisureActivities = "";
   }
 
-  if (!value.comprehendingInstructions.trim()) {
-    errors.comprehendingInstructions = "Your Field is required.";
-    isValid = false;
-  } else {
-    errors.comprehendingInstructions = "";
-  }
-
-  if (!value.performingRepetitiveTasks.trim()) {
-    errors.performingRepetitiveTasks = "Your Field is required.";
-    isValid = false;
-  } else {
-    errors.performingRepetitiveTasks = "";
-  }
-
-  if (!value.maintaininPace.trim()) {
-    errors.maintaininPace = "Your Field is required.";
-    isValid = false;
-  } else {
-    errors.maintaininPace = "";
-  }
-
-  if (!value.performingComplexTasks.trim()) {
-    errors.performingComplexTasks = "Your Field is required.";
-    isValid = false;
-  } else {
-    errors.performingComplexTasks = "";
-  }
-
-  if (!value.relatingReceivingInstructions.trim()) {
-    errors.relatingReceivingInstructions = "Your Field is required.";
-    isValid = false;
-  } else {
-    errors.relatingReceivingInstructions = "";
-  }
-
-  if (!value.makingGeneralizations.trim()) {
-    errors.makingGeneralizations = "Your Field is required.";
-    isValid = false;
-  } else {
-    errors.makingGeneralizations = "";
-  }
-
-  if (!value.acceptingResponsibility.trim()) {
-    errors.acceptingResponsibility = "Your Field is required.";
-    isValid = false;
-  } else {
-    errors.acceptingResponsibility = "";
-  }
-
-  if (!value.anyActivitiesListBefore.trim()) {
-    errors.anyActivitiesListBefore = "Your Field is required.";
-    isValid = false;
-  } else {
-    errors.anyActivitiesListBefore = "";
-  }
-
   return {
     isValid,
     errors,

@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Typography, CardContent } from "@mui/material";
 
-const TableCheckBox = ({ thead, tbody, onChange, title }) => {
+const TableCheckBox = ({ thead, tbody, onChange, title, checked }) => {
   return (
     <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
       <CardContent>
@@ -32,6 +32,9 @@ const TableCheckBox = ({ thead, tbody, onChange, title }) => {
                         name={item}
                         value={item2}
                         onChange={onChange}
+                        checked={
+                          checked?.filter((p) => p[item] === item2).length > 0
+                        }
                       />
                     </td>
                   )

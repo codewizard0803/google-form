@@ -431,30 +431,34 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
                 />
               </div>
             </div>
+
+            <div>
+              <CardField
+                title="Do you receive overtime pay?"
+                widthStyle="95%"
+                type="radio"
+                options={OvertiemPayOptions}
+                onChange={handleOvertiemPayChange}
+                checked={employmentInjuryPhysicalValue?.receiveOvertimePay}
+                errors={errors.receiveOvertimePay}
+              />
+              {employmentInjuryPhysicalValue?.receiveOvertimePay === "Yes" ? (
+                <div>
+                  <TextField
+                    title="How much overtime pay do you typically receive?"
+                    type="text"
+                    widthStyle="95%"
+                    name="overtimeRate"
+                    value={employmentInjuryPhysicalValue?.overtimeRate}
+                    placeholder="Your answer..."
+                    onChange={handleChange}
+                    error={errors.overtimeRate}
+                  />
+                </div>
+              ) : null}
+            </div>
           </CardContent>
         </Card>
-
-        <CardField
-          title="Do you receive overtime pay?"
-          type="radio"
-          options={OvertiemPayOptions}
-          onChange={handleOvertiemPayChange}
-          checked={employmentInjuryPhysicalValue?.receiveOvertimePay}
-          errors={errors.receiveOvertimePay}
-        />
-        {employmentInjuryPhysicalValue?.receiveOvertimePay === "Yes" ? (
-          <div>
-            <TextField
-              title="How much overtime pay do you typically receive?"
-              type="text"
-              name="overtimeRate"
-              value={employmentInjuryPhysicalValue?.overtimeRate}
-              placeholder="Your answer..."
-              onChange={handleChange}
-              error={errors.overtimeRate}
-            />
-          </div>
-        ) : null}
 
         <TextField
           title="18. What Do You Like About This Job?"

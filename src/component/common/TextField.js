@@ -10,13 +10,20 @@ const TextField = ({
   onChange,
   error,
   type,
+  widthStyle,
   checked,
   disabled,
   title,
   props,
 }) => {
   return (
-    <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
+    <Card
+      sx={{
+        width: widthStyle ? widthStyle : "65%",
+        margin: "auto",
+        marginTop: 3,
+      }}
+    >
       <CardContent>
         <Typography sx={{ fontSize: 20, textAlign: "left" }}>
           {title}

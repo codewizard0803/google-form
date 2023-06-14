@@ -21,6 +21,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
     haveSiblings: "",
     siblingsMany: "",
     siblingsRaised: "",
+    relationshipPrimaryAdults: [],
     relationshipSiblings: [],
     experienceAbuseChildhood: [],
     parentsMarried: "",
@@ -128,6 +129,29 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
       value: "Poor: high level of instability and conflict",
       name:
         "RelationshipSiblingsOptionsPoor: high level of instability and conflict",
+    },
+  ];
+
+  const RelationshipPrimaryAdultsOptions = [
+    {
+      label: "Positive: stable, supportive, or loving",
+      value: "Positive: stable, supportive, or loving",
+      name:
+        "RelationshipPrimaryAdultsOptionsPositive: stable, supportive, or loving",
+    },
+    {
+      label:
+        "Medium: some disruption in the relationship, some level of conflicts",
+      value:
+        "Medium: some disruption in the relationship, some level of conflicts",
+      name:
+        "RelationshipPrimaryAdultsOptionsMedium: some disruption in the relationship, some level of conflicts",
+    },
+    {
+      label: "Poor: high level of instability and conflict",
+      value: "Poor: high level of instability and conflict",
+      name:
+        "RelationshipPrimaryAdultsOptionsPoor: high level of instability and conflict",
     },
   ];
 
@@ -286,6 +310,24 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
     setDevelopmentalValue({
       ...developmentalValue,
       relationshipSiblings: newCheckedItems,
+    });
+  };
+
+  const handleRelationshipPrimaryAdultsChange = (event) => {
+    let itemValue = event.target.value;
+    let isChecked = event.target.checked;
+
+    let newCheckedItems = [...developmentalValue.relationshipPrimaryAdults];
+
+    if (isChecked) {
+      newCheckedItems.push(itemValue);
+    } else {
+      newCheckedItems = newCheckedItems.filter((item) => item !== itemValue);
+    }
+
+    setDevelopmentalValue({
+      ...developmentalValue,
+      relationshipPrimaryAdults: newCheckedItems,
     });
   };
 
@@ -454,6 +496,15 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
 
         <CardField
           title="182. How would you rate your relationship with the primary adults who raised you when you were a child?"
+          type="checkbox"
+          options={RelationshipPrimaryAdultsOptions}
+          onChange={handleRelationshipPrimaryAdultsChange}
+          checked={developmentalValue?.relationshipPrimaryAdults}
+          errors={errors.relationshipPrimaryAdults}
+        />
+
+        <CardField
+          title="183. Do you have siblings?"
           type="radio"
           options={HaveSiblingsOptions}
           onChange={handleHaveSiblingsChange}

@@ -28,6 +28,13 @@ const validateDevelopmentalHistory = (value) => {
     errors.raisedChilhood = "";
   }
 
+  if (value.relationshipPrimaryAdults.length === 0) {
+    errors.relationshipPrimaryAdults = "Your Field is required.";
+    isValid = false;
+  } else {
+    errors.relationshipPrimaryAdults = "";
+  }
+
   if (!value.haveSiblings.trim()) {
     errors.haveSiblings = "Your Field is required.";
     isValid = false;
