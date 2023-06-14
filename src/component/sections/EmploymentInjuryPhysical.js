@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
+import { toast } from "react-toastify";
 
 import TextField from "../common/TextField";
 import CardField from "../common/CardField";
@@ -302,6 +303,10 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
     if (isValid) {
       setEmploymentInjuryPhysical(employmentInjuryPhysicalValue);
       setCurrentSection(currentSection + 1);
+    } else {
+      toast.error("Please fill in all fields correctly!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
 

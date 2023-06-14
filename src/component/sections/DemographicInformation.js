@@ -7,6 +7,7 @@ import TextField from "../common/TextField";
 import useGlobalContext from "../../hooks/useGlobalContext";
 import CardField from "../common/CardField";
 import RadioFollowUp from "../common/RadioFollowUp";
+import { toast } from "react-toastify";
 
 const DemographicInformation = ({ currentSection, setCurrentSection }) => {
   const {
@@ -185,6 +186,10 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
     if (isValid) {
       setDemographicInformation(demographicInformationValue);
       setCurrentSection(currentSection + 1);
+    } else {
+      toast.error("Please fill in all fields correctly!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
 

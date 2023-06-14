@@ -28,90 +28,90 @@ const SectionCard = (props) => {
   const [currentSection, setCurrentSection] = useState(0);
 
   const sections = [
-    // <DemographicInformation
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <EmploymentInjuryPhysical
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
+    <DemographicInformation
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <EmploymentInjuryPhysical
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
     <CurrentEmployer
       currentSection={currentSection}
       setCurrentSection={setCurrentSection}
     />,
-    // <PhysicalInjury
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <ChiefComplaint
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <LongitudinalHistory
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <PHQ
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <GAD
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <PCL
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <CurrentTreatment
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <PastHistroy
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <SubstanceUse
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <MedicalHistory
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <FamilyHistory
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <RelationshipHistory
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <EmploymentHistory
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <EducationHistory
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <SocialHistory
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <CriminalHistory
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <ViolenceHistory
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
-    // <MilitaryHistory
-    //   currentSection={currentSection}
-    //   setCurrentSection={setCurrentSection}
-    // />,
+    <PhysicalInjury
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <ChiefComplaint
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <LongitudinalHistory
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <PHQ
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <GAD
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <PCL
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <CurrentTreatment
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <PastHistroy
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <SubstanceUse
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <MedicalHistory
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <FamilyHistory
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <RelationshipHistory
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <EmploymentHistory
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <EducationHistory
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <SocialHistory
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <CriminalHistory
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <ViolenceHistory
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <MilitaryHistory
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
     <CurrentDailyActivities
       currentSection={currentSection}
       setCurrentSection={setCurrentSection}

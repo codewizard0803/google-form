@@ -6,6 +6,7 @@ import TextField from "../common/TextField";
 
 import validateAdditionalInformation from "../../validation/validateAdditionalInformation";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
   const APP_URL = process.env.REACT_APP_API_BASE_URL;
@@ -98,9 +99,21 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
       axios
         .post(`${APP_URL}/api/generateDoc`, data)
         .then((res) => {
-          console.log("res", res);
+          if (res.status === 200) {
+            toast.success("Success", {
+              position: toast.POSITION.TOP_RIGHT,
+            });
+          }
         })
-        .catch((err) => console.log(err));
+        .catch((err) =>
+          toast.error("Server Error", {
+            position: toast.POSITION.TOP_RIGHT,
+          })
+        );
+    } else {
+      toast.error("Please fill in all fields correctly!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
 
@@ -112,7 +125,7 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <TextField
-          title="191. Is there anything else you would like to share with the evaluating clinician before your visit begins?"
+          title="192. Is there anything else you would like to share with the evaluating clinician before your visit begins?"
           placeholder="Your answer"
           name="evaluatingClinician"
           value={additionalValue?.evaluatingClinician}
@@ -121,7 +134,7 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="192. Please Provide Any Additional Information I Should Know About You:"
+          title="193. Please Provide Any Additional Information I Should Know About You:"
           placeholder="Your answer"
           name="yourAdditionalInformation"
           value={additionalValue?.yourAdditionalInformation}

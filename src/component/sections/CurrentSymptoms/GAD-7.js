@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
+import { toast } from "react-toastify";
 
 import CardField from "../../common/CardField";
 import RadioFollowUp from "../../common/RadioFollowUp";
@@ -717,6 +718,10 @@ const GAD = ({ currentSection, setCurrentSection }) => {
       setGADValue(updatedGADScore);
       setGAD7(updatedGADScore);
       setCurrentSection(currentSection + 1);
+    } else {
+      toast.error("Please fill in all fields correctly!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
 

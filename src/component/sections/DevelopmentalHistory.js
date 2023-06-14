@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
+import { toast } from "react-toastify";
 
 import CardField from "../common/CardField";
 import useGlobalContext from "../../hooks/useGlobalContext";
@@ -453,6 +454,10 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
     if (isValid) {
       setGlobalDevelopmentalHistory(developmentalValue);
       setCurrentSection(currentSection + 1);
+    } else {
+      toast.error("Please fill in all fields correctly!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
 
@@ -574,7 +579,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="183. Did you experience any abuse during your childhood?"
+          title="184. Did you experience any abuse during your childhood?"
           type="checkbox"
           options={ExperienceAbuseChildhoodOptions}
           onChange={handleExperienceAbuseChildhoodChange}
@@ -583,7 +588,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="184. Were your parents ever married?"
+          title="185. Were your parents ever married?"
           type="radio"
           options={ParentsMarriedOptions}
           onChange={handleParentsMarriedChange}
@@ -638,7 +643,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="185. Did your mother work?"
+          title="186. Did your mother work?"
           type="radio"
           options={MotherWorkOptions}
           onChange={handleMotherWorkChange}
@@ -669,7 +674,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="186. Is your mother current living?"
+          title="187. Is your mother current living?"
           type="radio"
           options={MotherCurrentLivingOptions}
           onChange={handleMotherCurrentLivingChange}
@@ -700,7 +705,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="187. Did your father work?"
+          title="188. Did your father work?"
           type="radio"
           options={FatherWorkOptions}
           onChange={handleFatherWorkChange}
@@ -731,7 +736,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="188. Is your father current living?"
+          title="189. Is your father current living?"
           type="radio"
           options={FatherCurrentLivingOptions}
           onChange={handleFatherCurrentLivingChange}
@@ -762,7 +767,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="189. Which of these statements best describes your social life as a child:"
+          title="190. Which of these statements best describes your social life as a child:"
           type="radio"
           options={BestDescribesSocialLifeChildOptions}
           onChange={handleBestDescribesSocialLifeChildChange}
@@ -771,7 +776,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="190. What activities did you enjoy during your childhood?"
+          title="191. What activities did you enjoy during your childhood?"
           placeholder="Your answer"
           name="enjoyActivitiesChild"
           value={developmentalValue?.enjoyActivitiesChild}

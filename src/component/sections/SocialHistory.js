@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
+import { toast } from "react-toastify";
 
 import CardField from "../common/CardField";
 import RadioFollowUp from "../common/RadioFollowUp";
@@ -399,6 +400,10 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
     if (isValid) {
       setGlobalSocialHistory(socialHistoryValue);
       setCurrentSection(currentSection + 1);
+    } else {
+      toast.error("Please fill in all fields correctly!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
 

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
+import { toast } from "react-toastify";
+
 import TextField from "../common/TextField";
 import useGlobalContext from "../../hooks/useGlobalContext";
 import CardField from "../common/CardField";
@@ -85,6 +87,10 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
     if (isValid) {
       setPhysicalInjury(physicalInjuryValue);
       setCurrentSection(currentSection + 1);
+    } else {
+      toast.error("Please fill in all fields correctly!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
 

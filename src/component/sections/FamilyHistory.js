@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
+import { toast } from "react-toastify";
 
 import CardField from "../common/CardField";
 import TextFollowUp from "../common/TextFollowUp";
@@ -163,6 +164,10 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
     if (isValid) {
       setGlobalFamilyHistory(familyHistoryValue);
       setCurrentSection(currentSection + 1);
+    } else {
+      toast.error("Please fill in all fields correctly!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
 

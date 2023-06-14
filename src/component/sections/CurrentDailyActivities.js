@@ -6,6 +6,7 @@ import TextField from "../common/TextField";
 import TextFollowUp from "../common/TextFollowUp";
 import validateCurrentDailyActivites from "../../validation/validateCurrentDailyActivites";
 import TableCheckBox from "../common/TableCheckBox";
+import { toast } from "react-toastify";
 
 const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
   const {
@@ -204,6 +205,10 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
     if (isValid) {
       setGlobalCurrentDailyActivities(currentDailyActivitiesValue);
       setCurrentSection(currentSection + 1);
+    } else {
+      toast.error("Please fill in all fields correctly!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
+import { toast } from "react-toastify";
 
 import CardField from "../common/CardField";
 import RadioFollowUp from "../common/RadioFollowUp";
@@ -397,6 +398,10 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
     if (isValid) {
       setGlobalCurrentTreatment(currentTreatmentValue);
       setCurrentSection(currentSection + 1);
+    } else {
+      toast.error("Please fill in all fields correctly!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
 

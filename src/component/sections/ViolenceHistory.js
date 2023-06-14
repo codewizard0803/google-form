@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
+import { toast } from "react-toastify";
 
 import CardField from "../common/CardField";
 import useGlobalContext from "../../hooks/useGlobalContext";
@@ -113,6 +114,10 @@ const ViolenceHistory = ({ currentSection, setCurrentSection }) => {
     if (isValid) {
       setGlobalViolenceHistory(globalViolenceHistory);
       setCurrentSection(currentSection + 1);
+    } else {
+      toast.error("Please fill in all fields correctly!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
 

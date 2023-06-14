@@ -7,6 +7,7 @@ import useGlobalContext from "../../hooks/useGlobalContext";
 import CardField from "../common/CardField";
 import validateChiefComplaint from "../../validation/validateChiefComplaint";
 import TextFollowUp from "../common/TextFollowUp";
+import { toast } from "react-toastify";
 
 const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
   const { chiefComplaint, setChiefComplaint } = useGlobalContext();
@@ -243,6 +244,10 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
     if (isValid) {
       setChiefComplaint(chiefComplaintValue);
       setCurrentSection(currentSection + 1);
+    } else {
+      toast.error("Please fill in all fields correctly!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
 

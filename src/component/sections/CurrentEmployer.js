@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
+import { toast } from "react-toastify";
 
 import TextField from "../common/TextField";
 import useGlobalContext from "../../hooks/useGlobalContext";
@@ -67,6 +68,10 @@ const CurrentEmployer = ({ currentSection, setCurrentSection }) => {
     if (isValid) {
       setCurrentEmployer(currentEmployerValue);
       setCurrentSection(currentSection + 1);
+    } else {
+      toast.error("Please fill in all fields correctly!", {
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
   };
 
