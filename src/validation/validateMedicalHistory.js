@@ -107,7 +107,10 @@ const validateMedicalHistory = (value, global) => {
   if (!value.allergiesMedication.trim()) {
     errors.allergiesMedication = "Your Field is required.";
     isValid = false;
-  } else if (value.allergiesMedication.trim() && value.allergiesList === "") {
+  } else if (
+    value.allergiesMedication === "Yes" &&
+    value.allergiesList === ""
+  ) {
     errors.allergiesList = "Your Field is required.";
     isValid = false;
   } else {
