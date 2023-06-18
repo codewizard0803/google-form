@@ -23,6 +23,7 @@ import MilitaryHistory from "./sections/MilitaryHistory";
 import CurrentDailyActivities from "./sections/CurrentDailyActivities";
 import DevelopmentalHistory from "./sections/DevelopmentalHistory";
 import AdditinalInformation from "./sections/AdditionalInformation";
+import Success from "./sections/success";
 
 const SectionCard = (props) => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -121,6 +122,10 @@ const SectionCard = (props) => {
       setCurrentSection={setCurrentSection}
     />,
     <AdditinalInformation
+      currentSection={currentSection}
+      setCurrentSection={setCurrentSection}
+    />,
+    <Success
       currentSection={currentSection}
       setCurrentSection={setCurrentSection}
     />,

@@ -98,18 +98,70 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
 
       axios
         .post(`${APP_URL}/api/generateDoc`, data)
-        .then((res) => {
+        .then(async (res) => {
           if (res.status === 200) {
-            toast.success("Success", {
-              position: toast.POSITION.TOP_RIGHT,
+            let sendBool = false;
+            let fileStoryURL = `${APP_URL}/downloads/${res.data?.storyPath}`;
+            let fileQaURL = `${APP_URL}/downloads/${res.data?.qaPath}`;
+
+            console.log("fileQaURL", fileQaURL);
+
+            const story = document.createElement("a");
+            story.href = fileStoryURL;
+            story.download = res.data?.storyPath;
+
+            const qa = document.createElement("a");
+            qa.href = fileQaURL;
+            qa.download = res.data?.qaPath;
+            story.addEventListener("click", (event) => {
+              sendBool = true;
             });
+
+            qa.addEventListener("click", (event) => {
+              if (sendBool) {
+                const url = {
+                  fileStoryURL: res.data?.storyPath,
+                  fileQaURL: res.data?.qaPath,
+                };
+                // axios
+                //   .post(`${APP_URL}/api/deleteFile`, url)
+                //   .then((response) => {
+                //     if (response.status === 200) {
+                //       toast.success("Success", {
+                //         position: toast.POSITION.TOP_RIGHT,
+                //       });
+
+                //       setIsDisable(true);
+                //     }
+                //     console.log(response);
+                //   })
+                //   .catch((err) => {
+                //     console.log(err);
+                //     toast.error("Server Error", {
+                //       position: toast.POSITION.TOP_RIGHT,
+                //     });
+                //   });
+                setCurrentSection(currentSection + 1);
+              }
+            });
+
+            if (res.data.storyPath) {
+              story.click();
+            }
+
+            if (res.data.qaPath) {
+              setTimeout(() => {
+                qa.click();
+              }, 100);
+            }
           }
         })
-        .catch((err) =>
+        .catch((err) => {
+          console.log(err);
           toast.error("Server Error", {
             position: toast.POSITION.TOP_RIGHT,
-          })
-        );
+          });
+        });
     } else {
       toast.error("Please fill in all fields correctly!", {
         position: toast.POSITION.TOP_RIGHT,
