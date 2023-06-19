@@ -132,14 +132,17 @@ const MilitaryHistory = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateMilitaryHistory(militaryHistoryValue);
     setErrors(errors);
 
-    if (isValid) {
-      setGlobalMilitaryHistory(militaryHistoryValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setGlobalMilitaryHistory(militaryHistoryValue);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   setGlobalMilitaryHistory(militaryHistoryValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

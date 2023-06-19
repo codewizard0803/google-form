@@ -84,14 +84,17 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validatePhysicalInjury(physicalInjuryValue);
     setErrors(errors);
 
-    if (isValid) {
-      setPhysicalInjury(physicalInjuryValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setPhysicalInjury(physicalInjuryValue);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   setPhysicalInjury(physicalInjuryValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

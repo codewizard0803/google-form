@@ -233,14 +233,17 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
     );
     setErrors(errors);
 
-    if (isValid) {
-      setGlobalMedicalHistory(medicalHistoryValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setGlobalMedicalHistory(medicalHistoryValue);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   setGlobalMedicalHistory(medicalHistoryValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

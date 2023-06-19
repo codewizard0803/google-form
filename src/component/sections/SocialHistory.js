@@ -397,14 +397,17 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateSocialHistory(socialHistoryValue);
     setErrors(errors);
 
-    if (isValid) {
-      setGlobalSocialHistory(socialHistoryValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setGlobalSocialHistory(socialHistoryValue);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   setGlobalSocialHistory(socialHistoryValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

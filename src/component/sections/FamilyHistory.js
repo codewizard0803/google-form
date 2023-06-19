@@ -161,14 +161,17 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateFamilyHistory(familyHistoryValue);
     setErrors(errors);
 
-    if (isValid) {
-      setGlobalFamilyHistory(familyHistoryValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setGlobalFamilyHistory(familyHistoryValue);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   setGlobalFamilyHistory(familyHistoryValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

@@ -240,15 +240,17 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
 
     const { isValid, errors } = validateChiefComplaint(chiefComplaintValue);
     setErrors(errors);
+    setChiefComplaint(chiefComplaintValue);
+    setCurrentSection(currentSection + 1);
 
-    if (isValid) {
-      setChiefComplaint(chiefComplaintValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    // if (isValid) {
+    //   setChiefComplaint(chiefComplaintValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

@@ -72,14 +72,17 @@ const CriminalHistory = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateCriminalHistory(criminalHistoryValue);
     setErrors(errors);
 
-    if (isValid) {
-      setGlobalCriminalHistory(criminalHistoryValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setGlobalCriminalHistory(criminalHistoryValue);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   setGlobalCriminalHistory(criminalHistoryValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

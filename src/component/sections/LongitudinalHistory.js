@@ -129,14 +129,17 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
     );
     setErrors(errors);
 
-    if (isValid) {
-      setLongitudinalHistory(longitudinalHistoryValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setLongitudinalHistory(longitudinalHistoryValue);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   setLongitudinalHistory(longitudinalHistoryValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

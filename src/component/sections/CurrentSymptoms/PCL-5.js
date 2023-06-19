@@ -840,43 +840,73 @@ const PCL = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validatePCL(PCLValue);
     setErrors(errors);
 
-    if (isValid) {
-      const updatedPCLScore = {
-        ...PCLValue,
-        PCLScore:
-          eachCalculateScore(PCLValue.stressfulExperienceMemories) +
-          eachCalculateScore(PCLValue.stressfulExperience) +
-          eachCalculateScore(PCLValue.suddenlyStressfulExperience) +
-          eachCalculateScore(PCLValue.veryUpsetStressfulExperience) +
-          eachCalculateScore(
-            PCLValue.strongPhysicalReactionStressfulExperience
-          ) +
-          eachCalculateScore(PCLValue.avoidingMemories) +
-          eachCalculateScore(PCLValue.avoidingExternalReminders) +
-          eachCalculateScore(PCLValue.troubleStressfulExperience) +
-          eachCalculateScore(PCLValue.strongNegativeBeliefs) +
-          eachCalculateScore(PCLValue.stressfulExperienceBlaming) +
-          eachCalculateScore(PCLValue.strongNegativefeelings) +
-          eachCalculateScore(PCLValue.lossInterestActivity) +
-          eachCalculateScore(PCLValue.feelingDistantPeople) +
-          eachCalculateScore(PCLValue.troubleExperiencePositiveFeeling) +
-          eachCalculateScore(PCLValue.irritableBehavior) +
-          eachCalculateScore(PCLValue.manyRisksThing) +
-          eachCalculateScore(PCLValue.beingWatchful) +
-          eachCalculateScore(PCLValue.irritableBehavior) +
-          eachCalculateScore(PCLValue.easilyStartled) +
-          eachCalculateScore(PCLValue.difficultyConcentrating) +
-          eachCalculateScore(PCLValue.troubleFallingAsleep),
-      };
+    const updatedPCLScore = {
+      ...PCLValue,
+      PCLScore:
+        eachCalculateScore(PCLValue.stressfulExperienceMemories) +
+        eachCalculateScore(PCLValue.stressfulExperience) +
+        eachCalculateScore(PCLValue.suddenlyStressfulExperience) +
+        eachCalculateScore(PCLValue.veryUpsetStressfulExperience) +
+        eachCalculateScore(PCLValue.strongPhysicalReactionStressfulExperience) +
+        eachCalculateScore(PCLValue.avoidingMemories) +
+        eachCalculateScore(PCLValue.avoidingExternalReminders) +
+        eachCalculateScore(PCLValue.troubleStressfulExperience) +
+        eachCalculateScore(PCLValue.strongNegativeBeliefs) +
+        eachCalculateScore(PCLValue.stressfulExperienceBlaming) +
+        eachCalculateScore(PCLValue.strongNegativefeelings) +
+        eachCalculateScore(PCLValue.lossInterestActivity) +
+        eachCalculateScore(PCLValue.feelingDistantPeople) +
+        eachCalculateScore(PCLValue.troubleExperiencePositiveFeeling) +
+        eachCalculateScore(PCLValue.irritableBehavior) +
+        eachCalculateScore(PCLValue.manyRisksThing) +
+        eachCalculateScore(PCLValue.beingWatchful) +
+        eachCalculateScore(PCLValue.irritableBehavior) +
+        eachCalculateScore(PCLValue.easilyStartled) +
+        eachCalculateScore(PCLValue.difficultyConcentrating) +
+        eachCalculateScore(PCLValue.troubleFallingAsleep),
+    };
 
-      setPCLValue(updatedPCLScore);
-      setPCL5(updatedPCLScore);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setPCLValue(updatedPCLScore);
+    setPCL5(updatedPCLScore);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   const updatedPCLScore = {
+    //     ...PCLValue,
+    //     PCLScore:
+    //       eachCalculateScore(PCLValue.stressfulExperienceMemories) +
+    //       eachCalculateScore(PCLValue.stressfulExperience) +
+    //       eachCalculateScore(PCLValue.suddenlyStressfulExperience) +
+    //       eachCalculateScore(PCLValue.veryUpsetStressfulExperience) +
+    //       eachCalculateScore(
+    //         PCLValue.strongPhysicalReactionStressfulExperience
+    //       ) +
+    //       eachCalculateScore(PCLValue.avoidingMemories) +
+    //       eachCalculateScore(PCLValue.avoidingExternalReminders) +
+    //       eachCalculateScore(PCLValue.troubleStressfulExperience) +
+    //       eachCalculateScore(PCLValue.strongNegativeBeliefs) +
+    //       eachCalculateScore(PCLValue.stressfulExperienceBlaming) +
+    //       eachCalculateScore(PCLValue.strongNegativefeelings) +
+    //       eachCalculateScore(PCLValue.lossInterestActivity) +
+    //       eachCalculateScore(PCLValue.feelingDistantPeople) +
+    //       eachCalculateScore(PCLValue.troubleExperiencePositiveFeeling) +
+    //       eachCalculateScore(PCLValue.irritableBehavior) +
+    //       eachCalculateScore(PCLValue.manyRisksThing) +
+    //       eachCalculateScore(PCLValue.beingWatchful) +
+    //       eachCalculateScore(PCLValue.irritableBehavior) +
+    //       eachCalculateScore(PCLValue.easilyStartled) +
+    //       eachCalculateScore(PCLValue.difficultyConcentrating) +
+    //       eachCalculateScore(PCLValue.troubleFallingAsleep),
+    //   };
+
+    //   setPCLValue(updatedPCLScore);
+    //   setPCL5(updatedPCLScore);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

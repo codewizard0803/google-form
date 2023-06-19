@@ -1077,14 +1077,17 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validatePastHistory(pastHistoryValue);
     setErrors(errors);
 
-    if (isValid) {
-      setGlobalPastHistory(pastHistoryValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setGlobalPastHistory(pastHistoryValue);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   setGlobalPastHistory(pastHistoryValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

@@ -202,14 +202,17 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
     );
     setErrors(errors);
 
-    if (isValid) {
-      setGlobalCurrentDailyActivities(currentDailyActivitiesValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setGlobalCurrentDailyActivities(currentDailyActivitiesValue);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   setGlobalCurrentDailyActivities(currentDailyActivitiesValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

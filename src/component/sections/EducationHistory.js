@@ -216,15 +216,17 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateEducationHistory(educationHistoryValue);
     setErrors(errors);
 
-    if (isValid) {
-      setGlobalEducationHistory(educationHistoryValue);
+    setGlobalEducationHistory(educationHistoryValue);
+    setCurrentSection(currentSection + 1);
 
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    // if (isValid) {
+    //   setGlobalEducationHistory(educationHistoryValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

@@ -111,14 +111,17 @@ const ViolenceHistory = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateViolenceHistory(violenceHistoryValue);
     setErrors(errors);
 
-    if (isValid) {
-      setGlobalViolenceHistory(violenceHistoryValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setGlobalViolenceHistory(violenceHistoryValue);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   setGlobalViolenceHistory(violenceHistoryValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

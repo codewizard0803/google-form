@@ -1000,14 +1000,17 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     setErrors(errors);
     setTextErrors(textErrors);
 
-    if (isValid) {
-      setGlobalSubStanceUse(substanceUseValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setGlobalSubStanceUse(substanceUseValue);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   setGlobalSubStanceUse(substanceUseValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

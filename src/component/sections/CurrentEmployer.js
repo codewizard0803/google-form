@@ -65,14 +65,17 @@ const CurrentEmployer = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateCurrentEmployer(currentEmployerValue);
     setErrors(errors);
 
-    if (isValid) {
-      setCurrentEmployer(currentEmployerValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setCurrentEmployer(currentEmployerValue);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   setCurrentEmployer(currentEmployerValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

@@ -906,28 +906,45 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validatePHQ(PHQValue);
     setErrors(errors);
 
-    if (isValid) {
-      const updatedPHQScore = {
-        ...PHQValue,
-        phqScore:
-          eachCalculateScore(PHQValue?.interestThing) +
-          eachCalculateScore(PHQValue?.feelingDepressed) +
-          eachCalculateScore(PHQValue?.troubleFallingAsleep) +
-          eachCalculateScore(PHQValue?.feelingEnergy) +
-          eachCalculateScore(PHQValue?.poorAppetite) +
-          eachCalculateScore(PHQValue?.yourselfFeelingBad) +
-          eachCalculateScore(PHQValue?.troubleConCentratingThing) +
-          eachCalculateScore(PHQValue?.fidgetyMoving) +
-          eachCalculateScore(PHQValue?.betterOffDeadYourself),
-      };
-      setPHQValue(updatedPHQScore);
-      setPHQ9(updatedPHQScore);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    const updatedPHQScore = {
+      ...PHQValue,
+      phqScore:
+        eachCalculateScore(PHQValue?.interestThing) +
+        eachCalculateScore(PHQValue?.feelingDepressed) +
+        eachCalculateScore(PHQValue?.troubleFallingAsleep) +
+        eachCalculateScore(PHQValue?.feelingEnergy) +
+        eachCalculateScore(PHQValue?.poorAppetite) +
+        eachCalculateScore(PHQValue?.yourselfFeelingBad) +
+        eachCalculateScore(PHQValue?.troubleConCentratingThing) +
+        eachCalculateScore(PHQValue?.fidgetyMoving) +
+        eachCalculateScore(PHQValue?.betterOffDeadYourself),
+    };
+    setPHQValue(updatedPHQScore);
+    setPHQ9(updatedPHQScore);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   const updatedPHQScore = {
+    //     ...PHQValue,
+    //     phqScore:
+    //       eachCalculateScore(PHQValue?.interestThing) +
+    //       eachCalculateScore(PHQValue?.feelingDepressed) +
+    //       eachCalculateScore(PHQValue?.troubleFallingAsleep) +
+    //       eachCalculateScore(PHQValue?.feelingEnergy) +
+    //       eachCalculateScore(PHQValue?.poorAppetite) +
+    //       eachCalculateScore(PHQValue?.yourselfFeelingBad) +
+    //       eachCalculateScore(PHQValue?.troubleConCentratingThing) +
+    //       eachCalculateScore(PHQValue?.fidgetyMoving) +
+    //       eachCalculateScore(PHQValue?.betterOffDeadYourself),
+    //   };
+    //   setPHQValue(updatedPHQScore);
+    //   setPHQ9(updatedPHQScore);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

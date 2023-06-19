@@ -703,26 +703,41 @@ const GAD = ({ currentSection, setCurrentSection }) => {
     const { isValid, errors } = validateGAD(GADValue);
     setErrors(errors);
 
-    if (isValid) {
-      const updatedGADScore = {
-        ...GADValue,
-        gadScore:
-          eachCalculateScore(GADValue?.feelingNervous) +
-          eachCalculateScore(GADValue?.stopControlWorring) +
-          eachCalculateScore(GADValue?.worringDifferentThing) +
-          eachCalculateScore(GADValue?.troubleRelaxing) +
-          eachCalculateScore(GADValue?.restlessSitHard) +
-          eachCalculateScore(GADValue?.easilyAnnoyed) +
-          eachCalculateScore(GADValue?.feelingAfraidAwfulThing),
-      };
-      setGADValue(updatedGADScore);
-      setGAD7(updatedGADScore);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    const updatedGADScore = {
+      ...GADValue,
+      gadScore:
+        eachCalculateScore(GADValue?.feelingNervous) +
+        eachCalculateScore(GADValue?.stopControlWorring) +
+        eachCalculateScore(GADValue?.worringDifferentThing) +
+        eachCalculateScore(GADValue?.troubleRelaxing) +
+        eachCalculateScore(GADValue?.restlessSitHard) +
+        eachCalculateScore(GADValue?.easilyAnnoyed) +
+        eachCalculateScore(GADValue?.feelingAfraidAwfulThing),
+    };
+    setGADValue(updatedGADScore);
+    setGAD7(updatedGADScore);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   const updatedGADScore = {
+    //     ...GADValue,
+    //     gadScore:
+    //       eachCalculateScore(GADValue?.feelingNervous) +
+    //       eachCalculateScore(GADValue?.stopControlWorring) +
+    //       eachCalculateScore(GADValue?.worringDifferentThing) +
+    //       eachCalculateScore(GADValue?.troubleRelaxing) +
+    //       eachCalculateScore(GADValue?.restlessSitHard) +
+    //       eachCalculateScore(GADValue?.easilyAnnoyed) +
+    //       eachCalculateScore(GADValue?.feelingAfraidAwfulThing),
+    //   };
+    //   setGADValue(updatedGADScore);
+    //   setGAD7(updatedGADScore);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

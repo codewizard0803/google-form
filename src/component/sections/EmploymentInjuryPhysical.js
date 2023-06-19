@@ -300,14 +300,17 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
     );
     setErrors(errors);
 
-    if (isValid) {
-      setEmploymentInjuryPhysical(employmentInjuryPhysicalValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setEmploymentInjuryPhysical(employmentInjuryPhysicalValue);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   setEmploymentInjuryPhysical(employmentInjuryPhysicalValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (

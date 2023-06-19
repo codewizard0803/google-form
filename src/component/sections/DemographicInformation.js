@@ -183,14 +183,17 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
     );
     setErrors(errors);
 
-    if (isValid) {
-      setDemographicInformation(demographicInformationValue);
-      setCurrentSection(currentSection + 1);
-    } else {
-      toast.error("Please fill in all fields correctly!", {
-        position: toast.POSITION.TOP_RIGHT,
-      });
-    }
+    setDemographicInformation(demographicInformationValue);
+    setCurrentSection(currentSection + 1);
+
+    // if (isValid) {
+    //   setDemographicInformation(demographicInformationValue);
+    //   setCurrentSection(currentSection + 1);
+    // } else {
+    //   toast.error("Please fill in all fields correctly!", {
+    //     position: toast.POSITION.TOP_RIGHT,
+    //   });
+    // }
   };
 
   return (
