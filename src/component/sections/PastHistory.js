@@ -39,7 +39,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     startedMedicationDate: "",
     stopedMedicationDate: "",
     pastPsychiatricMedication: [],
-    stopedPsychiatricMedicationsReason: "",
+    stopedPsychiatricMedicationsReason: [],
     prescribeThisMedication: "",
     prescribeThisMedicationNameDate: "",
     whatClinicWorked: "",
@@ -53,10 +53,11 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     pastPsychotherapistsDate: "",
     otherPsychotherapyTreatmentList: "",
     admittedPsychiatricHospital: "",
-    psychiatricHospitalizationReason: "",
+    psychiatricHospitalizationReason: [],
     receivedTreatment: "",
     admittedHospitalName: "",
     hospitalizedLong: "",
+    hospitalizedDate: "",
     suicidalIdeation: "",
     suicideAttempt: "",
     attemptedSuicideTimes: "1",
@@ -70,6 +71,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     evaluationReason: "",
     evaluationPerformed: "",
     evaluationOccur: "",
+    pastPsychiatricMedicationOther: "",
     physicalAltercations: "",
     physicialAltercationsMany: "",
   });
@@ -101,6 +103,30 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
       label: "psychosis",
       value: "psychosis",
       name: "PreviouslyExperiencedSymptomOptionspsychosis",
+    },
+  ];
+
+  const PreviouslyExperiencedSymptomTitle = [
+    {
+      label: "depressive mood",
+      title: "Please describe your depressive symptoms at that time:",
+    },
+    {
+      label: "anxiety",
+      title: "Please describe your anxiety symptoms at that time:",
+    },
+    {
+      label: "post traumatic stress",
+      title:
+        "Please describe your post traumatic stress symptoms at that time:",
+    },
+    {
+      label: "mania",
+      title: "Please describe your mania symptoms at that time:",
+    },
+    {
+      label: "psychosis",
+      title: "Please describe your psychosis symptoms at that time:",
     },
   ];
 
@@ -554,6 +580,11 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
       name: "AttendedSessionsPsychotherapyOptionsWeekly",
     },
     {
+      label: "Twice Weekly",
+      value: "Twice Weekly",
+      name: "AttendedSessionsPsychotherapyOptionsTwiceWeekly",
+    },
+    {
       label: "Twice per month",
       value: "Twice per month",
       name: "AttendedSessionsPsychotherapyOptionsTwice per month",
@@ -729,6 +760,9 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   ];
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setPastHistoryValue(globalPastHistory);
   }, [globalPastHistory]);
 
@@ -786,6 +820,19 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     setPastHistoryValue({
       ...pastHistoryValue,
       alcoholSubstances: event.target.value,
+    });
+  };
+
+  const handlePastPsychiatricMedicationOtherChange = (event) => {
+    setPastHistoryValue({
+      ...pastHistoryValue,
+      pastPsychiatricMedication: pastHistoryValue.pastPsychiatricMedication.map(
+        (item) =>
+          item.condition === "Other"
+            ? { ...item, effect: event.target.value }
+            : item
+      ),
+      pastPsychiatricMedicationOther: event.target.value,
     });
   };
 
@@ -864,7 +911,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
       startedMedicationDate: "",
       stopedMedicationDate: "",
       pastPsychiatricMedication: [],
-      stopedPsychiatricMedicationsReason: "",
+      stopedPsychiatricMedicationsReason: [],
       prescribeThisMedication: "",
       prescribeThisMedicationNameDate: "",
       whatClinicWorked: "",
@@ -881,10 +928,17 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     let newCheckedItems = [...pastHistoryValue?.pastPsychiatricMedication];
 
     if (isChecked) {
-      newCheckedItems.push({
-        condition: itemValue,
-        effect: "Improved symptoms",
-      });
+      if (itemValue !== "Other") {
+        newCheckedItems.push({
+          condition: itemValue,
+          effect: "Improved symptoms",
+        });
+      } else {
+        newCheckedItems.push({
+          condition: itemValue,
+          effect: pastHistoryValue.pastPsychiatricMedicationOther,
+        });
+      }
     } else {
       newCheckedItems = newCheckedItems.filter(
         (item) => item.condition !== itemValue
@@ -922,9 +976,22 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   };
 
   const handleStopedPsychiatricMedicationsReasonChange = (event) => {
+    const itemValue = event.target.value;
+    const isChecked = event.target.checked;
+
+    let newCheckedItems = [
+      ...pastHistoryValue.stopedPsychiatricMedicationsReason,
+    ];
+
+    if (isChecked) {
+      newCheckedItems.push(itemValue);
+    } else {
+      newCheckedItems = newCheckedItems.filter((item) => item !== itemValue);
+    }
+
     setPastHistoryValue({
       ...pastHistoryValue,
-      stopedPsychiatricMedicationsReason: event.target.value,
+      stopedPsychiatricMedicationsReason: newCheckedItems,
     });
   };
 
@@ -979,17 +1046,31 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     setPastHistoryValue({
       ...pastHistoryValue,
       admittedPsychiatricHospital: event.target.value,
-      psychiatricHospitalizationReason: "",
+      psychiatricHospitalizationReason: [],
       receivedTreatment: "",
       admittedHospitalName: "",
+      hospitalizedDate: "",
       hospitalizedLong: "",
     });
   };
 
   const handlePsychiatricHospitalizationReasonChange = (event) => {
+    const itemValue = event.target.value;
+    const isChecked = event.target.checked;
+
+    let newCheckedItems = [
+      ...pastHistoryValue?.psychiatricHospitalizationReason,
+    ];
+
+    if (isChecked) {
+      newCheckedItems.push(itemValue);
+    } else {
+      newCheckedItems = newCheckedItems.filter((item) => item !== itemValue);
+    }
+
     setPastHistoryValue({
       ...pastHistoryValue,
-      psychiatricHospitalizationReason: event.target.value,
+      psychiatricHospitalizationReason: newCheckedItems,
     });
   };
 
@@ -1104,7 +1185,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
           onChange={handlePreviouslyExperiencedSymptomchange}
           checked={pastHistoryValue?.previouslyExperiencedSymptom}
           errors={errors.previouslyExperiencedSymptom}
-          title2="Please describe your symptoms at that time:"
+          title2={PreviouslyExperiencedSymptomTitle}
           value={pastHistoryValue?.describeSymptoms}
           onChange2={handleSymtomsChange}
           errors2={errors.describeSymptoms}
@@ -1142,7 +1223,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
 
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
-                title="During this time did you sleep fewer than 4 hours per night for 4-7 or more consecutive nights, without feeling excessively tired?"
+                title="During this time, did you sleep fewer than 4 hours per night for 4-7 or more consecutive nights, without feeling excessively tired?"
                 onChange={handleSleepFewerChange}
                 options={SleepFewerOptions}
                 checked={pastHistoryValue?.sleepFewer}
@@ -1203,27 +1284,31 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
           errors={errors.experienceFollowing}
         />
 
-        {pastHistoryValue?.experienceFollowing.length > 0 ? (
-          <div>
-            <div className="w-[68%] mx-auto mt-3">
-              <TextFollowUp
-                title="If you have thoughts, behaviors, or rituals that are recurrent, what thoughts, behaviors, or rituals are you having?"
-                onChange={handleChange}
-                name="recurrentRituals"
-                value={pastHistoryValue?.recurrentRituals}
-                error={errors.recurrentRituals}
-              />
-            </div>
+        {pastHistoryValue?.experienceFollowing.filter(
+          (item) =>
+            item ===
+            "Had thoughts, behaviors, or rituals that are recurrent, intrusive, and time consuming"
+        ).length > 0 ? (
+          <div className="w-[68%] mx-auto mt-3">
+            <TextFollowUp
+              title="If you have thoughts, behaviors, or rituals that are recurrent, what thoughts, behaviors, or rituals are you having?"
+              onChange={handleChange}
+              name="recurrentRituals"
+              value={pastHistoryValue?.recurrentRituals}
+              error={errors.recurrentRituals}
+            />
+          </div>
+        ) : null}
 
-            <div className="w-[68%] mx-auto mt-3">
-              <RadioFollowUp
-                title="When experiencing these symptoms, were you drinking alcohol or using any substances?"
-                options={SymptomsDrinkingAlcoholOptions}
-                onChange={handleSymptomsDrinkingAlcoholChange}
-                checked={pastHistoryValue?.symptomsDrinkingAlcohol}
-                error={errors.symptomsDrinkingAlcohol}
-              />
-            </div>
+        {pastHistoryValue?.experienceFollowing.length > 0 ? (
+          <div className="w-[68%] mx-auto mt-3">
+            <RadioFollowUp
+              title="When experiencing these symptoms, were you drinking alcohol or using any substances?"
+              options={SymptomsDrinkingAlcoholOptions}
+              onChange={handleSymptomsDrinkingAlcoholChange}
+              checked={pastHistoryValue?.symptomsDrinkingAlcohol}
+              error={errors.symptomsDrinkingAlcohol}
+            />
           </div>
         ) : null}
 
@@ -1291,7 +1376,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="117. Have you ever taken any other medications in the past for a psychiatric or mental health condition, not listed above? This may include medications that did not work well or that were discontinued for other reasons."
+          title="117. Have you ever taken any other medications in the past for a psychiatric or mental health condition, not listed above? This may include medications that did not work well or that were stopped for other reasons."
           type="radio"
           options={OtherMedicationsOptions}
           onChange={handleOtherMedicationschange}
@@ -1302,7 +1387,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
           <div>
             <div className="w-[68%] mx-auto mt-3">
               <TextFollowUp
-                title="Please list the name(s) of the past medication, dose, and how often you take the medication."
+                title="Please list the name(s) of the past medication(s), dose(s), and how often you took the medication."
                 onChange={handleChange}
                 name="pastMedicationName"
                 value={pastHistoryValue?.pastMedicationName}
@@ -1336,15 +1421,19 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
               options={PastPsychiatricMedicationOptions}
               options2={PastPhysicalLogicOptions}
               type2="radio"
+              name3="pastPsychiatricMedicationOther"
+              value3={pastHistoryValue.pastPsychiatricMedicationOther}
+              onChange3={handlePastPsychiatricMedicationOtherChange}
               onChange={handlePastPsychiatricMedicationChange}
               errors={errors.pastPsychiatricMedication}
               checked={pastHistoryValue?.pastPsychiatricMedication}
               onChange2={handlePsychiatricMedicationChange}
             />
 
-            <div className="w-[68%] mx-auto mt-3">
-              <RadioFollowUp
+            <div>
+              <CardField
                 title="Past psychiatric medications were stopped due to:"
+                type="checkbox"
                 options={StopedPsychiatricMedicationsReasonOptions}
                 onChange={handleStopedPsychiatricMedicationsReasonChange}
                 checked={pastHistoryValue?.stopedPsychiatricMedicationsReason}
@@ -1394,7 +1483,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
 
             <div className="w-[68%] mx-auto mt-3">
               <TextFollowUp
-                title="From what date to what date did you see this psychiatrist?"
+                title="From what date(s) to what date(s) did you see these psychiatrists?"
                 onChange={handleChange}
                 name="thisPsychiatristSeeDate"
                 value={pastHistoryValue?.thisPsychiatristSeeDate}
@@ -1404,7 +1493,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
 
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
-                title="During this psychiatric, I attended sessions with your psychiatrist?"
+                title="During this psychiatric treatment, how often did you attend sessions with your psychiatrist?"
                 options={AttendedSessionsPsychiatristOptions}
                 onChange={handleAttendedSessionsPsychiatristChange}
                 checked={pastHistoryValue?.attendedSessionsPsychiatrist}
@@ -1447,7 +1536,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
 
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
-                title="During this psychotherapy, I attended sessions:"
+                title="During this psychotherapy treatment, how often did you attend these sessions:"
                 onChange={handleAttendedSessionsPsychotherapyChange}
                 options={AttendedSessionsPsychotherapyOptions}
                 checked={pastHistoryValue?.attendedSessionsPsychotherapy}
@@ -1488,9 +1577,10 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
 
         {pastHistoryValue?.admittedPsychiatricHospital === "Yes" ? (
           <div>
-            <div className="w-[68%] mx-auto mt-3">
-              <RadioFollowUp
+            <div>
+              <CardField
                 title="Please list the reason for the psychiatric hospitalization"
+                type="checkbox"
                 onChange={handlePsychiatricHospitalizationReasonChange}
                 options={PsychiatricHospitalizationReasonOptions}
                 checked={pastHistoryValue?.psychiatricHospitalizationReason}
@@ -1498,8 +1588,8 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
               />
             </div>
 
-            <div className="w-[68%] mx-auto mt-3">
-              <RadioFollowUp
+            <div>
+              <CardField
                 title="Please list the treatment you received during the psychiatric hospitalization"
                 onChange={handleReceivedTreatmentChange}
                 options={ReceivedTreatmentOptions}
@@ -1510,7 +1600,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
 
             <div className="w-[68%] mx-auto mt-3">
               <TextFollowUp
-                title="Please list the name of the hospital you were admitted to. If there is more than one instance, please list the information for all admissions."
+                title="Please list the name(s) of the hospital you were admitted to. If there is more than one instance, please list the information for all admissions."
                 onChange={handleChange}
                 name="admittedHospitalName"
                 value={pastHistoryValue?.admittedHospitalName}
@@ -1520,7 +1610,17 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
 
             <div className="w-[68%] mx-auto mt-3">
               <TextFollowUp
-                title="Please list how long you were hospitalized"
+                title="Please list the dates or year(s) in which you were hospitalized"
+                onChange={handleChange}
+                name="hospitalizedDate"
+                value={pastHistoryValue?.hospitalizedDate}
+                error={errors.hospitalizedDate}
+              />
+            </div>
+
+            <div className="w-[68%] mx-auto mt-3">
+              <TextFollowUp
+                title="Please list how long you were hospitalized on each occasion"
                 onChange={handleChange}
                 name="hospitalizedLong"
                 value={pastHistoryValue?.hospitalizedLong}

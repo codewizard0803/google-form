@@ -100,6 +100,9 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
   ];
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setCurrentDailyActivitiesValue(globalCurrentDailyActivities);
   }, [globalCurrentDailyActivities]);
 

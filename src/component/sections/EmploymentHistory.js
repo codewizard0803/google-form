@@ -183,6 +183,9 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
   ];
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setEmploymentHistoryValue(globalEmploymentHistory);
   }, [globalEmploymentHistory]);
 

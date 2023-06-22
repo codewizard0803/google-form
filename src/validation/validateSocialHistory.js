@@ -3,11 +3,11 @@ const validateSocialHistory = (value) => {
   let errors = {};
 
   if (!value.barriersReceivingHealthcare.trim()) {
-    errors.barriersReceivingHealthcare = "Your Field is required.";
+    errors.barriersReceivingHealthcare = "See required fields above.";
     isValid = false;
   } else if (value.barriersReceivingHealthcare === "Yes") {
     if (value.selectbarriersHealthcare.length === 0) {
-      errors.selectbarriersHealthcare = "Your Field is required.";
+      errors.selectbarriersHealthcare = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -15,7 +15,7 @@ const validateSocialHistory = (value) => {
   }
 
   if (value.describeCurrentLivingSituation.length === 0) {
-    errors.describeCurrentLivingSituation = "Your Field is required.";
+    errors.describeCurrentLivingSituation = "See required fields above.";
     isValid = false;
   } else if (
     value?.describeCurrentLivingSituation.filter(
@@ -23,17 +23,17 @@ const validateSocialHistory = (value) => {
     ).length > 0
   ) {
     if (value.livesYourHome.length === 0) {
-      errors.livesYourHome = "Your Field is required.";
+      errors.livesYourHome = "See required fields above.";
       isValid = false;
     }
 
     if (!value.ownYourHome.trim()) {
-      errors.ownYourHome = "Your Field is required.";
+      errors.ownYourHome = "See required fields above.";
       isValid = false;
     }
 
     if (!value.describeAdditionalStressors.trim()) {
-      errors.describeAdditionalStressors = "Your Field is required.";
+      errors.describeAdditionalStressors = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -41,11 +41,11 @@ const validateSocialHistory = (value) => {
   }
 
   if (!value.presentTimeDanger.trim()) {
-    errors.presentTimeDanger = "Your Field is required.";
+    errors.presentTimeDanger = "See required fields above.";
     isValid = false;
   } else if (value.presentTimeDanger === "Yes") {
     if (!value.describeFeelDanger.trim()) {
-      errors.describeFeelDanger = "Your Field is required.";
+      errors.describeFeelDanger = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -53,37 +53,37 @@ const validateSocialHistory = (value) => {
   }
 
   if (!value.allStressorsPastYear.trim()) {
-    errors.allStressorsPastYear = "Your Field is required.";
+    errors.allStressorsPastYear = "See required fields above.";
     isValid = false;
   } else {
     errors.allStressorsPastYear = "";
     if (!value.stressorsAffect.trim()) {
-      errors.stressorsAffect = "Your Field is required.";
+      errors.stressorsAffect = "See required fields above.";
       isValid = false;
     }
 
     if (!value.eachStressorsAffect.trim()) {
-      errors.eachStressorsAffect = "Your Field is required.";
+      errors.eachStressorsAffect = "See required fields above.";
       isValid = false;
     }
   }
 
   if (!value.otherStressorsBesides.trim()) {
-    errors.otherStressorsBesides = "Your Field is required.";
+    errors.otherStressorsBesides = "See required fields above.";
     isValid = false;
   } else if (value.otherStressorsBesides === "Yes") {
     if (!value.explainAllStressors.trim()) {
-      errors.explainAllStressors = "Your Field is required.";
+      errors.explainAllStressors = "See required fields above.";
       isValid = false;
     }
 
     if (!value.affectEmotionalSymptoms.trim()) {
-      errors.affectEmotionalSymptoms = "Your Field is required.";
+      errors.affectEmotionalSymptoms = "See required fields above.";
       isValid = false;
     }
 
     if (!value.eachAffectEmotionalSymptoms.trim()) {
-      errors.eachAffectEmotionalSymptoms = "Your Field is required.";
+      errors.eachAffectEmotionalSymptoms = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -91,11 +91,11 @@ const validateSocialHistory = (value) => {
   }
 
   if (!value.otherStressorsExperience.trim()) {
-    errors.otherStressorsExperience = "Your Field is required.";
+    errors.otherStressorsExperience = "See required fields above.";
     isValid = false;
   } else if (value.otherStressorsExperience === "Yes") {
     if (!value.explainStressorsExperience.trim()) {
-      errors.explainStressorsExperience = "Your Field is required.";
+      errors.explainStressorsExperience = "See required fields above.";
       isValid = false;
     }
   } else {

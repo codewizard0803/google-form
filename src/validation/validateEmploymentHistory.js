@@ -3,7 +3,7 @@ const validateEmploymentHistory = (value) => {
   let errors = {};
 
   if (!value.currentEmploymentStatus.trim()) {
-    errors.currentEmploymentStatus = "Your Field is required.";
+    errors.currentEmploymentStatus = "See required fields above.";
     isValid = false;
   } else if (
     value?.currentEmploymentStatus === "Employed <20 hours per week" ||
@@ -12,22 +12,22 @@ const validateEmploymentHistory = (value) => {
     value?.currentEmploymentStatus === "Employed full time"
   ) {
     if (!value.employerName.trim()) {
-      errors.employerName = "Your Field is required.";
+      errors.employerName = "See required fields above.";
       isValid = false;
     }
 
     if (!value.employmentTitle.trim()) {
-      errors.employmentTitle = "Your Field is required.";
+      errors.employmentTitle = "See required fields above.";
       isValid = false;
     }
 
     if (!value.jobDuties.trim()) {
-      errors.jobDuties = "Your Field is required.";
+      errors.jobDuties = "See required fields above.";
       isValid = false;
     }
 
     if (!value.difficultyJobDuties.trim()) {
-      errors.difficultyJobDuties = "Your Field is required.";
+      errors.difficultyJobDuties = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -35,49 +35,49 @@ const validateEmploymentHistory = (value) => {
   }
 
   if (!value?.pastEmployerName?.trim()) {
-    errors.pastEmployerName = "Your Field is required.";
+    errors.pastEmployerName = "See required fields above.";
     isValid = false;
   } else {
     errors.pastEmployerName = "";
     if (!value?.jobTitle?.trim()) {
-      errors.jobTitle = "Your Field is required.";
+      errors.jobTitle = "See required fields above.";
       isValid = false;
     }
 
     if (!value?.pastEmploymentBegan?.trim()) {
-      errors.pastEmploymentBegan = "Your Field is required.";
+      errors.pastEmploymentBegan = "See required fields above.";
       isValid = false;
     }
 
     if (!value?.pastEmploymentEnd?.trim()) {
-      errors.pastEmploymentEnd = "Your Field is required.";
+      errors.pastEmploymentEnd = "See required fields above.";
       isValid = false;
     }
 
     if (!value?.pastEmploymentEndReason?.trim()) {
-      errors.pastEmploymentEndReason = "Your Field is required.";
+      errors.pastEmploymentEndReason = "See required fields above.";
       isValid = false;
     }
   }
 
   if (!value.pastImmediatelyEmployerName.trim()) {
-    errors.pastImmediatelyEmployerName = "Your Field is required.";
+    errors.pastImmediatelyEmployerName = "See required fields above.";
     isValid = false;
   } else {
     errors.pastImmediatelyEmployerName = "";
   }
 
   if (!value.pastWorkplaceInjuries.trim()) {
-    errors.pastWorkplaceInjuries = "Your Field is required.";
+    errors.pastWorkplaceInjuries = "See required fields above.";
     isValid = false;
   } else if (value.pastWorkplaceInjuries === "Yes") {
     if (!value.injuriesOccurTime.trim()) {
-      errors.injuriesOccurTime = "Your Field is required.";
+      errors.injuriesOccurTime = "See required fields above.";
       isValid = false;
     }
 
     if (!value.injuryNature.trim()) {
-      errors.injuryNature = "Your Field is required.";
+      errors.injuryNature = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -85,32 +85,32 @@ const validateEmploymentHistory = (value) => {
   }
 
   if (!value.workerCompensationClaim.trim()) {
-    errors.workerCompensationClaim = "Your Field is required.";
+    errors.workerCompensationClaim = "See required fields above.";
     isValid = false;
   } else {
     errors.workerCompensationClaim = "";
   }
 
   if (!value.placedDisability.trim()) {
-    errors.placedDisability = "Your Field is required.";
+    errors.placedDisability = "See required fields above.";
     isValid = false;
   } else {
     errors.placedDisability = "";
   }
 
   if (!value.receivedNegativeWork.trim()) {
-    errors.receivedNegativeWork = "Your Field is required.";
+    errors.receivedNegativeWork = "See required fields above.";
     isValid = false;
   } else {
     errors.receivedNegativeWork = "";
   }
 
   if (!value.currentSourcesIncome.trim()) {
-    errors.currentSourcesIncome = "Your Field is required.";
+    errors.currentSourcesIncome = "See required fields above.";
     isValid = false;
   } else if (value.currentSourcesIncome !== "") {
     if (!value.otherEmploymentList.trim()) {
-      errors.otherEmploymentList = "Your Field is required.";
+      errors.otherEmploymentList = "See required fields above.";
       isValid = false;
     }
   } else {

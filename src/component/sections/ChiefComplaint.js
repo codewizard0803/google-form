@@ -15,7 +15,7 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
 
   const [chiefComplaintValue, setChiefComplaintValue] = useState({
     mostBothered: "",
-    currentlyExperiencingSymptom: "",
+    currentlyExperiencingSymptom: [],
     currentEpisodeDate: "",
     specificStressfulSymptom: "",
     specificStressfulEvent: "",
@@ -23,6 +23,10 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
   });
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+    console.log("cheifComplanintValue", chiefComplaint);
     setChiefComplaintValue(chiefComplaint);
   }, [chiefComplaint]);
 
@@ -208,9 +212,32 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
   };
 
   const handleCurrentlyExperiencingSymptomChange = (event) => {
+    const itemValue = event.target.value;
+    const isChecked = event.target.checked;
+
+    let newCheckedItems = [
+      ...chiefComplaintValue?.currentlyExperiencingSymptom,
+    ];
+
+    if (isChecked) {
+      if (itemValue === "None of the above") {
+        newCheckedItems = ["None of the above"];
+      } else {
+        if (
+          newCheckedItems.filter((item) => item === "None of the above")
+            .length > 0
+        ) {
+          newCheckedItems = [];
+        }
+        newCheckedItems.push(itemValue);
+      }
+    } else {
+      newCheckedItems = newCheckedItems.filter((item) => item !== itemValue);
+    }
+
     setChiefComplaintValue({
       ...chiefComplaintValue,
-      currentlyExperiencingSymptom: event.target.value,
+      currentlyExperiencingSymptom: newCheckedItems,
       currentEpisodeDate: "",
     });
   };
@@ -271,15 +298,13 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
 
         <CardField
           title="51. What emotional symptoms are you currently experiencing or recently experienced?"
-          type="radio"
+          type="checkbox"
           options={currentlyExperiencingSymptomsOptions}
           onChange={handleCurrentlyExperiencingSymptomChange}
           checked={chiefComplaintValue?.currentlyExperiencingSymptom}
           errors={errors.currentlyExperiencingSymptom}
         />
-        {chiefComplaintValue?.currentlyExperiencingSymptom !== "" &&
-        chiefComplaintValue?.currentlyExperiencingSymptom !==
-          "None of the above" ? (
+        {chiefComplaintValue?.currentlyExperiencingSymptom.length > 0 ? (
           <CardField
             title="When did this current episode of these emotional symptoms begin?"
             type="radio"

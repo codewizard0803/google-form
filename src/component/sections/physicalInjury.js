@@ -26,6 +26,9 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
   });
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setPhysicalInjuryValue(physicalInjury);
   }, [physicalInjury]);
 
@@ -105,7 +108,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <TextField
-          title="40. If Your Injury Was Initially Physical, Describe the First Symptoms (Pain) You Experienced:"
+          title="40. If your injury was initially physical, describe the first symptoms (pain) you experienced:"
           placeholder="Your answer"
           name="firstSymptoms"
           value={physicalInjuryValue.firstSymptoms}
@@ -114,7 +117,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="41. If Your Injury Was Initially Physical, Describe the First Treatment You Received Following This Injury(Medical, Chiropractic, Physical Therapy PT, Injections):"
+          title="41. If your injury was initially physical, describe the first treatment you received following this injury (medical, chiropractic, physical therapy pt, injections):"
           placeholder="Your answer"
           name="firstTreatment"
           value={physicalInjuryValue.firstTreatment}
@@ -123,7 +126,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="42. If Your Injury Was Initially Physical, Describe the Rest of Your Treatment (Medical, Chiropractic, PT)"
+          title="42. If your injury was initially physical, describe the rest of your treatment (medical, chiropractic, pt)"
           placeholder="Your answer"
           name="restYourTreatment"
           value={physicalInjuryValue.restYourTreatment}
@@ -132,7 +135,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="43. List the Doctors You Have Seen For This Physical Injury:"
+          title="43. List the doctors you have seen for this physical injury:"
           placeholder="Your answer"
           name="doctorsList"
           value={physicalInjuryValue.doctorsList}
@@ -150,7 +153,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="45. List the Surgeries You Have Received for This Physical Injury:"
+          title="45. List the surgeries you have received for this physical injury:"
           placeholder="Your answer"
           name="surgeryList"
           value={physicalInjuryValue.surgeryList}
@@ -159,7 +162,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="46. List the Medications You Have Received for This Physical Injury:"
+          title="46. List the medications you have received for this physical injury:"
           placeholder="Your answer"
           name="medicationList"
           value={physicalInjuryValue.medicationList}
@@ -168,7 +171,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="47. Have Any of the Above Treatments Helped Relieve Your Pain?"
+          title="47. Have any of the above treatments helped relieve your pain?"
           type="radio"
           options={treatmentsHelpedOptions}
           checked={physicalInjuryValue.treatmentsHelped}
@@ -177,7 +180,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="48. Are You Still Working?"
+          title="48. Are you still working?"
           type="radio"
           options={stillWorkingOptions}
           onChange={handleStillWorkingChange}
@@ -186,7 +189,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="49. If Not Working, Reason for Leaving?"
+          title="49. If not working, reason for leaving?"
           placeholder="Your answer"
           name="leavingReason"
           value={physicalInjuryValue.leavingReason}

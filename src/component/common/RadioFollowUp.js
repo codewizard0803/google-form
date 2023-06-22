@@ -1,13 +1,10 @@
 import React from "react";
-import classnames from 'classnames'
-
+import classnames from "classnames";
 
 const RadioFollowUp = ({ title, onChange, error, options, checked }) => {
   return (
     <div className="w-[95%] mx-auto p-2 shadow-lg">
-      <p className="text-left text-[23px]">
-        {title}
-      </p>
+      <p className="text-left text-[20px]">{title}</p>
       <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
       <div
         className={classnames("mt-5 p-2", {
@@ -32,9 +29,7 @@ const RadioFollowUp = ({ title, onChange, error, options, checked }) => {
       </div>
 
       {error && (
-        <div className="text-red-500 text-left text-[12px] mt-2">
-          {error}
-        </div>
+        <div className="text-red-500 text-left text-[12px] mt-2">{error}</div>
       )}
     </div>
   );

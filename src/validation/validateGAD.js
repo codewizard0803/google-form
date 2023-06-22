@@ -3,46 +3,46 @@ const GAD = (value) => {
   let errors = {};
 
   if (!value.feelingNervous.trim()) {
-    errors.feelingNervous = "Your Field is required.";
+    errors.feelingNervous = "See required fields above.";
     isValid = false;
   } else if (
     value.feelingNervous !== "Not at all" &&
     value.feltAnxiousLong === ""
   ) {
-    errors.feltAnxiousLong = "Your Field is required.";
+    errors.feltAnxiousLong = "See required fields above.";
     isValid = false;
   } else if (
     value.feelingNervous !== "Not at all" &&
     value.feelAnxiousOften === ""
   ) {
-    errors.feelAnxiousOften = "Your Field is required.";
+    errors.feelAnxiousOften = "See required fields above.";
     isValid = false;
   } else {
     errors.feelingNervous = "";
   }
 
   if (!value.stopControlWorring.trim()) {
-    errors.stopControlWorring = "Your Field is required.";
+    errors.stopControlWorring = "See required fields above.";
     isValid = false;
   } else {
     errors.stopControlWorring = "";
   }
 
   if (!value.worringDifferentThing.trim()) {
-    errors.worringDifferentThing = "Your Field is required.";
+    errors.worringDifferentThing = "See required fields above.";
     isValid = false;
   } else if (value.worringDifferentThing !== "Not at all") {
     if (value.worringThing === "") {
-      errors.worringThing = "Your Field is required.";
+      errors.worringThing = "See required fields above.";
       isValid = false;
     } else if (
       value.worringThing === "Other" &&
       value.describeWorringThing === ""
     ) {
-      errors.describeWorringThing = "Your Field is required.";
+      errors.describeWorringThing = "See required fields above.";
       isValid = false;
     } else if (value.specificAnxietyWorse === "") {
-      errors.specificAnxietyWorse = "Your Field is required.";
+      errors.specificAnxietyWorse = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -50,51 +50,51 @@ const GAD = (value) => {
   }
 
   if (!value.troubleRelaxing.trim()) {
-    errors.troubleRelaxing = "Your Field is required.";
+    errors.troubleRelaxing = "See required fields above.";
     isValid = false;
   } else {
     errors.troubleRelaxing = "";
   }
 
   if (!value.restlessSitHard.trim()) {
-    errors.restlessSitHard = "Your Field is required.";
+    errors.restlessSitHard = "See required fields above.";
     isValid = false;
   } else {
     errors.restlessSitHard = "";
   }
 
   if (!value.easilyAnnoyed.trim()) {
-    errors.easilyAnnoyed = "Your Field is required.";
+    errors.easilyAnnoyed = "See required fields above.";
     isValid = false;
   } else {
     errors.easilyAnnoyed = "";
   }
 
   if (!value.feelingAfraidAwfulThing.trim()) {
-    errors.feelingAfraidAwfulThing = "Your Field is required.";
+    errors.feelingAfraidAwfulThing = "See required fields above.";
     isValid = false;
   } else {
     errors.feelingAfraidAwfulThing = "";
   }
 
   if (!value.panicAttacks.trim()) {
-    errors.panicAttacks = "Your Field is required.";
+    errors.panicAttacks = "See required fields above.";
     isValid = false;
   } else if (value.panicAttacks === "Yes") {
     if (value.panicPhysicalSymptoms === "") {
-      errors.panicPhysicalSymptoms = "Your Field is required.";
+      errors.panicPhysicalSymptoms = "See required fields above.";
       isValid = false;
     }
     if (value.panicAttacksLastLong === "") {
-      errors.panicAttacksLastLong = "Your Field is required.";
+      errors.panicAttacksLastLong = "See required fields above.";
       isValid = false;
     }
     if (value.panicAttacksList === "") {
-      errors.panicAttacksList = "Your Field is required.";
+      errors.panicAttacksList = "See required fields above.";
       isValid = false;
     }
     if (value.panicAttacksSpontaneous === "") {
-      errors.panicAttacksSpontaneous = "Your Field is required.";
+      errors.panicAttacksSpontaneous = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -102,15 +102,15 @@ const GAD = (value) => {
   }
 
   if (!value.pastTraumaticEvents.trim()) {
-    errors.pastTraumaticEvents = "Your Field is required.";
+    errors.pastTraumaticEvents = "See required fields above.";
     isValid = false;
   } else if (value.pastTraumaticEvents === "Yes") {
-    if (value.traumaticEventExperience === "") {
-      errors.traumaticEventExperience = "Your Field is required.";
+    if (value.traumaticEventExperience.length === 0) {
+      errors.traumaticEventExperience = "See required fields above.";
       isValid = false;
     }
     if (value.describeTraumaticExperience === "") {
-      errors.describeTraumaticExperience = "Your Field is required.";
+      errors.describeTraumaticExperience = "See required fields above.";
       isValid = false;
     }
   } else {

@@ -254,6 +254,9 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
   ];
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setDevelopmentalValue(globalDevelopmentalHistory);
   }, [globalDevelopmentalHistory]);
 

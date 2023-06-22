@@ -3,7 +3,7 @@ const ValidateDemoGraphic = (value) => {
   let errors = {};
 
   if (!value.fullName.trim()) {
-    errors.name = "Full Name is required.";
+    errors.name = "See required fields above.";
     isValid = false;
   } else {
     errors.name = "";
@@ -12,7 +12,7 @@ const ValidateDemoGraphic = (value) => {
   const birthRegex = /^[1-9][0-9]*$/;
 
   if (!value.birth.trim()) {
-    errors.birth = "Date of birth is required.";
+    errors.birth = "See required fields above.";
     isValid = false;
   } else if (!birthRegex.test(value.birth)) {
     errors.birth = "Invalid date of birth format";
@@ -22,7 +22,7 @@ const ValidateDemoGraphic = (value) => {
 
   const emailRegex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
   if (!value.email.trim()) {
-    errors.email = "Email is required";
+    errors.email = "See required fields above.";
     isValid = false;
   } else if (!emailRegex.test(value.email)) {
     errors.email = "Invalid email format";
@@ -33,7 +33,7 @@ const ValidateDemoGraphic = (value) => {
 
   const phoneNumberRegex = /^\+?\d{1,3}[-.\s]?\(?\d{1,3}\)?[-.\s]?\d{3,}[-.\s]?\d{2,}[-.\s]?\d{2,}$/;
   if (!value.phoneNumber.trim()) {
-    errors.phoneNumber = "Phone number is required";
+    errors.phoneNumber = "See required fields above.";
     isValid = false;
   } else if (!phoneNumberRegex.test(value.phoneNumber)) {
     errors.phoneNumber = "Invalid phone number format";
@@ -43,17 +43,17 @@ const ValidateDemoGraphic = (value) => {
   }
 
   if (value.checkedEthnicityItems.length === 0) {
-    errors.checkedEthnicityItems = "Please select at least one checkbox";
+    errors.checkedEthnicityItems = "See required fields above.";
     isValid = false;
   } else {
     errors.checkedEthnicityItems = "";
   }
 
   if (!value.radioSexItem.trim()) {
-    errors.radioSexItem = "Your Sex assigned at birth is required.";
+    errors.radioSexItem = "See required fields above.";
     isValid = false;
   } else if (value.radioSexItem === "female" && value.pregnant === null) {
-    errors.pregnant = "Your pregnant is required";
+    errors.pregnant = "See required fields above";
     isValid = false;
   } else {
     errors.radioSexItem = "";
@@ -61,14 +61,14 @@ const ValidateDemoGraphic = (value) => {
   }
 
   if (!value.radioPreferPronounItem.trim()) {
-    errors.radioPreferPronounItem = "Your preferred pronoun is required.";
+    errors.radioPreferPronounItem = "See required fields above.";
     isValid = false;
   } else {
     errors.radioPreferPronounItem = "";
   }
 
   if (!value.maritalStatusItems.trim()) {
-    errors.maritalStatusItems = "Your marital status is required.";
+    errors.maritalStatusItems = "See required fields above.";
     isValid = false;
   } else {
     errors.maritalStatusItems = "";

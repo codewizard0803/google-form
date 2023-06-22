@@ -20,9 +20,10 @@ const CardCheckField = ({
       }}
     >
       <CardContent>
-        <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-          {title}
-        </Typography>
+        <Typography
+          sx={{ fontSize: 20, textAlign: "left" }}
+          dangerouslySetInnerHTML={{ __html: title }}
+        ></Typography>
         <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
         <div
           className={classnames("mt-5 p-2", {

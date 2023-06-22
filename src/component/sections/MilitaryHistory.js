@@ -85,6 +85,9 @@ const MilitaryHistory = ({ currentSection, setCurrentSection }) => {
   ];
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setMilitaryHistoryValue(globalMilitaryHistory);
   }, [globalMilitaryHistory]);
 

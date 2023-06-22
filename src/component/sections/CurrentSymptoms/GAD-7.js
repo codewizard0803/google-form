@@ -7,6 +7,7 @@ import RadioFollowUp from "../../common/RadioFollowUp";
 import useGlobalContext from "../../../hooks/useGlobalContext";
 import TextFollowUp from "../../common/TextFollowUp";
 import validateGAD from "../../../validation/validateGAD";
+import TextField from "../../common/TextField";
 
 const GAD = ({ currentSection, setCurrentSection }) => {
   const { GAD7, setGAD7 } = useGlobalContext();
@@ -28,17 +29,22 @@ const GAD = ({ currentSection, setCurrentSection }) => {
     feelingAfraidAwfulThing: "",
     currentAnxietySymptoms: "0",
     panicAttacks: "",
-    panicPhysicalSymptoms: "",
+    panicPhysicalSymptoms: [],
     panicAttacksLastLong: "",
     panicAttacksList: "",
     panicAttacksSpontaneous: "",
     pastTraumaticEvents: "",
-    traumaticEventExperience: "",
+    traumaticEventExperience: [],
     describeTraumaticExperience: "",
     gadScore: "0",
+    panicOccur: "",
   });
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+    console.log("GADValue", GADValue);
     setGADValue(GAD7);
   }, [GAD7]);
 
@@ -458,19 +464,14 @@ const GAD = ({ currentSection, setCurrentSection }) => {
 
   const PanicAttacksSpontaneousOptions = [
     {
-      label: "Yes",
-      value: "Yes",
+      label: "Yes, my panic attacks are unrelated to specific events",
+      value: "Yes, my panic attacks are unrelated to specific events",
       name: "PanicAttacksSpontaneousOptionsYes",
     },
     {
-      label: "No",
-      value: "No",
+      label: "No, my panic attacks are not triggered by specific events",
+      value: "No, my panic attacks are not triggered by specific events",
       name: "PanicAttacksSpontaneousOptionsNo",
-    },
-    {
-      label: "Unsure",
-      value: "Unsure",
-      name: "PanicAttacksSpontaneousOptionsUnsure",
     },
   ];
 
@@ -648,16 +649,28 @@ const GAD = ({ currentSection, setCurrentSection }) => {
     setGADValue({
       ...GADValue,
       panicAttacks: event.target.value,
-      panicPhysicalSymptoms: "",
+      panicPhysicalSymptoms: [],
+      panicOccur: "",
       panicAttacksLastLong: "",
       panicAttacksSpontaneous: "",
     });
   };
 
   const handlePanicPhysicalSymptomsChange = (event) => {
+    const itemValue = event.target.value;
+    const isChecked = event.target.checked;
+
+    let newCheckedItems = [...GADValue.panicPhysicalSymptoms];
+
+    if (isChecked) {
+      newCheckedItems.push(itemValue);
+    } else {
+      newCheckedItems = newCheckedItems.filter((item) => item !== itemValue);
+    }
+
     setGADValue({
       ...GADValue,
-      panicPhysicalSymptoms: event.target.value,
+      panicPhysicalSymptoms: newCheckedItems,
     });
   };
 
@@ -679,15 +692,26 @@ const GAD = ({ currentSection, setCurrentSection }) => {
     setGADValue({
       ...GADValue,
       pastTraumaticEvents: event.target.value,
-      traumaticEventExperience: "",
+      traumaticEventExperience: [],
       describeTraumaticExperience: "",
     });
   };
 
   const handleTraumaticEventExperienceChange = (event) => {
+    const itemValue = event.target.value;
+    const isChecked = event.target.checked;
+
+    let newCheckedItems = [...GADValue.traumaticEventExperience];
+
+    if (isChecked) {
+      newCheckedItems.push(itemValue);
+    } else {
+      newCheckedItems = newCheckedItems.filter((item) => item !== itemValue);
+    }
+
     setGADValue({
       ...GADValue,
-      traumaticEventExperience: event.target.value,
+      traumaticEventExperience: newCheckedItems,
     });
   };
 
@@ -745,9 +769,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
       <p className="bg-green-400 w-[65%] mx-auto p-3 text-xl text-white rounded-lg mt-5 shadow-lg">
         Current Symptoms
       </p>
-      <p className="bg-blue-400 w-[65%] mx-auto p-1 text-lg text-white rounded-lg mt-3 shadow-lg">
-        GAD-7
-      </p>
+
       <p className="bg-lime-400 w-[65%] mx-auto p-1 text-lg text-white rounded-lg mt-3 shadow-lg">
         Over the last two weeks, how often have you been bothered by the
         following problems?
@@ -755,7 +777,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="76. Feeling nervous, anxious, or on edge"
+          title="76. Over the last <u>2 weeks</u>, how often have you been feeling nervous, anxious, or on edge"
           type="radio"
           options={FeelingNervousOptions}
           onChange={handleFeelingNervousChange}
@@ -787,7 +809,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="77. Not being able to stop or control worrying"
+          title="77. Over the last <u>2 weeks</u>, how often have you been not being able to stop or control worrying"
           type="radio"
           options={StopControlWorringOptions}
           onChange={handleStopControlWorringChange}
@@ -796,7 +818,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="78. Worrying too much about different things"
+          title="78. Over the last <u>2 weeks</u>, how often have you been worrying too much about different things"
           type="radio"
           options={WorringDifferentThingOptions}
           onChange={handleWorringDifferentThingChange}
@@ -840,7 +862,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="79. Trouble relaxing"
+          title="79. Over the last <u>2 weeks</u>, how often have you been trouble relaxing"
           type="radio"
           options={TroubleRelaxingOptions}
           onChange={handleTroubleRelaxingChange}
@@ -849,7 +871,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="80. Being so restless that it's hard to sit still"
+          title="80. Over the last <u>2 weeks</u>, how often have you been being so restless that it's hard to sit still"
           type="radio"
           options={RestlessSitHardOptions}
           onChange={handleRestlessSitHardChange}
@@ -858,7 +880,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="81. Becoming easily annoyed or irritable"
+          title="81. Over the last <u>2 weeks</u>, how often have you been becoming easily annoyed or irritable"
           type="radio"
           options={EasilyAnnoyedOptions}
           onChange={handleEasilyAnnoyedChange}
@@ -867,7 +889,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="82. Feeling afraid as if something awful might happen"
+          title="82. Over the last <u>2 weeks</u>, how often have you been feeling afraid as if something awful might happen"
           type="radio"
           options={FeelingAfraidAwfulThingOptions}
           onChange={handleFeelingAfraidAwfulThingChange}
@@ -878,9 +900,10 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              83. With zero to 1 equaling no or minimal symptoms and 10 equaling
-              the most severe symptoms possible, how do you rate your current
-              anxiety symptoms?
+              83. Over the last <u>2 weeks</u>, how often have you been with
+              zero to 1 equaling no or minimal symptoms and 10 equaling the most
+              severe symptoms possible, how do you rate your current anxiety
+              symptoms?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">
@@ -903,7 +926,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <CardField
-          title="84. Do you experience panic attacks, in which your heart races, you feel like you can't breathe, you shake or sweat?"
+          title={`84. Over the last <span style="text-decoration:underline">2 weeks</span>, how often have you been experience panic attacks, in which your heart races, you feel like you can't breathe, you shake or sweat?`}
           type="radio"
           options={PanicAttacksOptions}
           onChange={handlePanicAttacksChange}
@@ -912,13 +935,22 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
         {GADValue?.panicAttacks === "Yes" ? (
           <div>
-            <div className="w-[68%] mx-auto mt-3">
-              <RadioFollowUp
+            <div>
+              <CardField
                 title="If you experience panic attacks, indicate the physical symptoms that occur."
+                type="checkbox"
                 options={PanicPhysicalSymptomsOptions}
                 onChange={handlePanicPhysicalSymptomsChange}
                 checked={GADValue?.panicPhysicalSymptoms}
                 error={errors.panicPhysicalSymptoms}
+              />
+            </div>
+            <div className="w-[68%] mx-auto mt-3">
+              <TextFollowUp
+                title="If you experience panic attacks, how often do they occur?"
+                name="panicOccur"
+                onChange={handleChange}
+                value={GADValue.panicOccur}
               />
             </div>
             <div className="w-[68%] mx-auto mt-3">
@@ -936,7 +968,6 @@ const GAD = ({ currentSection, setCurrentSection }) => {
                 onChange={handleChange}
                 name="panicAttacksList"
                 value={GADValue.panicAttacksList}
-                error={errors.panicAttacksList}
               />
             </div>
             <div className="w-[68%] mx-auto mt-3">
@@ -961,9 +992,10 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
         {GADValue?.pastTraumaticEvents === "Yes" ? (
           <div>
-            <div className="w-[68%] mx-auto mt-3">
-              <RadioFollowUp
+            <div>
+              <CardField
                 title="What traumatic event(s) did you experience?"
+                type="checkbox"
                 options={TraumaticEventExperienceOptions}
                 onChange={handleTraumaticEventExperienceChange}
                 checked={GADValue?.traumaticEventExperience}

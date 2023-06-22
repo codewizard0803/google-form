@@ -229,6 +229,9 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
   ];
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setSocialHistoryValue(globalSocialHistory);
   }, [globalSocialHistory]);
 

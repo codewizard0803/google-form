@@ -106,7 +106,13 @@ const CardTextFollowUp = ({
                 ) : null
               ) : checked === item.value ? (
                 <div className="w-[95%] mx-auto p-3  shadow-lg ">
-                  <p className="text-left text-[20px] mt-2">{title2}</p>
+                  {Array.isArray(title2) ? (
+                    <p className="text-left text-[20px] mt-2">
+                      {title2.filter((p) => p.label === item.label)[0].title}
+                    </p>
+                  ) : (
+                    <p className="text-left text-[20px] mt-2">{title2}</p>
+                  )}
                   <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
                   <div className="mt-5 p-2">
                     <input

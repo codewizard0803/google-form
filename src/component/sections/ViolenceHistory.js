@@ -50,6 +50,9 @@ const ViolenceHistory = ({ currentSection, setCurrentSection }) => {
   ];
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setViolenceHistoryValue(globalViolenceHistory);
   }, [globalViolenceHistory]);
 

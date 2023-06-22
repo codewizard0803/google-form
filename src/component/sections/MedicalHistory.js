@@ -40,6 +40,9 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setMedicalHistoryValue(globalMedicalHistory);
   }, [globalMedicalHistory]);
 

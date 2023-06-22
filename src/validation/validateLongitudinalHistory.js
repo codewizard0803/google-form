@@ -3,58 +3,58 @@ const validateLongitudinalHistory = (value) => {
   let errors = {};
 
   if (!value.emotionEpisodeBegan.trim()) {
-    errors.emotionEpisodeBegan = "Your Field is required.";
+    errors.emotionEpisodeBegan = "See required fields above.";
     isValid = false;
   } else {
     errors.emotionEpisodeBegan = "";
   }
 
   if (!value.emotionSymptom.trim()) {
-    errors.emotionSymptom = "Your Field is required.";
+    errors.emotionSymptom = "See required fields above.";
     isValid = false;
   } else {
     errors.emotionSymptom = "";
   }
 
   if (!value.mostWorstSymptom.trim()) {
-    errors.mostWorstSymptom = "Your Field is required.";
+    errors.mostWorstSymptom = "See required fields above.";
     isValid = false;
   } else {
     errors.mostWorstSymptom = "";
   }
 
   if (!value.emotionalSymptomBecome.trim()) {
-    errors.emotionalSymptomBecome = "Your Field is required.";
+    errors.emotionalSymptomBecome = "See required fields above.";
     isValid = false;
   } else {
     errors.emotionalSymptomBecome = "";
   }
 
   if (!value.feelEmotion.trim()) {
-    errors.feelEmotion = "Your Field is required.";
+    errors.feelEmotion = "See required fields above.";
     isValid = false;
   } else if (value.feelEmotion === "other" && value.explainFeelEmotion === "") {
-    errors.explainFeelEmotion = "Your Field is required.";
+    errors.explainFeelEmotion = "See required fields above.";
     isValid = false;
   } else {
     errors.feelEmotion = "";
   }
 
   if (!value.compareEmotionalSymptom.trim()) {
-    errors.compareEmotionalSymptom = "Your Field is required.";
+    errors.compareEmotionalSymptom = "See required fields above.";
     isValid = false;
   } else {
     errors.compareEmotionalSymptom = "";
   }
 
   if (!value.symptomsAffectedJob.trim()) {
-    errors.symptomsAffectedJob = "Your Field is required.";
+    errors.symptomsAffectedJob = "See required fields above.";
     isValid = false;
   } else if (
     value.symptomsAffectedJob === "Yes" &&
     value.describeSymptomsAffectedJob === ""
   ) {
-    errors.describeSymptomsAffectedJob = "Your Field is required.";
+    errors.describeSymptomsAffectedJob = "See required fields above.";
     isValid = false;
   } else {
     errors.symptomsAffectedJob = "";

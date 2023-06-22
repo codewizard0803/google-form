@@ -3,55 +3,55 @@ const validateCurrentEmployer = (value) => {
   let errors = {};
 
   if (!value.currentlyWorkEmployerInjury.trim()) {
-    errors.currentlyWorkEmployerInjury = "Your Field is required.";
+    errors.currentlyWorkEmployerInjury = "See required fields above.";
     isValid = false;
   } else if (
     value.currentlyWorkEmployerInjury === "No" &&
     value.currentlyWorkEmployerName === ""
   ) {
-    errors.currentlyWorkEmployerName = "Your Field is required.";
+    errors.currentlyWorkEmployerName = "See required fields above.";
     isValid = false;
   } else if (
     value.currentlyWorkEmployerInjury === "No" &&
     value.currentlyWorkNatureBusiness === ""
   ) {
-    errors.currentlyWorkNatureBusiness = "Your Field is required.";
+    errors.currentlyWorkNatureBusiness = "See required fields above.";
     isValid = false;
   } else if (
     value.currentlyWorkEmployerInjury === "No" &&
     value.currentlyWorkJobTitle === ""
   ) {
-    errors.currentlyWorkJobTitle = "Your Field is required.";
+    errors.currentlyWorkJobTitle = "See required fields above.";
     isValid = false;
   } else if (
     value.currentlyWorkEmployerInjury === "No" &&
     value.currentlyWorkJobDuties === ""
   ) {
-    errors.currentlyWorkJobDuties = "Your Field is required.";
+    errors.currentlyWorkJobDuties = "See required fields above.";
     isValid = false;
   } else if (
     value.currentlyWorkEmployerInjury === "No" &&
     value.currentlyWorkJobBeganDate === ""
   ) {
-    errors.currentlyWorkJobBeganDate = "Your Field is required.";
+    errors.currentlyWorkJobBeganDate = "See required fields above.";
     isValid = false;
   } else if (
     value.currentlyWorkEmployerInjury === "No" &&
     value.currentlyWorkSchedule === ""
   ) {
-    errors.currentlyWorkSchedule = "Your Field is required.";
+    errors.currentlyWorkSchedule = "See required fields above.";
     isValid = false;
   } else if (
     value.currentlyWorkEmployerInjury === "No" &&
     value.currentlyWorkSalary === ""
   ) {
-    errors.currentlyWorkSalary = "Your Field is required.";
+    errors.currentlyWorkSalary = "See required fields above.";
     isValid = false;
   } else if (
     value.currentlyWorkEmployerInjury === "No" &&
     value.currentlyWorkLikeThisJob === ""
   ) {
-    errors.currentlyWorkLikeThisJob = "Your Field is required.";
+    errors.currentlyWorkLikeThisJob = "See required fields above.";
     isValid = false;
   } else {
     errors.currentlyWorkEmployerInjury = "";

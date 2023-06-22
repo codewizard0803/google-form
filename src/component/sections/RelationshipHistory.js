@@ -185,6 +185,9 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
   ];
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setRelationshipHistoryValue(globalRelationshipHistory);
   }, [globalRelationshipHistory]);
 

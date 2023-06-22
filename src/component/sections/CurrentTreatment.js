@@ -22,6 +22,7 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
     medicationReason: [],
     describeMedicationReason: "",
     medicationsEffectYourCondition: [],
+    medicationsEffectOther: "",
     medicationAsPrescribed: "",
     experiencedSideEffects: [],
     describeSideEffect: "",
@@ -36,6 +37,9 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setCurrentTreatmentValue(globalCurrentTreatment);
   }, [globalCurrentTreatment]);
 
@@ -269,6 +273,7 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
       medicationReason: [],
       describeMedicationReason: "",
       medicationsEffectYourCondition: [],
+      medicationsEffectOther: "",
       medicationAsPrescribed: "",
       experiencedSideEffects: [],
       describeSideEffect: "",
@@ -302,10 +307,17 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
     ];
 
     if (isChecked) {
-      newCheckedItems.push({
-        condition: itemValue,
-        effect: "Improved symptoms",
-      });
+      if (itemValue !== "Other") {
+        newCheckedItems.push({
+          condition: itemValue,
+          effect: "Improved symptoms",
+        });
+      } else {
+        newCheckedItems.push({
+          condition: itemValue,
+          effect: currentTreatmentValue.medicationsEffectOther,
+        });
+      }
     } else {
       newCheckedItems = newCheckedItems.filter(
         (item) => item.condition !== itemValue
@@ -332,6 +344,19 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
             ? { ...item, effect: event.target.value }
             : item
       ),
+    });
+  };
+
+  const handleMedicationsEffectOther = (event) => {
+    setCurrentTreatmentValue({
+      ...currentTreatmentValue,
+      medicationsEffectYourCondition: currentTreatmentValue.medicationsEffectYourCondition.map(
+        (item) =>
+          item.condition === "Other"
+            ? { ...item, effect: event.target.value }
+            : item
+      ),
+      medicationsEffectOther: event.target.value,
     });
   };
 
@@ -428,7 +453,7 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
           <div>
             <div className="w-[68%] mx-auto mt-3">
               <TextFollowUp
-                title="Please list the name, dose, and how often you take this medication."
+                title="Please list the name(s), dose(s), and how often you take each of these medications."
                 onChange={handleChange}
                 name="medicationList"
                 value={currentTreatmentValue.medicationList}
@@ -437,7 +462,7 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
             </div>
             <div className="w-[68%] mx-auto mt-3">
               <TextFollowUp
-                title="How long have you been taking this medication?"
+                title="How long have you been taking each of these medications?"
                 onChange={handleChange}
                 name="medicationLong"
                 value={currentTreatmentValue.medicationLong}
@@ -474,7 +499,11 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
               options2={MedicationsEffectOptions}
               type2="radio"
               onChange={handleMedicationsEffectYourConditionChange}
+              name3="medicationsEffectOther"
+              value3={currentTreatmentValue?.medicationsEffectOther}
+              onChange3={handleMedicationsEffectOther}
               errors={errors.medicationsEffectYourCondition}
+              errors2={errors.medicationsEffectOther}
               checked={currentTreatmentValue?.medicationsEffectYourCondition}
               onChange2={handleMedicationsEffectChange}
             />
@@ -536,7 +565,7 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
           <div>
             <div className="w-[68%] mx-auto mt-3">
               <TextFollowUp
-                title="When did your most recent psychotherapy begin?"
+                title="When did your current psychotherapy treatment begin?"
                 onChange={handleChange}
                 name="recentPsychotherapyBegin"
                 value={currentTreatmentValue.recentPsychotherapyBegin}
@@ -556,7 +585,7 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
 
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
-                title="I attended psychotherapy sessions:"
+                title="I attend psychotherapy sessions:"
                 onChange={handlePsychotherapySessionsDatechange}
                 options={PsychotherapySessionsDateOptions}
                 checked={currentTreatmentValue?.psychotherapySessionsDate}
@@ -566,7 +595,7 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
 
             <div className="w-[68%] mx-auto mt-3">
               <TextFollowUp
-                title="Your current or most recent psychotherapist treatment provider was (name/facility/clinic):"
+                title="Your current or most recent psychotherapy treatment provider is (name/facility/clinic):"
                 onChange={handleChange}
                 name="psychotherapistTreatmentProvider"
                 value={currentTreatmentValue.psychotherapistTreatmentProvider}

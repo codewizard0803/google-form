@@ -16,12 +16,10 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     interestThing: "",
     previouslyEnjoyable: "",
     feelingDepressed: "",
-    duringFeelingDepressed: "",
     depressiveSymptomsImproved: "",
     oftenFeelDepressed: "",
     experienceDepression: "",
     troubleFallingAsleep: "",
-    fallAsleepLong: "",
     wakeUpTimes: "",
     stayAwakeLong: "",
     awakeSleepReason: "",
@@ -46,6 +44,9 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   });
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setPHQValue(PHQ9);
   }, [PHQ9]);
 
@@ -92,39 +93,6 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
       label: "Nearly every day",
       value: "Nearly every day",
       name: "FeelingDepressedNearly every day",
-    },
-  ];
-
-  const DuringFeelingDepressedOptions = [
-    {
-      label: "Several hours",
-      value: "Several hours",
-      name: "DuringFeelingDepressedSeveral hours",
-    },
-    {
-      label: "Several Days",
-      value: "Several Days",
-      name: "DuringFeelingDepressedSeveral Days",
-    },
-    {
-      label: "Several weeks",
-      value: "Several weeks",
-      name: "DuringFeelingDepressedSeveral weeks",
-    },
-    {
-      label: "Several months",
-      value: "Several months",
-      name: "DuringFeelingDepressedSeveral months",
-    },
-    {
-      label: "Several years",
-      value: "Several years",
-      name: "DuringFeelingDepressedSeveral years",
-    },
-    {
-      label: "Other",
-      value: "Other",
-      name: "DuringFeelingDepressedOther",
     },
   ];
 
@@ -220,59 +188,21 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     },
   ];
 
-  const FallAsleepLongOptions = [
-    {
-      label: "0-20 minutes",
-      value: "0-20 minutes",
-      name: "FallAsleepLongOptions0-20 minutes",
-    },
-    {
-      label: "20-60 minutes",
-      value: "20-60 minutes",
-      name: "FallAsleepLongOptions20-60 minutes",
-    },
-    {
-      label: "1-2 hours",
-      value: "1-2 hours",
-      name: "FallAsleepLongOptions1-2 hours",
-    },
-    {
-      label: "Several hours",
-      value: "Several hours",
-      name: "FallAsleepLongOptionsSeveral hours",
-    },
-    {
-      label: "I am unable to sleep at all ",
-      value: "I am unable to sleep at all ",
-      name: "FallAsleepLongOptionsI am unable to sleep at all ",
-    },
-    {
-      label: "Other",
-      value: "Other",
-      name: "FallAsleepLongOptionsOther",
-    },
-  ];
-
   const WakeUpTimesOptions = [
     {
-      label: "1-2 times per night",
-      value: "1-2 times per night",
-      name: "WakeUpTimesOptions1-2 times per night",
+      label: "0",
+      value: "0",
+      name: "WakeUpTimesOptions0",
     },
     {
-      label: "3-4 times per night",
-      value: "3-4 times per night",
-      name: "WakeUpTimesOptions3-4 times per night",
+      label: "1",
+      value: "1",
+      name: "WakeUpTimesOptions1",
     },
     {
-      label: "More than 5 times per night",
-      value: "More than 5 times per night",
-      name: "WakeUpTimesOptionsMore than 5 times per night",
-    },
-    {
-      label: "Other",
-      value: "Other",
-      name: "WakeUpTimesOptionsOther",
+      label: "2",
+      value: "2",
+      name: "WakeUpTimesOptions2",
     },
   ];
 
@@ -311,9 +241,9 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
 
   const AwakeSleepReasonOptions = [
     {
-      label: "AwakeSleepReasonOptions",
-      value: "AwakeSleepReasonOptions",
-      name: "AwakeSleepReasonOptionsAwakeSleepReasonOptions",
+      label: "Physical pain",
+      value: "Physical pain",
+      name: "Physical painAwakeSleepReasonOptions",
     },
     {
       label: "Anxiety",
@@ -694,17 +624,9 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     setPHQValue({
       ...PHQValue,
       feelingDepressed: event.target.value,
-      duringFeelingDepressed: "",
       depressiveSymptomsImproved: "",
       oftenFeelDepressed: "",
       experienceDepression: "",
-    });
-  };
-
-  const handleDuringFeelingDepressedChange = (event) => {
-    setPHQValue({
-      ...PHQValue,
-      duringFeelingDepressed: event.target.value,
     });
   };
 
@@ -733,7 +655,6 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     setPHQValue({
       ...PHQValue,
       troubleFallingAsleep: event.target.value,
-      fallAsleepLong: "",
       wakeUpTimes: "",
       stayAwakeLong: "",
       awakeSleepReason: "",
@@ -745,13 +666,6 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     setPHQValue({
       ...PHQValue,
       totalSleepTimes: event.target.value,
-    });
-  };
-
-  const handleFallAsleepLongChange = (event) => {
-    setPHQValue({
-      ...PHQValue,
-      fallAsleepLong: event.target.value,
     });
   };
 
@@ -952,11 +866,9 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
       <p className="bg-green-400 w-[65%] mx-auto p-3 text-xl text-white rounded-lg mt-5 shadow-lg">
         Current Symptoms
       </p>
-      <p className="bg-blue-400 w-[65%] mx-auto p-1 text-lg text-white rounded-lg mt-3 shadow-lg">
-        PHQ-9
-      </p>
       <p className="bg-lime-400 w-[65%] mx-auto p-1 text-lg text-white rounded-lg mt-3 shadow-lg">
-        How often have you been bothered by the following over the past 2 weeks?
+        How often have you been bothered by the following over the{" "}
+        <u>past 2 weeks?</u>
       </p>
 
       <form>
@@ -996,15 +908,6 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
           <div>
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
-                title="If you have experienced sad or depressed mood, how long have you felt sad or depressed during this or your most recent episode?"
-                onChange={handleDuringFeelingDepressedChange}
-                options={DuringFeelingDepressedOptions}
-                checked={PHQValue?.duringFeelingDepressed}
-                error={errors.duringFeelingDepressed}
-              />
-            </div>
-            <div className="w-[68%] mx-auto mt-3">
-              <RadioFollowUp
                 title="Have your depressive symptoms improved or become worse since they started?"
                 onChange={handleDepressiveSymptomsImprovedChange}
                 options={DepressiveSymptomsImprovedOptions}
@@ -1034,7 +937,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="64. Trouble falling or staying asleep, or sleeping too much?"
+          title="64. Over the last 2 weeks, have you had trouble falling or staying asleep, or sleeping too much?"
           type="radio"
           options={TroubleFallingAsleepOptions}
           onChange={handleTroubleFallingAsleepChange}
@@ -1047,20 +950,11 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
           <div>
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
-                title="If you have trouble falling asleep, how long does it take you to fall asleep?"
-                onChange={handleFallAsleepLongChange}
-                options={FallAsleepLongOptions}
-                checked={PHQValue?.fallAsleepLong}
-                error={errors.fallAsleepLong}
-              />
-            </div>
-            <div className="w-[68%] mx-auto mt-3">
-              <RadioFollowUp
-                title="If you have trouble staying asleep, how many times do you wake up per night?"
+                title="How many times do you wake up per night before the time you plan to wake up?"
                 onChange={handleWakeUpTimesChange}
                 options={WakeUpTimesOptions}
-                checked={PHQValue?.wakeUpTimes}
-                error={errors.wakeUpTimes}
+                checked={PHQValue?.stayAwakeLong}
+                error={errors.stayAwakeLong}
               />
             </div>
             <div className="w-[68%] mx-auto mt-3">
@@ -1094,7 +988,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="65. Feeling tired or having little energy?"
+          title="65. Over the last 2 weeks, have you been feeling tired or having little energy?"
           type="radio"
           options={FeelingEnergyOptions}
           onChange={handleFeelingEnergyChange}
@@ -1103,7 +997,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="66. Poor appetite or overeating?"
+          title="66. Over the last 2 weeks, have you had poor appetite or been overeating?"
           type="radio"
           options={PoorAppetiteOptions}
           onChange={handlePoorAppetiteChange}
@@ -1135,7 +1029,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="67. Feeling bad about yourself — or that you are a failure or have let yourself or your family down?"
+          title="67. Over the last 2 weeks, have you been feeling bad about yourself — or that you are a failure or have let yourself or your family down?"
           type="radio"
           options={YourselfFeelingBadOptions}
           onChange={handleYourselfFeelingBadChange}
@@ -1144,7 +1038,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="68. Trouble concentrating on things, such as reading the newspaper or watching television?"
+          title="68. Over the last 2 weeks, have you had trouble concentrating on things, such as reading the newspaper or watching television?"
           type="radio"
           options={TroubleConCentratingThingOptions}
           onChange={handleTroubleConCentratingThingChange}
@@ -1153,7 +1047,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="69. Moving or speaking so slowly that other people could have noticed? Or so fidgety or restless that you have been moving a lot more than usual?"
+          title="69. Over the last 2 weeks, have you been moving or speaking so slowly that other people could have noticed? Or so fidgety or restless that you have been moving a lot more than usual?"
           type="radio"
           options={FidgetyMovingOptions}
           onChange={handleFidgetyMovingChange}
@@ -1162,7 +1056,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="70. Thoughts that you would be better off dead, or thoughts of hurting yourself in some way?"
+          title="70. Over the last 2 weeks, have you had thoughts that you would be better off dead, or thoughts of hurting yourself in some way?"
           type="radio"
           options={BetterOffDeadYourselfOptions}
           onChange={handleBetterOffDeadYourselfChange}

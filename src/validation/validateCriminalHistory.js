@@ -3,21 +3,21 @@ const validateCriminalHistory = (value) => {
   let errors = {};
 
   if (!value.arrested.trim()) {
-    errors.arrested = "Your Field is required.";
+    errors.arrested = "See required fields above.";
     isValid = false;
   } else if (value.arrested === "Yes") {
     if (!value.charges.trim()) {
-      errors.charges = "Your Field is required.";
+      errors.charges = "See required fields above.";
       isValid = false;
     }
 
     if (!value.everIncarcerated.trim()) {
-      errors.everIncarcerated = "Your Field is required.";
+      errors.everIncarcerated = "See required fields above.";
       isValid = false;
     }
 
     if (!value.currentlyParole.trim()) {
-      errors.currentlyParole = "Your Field is required.";
+      errors.currentlyParole = "See required fields above.";
       isValid = false;
     }
   } else {

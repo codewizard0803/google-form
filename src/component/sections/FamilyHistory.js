@@ -20,6 +20,9 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setFamilyHistoryValue(globalFamilyHistory);
   }, [globalFamilyHistory]);
 

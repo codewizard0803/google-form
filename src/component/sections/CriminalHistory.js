@@ -33,6 +33,9 @@ const CriminalHistory = ({ currentSection, setCurrentSection }) => {
   ];
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setCriminalHistoryValue(globalCriminalHistory);
   }, [globalCriminalHistory]);
 

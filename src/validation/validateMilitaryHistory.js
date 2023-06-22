@@ -3,21 +3,21 @@ const validateMilitaryHistory = (value) => {
   let errors = {};
 
   if (!value.enrolledMilitary.trim()) {
-    errors.enrolledMilitary = "Your Field is required.";
+    errors.enrolledMilitary = "See required fields above.";
     isValid = false;
   } else if (value.enrolledMilitary === "Yes") {
     if (!value.branchMilitary.trim()) {
-      errors.branchMilitary = "Your Field is required.";
+      errors.branchMilitary = "See required fields above.";
       isValid = false;
     }
 
     if (!value.militaryDatesFrom.trim()) {
-      errors.militaryDatesFrom = "Your Field is required.";
+      errors.militaryDatesFrom = "See required fields above.";
       isValid = false;
     }
 
     if (!value.militaryDatesTo.trim()) {
-      errors.militaryDatesTo = "Your Field is required.";
+      errors.militaryDatesTo = "See required fields above.";
       isValid = false;
     }
 
@@ -33,12 +33,12 @@ const validateMilitaryHistory = (value) => {
     }
 
     if (!value.militaryJob.trim()) {
-      errors.militaryJob = "Your Field is required.";
+      errors.militaryJob = "See required fields above.";
       isValid = false;
     }
 
     if (!value.dischargeStatus.trim()) {
-      errors.dischargeStatus = "Your Field is required.";
+      errors.dischargeStatus = "See required fields above.";
       isValid = false;
     }
   } else {

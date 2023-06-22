@@ -30,6 +30,9 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setLongitudinalHistoryValue(longitudinalHistory);
   }, [longitudinalHistory]);
 
@@ -159,7 +162,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="55. Describe the Emotional/Psychiatric Symptoms You Have Experienced"
+          title="55. Describe the emotional/psychiatric symptoms you have experienced"
           placeholder="Your answer"
           name="emotionSymptom"
           value={longitudinalHistoryValue?.emotionSymptom}
@@ -177,7 +180,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="57. Have Your Emotional Symptoms Become Worse Or Better Since They Started Or Since A Specific Date Or Event?"
+          title="57. Have your emotional symptoms become worse or better since they started or since a specific date or event?"
           placeholder="Your answer"
           name="emotionalSymptomBecome"
           value={longitudinalHistoryValue?.emotionalSymptomBecome}
@@ -186,7 +189,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="58. How Often Do You Feel the Above Emotions?"
+          title="58. How often do you feel the above emotions?"
           type="radio"
           options={feelEmotionOptions}
           onChange={handleFeelEmotionChange}
@@ -208,10 +211,10 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              59. With zero to 1 equaling no or minimal symptoms and 10 equaling
-              the most severe symptoms possible, how would you rate your
-              depressive, anxiety, or post trauma symptoms when they were most
-              severe?
+              59. How would you rate your depressive, anxiety, or post trauma
+              symptoms <u>when they were most severe</u>, with zero to 1
+              equaling no or minimal symptoms and 10 equaling the most severe
+              symptoms imaginable?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">
@@ -267,8 +270,8 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              60. Currently, how do your current emotional symptoms compare to
-              when they were most severe?
+              60. <u>Currently</u>, how do you rate your depressive, anxiety, or
+              post trauma symptoms on the same 1-10 scale?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div
@@ -306,8 +309,8 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              61. Have Your Emotional Symptoms Affected Your Ability to Do Your
-              Job?
+              61. Have your emotional symptoms affected your ability to do your
+              job?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">
@@ -332,7 +335,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
                   </label>
                   {longitudinalHistoryValue?.symptomsAffectedJob === "Yes" ? (
                     <TextFollowUp
-                      title="Please describe your emotional symptoms have affected your ability to do your job?"
+                      title="Please describe how your emotional symptoms have affected your ability to do your job?"
                       onChange={handleChange}
                       name="describeSymptomsAffectedJob"
                       value={

@@ -3,16 +3,16 @@ const validateFamilyHistory = (value) => {
   let errors = {};
 
   if (!value.familyPsychiatricConditions.trim()) {
-    errors.familyPsychiatricConditions = "Your Field is required.";
+    errors.familyPsychiatricConditions = "See required fields above.";
     isValid = false;
   } else if (value.familyPsychiatricConditions === "Other") {
     if (!value.psychiatricConditionsList.trim()) {
-      errors.psychiatricConditionsList = "Your Field is required.";
+      errors.psychiatricConditionsList = "See required fields above.";
       isValid = false;
     }
 
     if (value.psychiatricConditionsTreatment.length === 0) {
-      errors.psychiatricConditionsTreatment = "Your Field is required.";
+      errors.psychiatricConditionsTreatment = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -20,7 +20,7 @@ const validateFamilyHistory = (value) => {
   }
 
   if (!value.familyAttemptedSuicide.trim()) {
-    errors.familyAttemptedSuicide = "Your Field is required.";
+    errors.familyAttemptedSuicide = "See required fields above.";
     isValid = false;
   } else {
     errors.familyAttemptedSuicide = "";

@@ -3,11 +3,11 @@ const validateViolenceHistory = (value) => {
   let errors = {};
 
   if (!value.physicalAltercations.trim()) {
-    errors.physicalAltercations = "Your Field is required.";
+    errors.physicalAltercations = "See required fields above.";
     isValid = false;
   } else if (value.physicalAltercations === "Yes") {
     if (!value.circumstancesSurrounding.trim()) {
-      errors.circumstancesSurrounding = "Your Field is required.";
+      errors.circumstancesSurrounding = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -15,11 +15,11 @@ const validateViolenceHistory = (value) => {
   }
 
   if (!value.thoughtsHurtAnyone.trim()) {
-    errors.thoughtsHurtAnyone = "Your Field is required.";
+    errors.thoughtsHurtAnyone = "See required fields above.";
     isValid = false;
   } else if (value.thoughtsHurtAnyone === "Yes") {
     if (!value.explainAccomplishingHurt.trim()) {
-      errors.explainAccomplishingHurt = "Your Field is required.";
+      errors.explainAccomplishingHurt = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -27,11 +27,11 @@ const validateViolenceHistory = (value) => {
   }
 
   if (!value.victimViolence.trim()) {
-    errors.victimViolence = "Your Field is required.";
+    errors.victimViolence = "See required fields above.";
     isValid = false;
   } else if (value.victimViolence === "Yes") {
     if (!value.currentlyDangerViolence.trim()) {
-      errors.currentlyDangerViolence = "Your Field is required.";
+      errors.currentlyDangerViolence = "See required fields above.";
       isValid = false;
     }
   } else {

@@ -90,7 +90,6 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
       value: "They/them/theirs",
       name: "PreferPronounThem",
     },
-    { label: "Ze", value: "Ze", name: "PreferPronounZe" },
     { label: "Hir", value: "Hir", name: "PreferPronounHir" },
     {
       label: "Other non-binary",
@@ -118,6 +117,9 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
   ];
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setDemographicInformationValue(demographicInformation);
   }, [demographicInformation]);
 
@@ -283,20 +285,7 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
                       />
                     ) : null}
                   </div>
-                  <div className="text-left">
-                    <label>
-                      <input
-                        type="radio"
-                        value="Other"
-                        className="mr-2"
-                        checked={
-                          demographicInformationValue?.radioSexItem === "Other"
-                        }
-                        onChange={handleRadioSexChange}
-                      />
-                      Other
-                    </label>
-                  </div>
+
                   <div className="text-left">
                     <label>
                       <input

@@ -26,6 +26,9 @@ const CurrentEmployer = ({ currentSection, setCurrentSection }) => {
   });
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setCurrentEmployerValue(currentEmployer);
   }, [currentEmployer]);
   const currentlyWorkLikeJobOptions = [
@@ -143,7 +146,7 @@ const CurrentEmployer = ({ currentSection, setCurrentSection }) => {
         {currentEmployerValue?.currentlyWorkEmployerInjury === "No" ? (
           <div>
             <TextField
-              title="Name of Current Employer:"
+              title="Name of current employer:"
               placeholder="Your answer"
               name="currentlyWorkEmployerName"
               value={currentEmployerValue.currentlyWorkEmployerName}
@@ -152,7 +155,7 @@ const CurrentEmployer = ({ currentSection, setCurrentSection }) => {
             />
 
             <TextField
-              title="Nature of Business:"
+              title="Nature of business:"
               placeholder="Your answer"
               name="currentlyWorkNatureBusiness"
               value={currentEmployerValue.currentlyWorkNatureBusiness}
@@ -161,7 +164,7 @@ const CurrentEmployer = ({ currentSection, setCurrentSection }) => {
             />
 
             <TextField
-              title="Job Title:"
+              title="Job title:"
               placeholder="Your answer"
               name="currentlyWorkJobTitle"
               value={currentEmployerValue.currentlyWorkJobTitle}
@@ -170,7 +173,7 @@ const CurrentEmployer = ({ currentSection, setCurrentSection }) => {
             />
 
             <TextField
-              title="Job Duties:"
+              title="Job duties:"
               placeholder="Your answer"
               name="currentlyWorkJobDuties"
               value={currentEmployerValue.currentlyWorkJobDuties}
@@ -179,7 +182,7 @@ const CurrentEmployer = ({ currentSection, setCurrentSection }) => {
             />
 
             <TextField
-              title="Date This Job Began:"
+              title="Date this job began:"
               placeholder="Your answer"
               name="currentlyWorkJobBeganDate"
               value={currentEmployerValue.currentlyWorkJobBeganDate}
@@ -188,7 +191,7 @@ const CurrentEmployer = ({ currentSection, setCurrentSection }) => {
             />
 
             <TextField
-              title="Your Schedule, Hours Worked Per (day, week, month):"
+              title="Your schedule, hours worked per (day, week, month):"
               placeholder="Your answer"
               name="currentlyWorkSchedule"
               value={currentEmployerValue.currentlyWorkSchedule}
@@ -197,7 +200,7 @@ const CurrentEmployer = ({ currentSection, setCurrentSection }) => {
             />
 
             <TextField
-              title="Salary or Hourly rate:"
+              title="Salary or hourly rate:"
               placeholder="Your answer"
               name="currentlyWorkSalary"
               value={currentEmployerValue.currentlyWorkSalary}

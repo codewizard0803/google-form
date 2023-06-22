@@ -41,6 +41,9 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   });
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setPCLValue(PCL5);
   }, [PCL5]);
 
@@ -914,9 +917,6 @@ const PCL = ({ currentSection, setCurrentSection }) => {
       <p className="bg-green-400 w-[65%] mx-auto p-3 text-xl text-white rounded-lg mt-5 shadow-lg">
         Current Symptoms
       </p>
-      <p className="bg-blue-400 w-[65%] mx-auto p-1 text-lg text-white rounded-lg mt-3 shadow-lg">
-        PCL-5
-      </p>
       <div className="bg-lime-400 w-[65%] mx-auto p-1 text-lg text-white rounded-lg mt-3 shadow-lg">
         <p>
           Below is a list of problems that people sometimes have in response to
@@ -924,7 +924,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         </p>
         <p>
           Please read each problem carefully and then indicate how much you have
-          been bothered by that problem in the past month.
+          been bothered by that problem <u>in the past month.</u>
         </p>
       </div>
 

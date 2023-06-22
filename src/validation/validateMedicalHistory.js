@@ -3,14 +3,14 @@ const validateMedicalHistory = (value, global) => {
   let errors = {};
 
   if (value?.diagnosedHealthcareProvider.length === 0) {
-    errors.diagnosedHealthcareProvider = "Your Field is required.";
+    errors.diagnosedHealthcareProvider = "See required fields above.";
     isValid = false;
   } else if (
     value?.diagnosedHealthcareProvider?.filter((item) => item === "Other")
       .length > 0
   ) {
     if (!value?.otherMedicalCondition.trim()) {
-      errors.otherMedicalCondition = "Your Field is required.";
+      errors.otherMedicalCondition = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -19,13 +19,13 @@ const validateMedicalHistory = (value, global) => {
 
   if (global?.radioSexItem === "Female") {
     if (!value.pregnantPlanning.trim()) {
-      errors.pregnantPlanning = "Your Field is required.";
+      errors.pregnantPlanning = "See required fields above.";
       isValid = false;
     } else if (
       value?.pregnantPlanning === "Yes" &&
       !value?.plannedPregnancyProvider.trim()
     ) {
-      errors.plannedPregnancyProvider = "Your Field is required.";
+      errors.plannedPregnancyProvider = "See required fields above.";
       isValid = false;
     } else {
       errors.pregnantPlanning = "";
@@ -33,18 +33,18 @@ const validateMedicalHistory = (value, global) => {
   }
 
   if (!value.physicalHealthMedicationsLists.trim()) {
-    errors.physicalHealthMedicationsLists = "Your Field is required.";
+    errors.physicalHealthMedicationsLists = "See required fields above.";
     isValid = false;
   } else {
     errors.physicalHealthMedicationsLists = "";
   }
 
   if (!value.surgeries.trim()) {
-    errors.surgeries = "Your Field is required.";
+    errors.surgeries = "See required fields above.";
     isValid = false;
   } else if (value.surgeries === "Yes") {
     if (!value.surgeriesDateList.trim()) {
-      errors.surgeriesDateList = "Your Field is required.";
+      errors.surgeriesDateList = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -52,18 +52,18 @@ const validateMedicalHistory = (value, global) => {
   }
 
   if (!value.medicationsSideEffect.trim()) {
-    errors.medicationsSideEffect = "Your Field is required.";
+    errors.medicationsSideEffect = "See required fields above.";
     isValid = false;
   } else {
     errors.medicationsSideEffect = "";
   }
 
   if (!value.futureMedicalPlan.trim()) {
-    errors.futureMedicalPlan = "Your Field is required.";
+    errors.futureMedicalPlan = "See required fields above.";
     isValid = false;
   } else if (value.futureMedicalPlan === "Yes") {
     if (!value.futureMedicalPlanList.trim()) {
-      errors.futureMedicalPlanList = "Your Field is required.";
+      errors.futureMedicalPlanList = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -71,47 +71,47 @@ const validateMedicalHistory = (value, global) => {
   }
 
   if (!value.currentPrimarycarePractitioner.trim()) {
-    errors.currentPrimarycarePractitioner = "Your Field is required.";
+    errors.currentPrimarycarePractitioner = "See required fields above.";
     isValid = false;
   } else {
     errors.currentPrimarycarePractitioner = "";
   }
 
   if (!value.pastprimarycarePractitioner.trim()) {
-    errors.pastprimarycarePractitioner = "Your Field is required.";
+    errors.pastprimarycarePractitioner = "See required fields above.";
     isValid = false;
   } else if (
     value.pastprimarycarePractitioner.trim() &&
     value.periodReceiveProvider === ""
   ) {
-    errors.periodReceiveProvider = "Your Field is required.";
+    errors.periodReceiveProvider = "See required fields above.";
     isValid = false;
   } else {
     errors.pastprimarycarePractitioner = "";
   }
 
   if (!value.hospitalListEverBeen.trim()) {
-    errors.hospitalListEverBeen = "Your Field is required.";
+    errors.hospitalListEverBeen = "See required fields above.";
     isValid = false;
   } else {
     errors.hospitalListEverBeen = "";
   }
 
   if (!value.medicationsListTaking.trim()) {
-    errors.medicationsListTaking = "Your Field is required.";
+    errors.medicationsListTaking = "See required fields above.";
     isValid = false;
   } else {
     errors.medicationsListTaking = "";
   }
 
   if (!value.allergiesMedication.trim()) {
-    errors.allergiesMedication = "Your Field is required.";
+    errors.allergiesMedication = "See required fields above.";
     isValid = false;
   } else if (
     value.allergiesMedication === "Yes" &&
     value.allergiesList === ""
   ) {
-    errors.allergiesList = "Your Field is required.";
+    errors.allergiesList = "See required fields above.";
     isValid = false;
   } else {
     errors.allergiesMedication = "";

@@ -3,18 +3,18 @@ const validateRelationshipHistory = (value) => {
   let errors = {};
 
   if (!value.currentlyIntimateRelationship.trim()) {
-    errors.currentlyIntimateRelationship = "Your Field is required.";
+    errors.currentlyIntimateRelationship = "See required fields above.";
     isValid = false;
   } else if (value.currentlyIntimateRelationship === "Yes") {
     if (!value.currentlyMarried.trim()) {
-      errors.currentlyMarried = "Your Field is required.";
+      errors.currentlyMarried = "See required fields above.";
       isValid = false;
     }
 
     const currentInvolveRegex = /^[1-9][0-9]*$/;
 
     if (!value.currentRelationshipInvolve.trim()) {
-      errors.currentRelationshipInvolve = "Your Field is required.";
+      errors.currentRelationshipInvolve = "See required fields above.";
       isValid = false;
     } else if (!currentInvolveRegex.test(value.currentRelationshipInvolve)) {
       errors.currentRelationshipInvolve =
@@ -22,12 +22,12 @@ const validateRelationshipHistory = (value) => {
     }
 
     if (!value.describeIntimateRelationship.trim()) {
-      errors.describeIntimateRelationship = "Your Field is required.";
+      errors.describeIntimateRelationship = "See required fields above.";
       isValid = false;
     }
 
     if (!value.PartnerOccupation.trim()) {
-      errors.PartnerOccupation = "Your Field is required.";
+      errors.PartnerOccupation = "See required fields above.";
       isValid = false;
     }
   } else {
@@ -35,51 +35,51 @@ const validateRelationshipHistory = (value) => {
   }
 
   if (!value.marriedNumber.trim()) {
-    errors.marriedNumber = "Your Field is required.";
+    errors.marriedNumber = "See required fields above.";
     isValid = false;
   } else {
     errors.marriedNumber = "";
   }
 
   if (!value.longTermRelationshipsLast.trim()) {
-    errors.longTermRelationshipsLast = "Your Field is required.";
+    errors.longTermRelationshipsLast = "See required fields above.";
     isValid = false;
   } else {
     errors.longTermRelationshipsLast = "";
   }
 
   if (!value.reasonPreviousRelationships.trim()) {
-    errors.reasonPreviousRelationships = "Your Field is required.";
+    errors.reasonPreviousRelationships = "See required fields above.";
     isValid = false;
   } else {
     errors.reasonPreviousRelationships = "";
   }
 
   if (!value.domesticViolence.trim()) {
-    errors.domesticViolence = "Your Field is required.";
+    errors.domesticViolence = "See required fields above.";
     isValid = false;
   } else {
     errors.domesticViolence = "";
   }
 
   if (!value.haveChildren.trim()) {
-    errors.haveChildren = "Your Field is required.";
+    errors.haveChildren = "See required fields above.";
     isValid = false;
   } else if (value.haveChildren === "Yes") {
     if (!value.childrenNumberAndAge.trim()) {
-      errors.childrenNumberAndAge = "Your Field is required.";
+      errors.childrenNumberAndAge = "See required fields above.";
       isValid = false;
     }
     if (!value.childrenDoingSchool.trim()) {
-      errors.childrenDoingSchool = "Your Field is required.";
+      errors.childrenDoingSchool = "See required fields above.";
       isValid = false;
     }
     if (!value.relationshipChildren.trim()) {
-      errors.relationshipChildren = "Your Field is required.";
+      errors.relationshipChildren = "See required fields above.";
       isValid = false;
     }
     if (!value.childrenHealthIssues.trim()) {
-      errors.childrenHealthIssues = "Your Field is required.";
+      errors.childrenHealthIssues = "See required fields above.";
       isValid = false;
     }
   } else {

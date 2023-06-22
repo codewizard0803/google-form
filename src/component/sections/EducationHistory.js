@@ -30,6 +30,9 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setEducationHistoryValue(globalEducationHistory);
   }, [globalEducationHistory]);
 
