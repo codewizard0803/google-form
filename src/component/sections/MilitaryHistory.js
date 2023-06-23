@@ -68,19 +68,34 @@ const MilitaryHistory = ({ currentSection, setCurrentSection }) => {
 
   const DischargeStatusOptions = [
     {
-      label: "honorably",
-      value: "honorably",
-      name: "DischargeStatusOptionshonorably",
+      label: "Honorable or Under honorable",
+      value: "Honorable or Under honorable",
+      name: "DischargeStatusOptionsHonorable or Under honorable",
     },
     {
-      label: "dishonorably",
-      value: "dishonorably",
-      name: "DischargeStatusOptionsdishonorably",
+      label: "General under Honorable",
+      value: "General under Honorable",
+      name: "DischargeStatusOptionsGeneral under Honorable",
     },
     {
-      label: "less than honorable",
-      value: "less than honorable",
-      name: "DischargeStatusOptionsless than honorable",
+      label: "Other than Honorable(OTH)",
+      value: "Other than Honorable(OTH)",
+      name: "DischargeStatusOptionsOther than Honorable(OTH)",
+    },
+    {
+      label: "Bad Conduct",
+      value: "Bad Conduct",
+      name: "DischargeStatusOptionsBad Conduct",
+    },
+    {
+      label: "Dishonorably(DD)",
+      value: "Dishonorably(DD)",
+      name: "DischargeStatusOptionsDishonorably(DD)",
+    },
+    {
+      label: "Entry Level(ELS) or Non-Characterized",
+      value: "Entry Level(ELS) or Non-Characterized",
+      name: "DischargeStatusOptionsEntry Level(ELS) or Non-Characterized",
     },
   ];
 
