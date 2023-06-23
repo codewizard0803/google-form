@@ -104,19 +104,19 @@ const validateSubstanceUse = (value) => {
       isValid = false;
     }
 
-    if (
-      value.treatmentLastedDateTo.trim() &&
-      value.treatmentLastedDateFrom.trim()
-    ) {
-      const d1 = new Date(value.treatmentLastedDateFrom);
-      const d2 = new Date(value.treatmentLastedDateTo);
-      if (d1 > d2) {
-        errors.treatmentLastedDateTo = "This Date is invalid.";
-        isValid = false;
-      } else {
-        errors.treatmentLastedDateTo = "";
-      }
-    }
+    // if (
+    //   value.treatmentLastedDateTo.trim() &&
+    //   value.treatmentLastedDateFrom.trim()
+    // ) {
+    //   const d1 = new Date(value.treatmentLastedDateFrom);
+    //   const d2 = new Date(value.treatmentLastedDateTo);
+    //   if (d1 > d2) {
+    //     errors.treatmentLastedDateTo = "This Date is invalid.";
+    //     isValid = false;
+    //   } else {
+    //     errors.treatmentLastedDateTo = "";
+    //   }
+    // }
 
     if (!value.cleanSoberLastedFrom.trim()) {
       errors.cleanSoberLastedFrom = "See required fields above.";
@@ -125,6 +125,11 @@ const validateSubstanceUse = (value) => {
 
     if (!value.cleanSoberLastedTo.trim()) {
       errors.cleanSoberLastedTo = "See required fields above.";
+      isValid = false;
+    }
+
+    if (!value.cleanSoberLongest.trim()) {
+      errors.cleanSoberLongest = "See required fields above.";
       isValid = false;
     }
 

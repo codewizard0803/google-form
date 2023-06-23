@@ -94,12 +94,21 @@ const validateEmploymentHistory = (value) => {
   if (!value.placedDisability.trim()) {
     errors.placedDisability = "See required fields above.";
     isValid = false;
+  } else if (value.placedDisability === "Yes" && value.disabilityDates === "") {
+    errors.disabilityDates = "See required fields above.";
+    isValid = false;
   } else {
     errors.placedDisability = "";
   }
 
   if (!value.receivedNegativeWork.trim()) {
     errors.receivedNegativeWork = "See required fields above.";
+    isValid = false;
+  } else if (
+    value.receivedNegativeWork === "Yes" &&
+    value.workEvaluationsExplain === ""
+  ) {
+    errors.workEvaluationsExplain = "See required fields above.";
     isValid = false;
   } else {
     errors.receivedNegativeWork = "";

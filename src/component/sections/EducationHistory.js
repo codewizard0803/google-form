@@ -264,7 +264,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="154. What Grades Did You Mostly Receive During Your Education (choose all that apply)?"
+          title="154. What grades did you mostly receive during your education (choose all that apply)?"
           type="checkbox"
           options={MostlyReceiveGradeOptions}
           onChange={handleMostlyReceiveGradechange}
@@ -296,7 +296,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="156. Did You Graduate High School?"
+          title="156. Did you graduate high school?"
           type="radio"
           options={GraduateHighSchoolOptions}
           onChange={handleGraduateHighSchoolchange}
@@ -307,7 +307,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
         {educationHistoryValue?.graduateHighSchool === "Yes" ? (
           <div>
             <CardField
-              title="If Yes, Did You Graduate On Time?"
+              title="Did You Graduate On Time?"
               type="radio"
               options={GraduateOnTimeOptions}
               onChange={handleGraduateOnTimechange}
@@ -318,7 +318,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="157. Did You Go To College"
+          title="157. Did you go to college"
           type="radio"
           options={GoToCollegeOptions}
           onChange={handleGoToCollegechange}
@@ -329,7 +329,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
         {educationHistoryValue?.goToCollege === "Yes" ? (
           <div>
             <CardField
-              title="if so, did you complete your degree?"
+              title="If so, did you complete your degree?"
               type="radio"
               options={CompleteYourDegreeOptions}
               onChange={handleCompleteYourDegreechange}
@@ -338,7 +338,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
             />
 
             <TextField
-              title="Name of College:"
+              title="Name of college:"
               type="text"
               name="collegeName"
               value={educationHistoryValue?.collegeName}
@@ -348,7 +348,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
             />
 
             <TextField
-              title="College Major or Primary Topic of Study:"
+              title="College major or primary topic of study:"
               type="text"
               name="collegeMajor"
               value={educationHistoryValue?.collegeMajor}

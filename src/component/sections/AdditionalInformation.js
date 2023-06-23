@@ -114,7 +114,6 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
           }
         })
         .catch((err) => {
-          console.log(err);
           toast.error("Server Error", {
             position: toast.POSITION.TOP_RIGHT,
           });
@@ -143,7 +142,7 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="193. Please Provide Any Additional Information I Should Know About You:"
+          title="193. Please provide any other additional information not already covered above."
           placeholder="Your answer"
           name="yourAdditionalInformation"
           value={additionalValue?.yourAdditionalInformation}

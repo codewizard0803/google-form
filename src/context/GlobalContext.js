@@ -146,7 +146,7 @@ const GlobalContextProvider = ({ children }) => {
     feelAnxiousOften: "",
     stopControlWorring: "",
     worringDifferentThing: "",
-    worringThing: "",
+    worringThing: [],
     describeWorringThing: "",
     specificAnxietyWorse: "",
     troubleRelaxing: "",
@@ -309,12 +309,13 @@ const GlobalContextProvider = ({ children }) => {
     remainedTreatmentCleanLongest: "",
     previouslyDescribedPsychiatricClean: "",
     toleranceDefinedFollowing: [],
-    withdrawalEitherFollowing: "",
+    withdrawalEitherFollowing: [],
     amountValue: "",
     eachSubstanceLast: [],
     eachSubstanceLastDate: "",
     cleanSoberLastedFrom: "",
     cleanSoberLastedTo: "",
+    cleanSoberLongest: "",
   });
 
   const [globalFamilyHistory, setGlobalFamilyHistory] = useState({
@@ -329,7 +330,7 @@ const GlobalContextProvider = ({ children }) => {
     currentlyMarried: "",
     currentlyUnit: "weeks",
     currentRelationshipInvolve: "",
-    describeIntimateRelationship: "",
+    describeIntimateRelationship: [],
     PartnerOccupation: "",
     marriedNumber: "",
     intimateRelationshipTimes: "1",
@@ -341,6 +342,7 @@ const GlobalContextProvider = ({ children }) => {
     childrenDoingSchool: "",
     relationshipChildren: "",
     childrenHealthIssues: "",
+    sufferPsychiatricConditions: "",
   });
 
   const [globalEmploymentHistory, setGlobalEmploymentHistory] = useState({
@@ -360,9 +362,11 @@ const GlobalContextProvider = ({ children }) => {
     injuryNature: "",
     workerCompensationClaim: "",
     placedDisability: "",
+    disabilityDates: "",
     receivedNegativeWork: "",
     currentSourcesIncome: "",
     otherEmploymentList: "",
+    workEvaluationsExplain: "",
   });
 
   const [globalEducationHistory, setGlobalEducationHistory] = useState({
@@ -405,6 +409,7 @@ const GlobalContextProvider = ({ children }) => {
     charges: "",
     everIncarcerated: "",
     currentlyParole: "",
+    arrestedDate: "",
   });
 
   const [globalViolenceHistory, setGlobalViolenceHistory] = useState({

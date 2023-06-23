@@ -226,7 +226,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <TextField
-          title="169. Time You Awaken- On Work Days:"
+          title="169. What time do you wake up on work days?"
           type="text"
           name="awakenTimeWorkDays"
           value={currentDailyActivitiesValue?.awakenTimeWorkDays}
@@ -236,7 +236,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="170. Time You Awaken- On Not Work Days:"
+          title="170. What time do you wake up on non work days?s"
           type="text"
           name="awakenTimeNotWorkDays"
           value={currentDailyActivitiesValue?.awakenTimeNotWorkDays}
@@ -246,7 +246,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="171. Time You Go To Bed:"
+          title="171. What time do you usually fall asleep?"
           type="text"
           name="goToBed"
           value={currentDailyActivitiesValue?.goToBed}
@@ -256,7 +256,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="172. Time Fall Asleep:"
+          title="172. What time do you usually fall asleep?"
           type="text"
           name="fallAsleepTime"
           value={currentDailyActivitiesValue?.fallAsleepTime}
@@ -268,14 +268,14 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              173. Describe All of the Activities You Do From the Time You Wake
-              Up Until You Go To Bed at Night:
+              173. Describe all of the activities you do from the time you wake
+              up until you go to bed at night:
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
 
             <div>
               <TextFollowUp
-                title="What You Do From 6 a.m. to 8 a.m.:"
+                title="What you do from 6 a.m. to 8 a.m.:"
                 onChange={handleChange}
                 name="do6am"
                 value={currentDailyActivitiesValue.do6am}
@@ -283,7 +283,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
               />
 
               <TextFollowUp
-                title="What You Do From 8 a.m. to 10 a.m.:"
+                title="What you do from 8 a.m. to 10 a.m.:"
                 onChange={handleChange}
                 name="do8am"
                 value={currentDailyActivitiesValue.do8am}
@@ -291,7 +291,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
               />
 
               <TextFollowUp
-                title="What You Do From 10 a.m. to 12 p.m.:"
+                title="What you do from 10 a.m. to 12 p.m.:"
                 onChange={handleChange}
                 name="do10am"
                 value={currentDailyActivitiesValue.do10am}
@@ -299,7 +299,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
               />
 
               <TextFollowUp
-                title="What You Do From 12 p.m. to 2 p.m.:"
+                title="What you do from 12 p.m. to 2 p.m.:"
                 onChange={handleChange}
                 name="do12pm"
                 value={currentDailyActivitiesValue.do12pm}
@@ -307,7 +307,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
               />
 
               <TextFollowUp
-                title="What You Do From 2 p.m. to 4 p.m.:"
+                title="What you do from 2 p.m. to 4 p.m.:"
                 onChange={handleChange}
                 name="do2pm"
                 value={currentDailyActivitiesValue.do2pm}
@@ -315,7 +315,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
               />
 
               <TextFollowUp
-                title="What You Do From 4 p.m. to 6 p.m.:"
+                title="What you do from 4 p.m. to 6 p.m.:"
                 onChange={handleChange}
                 name="do4pm"
                 value={currentDailyActivitiesValue.do4pm}
@@ -323,7 +323,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
               />
 
               <TextFollowUp
-                title="What You Do From 6 p.m. to 8 p.m.:"
+                title="What you do from 6 p.m. to 8 p.m.:"
                 onChange={handleChange}
                 name="do6pm"
                 value={currentDailyActivitiesValue.do6pm}
@@ -331,7 +331,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
               />
 
               <TextFollowUp
-                title="What You Do From 8 p.m. to 10 p.m.:"
+                title="What you do from 8 p.m. to 10 p.m.:"
                 onChange={handleChange}
                 name="do8pm"
                 value={currentDailyActivitiesValue.do8pm}
@@ -339,7 +339,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
               />
 
               <TextFollowUp
-                title="What You Do From 10 p.m. to 12 p.m. (or time to bed):"
+                title="What you do from 10 p.m. to 12 p.m. (or time to bed):"
                 onChange={handleChange}
                 name="do10pm"
                 value={currentDailyActivitiesValue.do10pm}
@@ -347,7 +347,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
               />
 
               <TextFollowUp
-                title="What You Do From 12 p.m. to 6 a.m.:"
+                title="What you do from 12 p.m. to 6 a.m.:"
                 onChange={handleChange}
                 name="do12p6am"
                 value={currentDailyActivitiesValue.do12p6am}
@@ -358,7 +358,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <TextField
-          title="174. What Are Your Leisure Activities or Hobbies?"
+          title="174. What are your leisure activities or hobbies?"
           type="text"
           name="leisureActivities"
           value={currentDailyActivitiesValue?.leisureActivities}
@@ -368,7 +368,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         />
 
         <TableCheckBox
-          title="175. Do You Have Any Trouble With the Following?"
+          title="175. Do you have any trouble with the following?"
           thead={troubleFollowingThead}
           tbody={troubleFollowingTbody}
           checked={currentDailyActivitiesValue?.troubleFollowing}
@@ -376,7 +376,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         />
 
         <TableCheckBox
-          title="176. Activities of Daily Living Worksheet. Please put a mark in the box that describes your ability to carry out the following:"
+          title="176. Activities of daily living worksheet. please put a mark in the box that describes your ability to carry out the following:"
           thead={dailyLivingThead}
           tbody={dailyLivingTbody}
           checked={currentDailyActivitiesValue?.dailyLivingFollowing}
@@ -392,7 +392,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="178. Please List Any Activities Not Included Above That You Used To Do But Are Unable To Do Or Don't Do Because Of Your Condition And Explain Why"
+          title="178. Please list any activities not included above that you used to do but are unable to do or don't do because of your condition and explain why"
           type="text"
           name="anyActivitiesListBefore"
           value={currentDailyActivitiesValue?.anyActivitiesListBefore}

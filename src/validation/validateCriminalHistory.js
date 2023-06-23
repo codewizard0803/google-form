@@ -11,6 +11,11 @@ const validateCriminalHistory = (value) => {
       isValid = false;
     }
 
+    if (!value.arrestedDate.trim()) {
+      errors.arrestedDate = "See required fields above.";
+      isValid = false;
+    }
+
     if (!value.everIncarcerated.trim()) {
       errors.everIncarcerated = "See required fields above.";
       isValid = false;

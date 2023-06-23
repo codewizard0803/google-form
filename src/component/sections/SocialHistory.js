@@ -100,6 +100,11 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
       name: "DescribeCurrentLivingSituationOptionsLive with friends",
     },
     {
+      label: "Live alone",
+      value: "Live alone",
+      name: "DescribeCurrentLivingSituationOptionsLive alone",
+    },
+    {
       label: "Temporary housing",
       value: "Temporary housing",
       name: "DescribeCurrentLivingSituationOptionsTemporary housing",
@@ -450,11 +455,22 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
           checked={socialHistoryValue?.describeCurrentLivingSituation}
           errors={errors.describeCurrentLivingSituation}
         />
-
+        {console.error(
+          socialHistoryValue?.describeCurrentLivingSituation.filter(
+            (item) => item !== "Homeless"
+          ).length
+        )}
         {socialHistoryValue?.describeCurrentLivingSituation.length !== 0 &&
-        socialHistoryValue?.describeCurrentLivingSituation.filter(
-          (item) => item !== "Homeless" && item !== "Other"
-        ).length > 0 ? (
+        !(
+          socialHistoryValue?.describeCurrentLivingSituation.filter(
+            (item) => item === "Homeless"
+          ).length > 0
+        ) &&
+        !(
+          socialHistoryValue?.describeCurrentLivingSituation.filter(
+            (item) => item === "Live alone"
+          ).length > 0
+        ) ? (
           <div>
             <CardField
               title="Who else lives in your home with you?"
@@ -500,7 +516,7 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
               errors={errors.ownYourHome}
             />
 
-            <TextField
+            {/* <TextField
               title="Please describe the additional stressors in your life, not already covered above:"
               type="text"
               name="describeAdditionalStressors"
@@ -508,7 +524,7 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
               placeholder="Your answer..."
               onChange={handleChange}
               error={errors.describeAdditionalStressors}
-            />
+            /> */}
           </div>
         ) : null}
 

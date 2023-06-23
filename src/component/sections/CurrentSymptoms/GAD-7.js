@@ -20,7 +20,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
     feelAnxiousOften: "",
     stopControlWorring: "",
     worringDifferentThing: "",
-    worringThing: "",
+    worringThing: [],
     describeWorringThing: "",
     specificAnxietyWorse: "",
     troubleRelaxing: "",
@@ -44,7 +44,6 @@ const GAD = ({ currentSection, setCurrentSection }) => {
     window.scrollTo({
       top: 0,
     });
-    console.log("GADValue", GADValue);
     setGADValue(GAD7);
   }, [GAD7]);
 
@@ -596,16 +595,26 @@ const GAD = ({ currentSection, setCurrentSection }) => {
     setGADValue({
       ...GADValue,
       worringDifferentThing: event.target.value,
-      worringThing: "",
+      worringThing: [],
       describeWorringThing: "",
       specificAnxietyWorse: "",
     });
   };
 
   const handleWorringThingChange = (event) => {
+    let isChecked = event.target.checked;
+    let isValue = event.target.value;
+    let newCheckedItem = [...GADValue.worringThing];
+
+    if (isChecked) {
+      newCheckedItem.push(isValue);
+    } else {
+      newCheckedItem = newCheckedItem.filter((item) => item !== isValue);
+    }
+
     setGADValue({
       ...GADValue,
-      worringThing: event.target.value,
+      worringThing: newCheckedItem,
       describeWorringThing: "",
     });
   };
@@ -829,16 +838,18 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         {GADValue?.worringDifferentThing !== "" &&
         GADValue?.worringDifferentThing !== "Not at all" ? (
           <div>
-            <div className="w-[68%] mx-auto mt-3">
-              <RadioFollowUp
+            <div>
+              <CardField
                 title="What do you worry about?"
+                type="checkbox"
                 onChange={handleWorringThingChange}
                 options={WorringThingOptions}
                 checked={GADValue?.worringThing}
                 error={errors.worringThing}
               />
             </div>
-            {GADValue?.worringThing === "Other" ? (
+            {GADValue?.worringThing.filter((item) => item === "Other").length >
+            0 ? (
               <div className="w-[68%] mx-auto mt-3">
                 <TextFollowUp
                   title="You selected 'other'. Please describe what you worry about."

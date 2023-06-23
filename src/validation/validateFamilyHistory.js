@@ -2,10 +2,13 @@ const validateFamilyHistory = (value) => {
   let isValid = true;
   let errors = {};
 
-  if (!value.familyPsychiatricConditions.trim()) {
+  if (value.familyPsychiatricConditions.length === 0) {
     errors.familyPsychiatricConditions = "See required fields above.";
     isValid = false;
-  } else if (value.familyPsychiatricConditions === "Other") {
+  } else if (
+    value.familyPsychiatricConditions.filter((item) => item === "Other")
+      .length > 0
+  ) {
     if (!value.psychiatricConditionsList.trim()) {
       errors.psychiatricConditionsList = "See required fields above.";
       isValid = false;

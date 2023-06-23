@@ -57,7 +57,7 @@ const validateDevelopmentalHistory = (value) => {
       errors.parentsRemainMarried = "See required fields above.";
       isValid = false;
     }
-
+  } else if (value.parentsMarried === "No") {
     if (!value.parentsDivorce.trim()) {
       errors.parentsDivorce = "See required fields above.";
       isValid = false;

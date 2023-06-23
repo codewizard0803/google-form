@@ -11,7 +11,7 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
   const { globalFamilyHistory, setGlobalFamilyHistory } = useGlobalContext();
 
   const [familyHistoryValue, setFamilyHistoryValue] = useState({
-    familyPsychiatricConditions: "",
+    familyPsychiatricConditions: [],
     psychiatricConditionsList: "",
     psychiatricConditionsTreatment: [],
     familyAttemptedSuicide: "",
@@ -130,9 +130,19 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
   };
 
   const handleFamilyPsychiatricConditionschange = (event) => {
+    let checked = event.target.checked;
+    let checkedValue = event.target.value;
+    let newCheckedItems = [...familyHistoryValue.familyPsychiatricConditions];
+
+    if (checked) {
+      newCheckedItems.push(checkedValue);
+    } else {
+      newCheckedItems = newCheckedItems.filter((item) => item !== checkedValue);
+    }
+
     setFamilyHistoryValue({
       ...familyHistoryValue,
-      familyPsychiatricConditions: event.target.value,
+      familyPsychiatricConditions: newCheckedItems,
       psychiatricConditionsList: "",
       psychiatricConditionsTreatment: [],
     });
@@ -186,14 +196,16 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
       <form>
         <CardField
           title="138. Do any of your family members suffer from the following psychiatric conditions?"
-          type="radio"
+          type="checkbox"
           options={FamilyPsychiatricConditionsOptions}
           onChange={handleFamilyPsychiatricConditionschange}
           checked={familyHistoryValue?.familyPsychiatricConditions}
           errors={errors.familyPsychiatricConditions}
         />
 
-        {familyHistoryValue?.familyPsychiatricConditions === "Other" ? (
+        {familyHistoryValue?.familyPsychiatricConditions.filter(
+          (item) => item === "Other"
+        ).length > 0 ? (
           <div>
             <div className="w-[68%] mx-auto mt-3">
               <TextFollowUp

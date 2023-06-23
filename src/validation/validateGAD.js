@@ -32,11 +32,11 @@ const GAD = (value) => {
     errors.worringDifferentThing = "See required fields above.";
     isValid = false;
   } else if (value.worringDifferentThing !== "Not at all") {
-    if (value.worringThing === "") {
+    if (value.worringThing.length === 0) {
       errors.worringThing = "See required fields above.";
       isValid = false;
     } else if (
-      value.worringThing === "Other" &&
+      value.worringThing.filter((item) => item === "Other").length > 0 &&
       value.describeWorringThing === ""
     ) {
       errors.describeWorringThing = "See required fields above.";

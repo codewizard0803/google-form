@@ -26,7 +26,6 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
     window.scrollTo({
       top: 0,
     });
-    console.log("cheifComplanintValue", chiefComplaint);
     setChiefComplaintValue(chiefComplaint);
   }, [chiefComplaint]);
 

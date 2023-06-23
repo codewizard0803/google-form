@@ -35,6 +35,8 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
     receivedNegativeWork: "",
     currentSourcesIncome: "",
     otherEmploymentList: "",
+    disabilityDates: "",
+    workEvaluationsExplain: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -227,6 +229,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
     setEmploymentHistoryValue({
       ...employmentHistoryValue,
       placedDisability: event.target.value,
+      disabilityDates: "",
     });
   };
 
@@ -234,13 +237,24 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
     setEmploymentHistoryValue({
       ...employmentHistoryValue,
       receivedNegativeWork: event.target.value,
+      workEvaluationsExplain: "",
     });
   };
 
   const handleCurrentSourcesIncomechange = (event) => {
+    let isChecked = event.target.checked;
+    let isValue = event.target.value;
+    let newCheckedItems = [...employmentHistoryValue?.currentSourcesIncome];
+
+    if (isChecked) {
+      newCheckedItems.push(isValue);
+    } else {
+      newCheckedItems = newCheckedItems.filter((item) => item !== isValue);
+    }
+
     setEmploymentHistoryValue({
       ...employmentHistoryValue,
-      currentSourcesIncome: event.target.value,
+      currentSourcesIncome: newCheckedItems,
       otherEmploymentList: "",
     });
   };
@@ -466,6 +480,19 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
           errors={errors.placedDisability}
         />
 
+        {employmentHistoryValue?.placedDisability === "Yes" ? (
+          <div>
+            <TextField
+              title="What were the dates of this disability?"
+              name="disabilityDates"
+              placeholder="Your answer..."
+              value={employmentHistoryValue?.disabilityDates}
+              onChange={handleChange}
+              errors={errors.disabilityDates}
+            />
+          </div>
+        ) : null}
+
         <CardField
           title="150. Have you ever received negative work evaluations, been terminated from a position, or received disciplinary action?"
           type="radio"
@@ -475,9 +502,21 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
           errors={errors.receivedNegativeWork}
         />
 
+        {employmentHistoryValue.receivedNegativeWork === "Yes" ? (
+          <div>
+            <TextField
+              title="Please explain:"
+              placeholder="Your answer..."
+              name="workEvaluationsExplain"
+              value={employmentHistoryValue?.workEvaluationsExplain}
+              onChange={handleChange}
+            />
+          </div>
+        ) : null}
+
         <CardField
-          title="151. List All of Your Current Sources of Income."
-          type="radio"
+          title="151. List all of your current sources of income."
+          type="checkbox"
           options={CurrentSourcesIncomeOptions}
           onChange={handleCurrentSourcesIncomechange}
           checked={employmentHistoryValue?.currentSourcesIncome}

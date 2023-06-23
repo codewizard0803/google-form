@@ -18,6 +18,7 @@ const CriminalHistory = ({ currentSection, setCurrentSection }) => {
     charges: "",
     everIncarcerated: "",
     currentlyParole: "",
+    arrestedDate: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -46,6 +47,7 @@ const CriminalHistory = ({ currentSection, setCurrentSection }) => {
       charges: "",
       everIncarcerated: "",
       currentlyParole: "",
+      arrestedDate: "",
     });
   };
 
@@ -105,6 +107,16 @@ const CriminalHistory = ({ currentSection, setCurrentSection }) => {
 
         {criminalHistoryValue?.arrested === "Yes" ? (
           <div>
+            <TextField
+              title="When were your arrests?"
+              type="text"
+              name="arrestedDate"
+              value={criminalHistoryValue?.arrestedDate}
+              placeholder="Your answer..."
+              onChange={handleChange}
+              error={errors.arrestedDate}
+            />
+
             <TextField
               title="What were the charges?"
               type="text"

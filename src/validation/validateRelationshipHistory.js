@@ -21,7 +21,7 @@ const validateRelationshipHistory = (value) => {
         "This Field is invalid. Please Enter Only Numbers";
     }
 
-    if (!value.describeIntimateRelationship.trim()) {
+    if (!value.describeIntimateRelationship.length === 0) {
       errors.describeIntimateRelationship = "See required fields above.";
       isValid = false;
     }

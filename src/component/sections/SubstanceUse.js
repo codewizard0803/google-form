@@ -29,19 +29,23 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     remainedTreatmentClean: "",
     remainedTreatmentCleanLongest: "",
     previouslyDescribedPsychiatricClean: "",
-    toleranceDefinedFollowing: "",
-    withdrawalEitherFollowing: "",
+    toleranceDefinedFollowing: [],
+    withdrawalEitherFollowing: [],
     amountValue: "",
     eachSubstanceLast: [],
     eachSubstanceLastDate: "",
     cleanSoberLastedFrom: "",
     cleanSoberLastedTo: "",
+    cleanSoberLongest: "",
   });
 
   const [errors, setErrors] = useState({});
   const [textErrors, setTextErrors] = useState({});
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
     setSubstanceUseValue(globalSubStanceUse);
   }, [globalSubStanceUse]);
 
@@ -876,9 +880,26 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     const isChecked = event.target.checked;
 
     let newCheckedItems = [...substanceUseValue?.regardingAlcoholAnyFollowing];
+    let newTolerance = [...substanceUseValue?.toleranceDefinedFollowing];
+    let newwithdrawal = [...substanceUseValue?.withdrawalEitherFollowing];
 
     if (isChecked) {
       newCheckedItems.push(itemValue);
+      if (itemValue === "Tolerance as defined by either of the following:") {
+        newTolerance = [
+          "a need for markedly increased amounts of alcohol to achieve intoxication or desired effect",
+          "a markedly diminished effect with continued use of the same amount of alcohol or substances",
+        ];
+      }
+
+      if (
+        itemValue === "Withdrawal as manifested by either of the following:"
+      ) {
+        newwithdrawal = [
+          "the characteristic withdrawal syndrome for alcohol or substances",
+          "alcohol or substances (or a closely related substance, such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms",
+        ];
+      }
     } else {
       newCheckedItems = newCheckedItems.filter((item) => item !== itemValue);
     }
@@ -888,19 +909,21 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       toleranceDefinedFollowing:
         itemValue === "Tolerance as defined by either of the following:" &&
         isChecked === false
-          ? ""
-          : substanceUseValue.toleranceDefinedFollowing,
+          ? []
+          : newTolerance,
       withdrawalEitherFollowing:
         itemValue === "Withdrawal as manifested by either of the following:" &&
         isChecked === false
-          ? ""
-          : substanceUseValue.withdrawalEitherFollowing,
+          ? []
+          : newwithdrawal,
     });
   };
 
   const handleToleranceDefinedFollowingChange = (event) => {
     let isChecked = event.target.checked;
+    let isValue = event.target.value;
     let newItem = [...substanceUseValue.regardingAlcoholAnyFollowing];
+    let newCheckedItem = [...substanceUseValue.toleranceDefinedFollowing];
 
     if (isChecked) {
       if (
@@ -913,17 +936,34 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       ) {
         newItem.push("Tolerance as defined by either of the following:");
       }
+      newCheckedItem.push(isValue);
+    } else {
+      newCheckedItem = newCheckedItem.filter((item) => item !== isValue);
     }
-    setSubstanceUseValue({
-      ...substanceUseValue,
-      regardingAlcoholAnyFollowing: newItem,
-      toleranceDefinedFollowing: event.target.value,
-    });
+
+    if (newCheckedItem.length === 0) {
+      let newRegardingAlcohol = substanceUseValue.regardingAlcoholAnyFollowing.filter(
+        (item) => item !== "Tolerance as defined by either of the following:"
+      );
+      setSubstanceUseValue({
+        ...substanceUseValue,
+        regardingAlcoholAnyFollowing: newRegardingAlcohol,
+        toleranceDefinedFollowing: newCheckedItem,
+      });
+    } else {
+      setSubstanceUseValue({
+        ...substanceUseValue,
+        regardingAlcoholAnyFollowing: newItem,
+        toleranceDefinedFollowing: newCheckedItem,
+      });
+    }
   };
 
   const handleWithdrawalEitherFollowingChange = (event) => {
     let isChecked = event.target.checked;
+    let isValue = event.target.value;
     let newItem = [...substanceUseValue.regardingAlcoholAnyFollowing];
+    let newCheckItem = [...substanceUseValue.withdrawalEitherFollowing];
 
     if (isChecked) {
       if (
@@ -936,12 +976,30 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       ) {
         newItem.push("Withdrawal as manifested by either of the following:");
       }
+
+      newCheckItem.push(isValue);
+    } else {
+      newCheckItem = newCheckItem.filter((item) => item !== isValue);
     }
-    setSubstanceUseValue({
-      ...substanceUseValue,
-      regardingAlcoholAnyFollowing: newItem,
-      withdrawalEitherFollowing: event.target.value,
-    });
+
+    if (newCheckItem.length === 0) {
+      let newRegardingAlcohol = substanceUseValue.regardingAlcoholAnyFollowing.filter(
+        (item) =>
+          item !== "Withdrawal as manifested by either of the following:"
+      );
+
+      setSubstanceUseValue({
+        ...substanceUseValue,
+        regardingAlcoholAnyFollowing: newRegardingAlcohol,
+        withdrawalEitherFollowing: newCheckItem,
+      });
+    } else {
+      setSubstanceUseValue({
+        ...substanceUseValue,
+        regardingAlcoholAnyFollowing: newItem,
+        withdrawalEitherFollowing: newCheckItem,
+      });
+    }
   };
 
   const handleEnrolledTreatmentProgramchange = (event) => {
@@ -1062,7 +1120,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
               onChange={handleEachSubstanceListStartedOldchange}
               checked={substanceUseValue?.eachSubstanceListStartedOld}
               errors={errors.eachSubstanceListStartedOld}
-              title2="Age(1-100)"
+              title2="Age"
               onChange2={handleAgeChange}
               errors2={textErrors?.eachSubstanceListStartedOldAge}
             />
@@ -1138,12 +1196,15 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
                           <div className="text-left my-3">
                             <label>
                               <input
-                                type="radio"
-                                value="increasedAlcohol"
+                                type="checkbox"
+                                value="a need for markedly increased amounts of alcohol to achieve intoxication or desired effect"
                                 className="mr-2"
                                 checked={
-                                  substanceUseValue?.toleranceDefinedFollowing ===
-                                  "increasedAlcohol"
+                                  substanceUseValue?.toleranceDefinedFollowing.filter(
+                                    (item) =>
+                                      item ===
+                                      "a need for markedly increased amounts of alcohol to achieve intoxication or desired effect"
+                                  ).length > 0
                                 }
                                 onChange={handleToleranceDefinedFollowingChange}
                               />
@@ -1155,12 +1216,15 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
                           <div className="text-left">
                             <label>
                               <input
-                                type="radio"
-                                value="alcoholAmount"
+                                type="checkbox"
+                                value="a markedly diminished effect with continued use of the same amount of alcohol or substances"
                                 className="mr-2"
                                 checked={
-                                  substanceUseValue?.toleranceDefinedFollowing ===
-                                  "alcoholAmount"
+                                  substanceUseValue?.toleranceDefinedFollowing.filter(
+                                    (item) =>
+                                      item ===
+                                      "a markedly diminished effect with continued use of the same amount of alcohol or substances"
+                                  ).length > 0
                                 }
                                 onChange={handleToleranceDefinedFollowingChange}
                               />
@@ -1177,12 +1241,15 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
                           <div className="text-left my-3">
                             <label>
                               <input
-                                type="radio"
-                                value="characteristicWithdrawal"
+                                type="checkbox"
+                                value="the characteristic withdrawal syndrome for alcohol or substances"
                                 className="mr-2"
                                 checked={
-                                  substanceUseValue?.withdrawalEitherFollowing ===
-                                  "characteristicWithdrawal"
+                                  substanceUseValue?.withdrawalEitherFollowing.filter(
+                                    (item) =>
+                                      item ===
+                                      "the characteristic withdrawal syndrome for alcohol or substances"
+                                  ).length > 0
                                 }
                                 onChange={handleWithdrawalEitherFollowingChange}
                               />
@@ -1194,16 +1261,19 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
                           <div className="text-left">
                             <label>
                               <input
-                                type="radio"
-                                value="alcoholWithdrawalSymptoms"
+                                type="checkbox"
+                                value="alcohol or substances (or a closely related substance, such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms"
                                 className="mr-2"
                                 checked={
-                                  substanceUseValue?.withdrawalEitherFollowing ===
-                                  "alcoholWithdrawalSymptoms"
+                                  substanceUseValue?.withdrawalEitherFollowing.filter(
+                                    (item) =>
+                                      item ===
+                                      "alcohol or substances (or a closely related substance, such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms"
+                                  ).length > 0
                                 }
                                 onChange={handleWithdrawalEitherFollowingChange}
                               />
-                              alcohol or substances (or a closely related
+                              Alcohol or substances (or a closely related
                               substance, such as a benzodiazepine) is taken to
                               relieve or avoid withdrawal symptoms
                             </label>
@@ -1256,7 +1326,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
                       <label htmlFor="from">From:</label>
                       <input
                         id="from"
-                        type="date"
+                        type="text"
                         className={classnames(
                           "border-b-2 ml-2 border-b-gray-300 w-full focus:outline-none focus:border-b-green-400 form-control form-control-lg",
                           { "border-b-red-500": errors.treatmentLastedDateFrom }
@@ -1279,7 +1349,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
                       <label htmlFor="to">To:</label>
                       <input
                         id="to"
-                        type="date"
+                        type="text"
                         className={classnames(
                           "border-b-2 ml-2 border-b-gray-300 w-full focus:outline-none focus:border-b-green-400 form-control form-control-lg",
                           { "border-b-red-500": errors.treatmentLastedDateTo }
@@ -1373,6 +1443,16 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
                 options={RemainedTreatmentCleanLongestOptions}
                 checked={substanceUseValue?.remainedTreatmentCleanLongest}
                 error={errors.remainedTreatmentCleanLongest}
+              />
+            </div>
+
+            <div className="w-[68%] mx-auto mt-3">
+              <TextFollowUp
+                title="When was this longest period of remaining clean and sober?"
+                onChange={handleChange}
+                name="cleanSoberLongest"
+                value={substanceUseValue?.cleanSoberLongest}
+                error={errors.cleanSoberLongest}
               />
             </div>
 

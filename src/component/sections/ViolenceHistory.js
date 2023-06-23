@@ -135,7 +135,7 @@ const ViolenceHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="165. Have you ever been arrested?"
+          title="165. Have you ever been involved in physical altercations?"
           type="radio"
           options={PhysicalAltercationsOptions}
           onChange={handlePhysicalAltercationschange}

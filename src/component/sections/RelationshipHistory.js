@@ -20,7 +20,7 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
     currentlyMarried: "",
     currentlyUnit: "weeks",
     currentRelationshipInvolve: "",
-    describeIntimateRelationship: "",
+    describeIntimateRelationship: [],
     PartnerOccupation: "",
     marriedNumber: "",
     intimateRelationshipTimes: "1",
@@ -31,6 +31,7 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
     childrenNumberAndAge: "",
     childrenDoingSchool: "",
     relationshipChildren: "",
+    sufferPsychiatricConditions: "",
     childrenHealthIssues: "",
   });
 
@@ -137,6 +138,11 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
 
   const ChildrenDoingSchoolOptions = [
     {
+      label: "Excellent",
+      value: "Excellent",
+      name: "ChildrenDoingSchoolOptionsExcellent",
+    },
+    {
       label: "Good",
       value: "Good",
       name: "ChildrenDoingSchoolOptionsGood",
@@ -154,6 +160,11 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
   ];
 
   const RelationshipChildrenOptions = [
+    {
+      label: "Excellent",
+      value: "Excellent",
+      name: "RelationshipChildrenOptionsExcellent",
+    },
     {
       label: "Good",
       value: "Good",
@@ -184,6 +195,19 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
     },
   ];
 
+  const sufferPsychiatricConditionsOptions = [
+    {
+      label: "Yes",
+      value: "Yes",
+      name: "sufferPsychiatricConditionsOptionsYes",
+    },
+    {
+      label: "No",
+      value: "No",
+      name: "sufferPsychiatricConditionsOptionsNo",
+    },
+  ];
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -198,8 +222,9 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
       currentlyMarried: "",
       currentlyUnit: "weeks",
       currentRelationshipInvolve: "",
-      describeIntimateRelationship: "",
+      describeIntimateRelationship: [],
       PartnerOccupation: "",
+      sufferPsychiatricConditions: "",
     });
   };
 
@@ -217,10 +242,29 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
     });
   };
 
-  const handleDescribeIntimateRelationshipchange = (event) => {
+  const handleSufferPsychiatricConditionsChange = (event) => {
     setRelationshipHistoryValue({
       ...relationshipHistoryValue,
-      describeIntimateRelationship: event.target.value,
+      sufferPsychiatricConditions: event.target.value,
+    });
+  };
+
+  const handleDescribeIntimateRelationshipchange = (event) => {
+    let isChecked = event.target.checked;
+    let isValue = event.target.value;
+    let newCheckedItems = [
+      ...relationshipHistoryValue.describeIntimateRelationship,
+    ];
+
+    if (isChecked) {
+      newCheckedItems.push(isValue);
+    } else {
+      newCheckedItems = newCheckedItems.filter((item) => item !== isValue);
+    }
+
+    setRelationshipHistoryValue({
+      ...relationshipHistoryValue,
+      describeIntimateRelationship: newCheckedItems,
     });
   };
 
@@ -346,7 +390,7 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
                 How long have you been involved in your current relationship?
               </p>
               <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
-              <div className="mt-5 p-2 flex">
+              <div className="mt-5 p-2">
                 <input
                   type="text"
                   className={classnames(
@@ -358,7 +402,7 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
                   onChange={handleChange}
                   placeholder="Your answer"
                 />
-                <select
+                {/* <select
                   className="w-[50%] bg-gray-50 border border-gray-400 rounded-md focus:ring-blue-500 focus:border-blue-500 focus: outline-none"
                   value={relationshipHistoryValue?.currentlyUnit}
                   onChange={handleCurrentylUnit}
@@ -368,7 +412,47 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
                       {item.label}
                     </option>
                   ))}
-                </select>
+                </select> */}
+                <div className="flex justify-between mt-4">
+                  <label>
+                    <input
+                      type="radio"
+                      value="weeks"
+                      className="mr-2"
+                      checked={
+                        relationshipHistoryValue?.currentlyUnit === "weeks"
+                      }
+                      onChange={handleCurrentylUnit}
+                    />
+                    weeks
+                  </label>
+
+                  <label>
+                    <input
+                      type="radio"
+                      value="months"
+                      className="mr-2"
+                      checked={
+                        relationshipHistoryValue?.currentlyUnit === "months"
+                      }
+                      onChange={handleCurrentylUnit}
+                    />
+                    months
+                  </label>
+
+                  <label>
+                    <input
+                      type="radio"
+                      value="years"
+                      className="mr-2"
+                      checked={
+                        relationshipHistoryValue?.currentlyUnit === "years"
+                      }
+                      onChange={handleCurrentylUnit}
+                    />
+                    years
+                  </label>
+                </div>
               </div>
 
               {errors.currentRelationshipInvolve && (
@@ -379,8 +463,8 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
             </div>
 
             <CardField
-              title="If yes, how would you describe your current intimate relationship?"
-              type="radio"
+              title="How would you describe your current intimate relationship?"
+              type="checkbox"
               options={DescribeIntimateRelationshipOptions}
               onChange={handleDescribeIntimateRelationshipchange}
               checked={relationshipHistoryValue?.describeIntimateRelationship}
@@ -389,11 +473,21 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
 
             <div className="w-[68%] mx-auto mt-3">
               <TextFollowUp
-                title="What Is Your Spouse or Partner's Occupation?"
+                title="What is your spouse or partner's occupation?"
                 onChange={handleChange}
                 name="PartnerOccupation"
                 value={relationshipHistoryValue?.PartnerOccupation}
                 error={errors.PartnerOccupation}
+              />
+            </div>
+
+            <div className="w-[68%] mx-auto mt-3">
+              <RadioFollowUp
+                title="Does your spouse or partner suffer from any general medical or psychiatric conditions (without naming their condition)?"
+                onChange={handleSufferPsychiatricConditionsChange}
+                options={sufferPsychiatricConditionsOptions}
+                checked={relationshipHistoryValue?.sufferPsychiatricConditions}
+                error={errors.sufferPsychiatricConditions}
               />
             </div>
           </div>
@@ -411,7 +505,7 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              142. How many long term intimate relationships have you had?
+              142. How many total long term intimate relationships have you had?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">

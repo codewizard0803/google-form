@@ -515,7 +515,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="183. Do you have siblings?"
+          title="183. How many of these siblings were you raised by?"
           type="radio"
           options={HaveSiblingsOptions}
           onChange={handleHaveSiblingsChange}
@@ -602,17 +602,8 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
           errors={errors.parentsMarried}
         />
 
-        {developmentalValue?.parentsMarried === "Yes" ? (
+        {developmentalValue?.parentsMarried === "No" ? (
           <div>
-            <CardField
-              title="Did your parents remain married?"
-              type="radio"
-              options={ParentsRemainMarriedOptions}
-              onChange={handleParentsRemainMarriedChange}
-              checked={developmentalValue?.parentsRemainMarried}
-              errors={errors.parentsRemainMarried}
-            />
-
             <CardField
               title="Did your parents divorce, separate, or have another arrangment?"
               type="radio"
@@ -646,7 +637,16 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
               </CardContent>
             </Card>
           </div>
-        ) : null}
+        ) : (
+          <CardField
+            title="Did your parents remain married?"
+            type="radio"
+            options={ParentsRemainMarriedOptions}
+            onChange={handleParentsRemainMarriedChange}
+            checked={developmentalValue?.parentsRemainMarried}
+            errors={errors.parentsRemainMarried}
+          />
+        )}
 
         <CardField
           title="186. Did your mother work?"

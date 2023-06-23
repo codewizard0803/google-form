@@ -257,7 +257,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="128. Have you ever experienced having so much energy that you do not need to sleep for several days or a week at a time?"
+          title="128. Have you been diagnosed by a healthcare provider with any of the following conditions?"
           type="checkbox"
           options={DiagnosedHealthcareProviderOptions}
           onChange={handleDiagnosedHealthcareProviderchange}
@@ -318,8 +318,18 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
           error={errors.physicalHealthMedicationsLists}
         />
 
+        <TextField
+          title="130. Have your general medical medications produced any side effects?"
+          type="text"
+          name="medicationsSideEffect"
+          value={medicalHistoryValue?.medicationsSideEffect}
+          placeholder="Your answer"
+          onChange={handleChange}
+          error={errors.medicationsSideEffect}
+        />
+
         <CardField
-          title="130. Have you ever had any surgeries?"
+          title="131. Have you ever had any surgeries?"
           type="radio"
           options={SurgeriesOptions}
           onChange={handleSurgerieschange}
@@ -341,18 +351,8 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
           </div>
         ) : null}
 
-        <TextField
-          title="131. Have your general medical medications produced any side effects?"
-          type="text"
-          name="medicationsSideEffect"
-          value={medicalHistoryValue?.medicationsSideEffect}
-          placeholder="Your answer"
-          onChange={handleChange}
-          error={errors.medicationsSideEffect}
-        />
-
         <CardField
-          title="132. Do your treatment providers have plans for your future medical care?"
+          title="132. Do your treatment providers have any plans for your future medical care?"
           type="radio"
           options={FutureMedicalPlanOptions}
           onChange={handleFutureMedicalPlanchange}
@@ -375,7 +375,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <TextField
-          title="133. Current primary care physician or nurse practitioner is (Name, Facility, City):"
+          title="133. Your current primary care physician or nurse practitioner is (Name, Facility, City):"
           type="text"
           name="currentPrimarycarePractitioner"
           value={medicalHistoryValue?.currentPrimarycarePractitioner}
@@ -440,7 +440,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <TextField
-          title="135. List All of the Hospitals You Have Ever Been In For Medical Reasons (and when you were in this hospital):"
+          title="135. List all of the hospitals you have ever been in for medical reasons (and when you were in this hospital):"
           type="text"
           name="hospitalListEverBeen"
           value={medicalHistoryValue?.hospitalListEverBeen}
@@ -449,15 +449,15 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
           error={errors.hospitalListEverBeen}
         />
 
-        <TextField
-          title="136. List All Of The Medications You Are Taking (Name of medication, dosage):"
+        {/* <TextField
+          title="136. List all of the medications you are taking (name of medication, dosage):"
           type="text"
           name="medicationsListTaking"
           value={medicalHistoryValue?.medicationsListTaking}
           placeholder="Your answer"
           onChange={handleChange}
           error={errors.medicationsListTaking}
-        />
+        /> */}
 
         <CardField
           title="137. Do you have any allergies or intolerances to medication or food?"

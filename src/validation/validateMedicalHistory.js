@@ -97,12 +97,12 @@ const validateMedicalHistory = (value, global) => {
     errors.hospitalListEverBeen = "";
   }
 
-  if (!value.medicationsListTaking.trim()) {
-    errors.medicationsListTaking = "See required fields above.";
-    isValid = false;
-  } else {
-    errors.medicationsListTaking = "";
-  }
+  // if (!value.medicationsListTaking.trim()) {
+  //   errors.medicationsListTaking = "See required fields above.";
+  //   isValid = false;
+  // } else {
+  //   errors.medicationsListTaking = "";
+  // }
 
   if (!value.allergiesMedication.trim()) {
     errors.allergiesMedication = "See required fields above.";
