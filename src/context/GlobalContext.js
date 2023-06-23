@@ -319,7 +319,7 @@ const GlobalContextProvider = ({ children }) => {
   });
 
   const [globalFamilyHistory, setGlobalFamilyHistory] = useState({
-    familyPsychiatricConditions: "",
+    familyPsychiatricConditions: [],
     psychiatricConditionsList: "",
     psychiatricConditionsTreatment: [],
     familyAttemptedSuicide: "",
