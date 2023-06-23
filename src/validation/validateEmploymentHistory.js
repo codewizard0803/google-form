@@ -114,10 +114,10 @@ const validateEmploymentHistory = (value) => {
     errors.receivedNegativeWork = "";
   }
 
-  if (!value.currentSourcesIncome.trim()) {
+  if (value.currentSourcesIncome.length === 0) {
     errors.currentSourcesIncome = "See required fields above.";
     isValid = false;
-  } else if (value.currentSourcesIncome !== "") {
+  } else if (value.currentSourcesIncome.length > 0) {
     if (!value.otherEmploymentList.trim()) {
       errors.otherEmploymentList = "See required fields above.";
       isValid = false;

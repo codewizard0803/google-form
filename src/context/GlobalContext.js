@@ -364,7 +364,7 @@ const GlobalContextProvider = ({ children }) => {
     placedDisability: "",
     disabilityDates: "",
     receivedNegativeWork: "",
-    currentSourcesIncome: "",
+    currentSourcesIncome: [],
     otherEmploymentList: "",
     workEvaluationsExplain: "",
   });

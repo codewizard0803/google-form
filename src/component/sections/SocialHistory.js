@@ -455,11 +455,7 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
           checked={socialHistoryValue?.describeCurrentLivingSituation}
           errors={errors.describeCurrentLivingSituation}
         />
-        {console.error(
-          socialHistoryValue?.describeCurrentLivingSituation.filter(
-            (item) => item !== "Homeless"
-          ).length
-        )}
+
         {socialHistoryValue?.describeCurrentLivingSituation.length !== 0 &&
         !(
           socialHistoryValue?.describeCurrentLivingSituation.filter(

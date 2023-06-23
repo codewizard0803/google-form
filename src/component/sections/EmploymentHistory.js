@@ -33,7 +33,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
     workerCompensationClaim: "",
     placedDisability: "",
     receivedNegativeWork: "",
-    currentSourcesIncome: "",
+    currentSourcesIncome: [],
     otherEmploymentList: "",
     disabilityDates: "",
     workEvaluationsExplain: "",
