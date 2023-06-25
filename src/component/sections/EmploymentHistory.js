@@ -194,16 +194,14 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
 
 
 
-  // useEffect(() => {
-  //   window.scrollTo({
-  //     top: 0,
-  //   });
-  //   setEmploymentHistoryValue(globalEmploymentHistory);
-  // }, [globalEmploymentHistory]);
-
   useEffect(() => {
-    console.log('EmploymentHistoryValue', employmentHistoryValue)
-  }, [employmentHistoryValue])
+    window.scrollTo({
+      top: 0,
+    });
+    setEmploymentHistoryValue(globalEmploymentHistory);
+  }, [globalEmploymentHistory]);
+
+
 
   const handleCurrentEmploymentStatuschange = (event) => {
     setEmploymentHistoryValue({
