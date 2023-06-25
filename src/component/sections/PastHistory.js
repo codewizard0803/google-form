@@ -1591,6 +1591,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
             <div>
               <CardField
                 title="Please list the treatment you received during the psychiatric hospitalization"
+                type="radio"
                 onChange={handleReceivedTreatmentChange}
                 options={ReceivedTreatmentOptions}
                 checked={pastHistoryValue?.receivedTreatment}

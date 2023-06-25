@@ -953,8 +953,8 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
                 title="How many times do you wake up per night before the time you plan to wake up?"
                 onChange={handleWakeUpTimesChange}
                 options={WakeUpTimesOptions}
-                checked={PHQValue?.stayAwakeLong}
-                error={errors.stayAwakeLong}
+                checked={PHQValue?.wakeUpTimes}
+                error={errors.wakeUpTimes}
               />
             </div>
             <div className="w-[68%] mx-auto mt-3">

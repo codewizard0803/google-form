@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
 import { toast } from "react-toastify";
+import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import CardField from "../common/CardField";
 import useGlobalContext from "../../hooks/useGlobalContext";
@@ -19,12 +21,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
     currentEmploymentStatus: "",
     employerName: "",
     employmentTitle: "",
-    pastEmployerName: "",
     jobDuties: "",
-    jobTitle: "",
-    pastEmploymentBegan: "",
-    pastEmploymentEnd: "",
-    pastEmploymentEndReason: "",
     difficultyJobDuties: "",
     pastImmediatelyEmployerName: "",
     pastWorkplaceInjuries: "",
@@ -37,6 +34,12 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
     otherEmploymentList: "",
     disabilityDates: "",
     workEvaluationsExplain: "",
+    employerList: [{
+      employer: "",
+      jobTitle: "",
+      datesOfEmployment: "",
+      reasonForLeaving: "",
+    }],
   });
 
   const [errors, setErrors] = useState({});
@@ -184,12 +187,23 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
     },
   ];
 
+  const employerListTHead = [
+    "Employer", "Your Job Title", "Dates of Employment", "Reason You Left This Job"
+  ]
+
+
+
+
+  // useEffect(() => {
+  //   window.scrollTo({
+  //     top: 0,
+  //   });
+  //   setEmploymentHistoryValue(globalEmploymentHistory);
+  // }, [globalEmploymentHistory]);
+
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-    });
-    setEmploymentHistoryValue(globalEmploymentHistory);
-  }, [globalEmploymentHistory]);
+    console.log('EmploymentHistoryValue', employmentHistoryValue)
+  }, [employmentHistoryValue])
 
   const handleCurrentEmploymentStatuschange = (event) => {
     setEmploymentHistoryValue({
@@ -201,6 +215,52 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
       difficultyJobDuties: "",
     });
   };
+
+  const handleInputChange = (event, rowIndex, columnName) => {
+    const updatedRows = [...employmentHistoryValue?.employerList]
+    updatedRows[rowIndex][columnName] = event.target.value
+    setEmploymentHistoryValue({
+      ...employmentHistoryValue,
+      employerList: updatedRows
+    })
+  }
+
+  const handleAddRow = (e) => {
+    e.preventDefault()
+    const lastEmployer = employmentHistoryValue.employerList[employmentHistoryValue.employerList.length - 1]
+    if (lastEmployer.employer && lastEmployer.jobTitle && lastEmployer.datesOfEmployment && lastEmployer.reasonForLeaving) {
+      let newRow = [...employmentHistoryValue.employerList]
+
+      newRow = [...newRow, { employer: '', jobTitle: '', datesOfEmployment: '', reasonForLeaving: '' }]
+      setEmploymentHistoryValue({
+        ...employmentHistoryValue,
+        employerList: newRow
+      })
+    } else {
+      toast.error("All columns must be filled in.", {
+        position: toast.POSITION.TOP_RIGHT
+      })
+    }
+
+  }
+
+  const handleDeleteRow = (index) => {
+    let newRow = [...employmentHistoryValue.employerList]
+
+    if(employmentHistoryValue.employerList.length > 1) {
+      newRow.splice(index, 1)
+      setEmploymentHistoryValue({
+        ...employmentHistoryValue,
+        employerList: newRow
+      })
+    } else {
+      toast.error("Can't Delete!", {
+        position: toast.POSITION.TOP_RIGHT
+      })
+    }
+
+   
+  }
 
   const handleDifficultyJobDutieschange = (event) => {
     setEmploymentHistoryValue({
@@ -301,7 +361,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="144. What is your current employment status?"
+          title="143. What is your current employment status?"
           type="radio"
           options={CurrentEmploymentStatusOptions}
           onChange={handleCurrentEmploymentStatuschange}
@@ -311,9 +371,9 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
 
         {employmentHistoryValue?.currentEmploymentStatus ===
           "Employed <20 hours per week" ||
-        employmentHistoryValue?.currentEmploymentStatus ===
+          employmentHistoryValue?.currentEmploymentStatus ===
           "Employed >20 hours per week, but not full time" ||
-        employmentHistoryValue?.currentEmploymentStatus ===
+          employmentHistoryValue?.currentEmploymentStatus ===
           "Employed full time" ? (
           <div>
             <TextField
@@ -357,80 +417,47 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
           </div>
         ) : null}
 
+
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              145. What is the name of your past employer immediately prior to
-              any current job you may have?
+              144. What is the name of your past employer immediately prior to any current job you may have?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
-            <div className="mt-5">
-              <div className="flex mt-2 mb-5">
-                <input
-                  type="text"
-                  className={classnames(
-                    "mt-2 border-b-2 border-b-gray-300 w-full focus:outline-none focus:border-b-green-400 form-control form-control-lg",
-                    { "border-b-red-500": errors.pastEmployerName }
-                  )}
-                  name="pastEmployerName"
-                  value={employmentHistoryValue.pastEmployerName}
-                  onChange={handleChange}
-                  placeholder="Your answer"
-                />
-              </div>
-              {errors.pastEmployerName && (
-                <div className="text-red-500 text-left text-[12px] mt-2">
-                  {errors.pastEmployerName}
-                </div>
-              )}
 
-              <TextFollowUp
-                title="What was your job title at this position?"
-                onChange={handleChange}
-                name="jobTitle"
-                value={employmentHistoryValue.jobTitle}
-                error={errors.jobTitle}
-              />
-
-              <TextFollowUp
-                title="When did you began this past employment"
-                onChange={handleChange}
-                name="pastEmploymentBegan"
-                value={employmentHistoryValue.pastEmploymentBegan}
-                error={errors.pastEmploymentBegan}
-              />
-
-              <TextFollowUp
-                title="When did you end this past employment position?"
-                onChange={handleChange}
-                name="pastEmploymentEnd"
-                value={employmentHistoryValue.pastEmploymentEnd}
-                error={errors.pastEmploymentEnd}
-              />
-
-              <TextFollowUp
-                title="What was the reason this employment ended?"
-                onChange={handleChange}
-                name="pastEmploymentEndReason"
-                value={employmentHistoryValue.pastEmploymentEndReason}
-                error={errors.pastEmploymentEndReason}
-              />
+            <div className="w-full flex justify-end">
+              <button onClick={handleAddRow} type="button" className="rounded my-2 text-blue-500"><AddCircleRoundedIcon sx={{ fontSize: 30 }} /></button>
+              <button onClick={() => handleDeleteRow(employmentHistoryValue.employerList.length - 1)} type="button" className="rounded my-2 text-blue-500"><DeleteIcon sx={{ fontSize: 30 }} /></button>
             </div>
+            <div className="overflow-x-auto">
+              <table className="w-full whitespace-no-wrap">
+                <thead className="text-xs text-center text-gray-700 uppercase bg-gray-50">
+                  <tr className="text-center border border-gray-200">
+                    <th className="border-r-2 border-gray-200">Employer</th>
+                    <th className="border-r-2 border-gray-200">Your Job Title</th>
+                    <th className="border-r-2 border-gray-200">Dates of Employment</th>
+                    <th className="border-r-2 border-gray-200">Reason You Left This Job</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {employmentHistoryValue?.employerList.map((row, index) => (
+                    <tr key={index} className="border border-gray-200">
+                      <td className="border-r-2 border-gray-200"><input type="text" className="focus:outline-none" value={row.employer} onChange={(e) => handleInputChange(e, index, 'employer')} /></td>
+                      <td className="border-r-2 border-gray-200"><input type="text" className="focus:outline-none" value={row.jobTitle} onChange={(e) => handleInputChange(e, index, 'jobTitle')} /></td>
+                      <td className="border-r-2 border-gray-200"><input type="text" className="focus:outline-none" value={row.datesOfEmployment} onChange={(e) => handleInputChange(e, index, 'datesOfEmployment')} /></td>
+                      <td className="border-r-2 border-gray-200"><input type="text" className="focus:outline-none" value={row.reasonForLeaving} onChange={(e) => handleInputChange(e, index, 'reasonForLeaving')} /></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
           </CardContent>
+
         </Card>
 
-        <TextField
-          title="146. What is the name of your past employer immediately prior to the job described above?"
-          type="text"
-          name="pastImmediatelyEmployerName"
-          value={employmentHistoryValue?.pastImmediatelyEmployerName}
-          placeholder="Your answer"
-          onChange={handleChange}
-          error={errors.pastImmediatelyEmployerName}
-        />
-
         <CardField
-          title="147. Have you had any past workplace injuries?"
+          title="145. Have you had any past workplace injuries?"
           type="radio"
           options={PastWorkplaceInjuriesOptions}
           onChange={handlePastWorkplaceInjurieschange}
@@ -463,7 +490,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="148. Have you ever submitted a Workers’ Compensation claim"
+          title="146. Have you ever submitted a Workers’ Compensation claim"
           type="radio"
           options={WorkerCompensationClaimOptions}
           onChange={handleWorkerCompensationClaimchange}
@@ -472,7 +499,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="149. Have you ever been placed on disability?"
+          title="147. Have you ever been placed on disability?"
           type="radio"
           options={PlacedDisabilityOptions}
           onChange={handlePlacedDisabilitychange}
@@ -494,7 +521,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="150. Have you ever received negative work evaluations, been terminated from a position, or received disciplinary action?"
+          title="148. Have you ever received negative work evaluations, been terminated from a position, or received disciplinary action?"
           type="radio"
           options={ReceivedNegativeWorkOptions}
           onChange={handleReceivedNegativeWorkchange}
@@ -515,7 +542,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="151. List all of your current sources of income."
+          title="149. List all of your current sources of income."
           type="checkbox"
           options={CurrentSourcesIncomeOptions}
           onChange={handleCurrentSourcesIncomechange}
@@ -523,15 +550,6 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
           errors={errors.currentSourcesIncome}
         />
 
-        <TextField
-          title="152. Please describe the other employment you listed in the previous question:"
-          type="text"
-          name="otherEmploymentList"
-          value={employmentHistoryValue?.otherEmploymentList}
-          placeholder="Your answer..."
-          onChange={handleChange}
-          error={errors.otherEmploymentList}
-        />
 
         <div className="mx-auto w-[65%] flex justify-between mt-3">
           {currentSection > 0 && (

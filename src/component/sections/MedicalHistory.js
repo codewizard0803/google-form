@@ -460,7 +460,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
         /> */}
 
         <CardField
-          title="137. Do you have any allergies or intolerances to medication or food?"
+          title="136. Do you have any allergies or intolerances to medication or food?"
           type="radio"
           options={AllergiesMedicationOptions}
           onChange={handleAllergiesMedicationchange}

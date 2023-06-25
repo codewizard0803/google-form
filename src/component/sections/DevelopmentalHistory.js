@@ -475,7 +475,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <TextField
-          title="179. Where were you born?"
+          title="176. Where were you born?"
           placeholder="Your answer"
           name="bornPlace"
           value={developmentalValue?.bornPlace}
@@ -484,7 +484,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="180. Where were you primarily raised?"
+          title="177. Where were you primarily raised?"
           placeholder="Your answer"
           name="primarilyRaised"
           value={developmentalValue?.primarilyRaised}
@@ -493,7 +493,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardTextFollowUp
-          title="181. Who primarlily raised you during your childhood?"
+          title="178. Who primarlily raised you during your childhood?"
           type="radio"
           options={RaisedChilhoodOptions}
           onChange={handleRaisedChilhoodchange}
@@ -506,7 +506,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="182. How would you rate your relationship with the primary adults who raised you when you were a child?"
+          title="179. How would you rate your relationship with the primary adults who raised you when you were a child?"
           type="checkbox"
           options={RelationshipPrimaryAdultsOptions}
           onChange={handleRelationshipPrimaryAdultsChange}
@@ -515,7 +515,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="183. How many of these siblings were you raised by?"
+          title="180. How many of these siblings were you raised by?"
           type="radio"
           options={HaveSiblingsOptions}
           onChange={handleHaveSiblingsChange}
@@ -585,7 +585,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="184. Did you experience any abuse during your childhood?"
+          title="181. Did you experience any abuse during your childhood?"
           type="checkbox"
           options={ExperienceAbuseChildhoodOptions}
           onChange={handleExperienceAbuseChildhoodChange}
@@ -594,7 +594,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="185. Were your parents ever married?"
+          title="182. Were your parents ever married?"
           type="radio"
           options={ParentsMarriedOptions}
           onChange={handleParentsMarriedChange}
@@ -637,7 +637,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
               </CardContent>
             </Card>
           </div>
-        ) : (
+        ) : developmentalValue?.parentsMarried !== "" ? (
           <CardField
             title="Did your parents remain married?"
             type="radio"
@@ -646,10 +646,10 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
             checked={developmentalValue?.parentsRemainMarried}
             errors={errors.parentsRemainMarried}
           />
-        )}
+        ) : null}
 
         <CardField
-          title="186. Did your mother work?"
+          title="183. Did your mother work?"
           type="radio"
           options={MotherWorkOptions}
           onChange={handleMotherWorkChange}
@@ -680,7 +680,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="187. Is your mother current living?"
+          title="184. Is your mother current living?"
           type="radio"
           options={MotherCurrentLivingOptions}
           onChange={handleMotherCurrentLivingChange}
@@ -711,7 +711,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="188. Did your father work?"
+          title="185. Did your father work?"
           type="radio"
           options={FatherWorkOptions}
           onChange={handleFatherWorkChange}
@@ -742,7 +742,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="189. Is your father current living?"
+          title="186. Is your father current living?"
           type="radio"
           options={FatherCurrentLivingOptions}
           onChange={handleFatherCurrentLivingChange}
@@ -773,7 +773,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="190. Which of these statements best describes your social life as a child:"
+          title="187. Which of these statements best describes your social life as a child:"
           type="radio"
           options={BestDescribesSocialLifeChildOptions}
           onChange={handleBestDescribesSocialLifeChildChange}
@@ -782,7 +782,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="191. What activities did you enjoy during your childhood?"
+          title="188. What activities did you enjoy during your childhood?"
           placeholder="Your answer"
           name="enjoyActivitiesChild"
           value={developmentalValue?.enjoyActivitiesChild}

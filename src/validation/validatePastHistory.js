@@ -213,7 +213,7 @@ const validatePastHistory = (value) => {
     errors.admittedPsychiatricHospital = "See required fields above.";
     isValid = false;
   } else if (value.admittedPsychiatricHospital === "Yes") {
-    if (!value.psychiatricHospitalizationReason.trim()) {
+    if (value.psychiatricHospitalizationReason.length === 0) {
       errors.psychiatricHospitalizationReason = "See required fields above.";
       isValid = false;
     }

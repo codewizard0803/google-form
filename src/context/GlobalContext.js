@@ -351,10 +351,6 @@ const GlobalContextProvider = ({ children }) => {
     employmentTitle: "",
     pastEmployerName: "",
     jobDuties: "",
-    jobTitle: "",
-    pastEmploymentBegan: "",
-    pastEmploymentEnd: "",
-    pastEmploymentEndReason: "",
     difficultyJobDuties: "",
     pastImmediatelyEmployerName: "",
     pastWorkplaceInjuries: "",
@@ -367,6 +363,12 @@ const GlobalContextProvider = ({ children }) => {
     currentSourcesIncome: [],
     otherEmploymentList: "",
     workEvaluationsExplain: "",
+    employerList: [{
+      employer: "",
+      jobTitle: "",
+      datesOfEmployment: "",
+      reasonForLeaving: "",
+    }]
   });
 
   const [globalEducationHistory, setGlobalEducationHistory] = useState({

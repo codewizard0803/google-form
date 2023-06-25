@@ -34,31 +34,7 @@ const validateEmploymentHistory = (value) => {
     errors.currentEmploymentStatus = "";
   }
 
-  if (!value?.pastEmployerName?.trim()) {
-    errors.pastEmployerName = "See required fields above.";
-    isValid = false;
-  } else {
-    errors.pastEmployerName = "";
-    if (!value?.jobTitle?.trim()) {
-      errors.jobTitle = "See required fields above.";
-      isValid = false;
-    }
-
-    if (!value?.pastEmploymentBegan?.trim()) {
-      errors.pastEmploymentBegan = "See required fields above.";
-      isValid = false;
-    }
-
-    if (!value?.pastEmploymentEnd?.trim()) {
-      errors.pastEmploymentEnd = "See required fields above.";
-      isValid = false;
-    }
-
-    if (!value?.pastEmploymentEndReason?.trim()) {
-      errors.pastEmploymentEndReason = "See required fields above.";
-      isValid = false;
-    }
-  }
+  
 
   if (!value.pastImmediatelyEmployerName.trim()) {
     errors.pastImmediatelyEmployerName = "See required fields above.";

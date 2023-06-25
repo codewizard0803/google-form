@@ -97,7 +97,7 @@ const CriminalHistory = ({ currentSection, setCurrentSection }) => {
       </p>
       <form>
         <CardField
-          title="164. Have you ever been arrested?"
+          title="161. Have you ever been arrested?"
           type="radio"
           options={ArrestedOptions}
           onChange={handleArrestedchange}

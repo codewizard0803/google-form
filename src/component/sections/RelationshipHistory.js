@@ -366,7 +366,7 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="140. Are you currently involved in an intimate relationship?"
+          title="139. Are you currently involved in an intimate relationship?"
           type="radio"
           options={CurrentlyIntimateRelationshipOptions}
           onChange={handleCurrentlyIntimateRelationshipchange}
@@ -494,7 +494,7 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="141. How many times have you been married?"
+          title="140. How many times have you been married?"
           type="radio"
           options={MarriedNumberOptions}
           onChange={handleMarriedNumberchange}
@@ -505,7 +505,7 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              142. How many total long term intimate relationships have you had?
+              141. How many total long term intimate relationships have you had?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
             <div className="mt-5">
@@ -551,7 +551,7 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <CardField
-          title="143. Do you have children?"
+          title="142. Do you have children?"
           type="radio"
           options={HaveChildrenOptions}
           onChange={handleHaveChildrenchange}
