@@ -68,13 +68,13 @@ const MilitaryHistory = ({ currentSection, setCurrentSection }) => {
 
   const DischargeStatusOptions = [
     {
-      label: "Honorable or Under honorable",
-      value: "honorable or Under honorable",
+      label: "Honorable",
+      value: "honorable",
       name: "DischargeStatusOptionsHonorable or Under honorable",
     },
     {
-      label: "General under Honorable",
-      value: "general under Honorable",
+      label: "General",
+      value: "general",
       name: "DischargeStatusOptionsGeneral under Honorable",
     },
     {
