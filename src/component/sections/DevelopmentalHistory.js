@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import { toast } from "react-toastify";
@@ -9,10 +11,8 @@ import validateDevelopmentalHistory from "../../validation/validateDevelopmental
 import CardTextFollowUp from "../common/CardTextFollowUp";
 
 const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
-  const {
-    globalDevelopmentalHistory,
-    setGlobalDevelopmentalHistory,
-  } = useGlobalContext();
+  const { globalDevelopmentalHistory, setGlobalDevelopmentalHistory } =
+    useGlobalContext();
   const [developmentalValue, setDevelopmentalValue] = useState({
     bornPlace: "",
     primarilyRaised: "",
@@ -114,45 +114,39 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
     {
       label: "Positive: stable, supportive, or loving",
       value: "Positive: stable, supportive, or loving",
-      name:
-        "RelationshipSiblingsOptionsPositive: stable, supportive, or loving",
+      name: "RelationshipSiblingsOptionsPositive: stable, supportive, or loving",
     },
     {
       label:
         "Medium: some disruption in the relationship, some level of conflicts",
       value:
         "Medium: some disruption in the relationship, some level of conflicts",
-      name:
-        "RelationshipSiblingsOptionsMedium: some disruption in the relationship, some level of conflicts",
+      name: "RelationshipSiblingsOptionsMedium: some disruption in the relationship, some level of conflicts",
     },
     {
-      label: "Poor: high level of instability and conflict",
-      value: "Poor: high level of instability and conflict",
-      name:
-        "RelationshipSiblingsOptionsPoor: high level of instability and conflict",
+      label: "poor: high level of instability and conflict",
+      value: "poor: high level of instability and conflict",
+      name: "RelationshipSiblingsOptionspoor: high level of instability and conflict",
     },
   ];
 
   const RelationshipPrimaryAdultsOptions = [
     {
       label: "Positive: stable, supportive, or loving",
-      value: "Positive: stable, supportive, or loving",
-      name:
-        "RelationshipPrimaryAdultsOptionsPositive: stable, supportive, or loving",
+      value: "positive(stable, supportive, or loving)",
+      name: "RelationshipPrimaryAdultsOptionsPositive: stable, supportive, or loving",
     },
     {
       label:
         "Medium: some disruption in the relationship, some level of conflicts",
       value:
-        "Medium: some disruption in the relationship, some level of conflicts",
-      name:
-        "RelationshipPrimaryAdultsOptionsMedium: some disruption in the relationship, some level of conflicts",
+        "medium(some disruption in the relationship, some level of conflicts)",
+      name: "RelationshipPrimaryAdultsOptionsMedium: some disruption in the relationship, some level of conflicts",
     },
     {
-      label: "Poor: high level of instability and conflict",
-      value: "Poor: high level of instability and conflict",
-      name:
-        "RelationshipPrimaryAdultsOptionsPoor: high level of instability and conflict",
+      label: "poor: high level of instability and conflict",
+      value: "poor(high level of instability and conflict)",
+      name: "RelationshipPrimaryAdultsOptionspoor: high level of instability and conflict",
     },
   ];
 
@@ -236,20 +230,17 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
     {
       label: "I was social as a child with many friends",
       value: "I was social as a child with many friends",
-      name:
-        "BestDescribesSocialLifeChildOptionsI was social as a child with many friends",
+      name: "BestDescribesSocialLifeChildOptionsI was social as a child with many friends",
     },
     {
       label: "I prefered to spend time alone and had few friends",
       value: "I prefered to spend time alone and had few friends",
-      name:
-        "BestDescribesSocialLifeChildOptionsI prefered to spend time alone and had few friends",
+      name: "BestDescribesSocialLifeChildOptionsI prefered to spend time alone and had few friends",
     },
     {
       label: "I had several close friends but also spent time alone as a child",
       value: "I had several close friends but also spent time alone as a child",
-      name:
-        "BestDescribesSocialLifeChildOptionsI had several close friends but also spent time alone as a child",
+      name: "BestDescribesSocialLifeChildOptionsI had several close friends but also spent time alone as a child",
     },
   ];
 
@@ -449,9 +440,8 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
   const handleNextClick = (event) => {
     event.preventDefault();
 
-    const { isValid, errors } = validateDevelopmentalHistory(
-      developmentalValue
-    );
+    const { isValid, errors } =
+      validateDevelopmentalHistory(developmentalValue);
     setErrors(errors);
 
     setGlobalDevelopmentalHistory(developmentalValue);

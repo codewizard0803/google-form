@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import classnames from "classnames";
@@ -9,10 +11,8 @@ import TextField from "../common/TextField";
 import validateMilitaryHistory from "../../validation/validateMilitaryHistory";
 
 const MilitaryHistory = ({ currentSection, setCurrentSection }) => {
-  const {
-    globalMilitaryHistory,
-    setGlobalMilitaryHistory,
-  } = useGlobalContext();
+  const { globalMilitaryHistory, setGlobalMilitaryHistory } =
+    useGlobalContext();
 
   const [militaryHistoryValue, setMilitaryHistoryValue] = useState({
     enrolledMilitary: "",
@@ -30,38 +30,38 @@ const MilitaryHistory = ({ currentSection, setCurrentSection }) => {
   ];
 
   const BranchMilitaryOptions = [
-    { label: "Army", value: "Army", name: "BranchMilitaryOptionsArmy" },
+    { label: "Army", value: "army", name: "BranchMilitaryOptionsArmy" },
     {
       label: "Marines",
-      value: "Marines",
+      value: "marines",
       name: "BranchMilitaryOptionsMarines",
     },
     { label: "Navy", value: "Navy", name: "BranchMilitaryOptionsNavy" },
 
     {
       label: "Air Force",
-      value: "Air Force",
+      value: "air Force",
       name: "BranchMilitaryOptionsAir Force",
     },
 
     {
       label: "Space Force",
-      value: "Space Force",
+      value: "space Force",
       name: "BranchMilitaryOptionsSpace Force",
     },
     {
       label: "Coast Guard",
-      value: "Coast Guard",
+      value: "coast Guard",
       name: "BranchMilitaryOptionsCoast Guard",
     },
     {
       label: "Air National Guard",
-      value: "Air National Guard",
+      value: "air National Guard",
       name: "BranchMilitaryOptionsAir National Guard",
     },
     {
       label: "Military Reserves",
-      value: "Military Reserves",
+      value: "military Reserves",
       name: "BranchMilitaryOptionsMilitary Reserves",
     },
   ];
@@ -69,32 +69,32 @@ const MilitaryHistory = ({ currentSection, setCurrentSection }) => {
   const DischargeStatusOptions = [
     {
       label: "Honorable or Under honorable",
-      value: "Honorable or Under honorable",
+      value: "honorable or Under honorable",
       name: "DischargeStatusOptionsHonorable or Under honorable",
     },
     {
       label: "General under Honorable",
-      value: "General under Honorable",
+      value: "general under Honorable",
       name: "DischargeStatusOptionsGeneral under Honorable",
     },
     {
       label: "Other than Honorable(OTH)",
-      value: "Other than Honorable(OTH)",
+      value: "other than Honorable(OTH)",
       name: "DischargeStatusOptionsOther than Honorable(OTH)",
     },
     {
       label: "Bad Conduct",
-      value: "Bad Conduct",
+      value: "bad Conduct",
       name: "DischargeStatusOptionsBad Conduct",
     },
     {
       label: "Dishonorably(DD)",
-      value: "Dishonorably(DD)",
+      value: "dishonorably(DD)",
       name: "DischargeStatusOptionsDishonorably(DD)",
     },
     {
       label: "Entry Level(ELS) or Non-Characterized",
-      value: "Entry Level(ELS) or Non-Characterized",
+      value: "entry Level(ELS) or Non-Characterized",
       name: "DischargeStatusOptionsEntry Level(ELS) or Non-Characterized",
     },
   ];

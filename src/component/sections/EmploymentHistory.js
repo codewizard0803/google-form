@@ -1,9 +1,11 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
 import { toast } from "react-toastify";
-import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
-import DeleteIcon from '@mui/icons-material/Delete';
+import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 import CardField from "../common/CardField";
 import useGlobalContext from "../../hooks/useGlobalContext";
@@ -12,10 +14,8 @@ import TextFollowUp from "../common/TextFollowUp";
 import validateEmploymentHistory from "../../validation/validateEmploymentHistory";
 
 const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
-  const {
-    globalEmploymentHistory,
-    setGlobalEmploymentHistory,
-  } = useGlobalContext();
+  const { globalEmploymentHistory, setGlobalEmploymentHistory } =
+    useGlobalContext();
 
   const [employmentHistoryValue, setEmploymentHistoryValue] = useState({
     currentEmploymentStatus: "",
@@ -34,12 +34,14 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
     otherEmploymentList: "",
     disabilityDates: "",
     workEvaluationsExplain: "",
-    employerList: [{
-      employer: "",
-      jobTitle: "",
-      datesOfEmployment: "",
-      reasonForLeaving: "",
-    }],
+    employerList: [
+      {
+        employer: "",
+        jobTitle: "",
+        datesOfEmployment: "",
+        reasonForLeaving: "",
+      },
+    ],
   });
 
   const [errors, setErrors] = useState({});
@@ -47,49 +49,47 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
   const CurrentEmploymentStatusOptions = [
     {
       label: "Unemployed, looking for work",
-      value: "Unemployed, looking for work",
+      value: "unemployed, looking for work",
       name: "CurrentEmploymentStatusOptionsUnemployed, looking for work",
     },
     {
       label: "Unemployed, not looking for work",
-      value: "Unemployed, not looking for work",
+      value: "unemployed, not looking for work",
       name: "CurrentEmploymentStatusOptionsUnemployed, not looking for work",
     },
     {
       label: "Employed <20 hours per week",
-      value: "Employed <20 hours per week",
+      value: "employed at less than 20 hours per week",
       name: "CurrentEmploymentStatusOptionsEmployed <20 hours per week",
     },
     {
       label: "Employed >20 hours per week, but not full time",
-      value: "Employed >20 hours per week, but not full time",
-      name:
-        "CurrentEmploymentStatusOptionsEmployed >20 hours per week, but not full time",
+      value: "employed at more than 20 hours per week, but not full time",
+      name: "CurrentEmploymentStatusOptionsEmployed >20 hours per week, but not full time",
     },
     {
       label: "Employed full time",
-      value: "Employed full time",
+      value: "employed full time",
       name: "CurrentEmploymentStatusOptionsEmployed full time",
     },
     {
       label: "Retired",
-      value: "Retired",
+      value: "retired",
       name: "CurrentEmploymentStatusOptionsRetired",
     },
     {
       label: "Total Temporary Disability, not working",
-      value: "Total Temporary Disability, not working",
-      name:
-        "CurrentEmploymentStatusOptionsTotal Temporary Disability, not working",
+      value: "total Temporary Disability, not working",
+      name: "CurrentEmploymentStatusOptionsTotal Temporary Disability, not working",
     },
     {
       label: "Permanent Disability, not working",
-      value: "Permanent Disability, not working",
+      value: "permanent Disability, not working",
       name: "CurrentEmploymentStatusOptionsPermanent Disability, not working",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "CurrentEmploymentStatusOptionsOther",
     },
   ];
@@ -162,37 +162,37 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
   const CurrentSourcesIncomeOptions = [
     {
       label: "Above employment",
-      value: "Above employment",
+      value: "above employment",
       name: "CurrentSourcesIncomeOptionsAbove employment",
     },
     {
       label: "Other employment",
-      value: "Other employment",
+      value: "other employment",
       name: "CurrentSourcesIncomeOptionsOther employment",
     },
     {
       label: "Workers’ Compensation benefits",
-      value: "Workers’ Compensation benefits",
+      value: "workers’ compensation benefits",
       name: "CurrentSourcesIncomeOptionsWorkers’ Compensation benefits",
     },
     {
       label: "Spouses income",
-      value: "Spouses income",
+      value: "spouses income",
       name: "CurrentSourcesIncomeOptionsSpouses income",
     },
     {
       label: "Children’s income",
-      value: "Children’s income",
+      value: "children’s income",
       name: "CurrentSourcesIncomeOptionsChildren’s income",
     },
   ];
 
   const employerListTHead = [
-    "Employer", "Your Job Title", "Dates of Employment", "Reason You Left This Job"
-  ]
-
-
-
+    "Employer",
+    "Your Job Title",
+    "Dates of Employment",
+    "Reason You Left This Job",
+  ];
 
   useEffect(() => {
     window.scrollTo({
@@ -200,8 +200,6 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
     });
     setEmploymentHistoryValue(globalEmploymentHistory);
   }, [globalEmploymentHistory]);
-
-
 
   const handleCurrentEmploymentStatuschange = (event) => {
     setEmploymentHistoryValue({
@@ -215,50 +213,63 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
   };
 
   const handleInputChange = (event, rowIndex, columnName) => {
-    const updatedRows = [...employmentHistoryValue?.employerList]
-    updatedRows[rowIndex][columnName] = event.target.value
+    const updatedRows = [...employmentHistoryValue?.employerList];
+    updatedRows[rowIndex][columnName] = event.target.value;
     setEmploymentHistoryValue({
       ...employmentHistoryValue,
-      employerList: updatedRows
-    })
-  }
+      employerList: updatedRows,
+    });
+  };
 
   const handleAddRow = (e) => {
-    e.preventDefault()
-    const lastEmployer = employmentHistoryValue.employerList[employmentHistoryValue.employerList.length - 1]
-    if (lastEmployer.employer && lastEmployer.jobTitle && lastEmployer.datesOfEmployment && lastEmployer.reasonForLeaving) {
-      let newRow = [...employmentHistoryValue.employerList]
+    e.preventDefault();
+    const lastEmployer =
+      employmentHistoryValue.employerList[
+        employmentHistoryValue.employerList.length - 1
+      ];
+    if (
+      lastEmployer.employer &&
+      lastEmployer.jobTitle &&
+      lastEmployer.datesOfEmployment &&
+      lastEmployer.reasonForLeaving
+    ) {
+      let newRow = [...employmentHistoryValue.employerList];
 
-      newRow = [...newRow, { employer: '', jobTitle: '', datesOfEmployment: '', reasonForLeaving: '' }]
+      newRow = [
+        ...newRow,
+        {
+          employer: "",
+          jobTitle: "",
+          datesOfEmployment: "",
+          reasonForLeaving: "",
+        },
+      ];
       setEmploymentHistoryValue({
         ...employmentHistoryValue,
-        employerList: newRow
-      })
+        employerList: newRow,
+      });
     } else {
       toast.error("All columns must be filled in.", {
-        position: toast.POSITION.TOP_RIGHT
-      })
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
-
-  }
+  };
 
   const handleDeleteRow = (index) => {
-    let newRow = [...employmentHistoryValue.employerList]
+    let newRow = [...employmentHistoryValue.employerList];
 
-    if(employmentHistoryValue.employerList.length > 1) {
-      newRow.splice(index, 1)
+    if (employmentHistoryValue.employerList.length > 1) {
+      newRow.splice(index, 1);
       setEmploymentHistoryValue({
         ...employmentHistoryValue,
-        employerList: newRow
-      })
+        employerList: newRow,
+      });
     } else {
       toast.error("Can't Delete!", {
-        position: toast.POSITION.TOP_RIGHT
-      })
+        position: toast.POSITION.TOP_RIGHT,
+      });
     }
-
-   
-  }
+  };
 
   const handleDifficultyJobDutieschange = (event) => {
     setEmploymentHistoryValue({
@@ -368,11 +379,11 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         {employmentHistoryValue?.currentEmploymentStatus ===
-          "Employed <20 hours per week" ||
-          employmentHistoryValue?.currentEmploymentStatus ===
-          "Employed >20 hours per week, but not full time" ||
-          employmentHistoryValue?.currentEmploymentStatus ===
-          "Employed full time" ? (
+          "employed at less than 20 hours per week" ||
+        employmentHistoryValue?.currentEmploymentStatus ===
+          "employed at more than 20 hours per week, but not full time" ||
+        employmentHistoryValue?.currentEmploymentStatus ===
+          "employed full time" ? (
           <div>
             <TextField
               title="What is the name of your employer?"
@@ -415,43 +426,99 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
           </div>
         ) : null}
 
-
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              144. What is the name of your past employer immediately prior to any current job you may have?
+              144. What is the name of your past employer immediately prior to
+              any current job you may have?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
 
             <div className="w-full flex justify-end">
-              <button onClick={handleAddRow} type="button" className="rounded my-2 text-blue-500"><AddCircleRoundedIcon sx={{ fontSize: 30 }} /></button>
-              <button onClick={() => handleDeleteRow(employmentHistoryValue.employerList.length - 1)} type="button" className="rounded my-2 text-blue-500"><DeleteIcon sx={{ fontSize: 30 }} /></button>
+              <button
+                onClick={handleAddRow}
+                type="button"
+                className="rounded my-2 text-blue-500"
+              >
+                <AddCircleRoundedIcon sx={{ fontSize: 30 }} />
+              </button>
+              <button
+                onClick={() =>
+                  handleDeleteRow(
+                    employmentHistoryValue.employerList.length - 1
+                  )
+                }
+                type="button"
+                className="rounded my-2 text-blue-500"
+              >
+                <DeleteIcon sx={{ fontSize: 30 }} />
+              </button>
             </div>
             <div className="overflow-x-auto">
               <table className="w-full whitespace-no-wrap">
                 <thead className="text-xs text-center text-gray-700 uppercase bg-gray-50">
                   <tr className="text-center border border-gray-200">
                     <th className="border-r-2 border-gray-200">Employer</th>
-                    <th className="border-r-2 border-gray-200">Your Job Title</th>
-                    <th className="border-r-2 border-gray-200">Dates of Employment</th>
-                    <th className="border-r-2 border-gray-200">Reason You Left This Job</th>
+                    <th className="border-r-2 border-gray-200">
+                      Your Job Title
+                    </th>
+                    <th className="border-r-2 border-gray-200">
+                      Dates of Employment
+                    </th>
+                    <th className="border-r-2 border-gray-200">
+                      Reason You Left This Job
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   {employmentHistoryValue?.employerList.map((row, index) => (
                     <tr key={index} className="border border-gray-200">
-                      <td className="border-r-2 border-gray-200"><input type="text" className="focus:outline-none" value={row.employer} onChange={(e) => handleInputChange(e, index, 'employer')} /></td>
-                      <td className="border-r-2 border-gray-200"><input type="text" className="focus:outline-none" value={row.jobTitle} onChange={(e) => handleInputChange(e, index, 'jobTitle')} /></td>
-                      <td className="border-r-2 border-gray-200"><input type="text" className="focus:outline-none" value={row.datesOfEmployment} onChange={(e) => handleInputChange(e, index, 'datesOfEmployment')} /></td>
-                      <td className="border-r-2 border-gray-200"><input type="text" className="focus:outline-none" value={row.reasonForLeaving} onChange={(e) => handleInputChange(e, index, 'reasonForLeaving')} /></td>
+                      <td className="border-r-2 border-gray-200">
+                        <input
+                          type="text"
+                          className="focus:outline-none"
+                          value={row.employer}
+                          onChange={(e) =>
+                            handleInputChange(e, index, "employer")
+                          }
+                        />
+                      </td>
+                      <td className="border-r-2 border-gray-200">
+                        <input
+                          type="text"
+                          className="focus:outline-none"
+                          value={row.jobTitle}
+                          onChange={(e) =>
+                            handleInputChange(e, index, "jobTitle")
+                          }
+                        />
+                      </td>
+                      <td className="border-r-2 border-gray-200">
+                        <input
+                          type="text"
+                          className="focus:outline-none"
+                          value={row.datesOfEmployment}
+                          onChange={(e) =>
+                            handleInputChange(e, index, "datesOfEmployment")
+                          }
+                        />
+                      </td>
+                      <td className="border-r-2 border-gray-200">
+                        <input
+                          type="text"
+                          className="focus:outline-none"
+                          value={row.reasonForLeaving}
+                          onChange={(e) =>
+                            handleInputChange(e, index, "reasonForLeaving")
+                          }
+                        />
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-
           </CardContent>
-
         </Card>
 
         <CardField
@@ -547,7 +614,6 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
           checked={employmentHistoryValue?.currentSourcesIncome}
           errors={errors.currentSourcesIncome}
         />
-
 
         <div className="mx-auto w-[65%] flex justify-between mt-3">
           {currentSection > 0 && (

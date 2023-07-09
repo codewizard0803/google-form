@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
@@ -49,57 +51,57 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
   const DiagnosedHealthcareProviderOptions = [
     {
       label: "Arthritis",
-      value: "Arthritis",
+      value: "arthritis",
       name: "DiagnosedHealthcareProviderOptionsArthritis",
     },
     {
       label: "Asthma",
-      value: "Asthma",
+      value: "asthma",
       name: "DiagnosedHealthcareProviderOptionsAsthma",
     },
     {
       label: "Back problems",
-      value: "Back problems",
+      value: "back problems",
       name: "DiagnosedHealthcareProviderOptionsBack problems",
     },
     {
       label: "Chronic pain",
-      value: "Chronic pain",
+      value: "chronic pain",
       name: "DiagnosedHealthcareProviderOptionsChronic pain",
     },
     {
       label: "Diabetes",
-      value: "Diabetes",
+      value: "diabetes",
       name: "DiagnosedHealthcareProviderOptionsDiabetes",
     },
     {
       label: "Heart Disease",
-      value: "Heart Disease",
+      value: "heart Disease",
       name: "DiagnosedHealthcareProviderOptionsHeart Disease",
     },
     {
       label: "Hypertension",
-      value: "Hypertension",
+      value: "hypertension",
       name: "DiagnosedHealthcareProviderOptionsHypertension",
     },
     {
       label: "Gastrointestinal problems",
-      value: "Gastrointestinal problems",
+      value: "gastrointestinal problems",
       name: "DiagnosedHealthcareProviderOptionsGastrointestinal problems",
     },
     {
       label: "Migraines",
-      value: "Migraines",
+      value: "migraines",
       name: "DiagnosedHealthcareProviderOptionsMigraines",
     },
     {
       label: "Thyroid problems",
-      value: "Thyroid problems",
+      value: "thyroid problems",
       name: "DiagnosedHealthcareProviderOptionsThyroid problems",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "DiagnosedHealthcareProviderOptionsOther",
     },
   ];
@@ -160,7 +162,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
         otherMedicalCondition: "",
       });
     } else {
-      if (isChecked === false && itemValue === "Other") {
+      if (isChecked === false && itemValue === "other") {
         setMedicalHistoryValue({
           ...medicalHistoryValue,
           diagnosedHealthcareProvider: newCheckedItems,
@@ -266,7 +268,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         {medicalHistoryValue?.diagnosedHealthcareProvider?.filter(
-          (item) => item === "Other"
+          (item) => item === "other"
         ).length > 0 ? (
           <div>
             <div className="w-[68%] mx-auto mt-3">

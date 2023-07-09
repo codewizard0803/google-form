@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
@@ -10,60 +12,56 @@ import RadioFollowUp from "../common/RadioFollowUp";
 import useGlobalContext from "../../hooks/useGlobalContext";
 
 const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
-  const {
-    employmentInjuryPhysical,
-    setEmploymentInjuryPhysical,
-  } = useGlobalContext();
+  const { employmentInjuryPhysical, setEmploymentInjuryPhysical } =
+    useGlobalContext();
 
   const [errors, setErrors] = useState({});
 
-  const [
-    employmentInjuryPhysicalValue,
-    setEmploymentInjuryPhysicalValue,
-  ] = useState({
-    currentEmployerName: "",
-    businessNature: "",
-    jobBeganDate: "",
-    jobLastDate: "",
-    employmentDuty: "",
-    startedJobTitle: "",
-    currentTitle: "",
-    typicalWorkSchedule: "",
-    salary: "",
-    hourlyRate: "",
-    overtimeRate: "",
-    likeJob: "",
-    receiveOvertimePay: "",
-    notLikeJob: "",
-    radioPhysicalConditionBeforeInjuryItem: "",
-    radioMentalConditionBeforeInjuryItem: "",
-    radioEmotionalSymptomsBeforeInjuryItem: "",
-    describeMedicalCondition: "",
-    injuryDate: "",
-    describeInjuryOccurred: "",
-    radioMedicationsBeforeInjuryItem: "",
-    radioMedicationsNameBeforeInjuryItem: "",
-    radioDisabilityConnectionClaimItem: "",
-    currentDisability: "",
-    radioContinuedWorkingItem: "",
-    radioCurrentlyWorkingItem: "",
-    radioConflictsItem: "",
-    conflictsCount: "",
-    eachConflicts: "",
-    conflictsRate: "",
-    relationShipLikeManagement: "",
-    immediateSupervisorName: "",
-    relationshipImmediateSupervisor: "",
-    explainSuperVisorReason: "",
-    performanceAppraisals: "",
-    explainPerformanceAppraisals: "",
-    relationshipCoWorkers: "",
-    explainRelationshipCoWorkers: "",
-    verbalWarning: "",
-    verbalWarningDateReason: "",
-    lastStraw: "",
-    explainLastStraw: "",
-  });
+  const [employmentInjuryPhysicalValue, setEmploymentInjuryPhysicalValue] =
+    useState({
+      currentEmployerName: "",
+      businessNature: "",
+      jobBeganDate: "",
+      jobLastDate: "",
+      employmentDuty: "",
+      startedJobTitle: "",
+      currentTitle: "",
+      typicalWorkSchedule: "",
+      salary: "",
+      hourlyRate: "",
+      overtimeRate: "",
+      likeJob: "",
+      receiveOvertimePay: "",
+      notLikeJob: "",
+      radioPhysicalConditionBeforeInjuryItem: "",
+      radioMentalConditionBeforeInjuryItem: "",
+      radioEmotionalSymptomsBeforeInjuryItem: "",
+      describeMedicalCondition: "",
+      injuryDate: "",
+      describeInjuryOccurred: "",
+      radioMedicationsBeforeInjuryItem: "",
+      radioMedicationsNameBeforeInjuryItem: "",
+      radioDisabilityConnectionClaimItem: "",
+      currentDisability: "",
+      radioContinuedWorkingItem: "",
+      radioCurrentlyWorkingItem: "",
+      radioConflictsItem: "",
+      conflictsCount: "",
+      eachConflicts: "",
+      conflictsRate: "",
+      relationShipLikeManagement: "",
+      immediateSupervisorName: "",
+      relationshipImmediateSupervisor: "",
+      explainSuperVisorReason: "",
+      performanceAppraisals: "",
+      explainPerformanceAppraisals: "",
+      relationshipCoWorkers: "",
+      explainRelationshipCoWorkers: "",
+      verbalWarning: "",
+      verbalWarningDateReason: "",
+      lastStraw: "",
+      explainLastStraw: "",
+    });
 
   useEffect(() => {
     window.scrollTo({
@@ -124,7 +122,7 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Partial Temp",
-      value: "Partial Temp",
+      value: "partial Temp",
       name: "currentDisabilityPartialTemp",
     },
     {
@@ -846,51 +844,51 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
                   <label>
                     <input
                       type="radio"
-                      value="Good"
+                      value="good"
                       name="relationshipImmediateSupervisorGood"
                       className="mr-2"
                       checked={
                         employmentInjuryPhysicalValue?.relationshipImmediateSupervisor ===
-                        "Good"
+                        "good"
                       }
                       onChange={handleRelationshipImmediateSupervisorChange}
                     />
-                    Good
+                    good
                   </label>
                 </div>
                 <div className="text-left">
                   <label>
                     <input
                       type="radio"
-                      value="Average"
-                      name="relationshipImmediateSupervisorAverage"
+                      value="average"
+                      name="relationshipImmediateSupervisoraverage"
                       className="mr-2"
                       checked={
                         employmentInjuryPhysicalValue?.relationshipImmediateSupervisor ===
-                        "Average"
+                        "average"
                       }
                       onChange={handleRelationshipImmediateSupervisorChange}
                     />
-                    Average
+                    average
                   </label>
                 </div>
                 <div className="text-left">
                   <label>
                     <input
                       type="radio"
-                      value="Poor"
-                      name="relationshipImmediateSupervisorPoor"
+                      value="poor"
+                      name="relationshipImmediateSupervisorpoor"
                       className="mr-2"
                       checked={
                         employmentInjuryPhysicalValue?.relationshipImmediateSupervisor ===
-                        "Poor"
+                        "poor"
                       }
                       onChange={handleRelationshipImmediateSupervisorChange}
                     />
-                    Poor
+                    poor
                   </label>
                   {employmentInjuryPhysicalValue?.relationshipImmediateSupervisor ===
-                  "Poor" ? (
+                  "poor" ? (
                     <div className="w-[95%] mx-auto p-2 shadow-lg">
                       <p className="text-left text-[23px] mt-3">
                         Explain the reason:
@@ -946,51 +944,51 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
                   <label>
                     <input
                       type="radio"
-                      value="Good"
+                      value="good"
                       name="performanceAppraisalsGood"
                       className="mr-2"
                       checked={
                         employmentInjuryPhysicalValue?.performanceAppraisals ===
-                        "Good"
+                        "good"
                       }
                       onChange={handleperformanceAppraisalsChange}
                     />
-                    Good
+                    good
                   </label>
                 </div>
                 <div className="text-left">
                   <label>
                     <input
                       type="radio"
-                      value="Average"
-                      name="performanceAppraisalsAverage"
+                      value="average"
+                      name="performanceAppraisalsaverage"
                       className="mr-2"
                       checked={
                         employmentInjuryPhysicalValue?.performanceAppraisals ===
-                        "Average"
+                        "average"
                       }
                       onChange={handleperformanceAppraisalsChange}
                     />
-                    Average
+                    average
                   </label>
                 </div>
                 <div className="text-left">
                   <label>
                     <input
                       type="radio"
-                      value="Poor"
-                      name="performanceAppraisalsPoor"
+                      value="poor"
+                      name="performanceAppraisalspoor"
                       className="mr-2"
                       checked={
                         employmentInjuryPhysicalValue?.performanceAppraisals ===
-                        "Poor"
+                        "poor"
                       }
                       onChange={handleperformanceAppraisalsChange}
                     />
-                    Poor
+                    poor
                   </label>
                   {employmentInjuryPhysicalValue?.performanceAppraisals ===
-                  "Poor" ? (
+                  "poor" ? (
                     <div className="w-[95%] mx-auto p-2 shadow-lg">
                       <p className="text-left text-[23px] mt-3">
                         Explain the reason:
@@ -1128,51 +1126,51 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
                   <label>
                     <input
                       type="radio"
-                      value="Good"
+                      value="good"
                       name="relationshipCoWorkersGood"
                       className="mr-2"
                       checked={
                         employmentInjuryPhysicalValue?.relationshipCoWorkers ===
-                        "Good"
+                        "good"
                       }
                       onChange={handleRelationshipCoWorkersChange}
                     />
-                    Good
+                    good
                   </label>
                 </div>
                 <div className="text-left">
                   <label>
                     <input
                       type="radio"
-                      value="Average"
-                      name="relationshipCoWorkersAverage"
+                      value="average"
+                      name="relationshipCoWorkersaverage"
                       className="mr-2"
                       checked={
                         employmentInjuryPhysicalValue?.relationshipCoWorkers ===
-                        "Average"
+                        "average"
                       }
                       onChange={handleRelationshipCoWorkersChange}
                     />
-                    Average
+                    average
                   </label>
                 </div>
                 <div className="text-left">
                   <label>
                     <input
                       type="radio"
-                      value="Poor"
-                      name="relationshipCoWorkersPoor"
+                      value="poor"
+                      name="relationshipCoWorkerspoor"
                       className="mr-2"
                       checked={
                         employmentInjuryPhysicalValue?.relationshipCoWorkers ===
-                        "Poor"
+                        "poor"
                       }
                       onChange={handleRelationshipCoWorkersChange}
                     />
-                    Poor
+                    poor
                   </label>
                   {employmentInjuryPhysicalValue?.relationshipCoWorkers ===
-                  "Poor" ? (
+                  "poor" ? (
                     <div className="w-[95%] mx-auto p-2 shadow-lg">
                       <p className="text-left text-[23px] mt-3">
                         Please give the names and reasons this relationship was

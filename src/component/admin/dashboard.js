@@ -14,7 +14,6 @@ const DashBoard = () => {
 
   useEffect(() => {
     axios.get(`${APP_URL}/api/dashboard`).then((res) => {
-      console.log("data", res.data);
       setData(res.data);
     });
   }, []);
@@ -30,7 +29,6 @@ const DashBoard = () => {
   const handleDelete = (fileName) => {
     if (window.confirm("Are you sure you want to delete this item?")) {
       let zipFileName = { zipFileName: fileName };
-      console.log("fileName", zipFileName);
 
       axios.post(`${APP_URL}/api/deleteFile`, zipFileName).then((res) => {
         if (res?.data === "Success") {

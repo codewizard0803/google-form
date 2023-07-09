@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import { toast } from "react-toastify";
@@ -171,17 +173,17 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   const LackSleepEnergyOptions = [
     {
       label: "High energy",
-      value: "High energy",
+      value: "high energy",
       name: "LackSleepEnergyOptionsHigh energy",
     },
     {
       label: "Normal energy",
-      value: "Normal energy",
+      value: "normal energy",
       name: "LackSleepEnergyOptionsNormal energy",
     },
     {
       label: "Low energy, fatigued",
-      value: "Low energy, fatigued",
+      value: "low energy, fatigued",
       name: "LackSleepEnergyOptionsLow energy, fatigued",
     },
   ];
@@ -192,14 +194,14 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   ];
 
   const MoodOptions = [
-    { label: "Euphoric", value: "Euphoric", name: "MoodOptionsEuphoric" },
-    { label: "Elevated", value: "Elevated", name: "MoodOptionsElevated" },
-    { label: "Irritable", value: "Irritable", name: "MoodOptionsIrritable" },
-    { label: "Anxious", value: "Anxious", name: "MoodOptionsAnxious" },
-    { label: "Normal", value: "Normal", name: "MoodOptionsNormal" },
-    { label: "Low", value: "Low", name: "MoodOptionsLow" },
-    { label: "Depressed", value: "Depressed", name: "MoodOptionsDepressed" },
-    { label: "Other", value: "Other", name: "MoodOptionsOther" },
+    { label: "Euphoric", value: "euphoric", name: "MoodOptionsEuphoric" },
+    { label: "Elevated", value: "elevated", name: "MoodOptionsElevated" },
+    { label: "Irritable", value: "irritable", name: "MoodOptionsIrritable" },
+    { label: "Anxious", value: "anxious", name: "MoodOptionsAnxious" },
+    { label: "Normal", value: "normal", name: "MoodOptionsNormal" },
+    { label: "Low", value: "low", name: "MoodOptionsLow" },
+    { label: "Depressed", value: "depressed", name: "MoodOptionsDepressed" },
+    { label: "Other", value: "other", name: "MoodOptionsOther" },
   ];
 
   const AlcoholSubstancesOptions = [
@@ -216,28 +218,26 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   const ExperienceFollowingOptions = [
     {
       label: "Heard a voice that no one else hears",
-      value: "Heard a voice that no one else hears",
+      value: "heard a voice that no one else hears",
       name: "ExperienceFollowingOptionsHeard a voice that no one else hears",
     },
     {
       label:
         "Felt like people you don't know are talking about you or following you",
       value:
-        "Felt like people you don't know are talking about you or following you",
-      name:
-        "ExperienceFollowingOptionsFelt like people you don't know are talking about you or following you",
+        "felt like people you don't know are talking about you or following you",
+      name: "ExperienceFollowingOptionsFelt like people you don't know are talking about you or following you",
     },
     {
       label:
         "Had thoughts, behaviors, or rituals that are recurrent, intrusive, and time consuming",
       value:
-        "Had thoughts, behaviors, or rituals that are recurrent, intrusive, and time consuming",
-      name:
-        "ExperienceFollowingOptionsHad thoughts, behaviors, or rituals that are recurrent, intrusive, and time consuming",
+        "had thoughts, behaviors, or rituals that are recurrent, intrusive, and time consuming",
+      name: "ExperienceFollowingOptionsHad thoughts, behaviors, or rituals that are recurrent, intrusive, and time consuming",
     },
     {
       label: "None of the above",
-      value: "None of the above",
+      value: "none of the above",
       name: "ExperienceFollowingOptionsNone of the above",
     },
   ];
@@ -273,68 +273,67 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   const DiagnosedMentalHealthOptions = [
     {
       label: "Anxiety",
-      value: "Anxiety",
+      value: "anxiety",
       name: "DiagnosedMentalHealthOptionsAnxiety",
     },
     {
       label: "Autism Spectrum Disorder",
-      value: "Autism Spectrum Disorder",
+      value: "autism Spectrum Disorder",
       name: "DiagnosedMentalHealthOptionsAutism Spectrum Disorder",
     },
     {
       label: "Bipolar disorder",
-      value: "Bipolar disorder",
+      value: "bipolar disorder",
       name: "DiagnosedMentalHealthOptionsBipolar disorder",
     },
     {
       label: "Depression",
-      value: "Depression",
+      value: "depression",
       name: "DiagnosedMentalHealthOptionsDepression",
     },
     {
       label: "Eating disorder",
-      value: "Eating disorder",
+      value: "eating disorder",
       name: "DiagnosedMentalHealthOptionsEating disorder",
     },
     {
       label: "Mood disorder",
-      value: "Mood disorder",
+      value: "mood disorder",
       name: "DiagnosedMentalHealthOptionsMood disorder",
     },
     {
       label: "Obsessive Compulsive Disorder",
-      value: "Obsessive Compulsive Disorder",
+      value: "obsessive Compulsive Disorder",
       name: "DiagnosedMentalHealthOptionsObsessive Compulsive Disorder",
     },
     {
       label: "Personality disorder",
-      value: "Personality disorder",
+      value: "personality disorder",
       name: "DiagnosedMentalHealthOptionsPersonality disorder",
     },
     {
       label: "Mania or Hypomania",
-      value: "Mania or Hypomania",
+      value: "mania or Hypomania",
       name: "DiagnosedMentalHealthOptionsMania or Hypomania",
     },
     {
       label: "Panic attacks",
-      value: "Panic attacks",
+      value: "panic attacks",
       name: "DiagnosedMentalHealthOptionsPanic attacks",
     },
     {
       label: "Schizophrenia or other psychotic disorder",
-      value: "Schizophrenia or other psychotic disorder",
-      name:
-        "DiagnosedMentalHealthOptionsSchizophrenia or other psychotic disorder",
+      value: "schizophrenia or other psychotic disorder",
+      name: "DiagnosedMentalHealthOptionsSchizophrenia or other psychotic disorder",
     },
     {
       label: "Post-traumatic stress disorder",
-      value: "Post-traumatic stress disorder",
+      value: "post-traumatic stress disorder",
       name: "DiagnosedMentalHealthOptionsPost-traumatic stress disorder",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "DiagnosedMentalHealthOptionsOther",
     },
   ];
@@ -355,22 +354,22 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   const PastPsychiatricMedicationOptions = [
     {
       label: "Depression",
-      value: "Depression",
+      value: "depression",
       name: "PastPsychiatricMedicationOptionsDepression",
     },
     {
       label: "Anxiety",
-      value: "Anxiety",
+      value: "anxiety",
       name: "PastPsychiatricMedicationOptionsAnxiety",
     },
     {
       label: "Mania",
-      value: "Mania",
+      value: "mania",
       name: "PastPsychiatricMedicationOptionsMania",
     },
     {
       label: "Psychotic symptoms",
-      value: "Psychotic symptoms",
+      value: "psychotic symptoms",
       name: "PastPsychiatricMedicationOptionsPsychotic symptoms",
     },
     {
@@ -385,7 +384,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "PastPsychiatricMedicationOptionsOther",
     },
   ];
@@ -393,17 +392,17 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   const PastPhysicalLogicOptions = [
     {
       label: "Improved symptoms",
-      value: "Improved symptoms",
+      value: "improved symptoms",
       name: "PastPhysicalLogicImproved symptoms",
     },
     {
       label: "Worsened symptoms",
-      value: "Worsened symptoms",
+      value: "worsened symptoms",
       name: "PastPhysicalLogicWorsened symptoms",
     },
     {
       label: "No effect on symptoms",
-      value: "No effect on symptoms",
+      value: "no effect on symptoms",
       name: "PastPhysicalLogicNo effect on symptoms",
     },
   ];
@@ -411,52 +410,47 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   const StopedPsychiatricMedicationsReasonOptions = [
     {
       label: "No longer working",
-      value: "No longer working",
+      value: "no longer working",
       name: "StopedPsychiatricMedicationsReasonOptionsNo longer working",
     },
     {
       label: "No longer wanted to take them",
-      value: "No longer wanted to take them",
-      name:
-        "StopedPsychiatricMedicationsReasonOptionsNo longer wanted to take them",
+      value: "no longer wanted to take them",
+      name: "StopedPsychiatricMedicationsReasonOptionsNo longer wanted to take them",
     },
     {
       label: "Cost",
-      value: "Cost",
+      value: "cost",
       name: "StopedPsychiatricMedicationsReasonOptionsCost",
     },
     {
       label: "Ended treatment with prescriber",
-      value: "Ended treatment with prescriber",
-      name:
-        "StopedPsychiatricMedicationsReasonOptionsEnded treatment with prescriber",
+      value: "ending treatment with that prescriber",
+      name: "StopedPsychiatricMedicationsReasonOptionsEnded treatment with prescriber",
     },
     {
       label: "Medication side effects",
-      value: "Medication side effects",
+      value: "medication side effects",
       name: "StopedPsychiatricMedicationsReasonOptionsMedication side effects",
     },
     {
       label: "Concerns about the medication",
-      value: "Concerns about the medication",
-      name:
-        "StopedPsychiatricMedicationsReasonOptionsConcerns about the medication",
+      value: "concerns about the medication",
+      name: "StopedPsychiatricMedicationsReasonOptionsConcerns about the medication",
     },
     {
       label: "Felt medication was no longer needed",
-      value: "Felt medication was no longer needed",
-      name:
-        "StopedPsychiatricMedicationsReasonOptionsFelt medication was no longer needed",
+      value: "felt the medication was no longer needed",
+      name: "StopedPsychiatricMedicationsReasonOptionsFelt medication was no longer needed",
     },
     {
       label: "Psychiatric symptoms had resolved",
-      value: "Psychiatric symptoms had resolved",
-      name:
-        "StopedPsychiatricMedicationsReasonOptionsPsychiatric symptoms had resolved",
+      value: "psychiatric symptoms had resolved",
+      name: "StopedPsychiatricMedicationsReasonOptionsPsychiatric symptoms had resolved",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "StopedPsychiatricMedicationsReasonOptionsOther",
     },
   ];
@@ -468,9 +462,9 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
       name: "PrescribeThisMedicationOptionspsychiatrist",
     },
     {
-      label: "psychiatric nurse practitionaer",
-      value: "psychiatric nurse practitionaer",
-      name: "PrescribeThisMedicationOptionspsychiatric nurse practitionaer",
+      label: "psychiatric nurse practitioner",
+      value: "psychiatric nurse practitioner",
+      name: "PrescribeThisMedicationOptionspsychiatric nurse practitioner",
     },
     {
       label: "primacy care clinician",
@@ -487,32 +481,32 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   const AttendedSessionsPsychiatristOptions = [
     {
       label: "Weekly",
-      value: "Weekly",
+      value: "weekly",
       name: "AttendedSessionsPsychiatristOptionsWeekly",
     },
     {
       label: "Twice per month",
-      value: "Twice per month",
+      value: "twice per month",
       name: "AttendedSessionsPsychiatristOptionsTwice per month",
     },
     {
       label: "Monthly",
-      value: "Monthly",
+      value: "monthly",
       name: "AttendedSessionsPsychiatristOptionsMonthly",
     },
     {
       label: "Every few months",
-      value: "Every few months",
+      value: "every few months",
       name: "AttendedSessionsPsychiatristOptionsEvery few months",
     },
     {
       label: "A few times per year",
-      value: "A few times per year",
+      value: "a few times per year",
       name: "AttendedSessionsPsychiatristOptionsA few times per year",
     },
     {
       label: "Infrequently",
-      value: "Infrequently",
+      value: "infrequently",
       name: "AttendedSessionsPsychiatristOptionsInfrequently",
     },
   ];
@@ -532,42 +526,42 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
 
   const ReceivedPsychotherapyLongOptions = [
     {
-      label: "one session",
+      label: "One session",
       value: "one session",
       name: "ReceivedPsychotherapyLongOptionsone session",
     },
     {
-      label: "several sessions",
+      label: "Several sessions",
       value: "several sessions",
       name: "ReceivedPsychotherapyLongOptionsseveral sessions",
     },
     {
-      label: "several months",
+      label: "Several months",
       value: "several months",
       name: "ReceivedPsychotherapyLongOptionsseveral months",
     },
     {
-      label: "approximately 6 months",
+      label: "Approximately 6 months",
       value: "approximately 6 months",
       name: "ReceivedPsychotherapyLongOptionsapproximately 6 months",
     },
     {
-      label: "approximatley one year",
+      label: "Approximatley one year",
       value: "approximatley one year",
       name: "ReceivedPsychotherapyLongOptionsapproximatley one year",
     },
     {
-      label: "several years",
+      label: "Several years",
       value: "several years",
       name: "ReceivedPsychotherapyLongOptionsseveral years",
     },
     {
-      label: "more than 5 years",
+      label: "More than 5 years",
       value: "more than 5 years",
       name: "ReceivedPsychotherapyLongOptionsmore than 5 years",
     },
     {
-      label: "until the present",
+      label: "Until the present",
       value: "until the present",
       name: "ReceivedPsychotherapyLongOptionsuntil the present",
     },
@@ -576,37 +570,37 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   const AttendedSessionsPsychotherapyOptions = [
     {
       label: "Weekly",
-      value: "Weekly",
+      value: "weekly",
       name: "AttendedSessionsPsychotherapyOptionsWeekly",
     },
     {
       label: "Twice Weekly",
-      value: "Twice Weekly",
+      value: "twice Weekly",
       name: "AttendedSessionsPsychotherapyOptionsTwiceWeekly",
     },
     {
       label: "Twice per month",
-      value: "Twice per month",
+      value: "twice per month",
       name: "AttendedSessionsPsychotherapyOptionsTwice per month",
     },
     {
       label: "Monthly",
-      value: "Monthly",
+      value: "monthly",
       name: "AttendedSessionsPsychotherapyOptionsMonthly",
     },
     {
       label: "Every few months",
-      value: "Every few months",
+      value: "every few months",
       name: "AttendedSessionsPsychotherapyOptionsEvery few months",
     },
     {
       label: "A few times per year",
-      value: "A few times per year",
+      value: "a few times per year",
       name: "AttendedSessionsPsychotherapyOptionsA few times per year",
     },
     {
       label: "Infrequently",
-      value: "Infrequently",
+      value: "infrequently",
       name: "AttendedSessionsPsychotherapyOptionsInfrequently",
     },
   ];
@@ -622,44 +616,39 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
 
   const PsychiatricHospitalizationReasonOptions = [
     {
-      label: "worsening of depressive symptoms",
+      label: "Worsening of depressive symptoms",
       value: "worsening of depressive symptoms",
-      name:
-        "PsychiatricHospitalizationReasonOptionsworsening of depressive symptoms",
+      name: "PsychiatricHospitalizationReasonOptionsworsening of depressive symptoms",
     },
     {
-      label: "suicidal ideation",
+      label: "Suicidal ideation",
       value: "suicidal ideation",
       name: "PsychiatricHospitalizationReasonOptionssuicidal ideation",
     },
     {
-      label: "suicide attempt",
+      label: "Suicide attempt",
       value: "suicide attempt",
       name: "PsychiatricHospitalizationReasonOptionssuicide attempt",
     },
     {
-      label: "worsening of anxiety symptoms",
+      label: "Worsening of anxiety symptoms",
       value: "worsening of anxiety symptoms",
-      name:
-        "PsychiatricHospitalizationReasonOptionsworsening of anxiety symptoms",
+      name: "PsychiatricHospitalizationReasonOptionsworsening of anxiety symptoms",
     },
     {
-      label: "worsening of post traumatic symptoms",
+      label: "Worsening of post traumatic symptoms",
       value: "worsening of post traumatic symptoms",
-      name:
-        "PsychiatricHospitalizationReasonOptionsworsening of post traumatic symptoms",
+      name: "PsychiatricHospitalizationReasonOptionsworsening of post traumatic symptoms",
     },
     {
-      label: "worsening of manic symptoms",
+      label: "Worsening of manic symptoms",
       value: "worsening of manic symptoms",
-      name:
-        "PsychiatricHospitalizationReasonOptionsworsening of manic symptoms",
+      name: "PsychiatricHospitalizationReasonOptionsworsening of manic symptoms",
     },
     {
-      label: "worsening of psychotic symptoms",
+      label: "Worsening of psychotic symptoms",
       value: "worsening of psychotic symptoms",
-      name:
-        "PsychiatricHospitalizationReasonOptionsworsening of psychotic symptoms",
+      name: "PsychiatricHospitalizationReasonOptionsworsening of psychotic symptoms",
     },
     {
       label: "I don't know",
@@ -671,28 +660,27 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   const ReceivedTreatmentOptions = [
     {
       label: "Psychiatric medications",
-      value: "Psychiatric medications",
+      value: "psychiatric medications",
       name: "ReceivedTreatmentOptionsPsychiatric medications",
     },
     {
-      label: "psychotherapy",
+      label: "Psychotherapy",
       value: "psychotherapy",
       name: "ReceivedTreatmentOptionspsychotherapy",
     },
     {
-      label: "case management or social support services,",
+      label: "Case management or social support services,",
       value: "case management or social support services,",
-      name:
-        "ReceivedTreatmentOptionscase management or social support services,",
+      name: "ReceivedTreatmentOptionscase management or social support services,",
     },
     {
-      label: "substance recovery treatment",
+      label: "Substance recovery treatment",
       value: "substance recovery treatment",
       name: "ReceivedTreatmentOptionssubstance recovery treatment",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "ReceivedTreatmentOptionsOther",
     },
   ];
@@ -828,7 +816,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
       ...pastHistoryValue,
       pastPsychiatricMedication: pastHistoryValue.pastPsychiatricMedication.map(
         (item) =>
-          item.condition === "Other"
+          item.condition === "other"
             ? { ...item, effect: event.target.value }
             : item
       ),
@@ -843,11 +831,11 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     let newCheckedItems = [...pastHistoryValue?.experienceFollowing];
 
     if (isChecked) {
-      if (itemValue === "None of the above") {
-        newCheckedItems = ["None of the above"];
+      if (itemValue === "none of the above") {
+        newCheckedItems = ["none of the above"];
       } else {
         if (
-          newCheckedItems.filter((item) => item === "None of the above")
+          newCheckedItems.filter((item) => item === "none of the above")
             .length > 0
         ) {
           newCheckedItems = [];
@@ -928,7 +916,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     let newCheckedItems = [...pastHistoryValue?.pastPsychiatricMedication];
 
     if (isChecked) {
-      if (itemValue !== "Other") {
+      if (itemValue !== "other") {
         newCheckedItems.push({
           condition: itemValue,
           effect: "Improved symptoms",
@@ -1241,7 +1229,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
               />
             </div>
 
-            {pastHistoryValue?.mood === "Other" ? (
+            {pastHistoryValue?.mood === "other" ? (
               <div>
                 <div className="w-[68%] mx-auto mt-3">
                   <TextFollowUp
@@ -1287,7 +1275,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         {pastHistoryValue?.experienceFollowing.filter(
           (item) =>
             item ===
-            "Had thoughts, behaviors, or rituals that are recurrent, intrusive, and time consuming"
+            "had thoughts, behaviors, or rituals that are recurrent, intrusive, and time consuming"
         ).length > 0 ? (
           <div className="w-[68%] mx-auto mt-3">
             <TextFollowUp
@@ -1360,7 +1348,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
         />
         {pastHistoryValue?.diagnosedMentalHealth &&
         pastHistoryValue?.diagnosedMentalHealth.filter(
-          (item) => item === "Other"
+          (item) => item === "other"
         ).length ? (
           <div>
             <div className="w-[68%] mx-auto mt-3">

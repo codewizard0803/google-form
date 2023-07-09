@@ -1,3 +1,5 @@
+/** @format */
+
 const GAD = (value) => {
   let isValid = true;
   let errors = {};
@@ -6,13 +8,13 @@ const GAD = (value) => {
     errors.feelingNervous = "See required fields above.";
     isValid = false;
   } else if (
-    value.feelingNervous !== "Not at all" &&
+    value.feelingNervous !== "not at all" &&
     value.feltAnxiousLong === ""
   ) {
     errors.feltAnxiousLong = "See required fields above.";
     isValid = false;
   } else if (
-    value.feelingNervous !== "Not at all" &&
+    value.feelingNervous !== "not at all" &&
     value.feelAnxiousOften === ""
   ) {
     errors.feelAnxiousOften = "See required fields above.";
@@ -31,12 +33,12 @@ const GAD = (value) => {
   if (!value.worringDifferentThing.trim()) {
     errors.worringDifferentThing = "See required fields above.";
     isValid = false;
-  } else if (value.worringDifferentThing !== "Not at all") {
+  } else if (value.worringDifferentThing !== "not at all") {
     if (value.worringThing.length === 0) {
       errors.worringThing = "See required fields above.";
       isValid = false;
     } else if (
-      value.worringThing.filter((item) => item === "Other").length > 0 &&
+      value.worringThing.filter((item) => item === "other").length > 0 &&
       value.describeWorringThing === ""
     ) {
       errors.describeWorringThing = "See required fields above.";

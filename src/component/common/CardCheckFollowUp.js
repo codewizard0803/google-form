@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { Card, Typography, CardContent } from "@mui/material";
 import classnames from "classnames";
@@ -50,7 +52,7 @@ const CardCheckFollowUp = ({
                   0) ||
                 checked === item.value) &&
               options2 ? (
-                item.value !== "Other" ? (
+                item.value !== "other" ? (
                   <div className="flex justify-between  flex-wrap	 p-4">
                     {options2?.map((item2, index2) => (
                       <div className="" key={index2}>
@@ -63,7 +65,7 @@ const CardCheckFollowUp = ({
                               checked?.filter(
                                 (p) =>
                                   p.effect === item2.value &&
-                                  p.condition === item.label
+                                  p.condition === item.value
                               ).length > 0
                             }
                             className="mr-2"

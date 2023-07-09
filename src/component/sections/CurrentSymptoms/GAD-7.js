@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import { toast } from "react-toastify";
@@ -50,22 +52,22 @@ const GAD = ({ currentSection, setCurrentSection }) => {
   const FeelingNervousOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "FeelingNervousOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "FeelingNervousOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "FeelingNervousOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "FeelingNervousOptionsNearly every day",
     },
   ];
@@ -73,32 +75,32 @@ const GAD = ({ currentSection, setCurrentSection }) => {
   const FeltAnxiousLongOptions = [
     {
       label: "Several hours",
-      value: "Several hours",
+      value: "several hours",
       name: "FeltAnxiousLongOptionsSeveral hours",
     },
     {
       label: "Several days",
-      value: "Several days",
+      value: "several days",
       name: "FeltAnxiousLongOptionsSeveral days",
     },
     {
       label: "Several weeks",
-      value: "Several weeks",
+      value: "several weeks",
       name: "FeltAnxiousLongOptionsSeveral weeks",
     },
     {
       label: "Several months",
-      value: "Several months",
+      value: "several months",
       name: "FeltAnxiousLongOptionsSeveral months",
     },
     {
       label: "Several years",
-      value: "Several years",
+      value: "several years",
       name: "FeltAnxiousLongOptionsSeveral years",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "FeltAnxiousLongOptionsOther",
     },
   ];
@@ -106,27 +108,27 @@ const GAD = ({ currentSection, setCurrentSection }) => {
   const FeelAnxiousOftenOptions = [
     {
       label: "Part of some days",
-      value: "Part of some days",
+      value: "part of some days",
       name: "FeelAnxiousOftenOptionsPart of some days",
     },
     {
       label: "Part of every day",
-      value: "Part of every day",
+      value: "part of every day",
       name: "FeelAnxiousOftenOptionsPart of every day",
     },
     {
       label: "Several days per week",
-      value: "Several days per week",
+      value: "several days per week",
       name: "FeelAnxiousOftenOptionsSeveral days per week",
     },
     {
       label: "All day every day",
-      value: "All day every day",
+      value: "all day every day",
       name: "FeelAnxiousOftenOptionsAll day every day",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "FeelAnxiousOftenOptionsOther",
     },
   ];
@@ -134,22 +136,22 @@ const GAD = ({ currentSection, setCurrentSection }) => {
   const StopControlWorringOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "StopControlWorringOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "StopControlWorringOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "StopControlWorringOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "StopControlWorringOptionsNearly every day",
     },
   ];
@@ -157,22 +159,22 @@ const GAD = ({ currentSection, setCurrentSection }) => {
   const WorringDifferentThingOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "WorringDifferentThingOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "WorringDifferentThingOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "WorringDifferentThingOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "WorringDifferentThingOptionsNearly every day",
     },
   ];
@@ -180,52 +182,52 @@ const GAD = ({ currentSection, setCurrentSection }) => {
   const WorringThingOptions = [
     {
       label: "Physical pain",
-      value: "Physical pain",
+      value: "physical pain",
       name: "WorringThingOptionsPhysical pain",
     },
     {
       label: "Employment situation",
-      value: "Employment situation",
+      value: "employment situation",
       name: "WorringThingOptionsEmployment situation",
     },
     {
       label: "Financial situation",
-      value: "Financial situation",
+      value: "financial situation",
       name: "WorringThingOptionsFinancial situation",
     },
     {
       label: "Relationships",
-      value: "Relationships",
+      value: "relationships",
       name: "WorringThingOptionsRelationships",
     },
     {
       label: "Family difficulties",
-      value: "Family difficulties",
+      value: "family difficulties",
       name: "WorringThingOptionsFamily difficulties",
     },
     {
       label: "Family death",
-      value: "Family death",
+      value: "family death",
       name: "WorringThingOptionsFamily death",
     },
     {
       label: "Previous trauma",
-      value: "Previous trauma",
+      value: "previous trauma",
       name: "WorringThingOptionsPrevious trauma",
     },
     {
       label: "Conflicts with family or at employment",
-      value: "Conflicts with family or at employment",
+      value: "conflicts with family or at employment",
       name: "WorringThingOptionsConflicts with family or at employment",
     },
     {
       label: "Medical condition",
-      value: "Medical condition",
+      value: "medical condition",
       name: "WorringThingOptionsMedical condition",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "WorringThingOptionsOther",
     },
     {
@@ -238,22 +240,22 @@ const GAD = ({ currentSection, setCurrentSection }) => {
   const TroubleRelaxingOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "TroubleRelaxingOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "TroubleRelaxingOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "TroubleRelaxingOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "TroubleRelaxingOptionsNearly every day",
     },
   ];
@@ -261,22 +263,22 @@ const GAD = ({ currentSection, setCurrentSection }) => {
   const RestlessSitHardOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "RestlessSitHardOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "RestlessSitHardOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "RestlessSitHardOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "RestlessSitHardOptionsNearly every day",
     },
   ];
@@ -284,22 +286,22 @@ const GAD = ({ currentSection, setCurrentSection }) => {
   const EasilyAnnoyedOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "EasilyAnnoyedOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "EasilyAnnoyedOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "EasilyAnnoyedOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "EasilyAnnoyedOptionsNearly every day",
     },
   ];
@@ -307,22 +309,22 @@ const GAD = ({ currentSection, setCurrentSection }) => {
   const FeelingAfraidAwfulThingOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "FeelingAfraidAwfulThingOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "FeelingAfraidAwfulThingOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "FeelingAfraidAwfulThingOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "FeelingAfraidAwfulThingOptionsNearly every day",
     },
   ];
@@ -348,77 +350,77 @@ const GAD = ({ currentSection, setCurrentSection }) => {
   const PanicPhysicalSymptomsOptions = [
     {
       label: "Increased heart rate",
-      value: "Increased heart rate",
+      value: "increased heart rate",
       name: "PanicPhysicalSymptomsOptionsIncreased heart rate",
     },
     {
       label: "Shortness of breath",
-      value: "Shortness of breath",
+      value: "shortness of breath",
       name: "PanicPhysicalSymptomsOptionsShortness of breath",
     },
     {
       label: "Difficulty swallowing",
-      value: "Difficulty swallowing",
+      value: "difficulty swallowing",
       name: "PanicPhysicalSymptomsOptionsDifficulty swallowing",
     },
     {
       label: "Excessive sweating",
-      value: "Excessive sweating",
+      value: "excessive sweating",
       name: "PanicPhysicalSymptomsOptionsExcessive sweating",
     },
     {
       label: "Lightheadedness",
-      value: "Lightheadedness",
+      value: "lightheadedness",
       name: "PanicPhysicalSymptomsOptionsLightheadedness",
     },
     {
       label: "Feeling like going to pass out",
-      value: "Feeling like going to pass out",
+      value: "feeling like going to pass out",
       name: "PanicPhysicalSymptomsOptionsFeeling like going to pass out",
     },
     {
       label: "Shaking",
-      value: "Shaking",
+      value: "shaking",
       name: "PanicPhysicalSymptomsOptionsShaking",
     },
     {
       label: "Feeling of choking",
-      value: "Feeling of choking",
+      value: "feeling of choking",
       name: "PanicPhysicalSymptomsOptionsFeeling of choking",
     },
     {
       label: "Nausea",
-      value: "Nausea",
+      value: "nausea",
       name: "PanicPhysicalSymptomsOptionsNausea",
     },
     {
       label: "Chest pain",
-      value: "Chest pain",
+      value: "chest pain",
       name: "PanicPhysicalSymptomsOptionsChest pain",
     },
     {
       label: "Chills or heat",
-      value: "Chills or heat",
+      value: "chills or heat",
       name: "PanicPhysicalSymptomsOptionsChills or heat",
     },
     {
       label: "Numbness or tingling",
-      value: "Numbness or tingling",
+      value: "numbness or tingling",
       name: "PanicPhysicalSymptomsOptionsNumbness or tingling",
     },
     {
       label: "Feeling detached",
-      value: "Feeling detached",
+      value: "feeling detached",
       name: "PanicPhysicalSymptomsOptionsFeeling detached",
     },
     {
       label: "Fear of “going crazy”",
-      value: "Fear of “going crazy”",
+      value: "fear of “going crazy”",
       name: "PanicPhysicalSymptomsOptionsFear of “going crazy”",
     },
     {
       label: "Fear of dying",
-      value: "Fear of dying",
+      value: "fear of dying",
       name: "PanicPhysicalSymptomsOptionsFear of dying",
     },
     {
@@ -446,7 +448,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Several hours",
-      value: "Several hours",
+      value: "several hours",
       name: "PanicAttacksLastLongOptionsSeveral hours",
     },
     {
@@ -456,7 +458,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Several days",
-      value: "Several days",
+      value: "several days",
       name: "PanicAttacksLastLongOptionsSeveral days",
     },
   ];
@@ -490,47 +492,47 @@ const GAD = ({ currentSection, setCurrentSection }) => {
   const TraumaticEventExperienceOptions = [
     {
       label: "Childhood trauma",
-      value: "Childhood trauma",
+      value: "childhood trauma",
       name: "TraumaticEventExperienceOptionsChildhood trauma",
     },
     {
       label: "Intimate partner violence",
-      value: "Intimate partner violence",
+      value: "intimate partner violence",
       name: "TraumaticEventExperienceOptionsIntimate partner violence",
     },
     {
       label: "Victim of other violence",
-      value: "Victim of other violence",
+      value: "victim of other violence",
       name: "TraumaticEventExperienceOptionsVictim of other violence",
     },
     {
       label: "Sexual assault",
-      value: "Sexual assault",
+      value: "sexual assault",
       name: "TraumaticEventExperienceOptionsSexual assault",
     },
     {
       label: "Witnessing violence",
-      value: "Witnessing violence",
+      value: "witnessing violence",
       name: "TraumaticEventExperienceOptionsWitnessing violence",
     },
     {
       label: "First responder trauma",
-      value: "First responder trauma",
+      value: "first responder trauma",
       name: "TraumaticEventExperienceOptionsFirst responder trauma",
     },
     {
       label: "Traumatic loss of loved one",
-      value: "Traumatic loss of loved one",
+      value: "traumatic loss of loved one",
       name: "TraumaticEventExperienceOptionsTraumatic loss of loved one",
     },
     {
       label: "Military combat",
-      value: "Military combat",
+      value: "military combat",
       name: "TraumaticEventExperienceOptionsMilitary combat",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "TraumaticEventExperienceOptionsOther",
     },
   ];
@@ -794,7 +796,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
           errors={errors.feelingNervous}
         />
         {GADValue?.feelingNervous !== "" &&
-        GADValue?.feelingNervous !== "Not at all" ? (
+        GADValue?.feelingNervous !== "not at all" ? (
           <div>
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
@@ -836,7 +838,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
 
         {GADValue?.worringDifferentThing !== "" &&
-        GADValue?.worringDifferentThing !== "Not at all" ? (
+        GADValue?.worringDifferentThing !== "not at all" ? (
           <div>
             <div>
               <CardField
@@ -848,7 +850,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
                 error={errors.worringThing}
               />
             </div>
-            {GADValue?.worringThing.filter((item) => item === "Other").length >
+            {GADValue?.worringThing.filter((item) => item === "other").length >
             0 ? (
               <div className="w-[68%] mx-auto mt-3">
                 <TextFollowUp

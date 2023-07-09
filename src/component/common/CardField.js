@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { Card, Typography, CardContent } from "@mui/material";
 import classnames from "classnames";
@@ -40,7 +42,7 @@ const CardCheckField = ({
                   className="mr-2"
                   checked={
                     type === "checkbox"
-                      ? checked?.includes(item.label)
+                      ? checked?.includes(item.value)
                       : checked === item.value
                   }
                   onChange={onChange}

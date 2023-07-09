@@ -1,3 +1,5 @@
+/** @format */
+
 const validateSocialHistory = (value) => {
   let isValid = true;
   let errors = {};
@@ -19,7 +21,7 @@ const validateSocialHistory = (value) => {
     isValid = false;
   } else if (
     value?.describeCurrentLivingSituation.filter(
-      (item) => item !== "Homeless" && item !== "Other"
+      (item) => item !== "Homeless" && item !== "other"
     ).length > 0
   ) {
     if (value.livesYourHome.length === 0) {

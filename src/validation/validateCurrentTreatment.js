@@ -1,3 +1,5 @@
+/** @format */
+
 const validateCurrentTreatment = (value) => {
   let isValid = true;
   let errors = {};
@@ -19,7 +21,7 @@ const validateCurrentTreatment = (value) => {
       errors.medicationReason = "See required fields above.";
       isValid = false;
     } else if (
-      value?.medicationReason.filter((item) => item === "Other").length &&
+      value?.medicationReason.filter((item) => item === "other").length &&
       value.describeMedicationReason === ""
     ) {
       errors.describeMedicationReason = "See required fields above.";
@@ -32,7 +34,7 @@ const validateCurrentTreatment = (value) => {
     } else if (
       value.medicationsEffectYourCondition.length > 0 &&
       value.medicationsEffectYourCondition.filter(
-        (item) => item.condition === "Other"
+        (item) => item.condition === "other"
       ).length > 0
     ) {
       errors.medicationsEffectOther = "See required fields above.";
@@ -48,7 +50,7 @@ const validateCurrentTreatment = (value) => {
       errors.experiencedSideEffects = "See required fields above.";
       isValid = false;
     } else if (
-      value.experiencedSideEffects.filter((item) => item === "Other").length >
+      value.experiencedSideEffects.filter((item) => item === "other").length >
         0 &&
       value.describeSideEffect === ""
     ) {

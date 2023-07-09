@@ -1,3 +1,5 @@
+/** @format */
+
 const validateLongitudinalHistory = (value) => {
   let isValid = true;
   let errors = {};

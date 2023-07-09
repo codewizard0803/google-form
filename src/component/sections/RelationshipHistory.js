@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
@@ -10,10 +12,8 @@ import TextFollowUp from "../common/TextFollowUp";
 import validateRelationshipHistory from "../../validation/validateRelationshipHistory";
 
 const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
-  const {
-    globalRelationshipHistory,
-    setGlobalRelationshipHistory,
-  } = useGlobalContext();
+  const { globalRelationshipHistory, setGlobalRelationshipHistory } =
+    useGlobalContext();
 
   const [relationshipHistoryValue, setRelationshipHistoryValue] = useState({
     currentlyIntimateRelationship: "",
@@ -97,17 +97,18 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "DescribeIntimateRelationshipOptionsOther",
     },
   ];
 
   const MarriedNumberOptions = [
     { label: "0", value: "0", name: "marriedUnitOptions0" },
-    { label: "1", value: "1", name: "marriedUnitOptions1" },
-    { label: "3", value: "3", name: "marriedUnitOptions3" },
-    { label: "4", value: "4", name: "marriedUnitOptions4" },
-    { label: "Other", value: "Other", name: "marriedUnitOptionsOther" },
+    { label: "1", value: "one", name: "marriedUnitOptions1" },
+    { label: "2", value: "two", name: "marriedUnitOptions2" },
+    { label: "3", value: "three", name: "marriedUnitOptions3" },
+    { label: "4", value: "four", name: "marriedUnitOptions4" },
+    { label: "Other", value: "other", name: "marriedUnitOptionsOther" },
   ];
 
   const DomesticViolenceOptions = [
@@ -139,22 +140,22 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
   const ChildrenDoingSchoolOptions = [
     {
       label: "Excellent",
-      value: "Excellent",
+      value: "excellent",
       name: "ChildrenDoingSchoolOptionsExcellent",
     },
     {
       label: "Good",
-      value: "Good",
-      name: "ChildrenDoingSchoolOptionsGood",
+      value: "good",
+      name: "ChildrenDoingSchoolOptionsgood",
     },
     {
       label: "Bad",
-      value: "Bad",
+      value: "bad",
       name: "ChildrenDoingSchoolOptionsBad",
     },
     {
       label: "OK, but having some struggles",
-      value: "OK, but having some struggles",
+      value: "oK, but having some struggles",
       name: "ChildrenDoingSchoolOptionsOK, but having some struggles",
     },
   ];
@@ -162,22 +163,22 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
   const RelationshipChildrenOptions = [
     {
       label: "Excellent",
-      value: "Excellent",
+      value: "excellent",
       name: "RelationshipChildrenOptionsExcellent",
     },
     {
       label: "Good",
-      value: "Good",
-      name: "RelationshipChildrenOptionsGood",
+      value: "good",
+      name: "RelationshipChildrenOptionsgood",
     },
     {
       label: "Bad",
-      value: "Bad",
+      value: "bad",
       name: "RelationshipChildrenOptionsBad",
     },
     {
       label: "OK, but having some struggles",
-      value: "OK, but having some struggles",
+      value: "oK, but having some struggles",
       name: "RelationshipChildrenOptionsOK, but having some struggles",
     },
   ];

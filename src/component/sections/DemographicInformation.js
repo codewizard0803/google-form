@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
@@ -10,27 +12,23 @@ import RadioFollowUp from "../common/RadioFollowUp";
 import { toast } from "react-toastify";
 
 const DemographicInformation = ({ currentSection, setCurrentSection }) => {
-  const {
-    demographicInformation,
-    setDemographicInformation,
-  } = useGlobalContext();
+  const { demographicInformation, setDemographicInformation } =
+    useGlobalContext();
 
   const [errors, setErrors] = useState({});
 
-  const [
-    demographicInformationValue,
-    setDemographicInformationValue,
-  ] = useState({
-    checkedEthnicityItems: [],
-    radioSexItem: "",
-    radioPreferPronounItem: "",
-    maritalStatusItems: "",
-    fullName: "",
-    birth: "",
-    email: "",
-    phoneNumber: "",
-    pregnant: null,
-  });
+  const [demographicInformationValue, setDemographicInformationValue] =
+    useState({
+      checkedEthnicityItems: [],
+      radioSexItem: "",
+      radioPreferPronounItem: "",
+      maritalStatusItems: "",
+      fullName: "",
+      birth: "",
+      email: "",
+      phoneNumber: "",
+      pregnant: null,
+    });
 
   const checkedEthnicityOptions = [
     {
@@ -54,9 +52,9 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
       name: "Native Hawaiian or Other Pacific Islander",
     },
     {
-      label: "White or Caucasian",
-      value: "White or Caucasian",
-      name: "White or Caucasian",
+      label: "Caucasian",
+      value: "Caucasian",
+      name: "Caucasian",
     },
     {
       label: "Hispanic or Latino or Spanish Origin",
@@ -69,7 +67,7 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
       value: "Prefer not to answer",
       name: "Prefer not to answer",
     },
-    { label: "Other", value: "Other", name: "Other" },
+    { label: "Other", value: "other", name: "Other" },
   ];
 
   const radioFemalePregnantOptions = [
@@ -83,22 +81,22 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
   ];
 
   const radioPreferPronounOptions = [
-    { label: "He/him/his", value: "He/him/his", name: "PreferPronounHim" },
-    { label: "She/her/hers", value: "She/her/hers", name: "PreferPronounHer" },
+    { label: "He/him/his", value: "he/him/his", name: "PreferPronounHim" },
+    { label: "She/her/hers", value: "she/her/hers", name: "PreferPronounHer" },
     {
       label: "They/them/theirs",
-      value: "They/them/theirs",
+      value: "they/them/theirs",
       name: "PreferPronounThem",
     },
-    { label: "Hir", value: "Hir", name: "PreferPronounHir" },
+    { label: "Hir", value: "hir", name: "PreferPronounHir" },
     {
       label: "Other non-binary",
-      value: "Other non-binary",
+      value: "other non-binary",
       name: "PreferPronounOther",
     },
     {
       label: "Prefer not to say",
-      value: "Prefer not to say",
+      value: "prefer not to say",
       name: "PreferPronounNotSay",
     },
   ];

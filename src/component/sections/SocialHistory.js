@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
@@ -48,32 +50,32 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
   const SelectbarriersHealthcareOptions = [
     {
       label: "Financial constraint",
-      value: "Financial constraint",
+      value: "financial constraint",
       name: "SelectbarriersHealthcareOptionsFinancial constraint",
     },
     {
       label: "Unstable housing",
-      value: "Unstable housing",
+      value: "unstable housing",
       name: "SelectbarriersHealthcareOptionsUnstable housing",
     },
     {
       label: "Transportation access",
-      value: "Transportation access",
+      value: "transportation access",
       name: "SelectbarriersHealthcareOptionsTransportation access",
     },
     {
       label: "Child-care",
-      value: "Child-care",
+      value: "child-care",
       name: "SelectbarriersHealthcareOptionsChild-care",
     },
     {
       label: "Family disapproval",
-      value: "Family disapproval",
+      value: "family disapproval",
       name: "SelectbarriersHealthcareOptionsFamily disapproval",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "SelectbarriersHealthcareOptionsOther",
     },
   ];
@@ -81,47 +83,47 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
   const DescribeCurrentLivingSituationOptions = [
     {
       label: "Rent a home",
-      value: "Rent a home",
+      value: "renting a home",
       name: "DescribeCurrentLivingSituationOptionsRent a home",
     },
     {
       label: "Own my own home",
-      value: "Own my own home",
+      value: "owning own home",
       name: "DescribeCurrentLivingSituationOptionsOwn my own home",
     },
     {
       label: "Live with family",
-      value: "Live with family",
+      value: "living with family",
       name: "DescribeCurrentLivingSituationOptionsLive with family",
     },
     {
       label: "Live with friends",
-      value: "Live with friends",
+      value: "living with friends",
       name: "DescribeCurrentLivingSituationOptionsLive with friends",
     },
     {
       label: "Live alone",
-      value: "Live alone",
+      value: "living alone",
       name: "DescribeCurrentLivingSituationOptionsLive alone",
     },
     {
       label: "Temporary housing",
-      value: "Temporary housing",
+      value: "temporary housing",
       name: "DescribeCurrentLivingSituationOptionsTemporary housing",
     },
     {
       label: "Hotel",
-      value: "Hotel",
+      value: "hotel",
       name: "DescribeCurrentLivingSituationOptionsHotel",
     },
     {
       label: "Homeless",
-      value: "Homeless",
+      value: "homeless",
       name: "DescribeCurrentLivingSituationOptionsHomeless",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "DescribeCurrentLivingSituationOptionsOther",
     },
   ];
@@ -168,8 +170,8 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
       name: "LivesYourHomeOptionsroommate",
     },
     {
-      label: "Lives alone",
-      value: "Lives alone",
+      label: "lives alone",
+      value: "lives alone",
       name: "LivesYourHomeOptionsLives alone",
     },
     {
@@ -293,28 +295,28 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
       livesYourHome:
         newCheckedItems.length !== 0 &&
         newCheckedItems.filter(
-          (item) => item !== "Homeless" && item !== "Other"
+          (item) => item !== "homeless" && item !== "other"
         ).length > 0
           ? socialHistoryValue.livesYourHome
           : [],
       residedCurrentHomeLong:
         newCheckedItems.length !== 0 &&
         newCheckedItems.filter(
-          (item) => item !== "Homeless" && item !== "Other"
+          (item) => item !== "homeless" && item !== "other"
         ).length > 0
           ? "1"
           : "",
       ownYourHome:
         newCheckedItems.length !== 0 &&
         newCheckedItems.filter(
-          (item) => item !== "Homeless" && item !== "Other"
+          (item) => item !== "homeless" && item !== "other"
         ).length > 0
           ? socialHistoryValue.ownYourHome
           : "",
       describeAdditionalStressors:
         newCheckedItems.length !== 0 &&
         newCheckedItems.filter(
-          (item) => item !== "Homeless" && item !== "Other"
+          (item) => item !== "homeless" && item !== "other"
         ).length > 0
           ? socialHistoryValue.describeAdditionalStressors
           : "",
@@ -459,12 +461,12 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
         {socialHistoryValue?.describeCurrentLivingSituation.length !== 0 &&
         !(
           socialHistoryValue?.describeCurrentLivingSituation.filter(
-            (item) => item === "Homeless"
+            (item) => item === "homeless"
           ).length > 0
         ) &&
         !(
           socialHistoryValue?.describeCurrentLivingSituation.filter(
-            (item) => item === "Live alone"
+            (item) => item === "live alone"
           ).length > 0
         ) ? (
           <div>

@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import { toast } from "react-toastify";
@@ -53,22 +55,22 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const InterestThingOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "interstThingNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "interstThingSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "interstThingMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "interstThingNearly every day",
     },
   ];
@@ -76,22 +78,22 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const FeelingDepressedOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "FeelingDepressedNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "FeelingDepressedSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "FeelingDepressedMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "FeelingDepressedNearly every day",
     },
   ];
@@ -99,17 +101,17 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const DepressiveSymptomsImprovedOptions = [
     {
       label: "Improved",
-      value: "Improved",
+      value: "improved",
       name: "DepressiveSymptomsImprovedOptionsImproved",
     },
     {
       label: "Gotten worse",
-      value: "Gotten worse",
+      value: "gotten worse",
       name: "DepressiveSymptomsImprovedOptionsGotten worse",
     },
     {
       label: "Stayed the same",
-      value: "Stayed the same",
+      value: "stayed the same",
       name: "DepressiveSymptomsImprovedOptionsStayed the same",
     },
     {
@@ -122,27 +124,27 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const OftenFeelDepressedOptions = [
     {
       label: "Part of some days",
-      value: "Part of some days",
+      value: "part of some days",
       name: "OftenFeelDepressedOptionsPart of some days",
     },
     {
       label: "Part of every day",
-      value: "Part of every day",
+      value: "part of every day",
       name: "OftenFeelDepressedOptionsPart of every day",
     },
     {
       label: "Several days per week",
-      value: "Several days per week",
+      value: "several days per week",
       name: "OftenFeelDepressedOptionsSeveral days per week",
     },
     {
       label: "All day every day",
-      value: "All day every day",
+      value: "all day every day",
       name: "OftenFeelDepressedOptionsAll day every day",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "OftenFeelDepressedOptionsOther",
     },
   ];
@@ -168,22 +170,22 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const TroubleFallingAsleepOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "TroubleFallingAsleepOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "TroubleFallingAsleepOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "TroubleFallingAsleepOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "TroubleFallingAsleepOptionsNearly every day",
     },
   ];
@@ -191,17 +193,17 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const WakeUpTimesOptions = [
     {
       label: "0",
-      value: "0",
+      value: "zero",
       name: "WakeUpTimesOptions0",
     },
     {
       label: "1",
-      value: "1",
+      value: "one",
       name: "WakeUpTimesOptions1",
     },
     {
       label: "2",
-      value: "2",
+      value: "two",
       name: "WakeUpTimesOptions2",
     },
   ];
@@ -209,7 +211,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const StayAwakeLongOptions = [
     {
       label: "Less than 30 minutes",
-      value: "Less than 30 minutes",
+      value: "less than 30 minutes",
       name: "StayAwakeLongOptionsLess than 30 minutes",
     },
     {
@@ -229,12 +231,12 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Once I wake up I never go back to sleep",
-      value: "Once I wake up I never go back to sleep",
+      value: "once I wake up I never go back to sleep",
       name: "StayAwakeLongOptionsOnce I wake up I never go back to sleep",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "StayAwakeLongOptionsOther",
     },
   ];
@@ -242,32 +244,32 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const AwakeSleepReasonOptions = [
     {
       label: "Physical pain",
-      value: "Physical pain",
+      value: "physical pain",
       name: "Physical painAwakeSleepReasonOptions",
     },
     {
       label: "Anxiety",
-      value: "Anxiety",
+      value: "anxiety",
       name: "AwakeSleepReasonOptionsAnxiety",
     },
     {
       label: "Worrying",
-      value: "Worrying",
+      value: "worrying",
       name: "AwakeSleepReasonOptionsWorrying",
     },
     {
       label: "Depression",
-      value: "Depression",
+      value: "depression",
       name: "AwakeSleepReasonOptionsDepression",
     },
     {
       label: "Environmental noise",
-      value: "Environmental noise",
+      value: "environmental noise",
       name: "AwakeSleepReasonOptionsEnvironmental noise",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "AwakeSleepReasonOptionsOther",
     },
   ];
@@ -298,22 +300,22 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const FeelingEnergyOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "FeelingEnergyOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "FeelingEnergyOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "FeelingEnergyOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "FeelingEnergyOptionsNearly every day",
     },
   ];
@@ -321,22 +323,22 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const PoorAppetiteOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "PoorAppetiteOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "PoorAppetiteOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "PoorAppetiteOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "PoorAppetiteOptionsNearly every day",
     },
   ];
@@ -344,42 +346,42 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const RecentlyWeightPoundsOptions = [
     {
       label: "Gained 0-10",
-      value: "Gained 0-10",
+      value: "gained 0-10",
       name: "RecentlyWeightPoundsOptionsGained 0-10",
     },
     {
       label: "Gained 11-25",
-      value: "Gained 11-25",
+      value: "gained 11-25",
       name: "RecentlyWeightPoundsOptionsGained 11-25",
     },
     {
       label: "Gained 26-35",
-      value: "Gained 26-35",
+      value: "gained 26-35",
       name: "RecentlyWeightPoundsOptionsGained 26-35",
     },
     {
       label: "Gained 36-50+",
-      value: "Gained 36-50+",
+      value: "gained 36-50+",
       name: "RecentlyWeightPoundsOptionsGained 36-50+",
     },
     {
       label: "Lost 0-10",
-      value: "Lost 0-10",
+      value: "lost 0-10",
       name: "RecentlyWeightPoundsOptionsLost 0-10",
     },
     {
       label: "Lost 11-25",
-      value: "Lost 11-25",
+      value: "lost 11-25",
       name: "RecentlyWeightPoundsOptionsLost 11-25",
     },
     {
       label: "Lost 26-35",
-      value: "Lost 26-35",
+      value: "lost 26-35",
       name: "RecentlyWeightPoundsOptionsLost 26-35",
     },
     {
       label: "Lost 36-50+",
-      value: "Lost 36-50+",
+      value: "lost 36-50+",
       name: "RecentlyWeightPoundsOptionsLost 36-50+",
     },
   ];
@@ -387,12 +389,12 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const WeightGainLostLongOptions = [
     {
       label: "Several days",
-      value: "Several days",
+      value: "several days",
       name: "WeightGainLostLongOptionsSeveral days",
     },
     {
       label: "Several weeks",
-      value: "Several weeks",
+      value: "several weeks",
       name: "WeightGainLostLongOptionsSeveral weeks",
     },
     {
@@ -420,22 +422,22 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const YourselfFeelingBadOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "YourselfFeelingBadOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "YourselfFeelingBadOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "YourselfFeelingBadOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "YourselfFeelingBadOptionsNearly every day",
     },
   ];
@@ -443,22 +445,22 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const TroubleConCentratingThingOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "TroubleConCentratingThingOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "TroubleConCentratingThingOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "TroubleConCentratingThingOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "TroubleConCentratingThingOptionsNearly every day",
     },
   ];
@@ -466,22 +468,22 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const FidgetyMovingOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "FidgetyMovingOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "FidgetyMovingOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "FidgetyMovingOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "FidgetyMovingOptionsNearly every day",
     },
   ];
@@ -489,22 +491,22 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const BetterOffDeadYourselfOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "BetterOffDeadYourselfOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "BetterOffDeadYourselfOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "BetterOffDeadYourselfOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "BetterOffDeadYourselfOptionsNearly every day",
     },
   ];
@@ -512,22 +514,22 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   const DeadWishWakeUpOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "DeadWishWakeUpOptionsNot at all",
     },
     {
       label: "Several Days",
-      value: "Several Days",
+      value: "several days",
       name: "DeadWishWakeUpOptionsSeveral Days",
     },
     {
       label: "More than half the days",
-      value: "More than half the days",
+      value: "more than half the days",
       name: "DeadWishWakeUpOptionsMore than half the days",
     },
     {
       label: "Nearly every day",
-      value: "Nearly every day",
+      value: "nearly every day",
       name: "DeadWishWakeUpOptionsNearly every day",
     },
   ];
@@ -882,7 +884,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         {PHQValue?.interestThing !== "" &&
-        PHQValue?.interestThing !== "Not at all" ? (
+        PHQValue?.interestThing !== "not at all" ? (
           <div className="w-[68%] mx-auto mt-3">
             <TextFollowUp
               title="If you have lost the ability to enjoy activities that were previously enjoyable, please list those activities that you used to but no longer enjoy."
@@ -904,7 +906,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         {PHQValue?.feelingDepressed !== "" &&
-        PHQValue?.feelingDepressed !== "Not at all" ? (
+        PHQValue?.feelingDepressed !== "not at all" ? (
           <div>
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
@@ -946,7 +948,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         {PHQValue?.troubleFallingAsleep !== "" &&
-        PHQValue?.troubleFallingAsleep !== "Not at all" ? (
+        PHQValue?.troubleFallingAsleep !== "not at all" ? (
           <div>
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
@@ -1005,7 +1007,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
           errors={errors.poorAppetite}
         />
         {PHQValue?.poorAppetite !== "" &&
-        PHQValue?.poorAppetite !== "Not at all" ? (
+        PHQValue?.poorAppetite !== "not at all" ? (
           <div>
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp

@@ -1,3 +1,5 @@
+/** @format */
+
 const validatePHQ = (value) => {
   let isValid = true;
   let errors = {};
@@ -6,7 +8,7 @@ const validatePHQ = (value) => {
     errors.interestThing = "See required fields above.";
     isValid = false;
   } else if (
-    value.interestThing !== "Not at all" &&
+    value.interestThing !== "not at all" &&
     value.previouslyEnjoyable === ""
   ) {
     errors.previouslyEnjoyable = "See required fields above.";
@@ -19,25 +21,25 @@ const validatePHQ = (value) => {
     errors.feelingDepressed = "See required fields above.";
     isValid = false;
   } else if (
-    value.feelingDepressed !== "Not at all" &&
+    value.feelingDepressed !== "not at all" &&
     value.duringFeelingDepressed === ""
   ) {
     errors.duringFeelingDepressed = "See required fields above.";
     isValid = false;
   } else if (
-    value.feelingDepressed !== "Not at all" &&
+    value.feelingDepressed !== "not at all" &&
     value.depressiveSymptomsImproved === ""
   ) {
     errors.depressiveSymptomsImproved = "See required fields above.";
     isValid = false;
   } else if (
-    value.feelingDepressed !== "Not at all" &&
+    value.feelingDepressed !== "not at all" &&
     value.oftenFeelDepressed === ""
   ) {
     errors.oftenFeelDepressed = "See required fields above.";
     isValid = false;
   } else if (
-    value.feelingDepressed !== "Not at all" &&
+    value.feelingDepressed !== "not at all" &&
     value.experienceDepression === ""
   ) {
     errors.experienceDepression = "See required fields above.";
@@ -50,31 +52,31 @@ const validatePHQ = (value) => {
     errors.troubleFallingAsleep = "See required fields above.";
     isValid = false;
   } else if (
-    value.troubleFallingAsleep !== "Not at all" &&
+    value.troubleFallingAsleep !== "not at all" &&
     value.fallAsleepLong === ""
   ) {
     errors.fallAsleepLong = "See required fields above.";
     isValid = false;
   } else if (
-    value.troubleFallingAsleep !== "Not at all" &&
+    value.troubleFallingAsleep !== "not at all" &&
     value.wakeUpTimes === ""
   ) {
     errors.wakeUpTimes = "See required fields above.";
     isValid = false;
   } else if (
-    value.troubleFallingAsleep !== "Not at all" &&
+    value.troubleFallingAsleep !== "not at all" &&
     value.stayAwakeLong === ""
   ) {
     errors.stayAwakeLong = "See required fields above.";
     isValid = false;
   } else if (
-    value.troubleFallingAsleep !== "Not at all" &&
+    value.troubleFallingAsleep !== "not at all" &&
     value.awakeSleepReason === ""
   ) {
     errors.awakeSleepReason = "See required fields above.";
     isValid = false;
   } else if (
-    value.troubleFallingAsleep !== "Not at all" &&
+    value.troubleFallingAsleep !== "not at all" &&
     value.totalSleepTimes === ""
   ) {
     errors.totalSleepTimes = "See required fields above.";
@@ -94,13 +96,13 @@ const validatePHQ = (value) => {
     errors.poorAppetite = "See required fields above.";
     isValid = false;
   } else if (
-    value.poorAppetite !== "Not at all" &&
+    value.poorAppetite !== "not at all" &&
     value.recentlyWeightPounds === ""
   ) {
     errors.recentlyWeightPounds = "See required fields above.";
     isValid = false;
   } else if (
-    value.poorAppetite !== "Not at all" &&
+    value.poorAppetite !== "not at all" &&
     value.weightGainLostLong === ""
   ) {
     errors.weightGainLostLong = "See required fields above.";

@@ -1,3 +1,5 @@
+/** @format */
+
 const validatePCL = (value) => {
   let isValid = true;
   let errors = {};
@@ -12,7 +14,7 @@ const validatePCL = (value) => {
   if (!value.stressfulExperience.trim()) {
     errors.stressfulExperience = "See required fields above.";
     isValid = false;
-  } else if (value?.stressfulExperience !== "Not at all") {
+  } else if (value?.stressfulExperience !== "not at all") {
     if (value.disturbingDreamsOccur === "") {
       errors.disturbingDreamsOccur = "See required fields above.";
       isValid = false;
@@ -53,7 +55,7 @@ const validatePCL = (value) => {
   if (!value.avoidingExternalReminders.trim()) {
     errors.avoidingExternalReminders = "See required fields above.";
     isValid = false;
-  } else if (value.avoidingExternalReminders !== "Not at all") {
+  } else if (value.avoidingExternalReminders !== "not at all") {
     if (value.describeSituations === "") {
       errors.describeSituations = "See required fields above.";
       isValid = false;

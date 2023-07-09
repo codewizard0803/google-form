@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
@@ -52,43 +54,42 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
   const FollowingSubstancesOptions = [
     {
       label: "Caffeine (coffee, pills, soft drinks, etc)",
-      value: "Caffeine (coffee, pills, soft drinks, etc)",
-      name:
-        "FollowingSubstancesOptionsCaffeine (coffee, pills, soft drinks, etc)",
+      value: "caffeine (coffee, pills, soft drinks, etc)",
+      name: "FollowingSubstancesOptionsCaffeine (coffee, pills, soft drinks, etc)",
     },
     {
       label: "Alcohol",
-      value: "Alcohol",
+      value: "alcohol",
       name: "FollowingSubstancesOptionsAlcohol",
     },
     {
       label: "Tobaco or nicotine products",
-      value: "Tobaco or nicotine products",
+      value: "tobaco or nicotine products",
       name: "FollowingSubstancesOptionsTobaco or nicotine products",
     },
     {
       label: "Cocaine",
-      value: "Cocaine",
+      value: "cocaine",
       name: "FollowingSubstancesOptionsCocaine",
     },
     {
       label: "Heroin",
-      value: "Heroin",
+      value: "heroin",
       name: "FollowingSubstancesOptionsHeroin",
     },
     {
       label: "Prescription pain medications",
-      value: "Prescription pain medications",
+      value: "prescription pain medications",
       name: "FollowingSubstancesOptionsPrescription pain medications",
     },
     {
       label: "Marijuana",
-      value: "Marijuana",
+      value: "marijuana",
       name: "FollowingSubstancesOptionsMarijuana",
     },
     {
       label: "Methamphetamine or other stimulants",
-      value: "Methamphetamine or other stimulants",
+      value: "methamphetamine or other stimulants",
       name: "FollowingSubstancesOptionsMethamphetamine or other stimulants",
     },
     {
@@ -101,49 +102,48 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       value: "LSD or other hallucinogens",
       name: "FollowingSubstancesOptionsLSD or other hallucinogens",
     },
-    { label: "Other", value: "Other", name: "FollowingSubstancesOptionsOther" },
+    { label: "Other", value: "other", name: "FollowingSubstancesOptionsOther" },
   ];
 
   const CurrentlySubstanceOptions = [
     {
       label: "Caffeine (coffee, pills, soft drinks, etc)",
-      value: "Caffeine (coffee, pills, soft drinks, etc)",
-      name:
-        "CurrentlySubstanceOptionsCaffeine (coffee, pills, soft drinks, etc)",
+      value: "caffeine (coffee, pills, soft drinks, etc)",
+      name: "CurrentlySubstanceOptionsCaffeine (coffee, pills, soft drinks, etc)",
     },
     {
       label: "Alcohol",
-      value: "Alcohol",
+      value: "alcohol",
       name: "CurrentlySubstanceOptionsAlcohol",
     },
     {
       label: "Tobaco or nicotine products",
-      value: "Tobaco or nicotine products",
+      value: "tobaco or nicotine products",
       name: "CurrentlySubstanceOptionsTobaco or nicotine products",
     },
     {
       label: "Cocaine",
-      value: "Cocaine",
+      value: "cocaine",
       name: "CurrentlySubstanceOptionsCocaine",
     },
     {
       label: "Heroin",
-      value: "Heroin",
+      value: "heroin",
       name: "CurrentlySubstanceOptionsHeroin",
     },
     {
       label: "Prescription pain medications",
-      value: "Prescription pain medications",
+      value: "prescription pain medications",
       name: "CurrentlySubstanceOptionsPrescription pain medications",
     },
     {
       label: "Marijuana",
-      value: "Marijuana",
+      value: "marijuana",
       name: "CurrentlySubstanceOptionsMarijuana",
     },
     {
       label: "Methamphetamine or other stimulants",
-      value: "Methamphetamine or other stimulants",
+      value: "methamphetamine or other stimulants",
       name: "CurrentlySubstanceOptionsMethamphetamine or other stimulants",
     },
     {
@@ -162,59 +162,57 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     { label: "Never", value: "Never", name: "EachSubstanceOptionsNever" },
     {
       label: "Socially (1-2 per month)",
-      value: "Socially (1-2 per month)",
+      value: "socially (1-2 per month)",
       name: "EachSubstanceOptionsSocially (1-2 per month)",
     },
-    { label: "Weekly", value: "Weekly", name: "EachSubstanceOptionsWeekly" },
-    { label: "Daily", value: "Daily", name: "EachSubstanceOptionsDaily" },
+    { label: "Weekly", value: "weekly", name: "EachSubstanceOptionsWeekly" },
+    { label: "Daily", value: "daily", name: "EachSubstanceOptionsDaily" },
     {
       label: "I previously used this substance but have not recently",
       value: "I previously used this substance but have not recently",
-      name:
-        "EachSubstanceOptionsI previously used this substance but have not recently",
+      name: "EachSubstanceOptionsI previously used this substance but have not recently",
     },
   ];
 
   const EachSubstanceListOptions = [
     {
       label: "Caffeine (coffee, pills, soft drinks, etc)",
-      value: "Caffeine (coffee, pills, soft drinks, etc)",
-      name:
-        "EachSubstanceListOptionsCaffeine (coffee, pills, soft drinks, etc)",
+      value: "caffeine (coffee, pills, soft drinks, etc)",
+      name: "EachSubstanceListOptionsCaffeine (coffee, pills, soft drinks, etc)",
     },
     {
       label: "Alcohol",
-      value: "Alcohol",
+      value: "alcohol",
       name: "EachSubstanceListOptionsAlcohol",
     },
     {
       label: "Tobaco or nicotine products",
-      value: "Tobaco or nicotine products",
+      value: "tobaco or nicotine products",
       name: "EachSubstanceListOptionsTobaco or nicotine products",
     },
     {
       label: "Cocaine",
-      value: "Cocaine",
+      value: "cocaine",
       name: "EachSubstanceListOptionsCocaine",
     },
     {
       label: "Heroin",
-      value: "Heroin",
+      value: "heroin",
       name: "EachSubstanceListOptionsHeroin",
     },
     {
       label: "Prescription pain medications",
-      value: "Prescription pain medications",
+      value: "prescription pain medications",
       name: "EachSubstanceListOptionsPrescription pain medications",
     },
     {
       label: "Marijuana",
-      value: "Marijuana",
+      value: "marijuana",
       name: "EachSubstanceListOptionsMarijuana",
     },
     {
       label: "Methamphetamine or other stimulants",
-      value: "Methamphetamine or other stimulants",
+      value: "methamphetamine or other stimulants",
       name: "EachSubstanceListOptionsMethamphetamine or other stimulants",
     },
     {
@@ -232,45 +230,43 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
   const EachSubstanceListStartedOldOptions = [
     {
       label: "Caffeine (coffee, pills, soft drinks, etc)",
-      value: "Caffeine (coffee, pills, soft drinks, etc)",
-      name:
-        "EachSubstanceListStartedOldOptionsCaffeine (coffee, pills, soft drinks, etc)",
+      value: "caffeine (coffee, pills, soft drinks, etc)",
+      name: "EachSubstanceListStartedOldOptionsCaffeine (coffee, pills, soft drinks, etc)",
     },
     {
       label: "Alcohol",
-      value: "Alcohol",
+      value: "alcohol",
       name: "EachSubstanceListStartedOldOptionsAlcohol",
     },
     {
       label: "Tobaco or nicotine products",
-      value: "Tobaco or nicotine products",
+      value: "tobaco or nicotine products",
       name: "EachSubstanceListStartedOldOptionsTobaco or nicotine products",
     },
     {
       label: "Cocaine",
-      value: "Cocaine",
+      value: "cocaine",
       name: "EachSubstanceListStartedOldOptionsCocaine",
     },
     {
       label: "Heroin",
-      value: "Heroin",
+      value: "heroin",
       name: "EachSubstanceListStartedOldOptionsHeroin",
     },
     {
       label: "Prescription pain medications",
-      value: "Prescription pain medications",
+      value: "prescription pain medications",
       name: "EachSubstanceListStartedOldOptionsPrescription pain medications",
     },
     {
       label: "Marijuana",
-      value: "Marijuana",
+      value: "marijuana",
       name: "EachSubstanceListStartedOldOptionsMarijuana",
     },
     {
       label: "Methamphetamine or other stimulants",
-      value: "Methamphetamine or other stimulants",
-      name:
-        "EachSubstanceListStartedOldOptionsMethamphetamine or other stimulants",
+      value: "methamphetamine or other stimulants",
+      name: "EachSubstanceListStartedOldOptionsMethamphetamine or other stimulants",
     },
     {
       label: "MDMA, PCP, or other club drugs",
@@ -287,43 +283,42 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
   const EachSubstanceLastOptions = [
     {
       label: "Caffeine (coffee, pills, soft drinks, etc)",
-      value: "Caffeine (coffee, pills, soft drinks, etc)",
-      name:
-        "EachSubstanceLastOptionsCaffeine (coffee, pills, soft drinks, etc)",
+      value: "caffeine (coffee, pills, soft drinks, etc)",
+      name: "EachSubstanceLastOptionsCaffeine (coffee, pills, soft drinks, etc)",
     },
     {
       label: "Alcohol",
-      value: "Alcohol",
+      value: "alcohol",
       name: "EachSubstanceLastOptionsAlcohol",
     },
     {
       label: "Tobaco or nicotine products",
-      value: "Tobaco or nicotine products",
+      value: "tobaco or nicotine products",
       name: "EachSubstanceLastOptionsTobaco or nicotine products",
     },
     {
       label: "Cocaine",
-      value: "Cocaine",
+      value: "cocaine",
       name: "EachSubstanceLastOptionsCocaine",
     },
     {
       label: "Heroin",
-      value: "Heroin",
+      value: "heroin",
       name: "EachSubstanceLastOptionsHeroin",
     },
     {
       label: "Prescription pain medications",
-      value: "Prescription pain medications",
+      value: "prescription pain medications",
       name: "EachSubstanceLastOptionsPrescription pain medications",
     },
     {
       label: "Marijuana",
-      value: "Marijuana",
+      value: "marijuana",
       name: "EachSubstanceLastOptionsMarijuana",
     },
     {
       label: "Methamphetamine or other stimulants",
-      value: "Methamphetamine or other stimulants",
+      value: "methamphetamine or other stimulants",
       name: "EachSubstanceLastOptionsMethamphetamine or other stimulants",
     },
     {
@@ -341,45 +336,43 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
   const ToleranceFollowingSubstancesOptions = [
     {
       label: "Caffeine (coffee, pills, soft drinks, etc)",
-      value: "Caffeine (coffee, pills, soft drinks, etc)",
-      name:
-        "ToleranceFollowingSubstancesOptionsCaffeine (coffee, pills, soft drinks, etc)",
+      value: "caffeine (coffee, pills, soft drinks, etc)",
+      name: "ToleranceFollowingSubstancesOptionsCaffeine (coffee, pills, soft drinks, etc)",
     },
     {
       label: "Alcohol",
-      value: "Alcohol",
+      value: "alcohol",
       name: "ToleranceFollowingSubstancesOptionsAlcohol",
     },
     {
       label: "Tobaco or nicotine products",
-      value: "Tobaco or nicotine products",
+      value: "tobaco or nicotine products",
       name: "ToleranceFollowingSubstancesOptionsTobaco or nicotine products",
     },
     {
       label: "Cocaine",
-      value: "Cocaine",
+      value: "cocaine",
       name: "ToleranceFollowingSubstancesOptionsCocaine",
     },
     {
       label: "Heroin",
-      value: "Heroin",
+      value: "heroin",
       name: "ToleranceFollowingSubstancesOptionsHeroin",
     },
     {
       label: "Prescription pain medications",
-      value: "Prescription pain medications",
+      value: "prescription pain medications",
       name: "ToleranceFollowingSubstancesOptionsPrescription pain medications",
     },
     {
       label: "Marijuana",
-      value: "Marijuana",
+      value: "marijuana",
       name: "ToleranceFollowingSubstancesOptionsMarijuana",
     },
     {
       label: "Methamphetamine or other stimulants",
-      value: "Methamphetamine or other stimulants",
-      name:
-        "ToleranceFollowingSubstancesOptionsMethamphetamine or other stimulants",
+      value: "methamphetamine or other stimulants",
+      name: "ToleranceFollowingSubstancesOptionsMethamphetamine or other stimulants",
     },
     {
       label: "MDMA, PCP, or other club drugs",
@@ -396,51 +389,48 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
   const WithdrawalFollowingSubstancesOptions = [
     {
       label: "Caffeine (coffee, pills, soft drinks, etc)",
-      value: "Caffeine (coffee, pills, soft drinks, etc)",
-      name:
-        "WithdrawalFollowingSubstancesOptionsCaffeine (coffee, pills, soft drinks, etc)",
+      value: "caffeine (coffee, pills, soft drinks, etc)",
+      name: "WithdrawalFollowingSubstancesOptionsCaffeine (coffee, pills, soft drinks, etc)",
     },
     {
       label: "Alcohol",
-      value: "Alcohol",
+      value: "alcohol",
       name: "WithdrawalFollowingSubstancesOptionsAlcohol",
     },
     {
       label: "Tobaco or nicotine products",
-      value: "Tobaco or nicotine products",
+      value: "tobaco or nicotine products",
       name: "WithdrawalFollowingSubstancesOptionsTobaco or nicotine products",
     },
     {
       label: "Cocaine",
-      value: "Cocaine",
+      value: "cocaine",
       name: "WithdrawalFollowingSubstancesOptionsCocaine",
     },
     {
       label: "Heroin",
-      value: "Heroin",
+      value: "heroin",
       name: "WithdrawalFollowingSubstancesOptionsHeroin",
     },
     {
       label: "Prescription pain medications",
-      value: "Prescription pain medications",
+      value: "prescription pain medications",
       name: "WithdrawalFollowingSubstancesOptionsPrescription pain medications",
     },
     {
       label: "Marijuana",
-      value: "Marijuana",
+      value: "marijuana",
       name: "WithdrawalFollowingSubstancesOptionsMarijuana",
     },
     {
       label: "Methamphetamine or other stimulants",
-      value: "Methamphetamine or other stimulants",
-      name:
-        "WithdrawalFollowingSubstancesOptionsMethamphetamine or other stimulants",
+      value: "methamphetamine or other stimulants",
+      name: "WithdrawalFollowingSubstancesOptionsMethamphetamine or other stimulants",
     },
     {
       label: "MDMA, PCP, or other club drugs",
       value: "MDMA, PCP, or other club drugs",
-      name:
-        "WithdrawalFollowingSubstancesOptionsMDMA, PCP, or other club drugs",
+      name: "WithdrawalFollowingSubstancesOptionsMDMA, PCP, or other club drugs",
     },
     {
       label: "LSD or other hallucinogens",
@@ -459,85 +449,74 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       label:
         "Alcohol or substance is often taken in larger amounts or over a longer period of time than intended",
       value:
-        "Alcohol or substance is often taken in larger amounts or over a longer period of time than intended",
-      name:
-        "RegardingAlcoholAnyFollowingOptionsAlcohol or substance is often taken in larger amounts or over a longer period of time than intended",
+        "alcohol or substance is often taken in larger amounts or over a longer period of time than intended",
+      name: "RegardingAlcoholAnyFollowingOptionsAlcohol or substance is often taken in larger amounts or over a longer period of time than intended",
     },
     {
       label:
         "There is a persistent desire or unsuccessful effort to cut down or control alcohol or substance use",
       value:
-        "There is a persistent desire or unsuccessful effort to cut down or control alcohol or substance use",
-      name:
-        "RegardingAlcoholAnyFollowingOptionsThere is a persistent desire or unsuccessful effort to cut down or control alcohol or substance use",
+        "there is a persistent desire or unsuccessful effort to cut down or control alcohol or substance use",
+      name: "RegardingAlcoholAnyFollowingOptionsThere is a persistent desire or unsuccessful effort to cut down or control alcohol or substance use",
     },
 
     {
       label:
         "A great deal of time is spent in activities necessary to obtain alcohol alcohol or substances, use these, or recover from its effects",
       value:
-        "A great deal of time is spent in activities necessary to obtain alcohol alcohol or substances, use these, or recover from its effects",
-      name:
-        "RegardingAlcoholAnyFollowingOptionsA great deal of time is spent in activities necessary to obtain alcohol alcohol or substances, use these, or recover from its effects",
+        "a great deal of time is spent in activities necessary to obtain alcohol alcohol or substances, use these, or recover from its effects",
+      name: "RegardingAlcoholAnyFollowingOptionsA great deal of time is spent in activities necessary to obtain alcohol alcohol or substances, use these, or recover from its effects",
     },
 
     {
       label: "Craving, or a strong desire or urge to use alcohol or substances",
-      value: "Craving, or a strong desire or urge to use alcohol or substances",
-      name:
-        "RegardingAlcoholAnyFollowingOptionsCraving, or a strong desire or urge to use alcohol or substances",
+      value: "craving, or a strong desire or urge to use alcohol or substances",
+      name: "RegardingAlcoholAnyFollowingOptionsCraving, or a strong desire or urge to use alcohol or substances",
     },
     {
       label:
         "Recurrent alcohol or substance use resulting in a failure to fulfill major role obligations at work, school, or home",
       value:
-        "Recurrent alcohol or substance use resulting in a failure to fulfill major role obligations at work, school, or home",
-      name:
-        "RegardingAlcoholAnyFollowingOptionsRecurrent alcohol or substance use resulting in a failure to fulfill major role obligations at work, school, or home",
+        "recurrent alcohol or substance use resulting in a failure to fulfill major role obligations at work, school, or home",
+      name: "RegardingAlcoholAnyFollowingOptionsRecurrent alcohol or substance use resulting in a failure to fulfill major role obligations at work, school, or home",
     },
     {
       label:
         "Continued alcohol or substance use despite having persistent or recurrent social or interpersonal problems caused or exacerbated by the effects of alcohol or substances",
       value:
-        "Continued alcohol or substance use despite having persistent or recurrent social or interpersonal problems caused or exacerbated by the effects of alcohol or substances",
-      name:
-        "RegardingAlcoholAnyFollowingOptionsContinued alcohol or substance use despite having persistent or recurrent social or interpersonal problems caused or exacerbated by the effects of alcohol or substances",
+        "continued alcohol or substance use despite having persistent or recurrent social or interpersonal problems caused or exacerbated by the effects of alcohol or substances",
+      name: "RegardingAlcoholAnyFollowingOptionsContinued alcohol or substance use despite having persistent or recurrent social or interpersonal problems caused or exacerbated by the effects of alcohol or substances",
     },
     {
       label:
         "Important social, occupational, or recreational activities are given up or reduced because of alcohol or substance use",
       value:
-        "Important social, occupational, or recreational activities are given up or reduced because of alcohol or substance use",
-      name:
-        "RegardingAlcoholAnyFollowingOptionsImportant social, occupational, or recreational activities are given up or reduced because of alcohol or substance use",
+        "important social, occupational, or recreational activities are given up or reduced because of alcohol or substance use",
+      name: "RegardingAlcoholAnyFollowingOptionsImportant social, occupational, or recreational activities are given up or reduced because of alcohol or substance use",
     },
     {
       label:
         "Recurrent alcohol or substance use in situations where it is physically dangerous",
       value:
-        "Recurrent alcohol or substance use in situations where it is physically dangerous",
-      name:
-        "RegardingAlcoholAnyFollowingOptionsRecurrent alcohol or substance use in situations where it is physically dangerous",
+        "recurrent alcohol or substance use in situations where it is physically dangerous",
+      name: "RegardingAlcoholAnyFollowingOptionsRecurrent alcohol or substance use in situations where it is physically dangerous",
     },
     {
       label:
         "alcohol or substance use is continued despite knowledge of having a persistent or recurrent physical or psychological problem that is likely to have been caused or exacerbated by alcohol or substance",
       value:
         "alcohol or substance use is continued despite knowledge of having a persistent or recurrent physical or psychological problem that is likely to have been caused or exacerbated by alcohol or substance",
-      name:
-        "RegardingAlcoholAnyFollowingOptionsalcohol or substance use is continued despite knowledge of having a persistent or recurrent physical or psychological problem that is likely to have been caused or exacerbated by alcohol or substance",
+      name: "RegardingAlcoholAnyFollowingOptionsalcohol or substance use is continued despite knowledge of having a persistent or recurrent physical or psychological problem that is likely to have been caused or exacerbated by alcohol or substance",
     },
     {
       label: "Tolerance as defined by either of the following:",
-      value: "Tolerance as defined by either of the following:",
-      name:
-        "RegardingAlcoholAnyFollowingOptionsTolerance as defined by either of the following: a) a need for markedly increased amounts of alcohol to achieve intoxication or desired effect, b) a markedly diminished effect with continued use of the same amount of alcohol or substances",
+      value: "tolerance as defined by either of the following",
+      name: "RegardingAlcoholAnyFollowingOptionsTolerance as defined by either of the following: a) a need for markedly increased amounts of alcohol to achieve intoxication or desired effect, b) a markedly diminished effect with continued use of the same amount of alcohol or substances",
     },
     {
       label: "Withdrawal as manifested by either of the following:",
-      value: "Withdrawal as manifested by either of the following:",
-      name:
-        "RegardingAlcoholAnyFollowingOptionsWithdrawal as manifested by either of the following: a) the characteristic withdrawal syndrome for alcohol or substances, b) alcohol or substances (or a closely related substance, such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms",
+      value: "withdrawal as manifested by either of the following",
+      name: "RegardingAlcoholAnyFollowingOptionsWithdrawal as manifested by either of the following: a) the characteristic withdrawal syndrome for alcohol or substances, b) alcohol or substances (or a closely related substance, such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms",
     },
   ];
 
@@ -564,7 +543,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Several months",
-      value: "Several months",
+      value: "several months",
       name: "RemainedTreatmentCleanLongestOptionsSeveral months",
     },
     {
@@ -574,7 +553,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Several years",
-      value: "Several years",
+      value: "several years",
       name: "RemainedTreatmentCleanLongestOptionsSeveral years",
     },
     {
@@ -584,7 +563,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "RemainedTreatmentCleanLongestOptionsOther",
     },
   ];
@@ -747,12 +726,12 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
 
     setSubstanceUseValue({
       ...substanceUseValue,
-      toleranceFollowingSubstances: substanceUseValue.toleranceFollowingSubstances.map(
-        (item) =>
+      toleranceFollowingSubstances:
+        substanceUseValue.toleranceFollowingSubstances.map((item) =>
           item.condition === condition[0].value
             ? { ...item, effect: event.target.value }
             : item
-      ),
+        ),
     });
   };
 
@@ -787,12 +766,12 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
 
     setSubstanceUseValue({
       ...substanceUseValue,
-      eachSubstanceListStartedOld: substanceUseValue.eachSubstanceListStartedOld.map(
-        (item) =>
+      eachSubstanceListStartedOld:
+        substanceUseValue.eachSubstanceListStartedOld.map((item) =>
           item.condition === condition[0].value
             ? { ...item, effect: event.target.value }
             : item
-      ),
+        ),
     });
   };
 
@@ -866,12 +845,12 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
 
     setSubstanceUseValue({
       ...substanceUseValue,
-      withdrawalFollowingSubstances: substanceUseValue.withdrawalFollowingSubstances.map(
-        (item) =>
+      withdrawalFollowingSubstances:
+        substanceUseValue.withdrawalFollowingSubstances.map((item) =>
           item.condition === condition[0].value
             ? { ...item, effect: event.target.value }
             : item
-      ),
+        ),
     });
   };
 
@@ -885,16 +864,14 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
 
     if (isChecked) {
       newCheckedItems.push(itemValue);
-      if (itemValue === "Tolerance as defined by either of the following:") {
+      if (itemValue === "tolerance as defined by either of the following") {
         newTolerance = [
           "a need for markedly increased amounts of alcohol to achieve intoxication or desired effect",
           "a markedly diminished effect with continued use of the same amount of alcohol or substances",
         ];
       }
 
-      if (
-        itemValue === "Withdrawal as manifested by either of the following:"
-      ) {
+      if (itemValue === "withdrawal as manifested by either of the following") {
         newwithdrawal = [
           "the characteristic withdrawal syndrome for alcohol or substances",
           "alcohol or substances (or a closely related substance, such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms",
@@ -907,12 +884,12 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       ...substanceUseValue,
       regardingAlcoholAnyFollowing: newCheckedItems,
       toleranceDefinedFollowing:
-        itemValue === "Tolerance as defined by either of the following:" &&
+        itemValue === "tolerance as defined by either of the following" &&
         isChecked === false
           ? []
           : newTolerance,
       withdrawalEitherFollowing:
-        itemValue === "Withdrawal as manifested by either of the following:" &&
+        itemValue === "withdrawal as manifested by either of the following" &&
         isChecked === false
           ? []
           : newwithdrawal,
@@ -929,12 +906,11 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       if (
         !(
           newItem.filter(
-            (item) =>
-              item === "Tolerance as defined by either of the following:"
+            (item) => item === "tolerance as defined by either of the following"
           ).length > 0
         )
       ) {
-        newItem.push("Tolerance as defined by either of the following:");
+        newItem.push("tolerance as defined by either of the following");
       }
       newCheckedItem.push(isValue);
     } else {
@@ -942,9 +918,10 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     }
 
     if (newCheckedItem.length === 0) {
-      let newRegardingAlcohol = substanceUseValue.regardingAlcoholAnyFollowing.filter(
-        (item) => item !== "Tolerance as defined by either of the following:"
-      );
+      let newRegardingAlcohol =
+        substanceUseValue.regardingAlcoholAnyFollowing.filter(
+          (item) => item !== "tolerance as defined by either of the following"
+        );
       setSubstanceUseValue({
         ...substanceUseValue,
         regardingAlcoholAnyFollowing: newRegardingAlcohol,
@@ -970,11 +947,11 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
         !(
           newItem.filter(
             (item) =>
-              item === "Withdrawal as manifested by either of the following:"
+              item === "withdrawal as manifested by either of the following:"
           ).length > 0
         )
       ) {
-        newItem.push("Withdrawal as manifested by either of the following:");
+        newItem.push("withdrawal as manifested by either of the following");
       }
 
       newCheckItem.push(isValue);
@@ -983,10 +960,11 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     }
 
     if (newCheckItem.length === 0) {
-      let newRegardingAlcohol = substanceUseValue.regardingAlcoholAnyFollowing.filter(
-        (item) =>
-          item !== "Withdrawal as manifested by either of the following:"
-      );
+      let newRegardingAlcohol =
+        substanceUseValue.regardingAlcoholAnyFollowing.filter(
+          (item) =>
+            item !== "withdrawal as manifested by either of the following"
+        );
 
       setSubstanceUseValue({
         ...substanceUseValue,
@@ -1052,9 +1030,8 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
   const handleNextClick = (event) => {
     event.preventDefault();
 
-    const { isValid, errors, textErrors } = validateSubstanceUse(
-      substanceUseValue
-    );
+    const { isValid, errors, textErrors } =
+      validateSubstanceUse(substanceUseValue);
     setErrors(errors);
     setTextErrors(textErrors);
 

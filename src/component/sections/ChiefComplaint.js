@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
@@ -32,47 +34,47 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
   const currentlyExperiencingSymptomsOptions = [
     {
       label: "Anxiety",
-      value: "Anxiety",
+      value: "anxiety",
       name: "currentlyExperiencingSymptomsAnxiety",
     },
     {
       label: "Panic",
-      value: "Panic",
+      value: "panic",
       name: "currentlyExperiencingSymptomsPanic",
     },
     {
       label: "Depression",
-      value: "Depression",
+      value: "depression",
       name: "currentlyExperiencingSymptomsDepression",
     },
     {
       label: "Post-traumatic stress",
-      value: "Post-traumatic stress",
+      value: "post-traumatic stress",
       name: "currentlyExperiencingSymptomsPost-traumatic stress",
     },
     {
       label: "Mania",
-      value: "Mania",
+      value: "mania",
       name: "currentlyExperiencingSymptomsMania",
     },
     {
       label: "Hypomania",
-      value: "Hypomania",
+      value: "hypomania",
       name: "currentlyExperiencingSymptomsHypomania",
     },
     {
       label: "Psychosis",
-      value: "Psychosis",
+      value: "psychosis",
       name: "currentlyExperiencingSymptomsPsychosis",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "currentlyExperiencingSymptomsOther",
     },
     {
       label: "None of the above",
-      value: "None of the above",
+      value: "none of the above",
       name: "currentlyExperiencingSymptomsNone of the above",
     },
   ];
@@ -80,32 +82,32 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
   const currentEpisodeDateOptions = [
     {
       label: "A few hours ago",
-      value: "A few hours ago",
+      value: "a few hours ago",
       name: "currentEpisodeDateA few hours ago",
     },
     {
       label: "A few days ago",
-      value: "A few days ago",
+      value: "a few days ago",
       name: "currentEpisodeDateA few days ago",
     },
     {
       label: "A week ago",
-      value: "A week ago",
+      value: "a week ago",
       name: "currentEpisodeDateA week ago",
     },
     {
       label: "Several weeks ago",
-      value: "Several weeks ago",
+      value: "several weeks ago",
       name: "currentEpisodeDateSeveral weeks ago",
     },
     {
       label: "A month ago",
-      value: "A month ago",
+      value: "a month ago",
       name: "currentEpisodeDateA month ago",
     },
     {
       label: "Several months ago",
-      value: "Several months ago",
+      value: "several months ago",
       name: "currentEpisodeDateSeveral months ago",
     },
     {
@@ -115,63 +117,58 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "A year ago",
-      value: "A year ago",
+      value: "a year ago",
       name: "currentEpisodeDateA year ago",
     },
     {
       label: "Several years ago",
-      value: "Several years ago",
+      value: "several years ago",
       name: "currentEpisodeDateSeveral years ago",
     },
     {
       label: "Over ten years ago",
-      value: "Over ten years ago",
+      value: "over ten years ago",
       name: "currentEpisodeDateOver ten years ago",
     },
     {
       label: "I can not remember a time when I did not feel these emotions",
       value: "I can not remember a time when I did not feel these emotions",
-      name:
-        "currentEpisodeDateI can not remember a time when I did not feel these emotions",
+      name: "currentEpisodeDateI can not remember a time when I did not feel these emotions",
     },
   ];
 
   const stressFollowingOptions = [
     {
       label: "Loss of a job or other financial changes",
-      value: "Loss of a job or other financial changes",
-      name: "Loss of a job or other financial changes",
+      value: "loss of a job or other financial changes",
+      name: "loss of a job or other financial changes",
     },
     {
       label: "Unstable housing",
-      value: "Unstable housing",
-      name: "Unstable housing",
+      value: "unstable housing",
+      name: "unstable housing",
     },
     {
       label: "Death or loss of a friend or relative",
-      value: "Death or loss of a friend or relative",
-      name: "Death or loss of a friend or relative",
+      value: "death or loss of a friend or relative",
+      name: "death or loss of a friend or relative",
     },
     {
       label:
         "Relationship stress such as friends, significant others, or family members",
       value:
-        "Relationship stress such as friends, significant others, or family members",
-      name:
-        "Relationship stress such as friends, significant others, or family members",
+        "relationship stress such as friends, significant others, or family members",
+      name: "relationship stress such as friends, significant others, or family members",
     },
     {
-      label:
-        "Any anticipated or upcoming life changes such as housing, career changes, new children or other family changes",
-      value:
-        "Any anticipated or upcoming life changes such as housing, career changes, new children or other family changes",
-      name:
-        "Any anticipated or upcoming life changes such as housing, career changes, new children or other family changes",
+      label: "Housing, career changes, new children and other family changes",
+      value: "housing, career changes, new children and other family changes",
+      name: "housing, career changes, new children and other family changes",
     },
-    { label: "Other", value: "Other", name: "Other" },
+    { label: "Other", value: "other", name: "Other" },
     {
       label: "None of the above",
-      value: "None of the above",
+      value: "none of the above",
       name: "None of the above",
     },
   ];
@@ -190,11 +187,11 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
     let newCheckedItems = [...chiefComplaintValue?.stressFollowing];
 
     if (isChecked) {
-      if (itemValue === "None of the above") {
-        newCheckedItems = ["None of the above"];
+      if (itemValue === "none of the above") {
+        newCheckedItems = ["none of the above"];
       } else {
         if (
-          newCheckedItems.filter((item) => item === "None of the above")
+          newCheckedItems.filter((item) => item === "none of the above")
             .length > 0
         ) {
           newCheckedItems = [];
@@ -219,11 +216,11 @@ const ChiefComplaint = ({ currentSection, setCurrentSection }) => {
     ];
 
     if (isChecked) {
-      if (itemValue === "None of the above") {
-        newCheckedItems = ["None of the above"];
+      if (itemValue === "none of the above") {
+        newCheckedItems = ["none of the above"];
       } else {
         if (
-          newCheckedItems.filter((item) => item === "None of the above")
+          newCheckedItems.filter((item) => item === "none of the above")
             .length > 0
         ) {
           newCheckedItems = [];

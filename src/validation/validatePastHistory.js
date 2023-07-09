@@ -1,3 +1,5 @@
+/** @format */
+
 const validatePastHistory = (value) => {
   let isValid = true;
   let errors = {};
@@ -36,7 +38,7 @@ const validatePastHistory = (value) => {
     if (value.mood === "") {
       errors.mood = "See required fields above.";
       isValid = false;
-    } else if (value?.mood === "Other") {
+    } else if (value?.mood === "other") {
       if (value.describeMood === "") {
         errors.describeMood = "See required fields above.";
         isValid = false;
@@ -108,7 +110,7 @@ const validatePastHistory = (value) => {
     errors.diagnosedMentalHealth = "See required fields above.";
     isValid = false;
   } else if (
-    value.diagnosedMentalHealth.filter((item) => item === "Other").length > 0 &&
+    value.diagnosedMentalHealth.filter((item) => item === "other").length > 0 &&
     value.describeHealthCondition === ""
   ) {
     errors.describeHealthCondition = "See required fields above.";

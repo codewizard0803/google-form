@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 
@@ -9,35 +11,31 @@ import TableCheckBox from "../common/TableCheckBox";
 import { toast } from "react-toastify";
 
 const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
-  const {
-    globalCurrentDailyActivities,
-    setGlobalCurrentDailyActivities,
-  } = useGlobalContext();
+  const { globalCurrentDailyActivities, setGlobalCurrentDailyActivities } =
+    useGlobalContext();
 
-  const [
-    currentDailyActivitiesValue,
-    setCurrentDailyActivitiesValue,
-  ] = useState({
-    awakenTimeWorkDays: "",
-    awakenTimeNotWorkDays: "",
-    goToBed: "",
-    fallAsleepTime: "",
-    do6am: "",
-    do8am: "",
-    do10am: "",
-    do12pm: "",
-    do2pm: "",
-    do4pm: "",
-    do6pm: "",
-    do8pm: "",
-    do10pm: "",
-    do12p6am: "",
-    leisureActivities: "",
-    dailyLivingFollowing: [],
-    difficultAmount: [],
-    anyActivitiesListBefore: "",
-    troubleFollowing: [],
-  });
+  const [currentDailyActivitiesValue, setCurrentDailyActivitiesValue] =
+    useState({
+      awakenTimeWorkDays: "",
+      awakenTimeNotWorkDays: "",
+      goToBed: "",
+      fallAsleepTime: "",
+      do6am: "",
+      do8am: "",
+      do10am: "",
+      do12pm: "",
+      do2pm: "",
+      do4pm: "",
+      do6pm: "",
+      do8pm: "",
+      do10pm: "",
+      do12p6am: "",
+      leisureActivities: "",
+      dailyLivingFollowing: [],
+      difficultAmount: [],
+      anyActivitiesListBefore: "",
+      troubleFollowing: [],
+    });
   const [errors, setErrors] = useState({});
 
   const dailyLivingThead = [
@@ -45,7 +43,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
     "Able to Do Independently",
     "Need Help",
     "Can't Do",
-    "Don’t Do",
+    "Don't Do",
     "N/A",
   ];
 
@@ -67,7 +65,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
     "Housework",
     "Doing Laundry",
     "Driving",
-    " Managing Finances",
+    "Managing Finances",
     "Recreation",
   ];
 

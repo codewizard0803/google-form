@@ -1,3 +1,5 @@
+/** @format */
+
 const validateMedicalHistory = (value, global) => {
   let isValid = true;
   let errors = {};
@@ -6,7 +8,7 @@ const validateMedicalHistory = (value, global) => {
     errors.diagnosedHealthcareProvider = "See required fields above.";
     isValid = false;
   } else if (
-    value?.diagnosedHealthcareProvider?.filter((item) => item === "Other")
+    value?.diagnosedHealthcareProvider?.filter((item) => item === "other")
       .length > 0
   ) {
     if (!value?.otherMedicalCondition.trim()) {

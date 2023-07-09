@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import { toast } from "react-toastify";
@@ -50,27 +52,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const StressfulExperienceMemoriesOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "StressfulExperienceMemoriesOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "StressfulExperienceMemoriesOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "StressfulExperienceMemoriesOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "StressfulExperienceMemoriesOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "StressfulExperienceMemoriesOptionsExtremely",
     },
   ];
@@ -78,27 +80,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const StressfulExperienceOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "StressfulExperienceOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "StressfulExperienceOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "StressfulExperienceOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "StressfulExperienceOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "StressfulExperienceOptionsExtremely",
     },
   ];
@@ -144,27 +146,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const SuddenlyStressfulExperienceOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "SuddenlyStressfulExperienceOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "SuddenlyStressfulExperienceOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "SuddenlyStressfulExperienceOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "SuddenlyStressfulExperienceOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "SuddenlyStressfulExperienceOptionsExtremely",
     },
   ];
@@ -172,27 +174,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const VeryUpsetStressfulExperienceOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "VeryUpsetStressfulExperienceOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "VeryUpsetStressfulExperienceOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "VeryUpsetStressfulExperienceOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "VeryUpsetStressfulExperienceOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "VeryUpsetStressfulExperienceOptionsExtremely",
     },
   ];
@@ -200,27 +202,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const StrongPhysicalReactionStressfulExperienceOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "StrongPhysicalReactionStressfulExperienceOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "StrongPhysicalReactionStressfulExperienceOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "StrongPhysicalReactionStressfulExperienceOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "StrongPhysicalReactionStressfulExperienceOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "StrongPhysicalReactionStressfulExperienceOptionsExtremely",
     },
   ];
@@ -228,27 +230,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const AvoidingMemoriesOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "AvoidingMemoriesOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "AvoidingMemoriesOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "AvoidingMemoriesOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "AvoidingMemoriesOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "AvoidingMemoriesOptionsExtremely",
     },
   ];
@@ -256,27 +258,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const AvoidingExternalRemindersOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "AvoidingExternalRemindersOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "AvoidingExternalRemindersOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "AvoidingExternalRemindersOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "AvoidingExternalRemindersOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "AvoidingExternalRemindersOptionsExtremely",
     },
   ];
@@ -284,27 +286,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const TroubleStressfulExperienceOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "TroubleStressfulExperienceOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "TroubleStressfulExperienceOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "TroubleStressfulExperienceOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "TroubleStressfulExperienceOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "TroubleStressfulExperienceOptionsExtremely",
     },
   ];
@@ -312,27 +314,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const StrongNegativeBeliefsOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "StrongNegativeBeliefsOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "StrongNegativeBeliefsOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "StrongNegativeBeliefsOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "StrongNegativeBeliefsOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "StrongNegativeBeliefsOptionsExtremely",
     },
   ];
@@ -340,27 +342,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const StressfulExperienceBlamingOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "StressfulExperienceBlamingOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "StressfulExperienceBlamingOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "StressfulExperienceBlamingOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "StressfulExperienceBlamingOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "StressfulExperienceBlamingOptionsExtremely",
     },
   ];
@@ -368,27 +370,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const StrongNegativefeelingsOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "StrongNegativefeelingsOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "StrongNegativefeelingsOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "StrongNegativefeelingsOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "StrongNegativefeelingsOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "StrongNegativefeelingsOptionsExtremely",
     },
   ];
@@ -396,27 +398,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const LossInterestActivityOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "LossInterestActivityOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "LossInterestActivityOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "LossInterestActivityOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "LossInterestActivityOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "LossInterestActivityOptionsExtremely",
     },
   ];
@@ -424,27 +426,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const FeelingDistantPeopleOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "FeelingDistantPeopleOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "FeelingDistantPeopleOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "FeelingDistantPeopleOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "FeelingDistantPeopleOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "FeelingDistantPeopleOptionsExtremely",
     },
   ];
@@ -452,27 +454,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const TroubleExperiencePositiveFeelingOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "TroubleExperiencePositiveFeelingOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "TroubleExperiencePositiveFeelingOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "TroubleExperiencePositiveFeelingOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "TroubleExperiencePositiveFeelingOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "TroubleExperiencePositiveFeelingOptionsExtremely",
     },
   ];
@@ -480,27 +482,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const IrritableBehaviorOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "IrritableBehaviorOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "IrritableBehaviorOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "IrritableBehaviorOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "IrritableBehaviorOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "IrritableBehaviorOptionsExtremely",
     },
   ];
@@ -508,27 +510,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const ManyRisksThingOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "ManyRisksThingOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "ManyRisksThingOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "ManyRisksThingOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "ManyRisksThingOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "ManyRisksThingOptionsExtremely",
     },
   ];
@@ -536,27 +538,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const BeingWatchfulOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "BeingWatchfulOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "BeingWatchfulOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "BeingWatchfulOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "BeingWatchfulOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "BeingWatchfulOptionsExtremely",
     },
   ];
@@ -564,27 +566,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const EasilyStartledOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "EasilyStartledOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "EasilyStartledOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "EasilyStartledOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "EasilyStartledOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "EasilyStartledOptionsExtremely",
     },
   ];
@@ -592,27 +594,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const DifficultyConcentratingOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "DifficultyConcentratingOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "DifficultyConcentratingOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "DifficultyConcentratingOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "DifficultyConcentratingOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "DifficultyConcentratingOptionsExtremely",
     },
   ];
@@ -620,27 +622,27 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const TroubleFallingAsleepOptions = [
     {
       label: "Not at all",
-      value: "Not at all",
+      value: "not at all",
       name: "TroubleFallingAsleepOptionsNot at all",
     },
     {
       label: "A little bit",
-      value: "A little bit",
+      value: "a little bit",
       name: "TroubleFallingAsleepOptionsA little bit",
     },
     {
       label: "Moderately",
-      value: "Moderately",
+      value: "moderately",
       name: "TroubleFallingAsleepOptionsModerately",
     },
     {
       label: "Quite a bit",
-      value: "Quite a bit",
+      value: "quite a bit",
       name: "TroubleFallingAsleepOptionsQuite a bit",
     },
     {
       label: "Extremely",
-      value: "Extremely",
+      value: "extremely",
       name: "TroubleFallingAsleepOptionsExtremely",
     },
   ];
@@ -805,16 +807,16 @@ const PCL = ({ currentSection, setCurrentSection }) => {
   const eachCalculateScore = (value) => {
     let eachScore = 0;
     switch (value) {
-      case "Not at all":
+      case "not at all":
         eachScore = 0;
         break;
-      case "Several Days":
+      case "several Days":
         eachScore = 1;
         break;
-      case "More than half the days":
+      case "more than half the days":
         eachScore = 2;
         break;
-      case "Nearly every day":
+      case "nearly every day":
         eachScore = 3;
         break;
       default:
@@ -948,7 +950,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         {PCLValue?.stressfulExperience !== "" &&
-        PCLValue?.stressfulExperience !== "Not at all" ? (
+        PCLValue?.stressfulExperience !== "not at all" ? (
           <div>
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
@@ -1007,7 +1009,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
           errors={errors.avoidingExternalReminders}
         />
         {PCLValue?.avoidingExternalReminders !== "" &&
-        PCLValue?.avoidingExternalReminders !== "Not at all" ? (
+        PCLValue?.avoidingExternalReminders !== "not at all" ? (
           <div>
             <div className="w-[68%] mx-auto mt-3">
               <TextFollowUp

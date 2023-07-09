@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import { toast } from "react-toastify";
@@ -8,10 +10,8 @@ import TextField from "../common/TextField";
 import validateEducationHistory from "../../validation/validateEducationHistory";
 
 const EducationHistory = ({ currentSection, setCurrentSection }) => {
-  const {
-    globalEducationHistory,
-    setGlobalEducationHistory,
-  } = useGlobalContext();
+  const { globalEducationHistory, setGlobalEducationHistory } =
+    useGlobalContext();
 
   const [educationHistoryValue, setEducationHistoryValue] = useState({
     highestLevelEducation: "",
@@ -39,7 +39,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
   const HighestLevelEducationOptions = [
     {
       label: "Less than 8th grade",
-      value: "Less than 8th grade",
+      value: "less than 8th grade",
       name: "HighestLevelEducationOptionsLess than 8th grade",
     },
     {
@@ -64,39 +64,38 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "High school graduate",
-      value: "High school graduate",
+      value: "high school graduate",
       name: "HighestLevelEducationOptionsHigh school graduate",
     },
     { label: "GED", value: "GED", name: "HighestLevelEducationOptionsGED" },
     {
       label: "Some college courses",
-      value: "Some college courses",
+      value: "some college courses",
       name: "HighestLevelEducationOptionsSome college courses",
     },
     {
       label: "Associates degree or professional certification",
-      value: "Associates degree or professional certification",
-      name:
-        "HighestLevelEducationOptionsAssociates degree or professional certification",
+      value: "associates degree or professional certification",
+      name: "HighestLevelEducationOptionsAssociates degree or professional certification",
     },
     {
       label: "Bachelors degree",
-      value: "Bachelors degree",
+      value: "bachelors degree",
       name: "HighestLevelEducationOptionsBachelors degree",
     },
     {
       label: "Masters degree",
-      value: "Masters degree",
+      value: "masters degree",
       name: "HighestLevelEducationOptionsMasters degree",
     },
     {
       label: "Doctoral degree or beyond",
-      value: "Doctoral degree or beyond",
+      value: "doctoral degree or beyond",
       name: "HighestLevelEducationOptionsDoctoral degree or beyond",
     },
     {
       label: "Currently a student",
-      value: "Currently a student",
+      value: "currently a student",
       name: "HighestLevelEducationOptionsCurrently a student",
     },
   ];

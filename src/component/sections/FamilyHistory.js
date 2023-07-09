@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import { toast } from "react-toastify";
@@ -29,22 +31,22 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
   const FamilyPsychiatricConditionsOptions = [
     {
       label: "Depression",
-      value: "Depression",
+      value: "depression",
       name: "FamilyPsychiatricConditionsOptionsDepression",
     },
     {
       label: "Anxiety",
-      value: "Anxiety",
+      value: "anxiety",
       name: "FamilyPsychiatricConditionsOptionsAnxiety",
     },
     {
       label: "Bipolar Disorder",
-      value: "Bipolar Disorder",
+      value: "bipolar Disorder",
       name: "FamilyPsychiatricConditionsOptionsBipolar Disorder",
     },
     {
       label: "Psychotic Disorder",
-      value: "Psychotic Disorder",
+      value: "psychotic Disorder",
       name: "FamilyPsychiatricConditionsOptionsPsychotic Disorder",
     },
     {
@@ -59,7 +61,7 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "FamilyPsychiatricConditionsOptionsOther",
     },
   ];
@@ -67,22 +69,22 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
   const PsychiatricConditionsTreatmentOptions = [
     {
       label: "Medication",
-      value: "Medication",
+      value: "medication",
       name: "PsychiatricConditionsTreatmentOptionsMedication",
     },
     {
       label: "Therapy",
-      value: "Therapy",
+      value: "therapy",
       name: "PsychiatricConditionsTreatmentOptionsTherapy",
     },
     {
       label: "Psychiatric Hospitalization",
-      value: "Psychiatric Hospitalization",
+      value: "psychiatric Hospitalization",
       name: "PsychiatricConditionsTreatmentOptionsPsychiatric Hospitalization",
     },
     {
       label: "None of the above",
-      value: "None of the above",
+      value: "none of the above",
       name: "PsychiatricConditionsTreatmentOptionsNone of the above",
     },
   ];
@@ -109,11 +111,11 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
     ];
 
     if (isChecked) {
-      if (itemValue === "None of the above") {
-        newCheckedItems = ["None of the above"];
+      if (itemValue === "none of the above") {
+        newCheckedItems = ["none of the above"];
       } else {
         if (
-          newCheckedItems.filter((item) => item === "None of the above")
+          newCheckedItems.filter((item) => item === "none of the above")
             .length > 0
         ) {
           newCheckedItems = [];
@@ -204,7 +206,7 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         {familyHistoryValue?.familyPsychiatricConditions.filter(
-          (item) => item === "Other"
+          (item) => item === "other"
         ).length > 0 ? (
           <div>
             <div className="w-[68%] mx-auto mt-3">

@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import { toast } from "react-toastify";
@@ -10,10 +12,8 @@ import validateCurrentTreatment from "../../validation/validateCurrentTreatment"
 import CardCheckFollowUp from "../common/CardCheckFollowUp";
 
 const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
-  const {
-    globalCurrentTreatment,
-    setGlobalCurrentTreatment,
-  } = useGlobalContext();
+  const { globalCurrentTreatment, setGlobalCurrentTreatment } =
+    useGlobalContext();
 
   const [currentTreatmentValue, setCurrentTreatmentValue] = useState({
     currentlyPsychiatricMedications: "",
@@ -59,22 +59,22 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
   const MedicationReasonOptions = [
     {
       label: "Depression",
-      value: "Depression",
+      value: "depression",
       name: "MedicationReasonOptionsDepression",
     },
     {
       label: "Anxiety",
-      value: "Anxiety",
+      value: "anxiety",
       name: "MedicationReasonOptionsAnxiety",
     },
     {
       label: "Mania",
-      value: "Mania",
+      value: "mania",
       name: "MedicationReasonOptionsMania",
     },
     {
       label: "Psychosis",
-      value: "Psychosis",
+      value: "psychosis",
       name: "MedicationReasonOptionsPsychosis",
     },
     {
@@ -89,7 +89,7 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "MedicationReasonOptionsOther",
     },
   ];
@@ -97,22 +97,22 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
   const MedicationsEffectYourConditionOptions = [
     {
       label: "Depression",
-      value: "Depression",
+      value: "depression",
       name: "MedicationsEffectYourConditionOptionsDepression",
     },
     {
       label: "Anxiety",
-      value: "Anxiety",
+      value: "anxiety",
       name: "MedicationsEffectYourConditionOptionsAnxiety",
     },
     {
       label: "Mania",
-      value: "Mania",
+      value: "mania",
       name: "MedicationsEffectYourConditionOptionsMania",
     },
     {
       label: "Psychosis",
-      value: "Psychosis",
+      value: "psychosis",
       name: "MedicationsEffectYourConditionOptionsPsychosis",
     },
     {
@@ -127,7 +127,7 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "MedicationsEffectYourConditionOptionsOther",
     },
   ];
@@ -135,17 +135,17 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
   const MedicationsEffectOptions = [
     {
       label: "Improved symptoms",
-      value: "Improved symptoms",
+      value: "improved symptoms",
       name: "MedicationsEffectOptionsImproved symptoms",
     },
     {
       label: "Worsened symptoms",
-      value: "Worsened symptoms",
+      value: "worsened symptoms",
       name: "MedicationsEffectOptionsWorsened symptoms",
     },
     {
       label: "No effect on symptoms",
-      value: "No effect on symptoms",
+      value: "no effect on symptoms",
       name: "MedicationsEffectOptionsNo effect on symptoms",
     },
   ];
@@ -158,62 +158,62 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
   const ExperiencedSideEffectsOptions = [
     {
       label: "Upset stomach/nausea",
-      value: "Upset stomach/nausea",
+      value: "upset stomach/nausea",
       name: "ExperiencedSideEffectsOptionsUpset stomach/nausea",
     },
     {
       label: "Diarrhea",
-      value: "Diarrhea",
+      value: "diarrhea",
       name: "ExperiencedSideEffectsOptionsDiarrhea",
     },
     {
       label: "Constipation",
-      value: "Constipation",
+      value: "constipation",
       name: "ExperiencedSideEffectsOptionsConstipation",
     },
     {
       label: "Insomnia",
-      value: "Insomnia",
+      value: "insomnia",
       name: "ExperiencedSideEffectsOptionsInsomnia",
     },
     {
       label: "Fatigue",
-      value: "Fatigue",
+      value: "fatigue",
       name: "ExperiencedSideEffectsOptionsFatigue",
     },
     {
       label: "Headache",
-      value: "Headache",
+      value: "headache",
       name: "ExperiencedSideEffectsOptionsHeadache",
     },
     {
       label: "Sexual dysfunction",
-      value: "Sexual dysfunction",
+      value: "sexual dysfunction",
       name: "ExperiencedSideEffectsOptionsSexual dysfunction",
     },
     {
       label: "Shaking, stiffness, tremors",
-      value: "Shaking, stiffness, tremors",
+      value: "shaking, stiffness, tremors",
       name: "ExperiencedSideEffectsOptionsShaking, stiffness, tremors",
     },
     {
       label: "Weight gain",
-      value: "Weight gain",
+      value: "weight gain",
       name: "ExperiencedSideEffectsOptionsWeight gain",
     },
     {
       label: "Weight loss",
-      value: "Weight loss",
+      value: "weight loss",
       name: "ExperiencedSideEffectsOptionsWeight loss",
     },
     {
       label: "Withdrawal",
-      value: "Withdrawal",
+      value: "withdrawal",
       name: "ExperiencedSideEffectsOptionsWithdrawal",
     },
     {
       label: "Other",
-      value: "Other",
+      value: "other",
       name: "ExperiencedSideEffectsOptionsOther",
     },
   ];
@@ -234,32 +234,32 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
   const PsychotherapySessionsDateOptions = [
     {
       label: "Weekly",
-      value: "Weekly",
+      value: "weekly",
       name: "PsychotherapySessionsDateOptionsWeekly",
     },
     {
       label: "Twice per month",
-      value: "Twice per month",
+      value: "twice per month",
       name: "PsychotherapySessionsDateOptionsTwice per month",
     },
     {
       label: "Monthly",
-      value: "Monthly",
+      value: "monthly",
       name: "PsychotherapySessionsDateOptionsMonthly",
     },
     {
       label: "Every few months",
-      value: "Every few months",
+      value: "every few months",
       name: "PsychotherapySessionsDateOptionsEvery few months",
     },
     {
       label: "A few times per year",
-      value: "A few times per year",
+      value: "a few times per year",
       name: "PsychotherapySessionsDateOptionsA few times per year",
     },
     {
       label: "Infrequently",
-      value: "Infrequently",
+      value: "infrequently",
       name: "PsychotherapySessionsDateOptionsInfrequently",
     },
   ];
@@ -307,10 +307,10 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
     ];
 
     if (isChecked) {
-      if (itemValue !== "Other") {
+      if (itemValue !== "other") {
         newCheckedItems.push({
           condition: itemValue,
-          effect: "Improved symptoms",
+          effect: "improved symptoms",
         });
       } else {
         newCheckedItems.push({
@@ -338,24 +338,24 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
 
     setCurrentTreatmentValue({
       ...currentTreatmentValue,
-      medicationsEffectYourCondition: currentTreatmentValue.medicationsEffectYourCondition.map(
-        (item) =>
+      medicationsEffectYourCondition:
+        currentTreatmentValue.medicationsEffectYourCondition.map((item) =>
           item.condition === cond
             ? { ...item, effect: event.target.value }
             : item
-      ),
+        ),
     });
   };
 
   const handleMedicationsEffectOther = (event) => {
     setCurrentTreatmentValue({
       ...currentTreatmentValue,
-      medicationsEffectYourCondition: currentTreatmentValue.medicationsEffectYourCondition.map(
-        (item) =>
-          item.condition === "Other"
+      medicationsEffectYourCondition:
+        currentTreatmentValue.medicationsEffectYourCondition.map((item) =>
+          item.condition === "other"
             ? { ...item, effect: event.target.value }
             : item
-      ),
+        ),
       medicationsEffectOther: event.target.value,
     });
   };
@@ -479,7 +479,7 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
             />
             {currentTreatmentValue?.medicationReason &&
             currentTreatmentValue?.medicationReason.filter(
-              (item) => item === "Other"
+              (item) => item === "other"
             ).length ? (
               <div className="w-[68%] mx-auto mt-3">
                 <TextFollowUp
@@ -527,7 +527,7 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
             />
             {currentTreatmentValue?.experiencedSideEffects &&
             currentTreatmentValue?.experiencedSideEffects.filter(
-              (item) => item === "Other"
+              (item) => item === "other"
             ).length ? (
               <div className="w-[68%] mx-auto mt-3">
                 <TextFollowUp
