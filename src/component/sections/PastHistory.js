@@ -919,7 +919,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
       if (itemValue !== "other") {
         newCheckedItems.push({
           condition: itemValue,
-          effect: "Improved symptoms",
+          effect: "improved symptoms",
         });
       } else {
         newCheckedItems.push({
