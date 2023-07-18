@@ -113,19 +113,19 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
   const RelationshipSiblingsOptions = [
     {
       label: "Positive: stable, supportive, or loving",
-      value: "Positive: stable, supportive, or loving",
+      value: "positive (stable, supportive, or loving)",
       name: "RelationshipSiblingsOptionsPositive: stable, supportive, or loving",
     },
     {
       label:
         "Medium: some disruption in the relationship, some level of conflicts",
       value:
-        "Medium: some disruption in the relationship, some level of conflicts",
+        "medium (some disruption in the relationship, some level of conflicts)",
       name: "RelationshipSiblingsOptionsMedium: some disruption in the relationship, some level of conflicts",
     },
     {
       label: "poor: high level of instability and conflict",
-      value: "poor: high level of instability and conflict",
+      value: "poor (high level of instability and conflict)",
       name: "RelationshipSiblingsOptionspoor: high level of instability and conflict",
     },
   ];
@@ -153,27 +153,27 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
   const ExperienceAbuseChildhoodOptions = [
     {
       label: "None",
-      value: "None",
+      value: "none",
       name: "ExperienceAbuseChildhoodOptionsNone",
     },
     {
       label: "Yes, emotional abuse",
-      value: "Yes, emotional abuse",
+      value: "emotional abuse",
       name: "ExperienceAbuseChildhoodOptionsYes, emotional abuse",
     },
     {
       label: "Yes, physical abuse",
-      value: "Yes, physical abuse",
+      value: "physical abuse",
       name: "ExperienceAbuseChildhoodOptionsYes, physical abuse",
     },
     {
       label: "Yes, sexual abuse",
-      value: "Yes, sexual abuse",
+      value: "sexual abuse",
       name: "ExperienceAbuseChildhoodOptionsYes, sexual abuse",
     },
     {
       label: "Yes, neglect",
-      value: "Yes, neglect",
+      value: "neglect",
       name: "ExperienceAbuseChildhoodOptionsYes, neglect",
     },
   ];

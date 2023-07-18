@@ -366,7 +366,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
           <div>
             <div className="w-[68%] mx-auto mt-3">
               <TextFollowUp
-                title="Please list your planned planned future medical care"
+                title="Please list your planned future medical care"
                 onChange={handleChange}
                 name="futureMedicalPlanList"
                 value={medicalHistoryValue?.futureMedicalPlanList}

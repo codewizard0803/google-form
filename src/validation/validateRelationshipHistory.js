@@ -1,3 +1,5 @@
+/** @format */
+
 const validateRelationshipHistory = (value) => {
   let isValid = true;
   let errors = {};
@@ -28,6 +30,16 @@ const validateRelationshipHistory = (value) => {
 
     if (!value.PartnerOccupation.trim()) {
       errors.PartnerOccupation = "See required fields above.";
+      isValid = false;
+    }
+
+    if (!value.sufferPsychiatricConditions.trim()) {
+      errors.sufferPsychiatricConditions = "See required fields above.";
+      isValid = false;
+    }
+
+    if (!value.stressfulPsychiatricConditions.trim()) {
+      errors.stressfulPsychiatricConditions = "See required fields above.";
       isValid = false;
     }
   } else {

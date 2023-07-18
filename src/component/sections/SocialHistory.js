@@ -113,7 +113,7 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Hotel",
-      value: "hotel",
+      value: "living in a hotel",
       name: "DescribeCurrentLivingSituationOptionsHotel",
     },
     {

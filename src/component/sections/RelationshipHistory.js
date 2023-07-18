@@ -32,6 +32,7 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
     childrenDoingSchool: "",
     relationshipChildren: "",
     sufferPsychiatricConditions: "",
+    stressfulPsychiatricConditions: "",
     childrenHealthIssues: "",
   });
 
@@ -72,27 +73,27 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
   const DescribeIntimateRelationshipOptions = [
     {
       label: "Stable",
-      value: "Stable",
+      value: "stable",
       name: "DescribeIntimateRelationshipOptionsStable",
     },
     {
       label: "Supportive",
-      value: "Supportive",
+      value: "supportive",
       name: "DescribeIntimateRelationshipOptionsSupportive",
     },
     {
       label: "Volatile",
-      value: "Volatile",
+      value: "volatile",
       name: "DescribeIntimateRelationshipOptionsVolatile",
     },
     {
       label: "Conflictual",
-      value: "Conflictual",
+      value: "conflictual",
       name: "DescribeIntimateRelationshipOptionsConflictual",
     },
     {
       label: "About to end",
-      value: "About to end",
+      value: "about to end",
       name: "DescribeIntimateRelationshipOptionsAbout to end",
     },
     {
@@ -209,6 +210,19 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
     },
   ];
 
+  const stressfulPsychiatricConditionsOptions = [
+    {
+      label: "Yes",
+      value: "Yes",
+      name: "stressfulPsychiatricConditionsOptionsYes",
+    },
+    {
+      label: "No",
+      value: "No",
+      name: "stressfulPsychiatricConditionsOptionsNo",
+    },
+  ];
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -247,6 +261,13 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
     setRelationshipHistoryValue({
       ...relationshipHistoryValue,
       sufferPsychiatricConditions: event.target.value,
+    });
+  };
+
+  const handleStressfulPsychiatricConditionsChange = (event) => {
+    setRelationshipHistoryValue({
+      ...relationshipHistoryValue,
+      stressfulPsychiatricConditions: event.target.value,
     });
   };
 
@@ -489,6 +510,18 @@ const RelationshipHistory = ({ currentSection, setCurrentSection }) => {
                 options={sufferPsychiatricConditionsOptions}
                 checked={relationshipHistoryValue?.sufferPsychiatricConditions}
                 error={errors.sufferPsychiatricConditions}
+              />
+            </div>
+
+            <div className="w-[68%] mx-auto mt-3">
+              <RadioFollowUp
+                title="Is your partner or spouse’s medical or psychiatric condition stressful for you?"
+                onChange={handleStressfulPsychiatricConditionsChange}
+                options={stressfulPsychiatricConditionsOptions}
+                checked={
+                  relationshipHistoryValue?.stressfulPsychiatricConditions
+                }
+                error={errors.stressfulPsychiatricConditions}
               />
             </div>
           </div>

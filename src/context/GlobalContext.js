@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 
 export const GlobalContext = React.createContext();
@@ -343,6 +345,7 @@ const GlobalContextProvider = ({ children }) => {
     relationshipChildren: "",
     childrenHealthIssues: "",
     sufferPsychiatricConditions: "",
+    stressfulPsychiatricConditions: "",
   });
 
   const [globalEmploymentHistory, setGlobalEmploymentHistory] = useState({
@@ -362,12 +365,14 @@ const GlobalContextProvider = ({ children }) => {
     currentSourcesIncome: [],
     otherEmploymentList: "",
     workEvaluationsExplain: "",
-    employerList: [{
-      employer: "",
-      jobTitle: "",
-      datesOfEmployment: "",
-      reasonForLeaving: "",
-    }]
+    employerList: [
+      {
+        employer: "",
+        jobTitle: "",
+        datesOfEmployment: "",
+        reasonForLeaving: "",
+      },
+    ],
   });
 
   const [globalEducationHistory, setGlobalEducationHistory] = useState({
@@ -432,30 +437,28 @@ const GlobalContextProvider = ({ children }) => {
     dischargeStatus: "",
   });
 
-  const [
-    globalCurrentDailyActivities,
-    setGlobalCurrentDailyActivities,
-  ] = useState({
-    awakenTimeWorkDays: "",
-    awakenTimeNotWorkDays: "",
-    goToBed: "",
-    fallAsleepTime: "",
-    do6am: "",
-    do8am: "",
-    do10am: "",
-    do12pm: "",
-    do2pm: "",
-    do4pm: "",
-    do6pm: "",
-    do8pm: "",
-    do10pm: "",
-    do12p6am: "",
-    leisureActivities: "",
-    dailyLivingFollowing: [],
-    difficultAmount: [],
-    anyActivitiesListBefore: "",
-    troubleFollowing: [],
-  });
+  const [globalCurrentDailyActivities, setGlobalCurrentDailyActivities] =
+    useState({
+      awakenTimeWorkDays: "",
+      awakenTimeNotWorkDays: "",
+      goToBed: "",
+      fallAsleepTime: "",
+      do6am: "",
+      do8am: "",
+      do10am: "",
+      do12pm: "",
+      do2pm: "",
+      do4pm: "",
+      do6pm: "",
+      do8pm: "",
+      do10pm: "",
+      do12p6am: "",
+      leisureActivities: "",
+      dailyLivingFollowing: [],
+      difficultAmount: [],
+      anyActivitiesListBefore: "",
+      troubleFollowing: [],
+    });
 
   const [globalDevelopmentalHistory, setGlobalDevelopmentalHistory] = useState({
     bornPlace: "",
@@ -489,13 +492,11 @@ const GlobalContextProvider = ({ children }) => {
     enjoyActivitiesChild: "",
   });
 
-  const [
-    globalAdditionalInformation,
-    setGlobalAdditionalInformation,
-  ] = useState({
-    evaluatingClinician: "",
-    yourAdditionalInformation: "",
-  });
+  const [globalAdditionalInformation, setGlobalAdditionalInformation] =
+    useState({
+      evaluatingClinician: "",
+      yourAdditionalInformation: "",
+    });
 
   return (
     <GlobalContext.Provider

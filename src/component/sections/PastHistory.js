@@ -182,9 +182,9 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
       name: "LackSleepEnergyOptionsNormal energy",
     },
     {
-      label: "Low energy, fatigued",
-      value: "low energy, fatigued",
-      name: "LackSleepEnergyOptionsLow energy, fatigued",
+      label: "Low and fatigued",
+      value: "low and fatigued",
+      name: "LackSleepEnergyOptionsLow and fatigued",
     },
   ];
 
@@ -670,7 +670,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Case management or social support services,",
-      value: "case management or social support services,",
+      value: "case management or social support services",
       name: "ReceivedTreatmentOptionscase management or social support services,",
     },
     {

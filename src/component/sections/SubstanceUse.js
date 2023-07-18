@@ -159,7 +159,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
   ];
 
   const EachSubstanceOptions = [
-    { label: "Never", value: "Never", name: "EachSubstanceOptionsNever" },
+    { label: "Never", value: "never", name: "EachSubstanceOptionsNever" },
     {
       label: "Socially (1-2 per month)",
       value: "socially (1-2 per month)",
@@ -169,7 +169,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     { label: "Daily", value: "daily", name: "EachSubstanceOptionsDaily" },
     {
       label: "I previously used this substance but have not recently",
-      value: "I previously used this substance but have not recently",
+      value: "previously but has not recently",
       name: "EachSubstanceOptionsI previously used this substance but have not recently",
     },
   ];
@@ -514,8 +514,8 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       name: "RegardingAlcoholAnyFollowingOptionsTolerance as defined by either of the following: a) a need for markedly increased amounts of alcohol to achieve intoxication or desired effect, b) a markedly diminished effect with continued use of the same amount of alcohol or substances",
     },
     {
-      label: "Withdrawal as manifested by either of the following:",
-      value: "withdrawal as manifested by either of the following",
+      label: "Withdraws as manifested by either of the following:",
+      value: "withdraws as manifested by either of the following",
       name: "RegardingAlcoholAnyFollowingOptionsWithdrawal as manifested by either of the following: a) the characteristic withdrawal syndrome for alcohol or substances, b) alcohol or substances (or a closely related substance, such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms",
     },
   ];
