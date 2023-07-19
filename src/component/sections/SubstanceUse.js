@@ -514,8 +514,8 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       name: "RegardingAlcoholAnyFollowingOptionsTolerance as defined by either of the following: a) a need for markedly increased amounts of alcohol to achieve intoxication or desired effect, b) a markedly diminished effect with continued use of the same amount of alcohol or substances",
     },
     {
-      label: "Withdraws as manifested by either of the following:",
-      value: "withdraws as manifested by either of the following",
+      label: "Withdrawal as manifested by either of the following:",
+      value: "withdrawal as manifested by either of the following",
       name: "RegardingAlcoholAnyFollowingOptionsWithdrawal as manifested by either of the following: a) the characteristic withdrawal syndrome for alcohol or substances, b) alcohol or substances (or a closely related substance, such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms",
     },
   ];
@@ -871,7 +871,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
         ];
       }
 
-      if (itemValue === "withdrawal as manifested by either of the following") {
+      if (itemValue === "withdraws as manifested by either of the following") {
         newwithdrawal = [
           "the characteristic withdrawal syndrome for alcohol or substances",
           "alcohol or substances (or a closely related substance, such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms",
