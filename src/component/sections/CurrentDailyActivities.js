@@ -74,7 +74,7 @@ const CurrentDailyActivities = ({ currentSection, setCurrentSection }) => {
   const troubleFollowingTbody = [
     "Comprehending and following instructions",
     "Performing simple and repetitive tasks",
-    "Maintaining a work pace appropriate to a given work load",
+    "Maintaining a workplace appropriate to a given work load",
     "Performing complex or varied tasks",
     "Relating to other people beyond giving and receiving instructions",
     "Making generalizations, evaluations or decisions without immediate supervision",
