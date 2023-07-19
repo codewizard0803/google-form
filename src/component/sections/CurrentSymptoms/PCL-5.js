@@ -810,14 +810,17 @@ const PCL = ({ currentSection, setCurrentSection }) => {
       case "not at all":
         eachScore = 0;
         break;
-      case "several Days":
+      case "a little bit":
         eachScore = 1;
         break;
-      case "more than half the days":
+      case "moderately":
         eachScore = 2;
         break;
-      case "nearly every day":
+      case "quite a bit":
         eachScore = 3;
+        break;
+      case "extremely":
+        eachScore = 4;
         break;
       default:
         break;

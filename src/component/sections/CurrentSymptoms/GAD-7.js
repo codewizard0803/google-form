@@ -540,16 +540,16 @@ const GAD = ({ currentSection, setCurrentSection }) => {
   const eachCalculateScore = (value) => {
     let eachScore = 0;
     switch (value) {
-      case "Not at all":
+      case "not at all":
         eachScore = 0;
         break;
-      case "Several Days":
+      case "several days":
         eachScore = 1;
         break;
-      case "More than half the days":
+      case "more than half the days":
         eachScore = 2;
         break;
-      case "Nearly every day":
+      case "nearly every day":
         eachScore = 3;
         break;
       default:
