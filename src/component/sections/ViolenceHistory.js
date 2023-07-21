@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import { toast } from "react-toastify";
@@ -8,10 +10,8 @@ import TextField from "../common/TextField";
 import validateViolenceHistory from "../../validation/validateViolenceHistory";
 
 const ViolenceHistory = ({ currentSection, setCurrentSection }) => {
-  const {
-    globalViolenceHistory,
-    setGlobalViolenceHistory,
-  } = useGlobalContext();
+  const { globalViolenceHistory, setGlobalViolenceHistory } =
+    useGlobalContext();
 
   const [violenceHistoryValue, setViolenceHistoryValue] = useState({
     physicalAltercations: "",
@@ -135,7 +135,7 @@ const ViolenceHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="162. Have you ever been involved in physical altercations?"
+          title="163. Have you ever been involved in physical altercations?"
           type="radio"
           options={PhysicalAltercationsOptions}
           onChange={handlePhysicalAltercationschange}
@@ -183,7 +183,7 @@ const ViolenceHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="163. Do you currently or have you recently had thoughts of wanting to hurt anyone?"
+          title="164. Do you currently or have you recently had thoughts of wanting to hurt anyone?"
           type="radio"
           options={ThoughtsHurtAnyoneOptions}
           onChange={handleThoughtsHurtAnyonechange}
@@ -206,7 +206,7 @@ const ViolenceHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="164. Have you ever been the victim of violence?"
+          title="165. Have you ever been the victim of violence?"
           type="radio"
           options={VictimViolenceOptions}
           onChange={handleVictimViolencechange}

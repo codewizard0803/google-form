@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import { toast } from "react-toastify";
@@ -108,7 +110,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <TextField
-          title="40. If your injury was initially physical, describe the first symptoms (pain) you experienced:"
+          title="41. If your injury was initially physical, describe the first symptoms (pain) you experienced:"
           placeholder="Your answer"
           name="firstSymptoms"
           value={physicalInjuryValue.firstSymptoms}
@@ -117,7 +119,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="41. If your injury was initially physical, describe the first treatment you received following this injury (medical, chiropractic, physical therapy pt, injections):"
+          title="42. If your injury was initially physical, describe the first treatment you received following this injury (medical, chiropractic, physical therapy pt, injections):"
           placeholder="Your answer"
           name="firstTreatment"
           value={physicalInjuryValue.firstTreatment}
@@ -126,7 +128,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="42. If your injury was initially physical, describe the rest of your treatment (medical, chiropractic, pt)"
+          title="43. If your injury was initially physical, describe the rest of your treatment (medical, chiropractic, pt)"
           placeholder="Your answer"
           name="restYourTreatment"
           value={physicalInjuryValue.restYourTreatment}
@@ -135,7 +137,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="43. List the doctors you have seen for this physical injury:"
+          title="44. List the doctors you have seen for this physical injury:"
           placeholder="Your answer"
           name="doctorsList"
           value={physicalInjuryValue.doctorsList}
@@ -144,7 +146,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="44. Did you receive surgery for this injury?"
+          title="45. Did you receive surgery for this injury?"
           type="radio"
           options={receivedSurgeryOptions}
           onChange={handleReceivedSurgeryChange}
@@ -153,7 +155,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="45. List the surgeries you have received for this physical injury:"
+          title="46. List the surgeries you have received for this physical injury:"
           placeholder="Your answer"
           name="surgeryList"
           value={physicalInjuryValue.surgeryList}
@@ -162,7 +164,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="46. List the medications you have received for this physical injury:"
+          title="47. List the medications you have received for this physical injury:"
           placeholder="Your answer"
           name="medicationList"
           value={physicalInjuryValue.medicationList}
@@ -171,7 +173,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="47. Have any of the above treatments helped relieve your pain?"
+          title="48. Have any of the above treatments helped relieve your pain?"
           type="radio"
           options={treatmentsHelpedOptions}
           checked={physicalInjuryValue.treatmentsHelped}
@@ -180,7 +182,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="48. Are you still working?"
+          title="49. Are you still working?"
           type="radio"
           options={stillWorkingOptions}
           onChange={handleStillWorkingChange}
@@ -189,7 +191,7 @@ const PhysicalInjury = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="49. If not working, reason for leaving?"
+          title="50. If not working, reason for leaving?"
           placeholder="Your answer"
           name="leavingReason"
           value={physicalInjuryValue.leavingReason}

@@ -428,7 +428,7 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="155. Are you experiencing any barriers to receiving healthcare?"
+          title="156. Are you experiencing any barriers to receiving healthcare?"
           type="radio"
           options={BarriersReceivingHealthcareOptions}
           onChange={handleBarriersReceivingHealthcarechange}
@@ -450,7 +450,7 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="156. Please describe your current living situation(select all that apply):"
+          title="157. Please describe your current living situation(select all that apply):"
           type="checkbox"
           options={DescribeCurrentLivingSituationOptions}
           onChange={handleDescribeCurrentLivingSituationchange}
@@ -527,7 +527,7 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="157. Do you feel that you are in any danger at the present time?"
+          title="158. Do you feel that you are in any danger at the present time?"
           type="radio"
           options={PresentTimeDangerOptions}
           onChange={handlePresentTimeDangerchange}
@@ -552,7 +552,7 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              158. List ALL stressors NOT related to work which happened in the
+              159. List ALL stressors NOT related to work which happened in the
               past year (i.e., separation/divorce, death in family, problems
               with children, financial, foreclosure, bankruptcy, repossessions,
               etc).
@@ -599,7 +599,7 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <CardField
-          title="159. Since Your Injury, Have You Experienced Any Other Stressors Besides Your Injury or Psychiatric Issue?"
+          title="160. Since Your Injury, Have You Experienced Any Other Stressors Besides Your Injury or Psychiatric Issue?"
           type="radio"
           options={OtherStressorsBesidesOptions}
           onChange={handleOtherStressorsBesideschange}
@@ -641,7 +641,7 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="160. Are you experiencing any other stressors in your life not covered above?"
+          title="161. Are you experiencing any other stressors in your life not covered above?"
           type="radio"
           options={OtherStressorsExperienceOptions}
           onChange={handleOtherStressorsExperiencechange}

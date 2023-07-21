@@ -1056,7 +1056,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="126. Have you ever used any of the following substances?"
+          title="127. Have you ever used any of the following substances?"
           type="checkbox"
           options={FollowingSubstancesOptions}
           onChange={handleFollowingSubstanceschange}
@@ -1271,7 +1271,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="127. Have you ever enrolled in a substance recovery treatment program?"
+          title="128. Have you ever enrolled in a substance recovery treatment program?"
           type="radio"
           options={EnrolledTreatmentProgramOptions}
           onChange={handleEnrolledTreatmentProgramchange}

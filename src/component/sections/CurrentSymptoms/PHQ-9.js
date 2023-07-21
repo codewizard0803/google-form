@@ -875,7 +875,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="62. Little interest or pleasure in doing things?"
+          title="63. Little interest or pleasure in doing things?"
           type="radio"
           options={InterestThingOptions}
           onChange={handleInterestThingChange}
@@ -897,7 +897,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="63. Feeling down, depressed, or hopeless?"
+          title="64. Feeling down, depressed, or hopeless?"
           type="radio"
           options={FeelingDepressedOptions}
           onChange={handleFeelingDepressedChange}
@@ -939,7 +939,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="64. Over the last 2 weeks, have you had trouble falling or staying asleep, or sleeping too much?"
+          title="65. Over the last 2 weeks, have you had trouble falling or staying asleep, or sleeping too much?"
           type="radio"
           options={TroubleFallingAsleepOptions}
           onChange={handleTroubleFallingAsleepChange}
@@ -990,7 +990,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="65. Over the last 2 weeks, have you been feeling tired or having little energy?"
+          title="66. Over the last 2 weeks, have you been feeling tired or having little energy?"
           type="radio"
           options={FeelingEnergyOptions}
           onChange={handleFeelingEnergyChange}
@@ -999,7 +999,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="66. Over the last 2 weeks, have you had poor appetite or been overeating?"
+          title="67. Over the last 2 weeks, have you had poor appetite or been overeating?"
           type="radio"
           options={PoorAppetiteOptions}
           onChange={handlePoorAppetiteChange}
@@ -1031,7 +1031,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="67. Over the last 2 weeks, have you been feeling bad about yourself — or that you are a failure or have let yourself or your family down?"
+          title="68. Over the last 2 weeks, have you been feeling bad about yourself — or that you are a failure or have let yourself or your family down?"
           type="radio"
           options={YourselfFeelingBadOptions}
           onChange={handleYourselfFeelingBadChange}
@@ -1040,7 +1040,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="68. Over the last 2 weeks, have you had trouble concentrating on things, such as reading the newspaper or watching television?"
+          title="69. Over the last 2 weeks, have you had trouble concentrating on things, such as reading the newspaper or watching television?"
           type="radio"
           options={TroubleConCentratingThingOptions}
           onChange={handleTroubleConCentratingThingChange}
@@ -1049,7 +1049,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="69. Over the last 2 weeks, have you been moving or speaking so slowly that other people could have noticed? Or so fidgety or restless that you have been moving a lot more than usual?"
+          title="70. Over the last 2 weeks, have you been moving or speaking so slowly that other people could have noticed? Or so fidgety or restless that you have been moving a lot more than usual?"
           type="radio"
           options={FidgetyMovingOptions}
           onChange={handleFidgetyMovingChange}
@@ -1058,7 +1058,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="70. Over the last 2 weeks, have you had thoughts that you would be better off dead, or thoughts of hurting yourself in some way?"
+          title="71. Over the last 2 weeks, have you had thoughts that you would be better off dead, or thoughts of hurting yourself in some way?"
           type="radio"
           options={BetterOffDeadYourselfOptions}
           onChange={handleBetterOffDeadYourselfChange}
@@ -1067,7 +1067,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="71. In the past month, have you wished you were dead or wished you could go to sleep and not wake up?"
+          title="72. In the past month, have you wished you were dead or wished you could go to sleep and not wake up?"
           type="radio"
           options={DeadWishWakeUpOptions}
           onChange={handleDeadWishWakeUpChange}
@@ -1076,7 +1076,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="72. In the past month, have you had any actual thoughts of killing yourself?"
+          title="73. In the past month, have you had any actual thoughts of killing yourself?"
           type="radio"
           options={KillingYourselfOptions}
           onChange={handleKillingYourselfChange}
@@ -1125,7 +1125,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="73. Have you ever done anything, started to do anything, or prepared to do anything to end your life?"
+          title="74. Have you ever done anything, started to do anything, or prepared to do anything to end your life?"
           type="radio"
           options={PreparedAnythingEndYourlifeOptions}
           onChange={handlePreparedAnythingEndYourlifeChange}
@@ -1134,7 +1134,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="74. Do you have thoughts of hurting anyone else?"
+          title="75. Do you have thoughts of hurting anyone else?"
           type="radio"
           options={HurtingAnyoneOptions}
           onChange={handleHurtingAnyoneChange}
@@ -1145,7 +1145,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              75. With zero to 1 equaling no or minimal symptoms and 10 equaling
+              76. With zero to 1 equaling no or minimal symptoms and 10 equaling
               the most severe symptoms possible, how do you rate your current
               depressive symptoms?
             </Typography>

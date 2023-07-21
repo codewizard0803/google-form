@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import classnames from "classnames";
@@ -91,7 +93,7 @@ const CurrentEmployer = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              39. Do you currently work for the same employer where the above
+              40. Do you currently work for the same employer where the above
               injury occurred?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>

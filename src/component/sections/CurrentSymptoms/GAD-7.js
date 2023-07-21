@@ -788,7 +788,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="76. Over the last <u>2 weeks</u>, how often have you been feeling nervous, anxious, or on edge"
+          title="77. Over the last <u>2 weeks</u>, how often have you been feeling nervous, anxious, or on edge"
           type="radio"
           options={FeelingNervousOptions}
           onChange={handleFeelingNervousChange}
@@ -820,7 +820,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="77. Over the last <u>2 weeks</u>, how often have you been not being able to stop or control worrying"
+          title="78. Over the last <u>2 weeks</u>, how often have you been not being able to stop or control worrying"
           type="radio"
           options={StopControlWorringOptions}
           onChange={handleStopControlWorringChange}
@@ -829,7 +829,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="78. Over the last <u>2 weeks</u>, how often have you been worrying too much about different things"
+          title="79. Over the last <u>2 weeks</u>, how often have you been worrying too much about different things"
           type="radio"
           options={WorringDifferentThingOptions}
           onChange={handleWorringDifferentThingChange}
@@ -875,7 +875,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="79. Over the last <u>2 weeks</u>, how often have you been trouble relaxing"
+          title="80. Over the last <u>2 weeks</u>, how often have you been trouble relaxing"
           type="radio"
           options={TroubleRelaxingOptions}
           onChange={handleTroubleRelaxingChange}
@@ -884,7 +884,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="80. Over the last <u>2 weeks</u>, how often have you been being so restless that it's hard to sit still"
+          title="81. Over the last <u>2 weeks</u>, how often have you been being so restless that it's hard to sit still"
           type="radio"
           options={RestlessSitHardOptions}
           onChange={handleRestlessSitHardChange}
@@ -893,7 +893,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="81. Over the last <u>2 weeks</u>, how often have you been becoming easily annoyed or irritable"
+          title="82. Over the last <u>2 weeks</u>, how often have you been becoming easily annoyed or irritable"
           type="radio"
           options={EasilyAnnoyedOptions}
           onChange={handleEasilyAnnoyedChange}
@@ -902,7 +902,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="82. Over the last <u>2 weeks</u>, how often have you been feeling afraid as if something awful might happen"
+          title="83. Over the last <u>2 weeks</u>, how often have you been feeling afraid as if something awful might happen"
           type="radio"
           options={FeelingAfraidAwfulThingOptions}
           onChange={handleFeelingAfraidAwfulThingChange}
@@ -913,7 +913,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              83. Over the last <u>2 weeks</u>, how often have you been with
+              84. Over the last <u>2 weeks</u>, how often have you been with
               zero to 1 equaling no or minimal symptoms and 10 equaling the most
               severe symptoms possible, how do you rate your current anxiety
               symptoms?
@@ -939,7 +939,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <CardField
-          title={`84. Over the last <span style="text-decoration:underline">2 weeks</span>, how often have you been experience panic attacks, in which your heart races, you feel like you can't breathe, you shake or sweat?`}
+          title={`85. Over the last <span style="text-decoration:underline">2 weeks</span>, how often have you been experience panic attacks, in which your heart races, you feel like you can't breathe, you shake or sweat?`}
           type="radio"
           options={PanicAttacksOptions}
           onChange={handlePanicAttacksChange}
@@ -996,7 +996,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="85. Have you experienced past traumatic event(s)"
+          title="86. Have you experienced past traumatic event(s)"
           type="radio"
           options={PastTraumaticEventsOptions}
           onChange={handlePastTraumaticEventsChange}

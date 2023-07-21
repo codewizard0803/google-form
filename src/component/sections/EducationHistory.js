@@ -239,7 +239,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="150. What is your highest level of education?"
+          title="151. What is your highest level of education?"
           type="radio"
           options={HighestLevelEducationOptions}
           onChange={handleHighestLevelEducationchange}
@@ -263,7 +263,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="151. What grades did you mostly receive during your education (choose all that apply)?"
+          title="152. What grades did you mostly receive during your education (choose all that apply)?"
           type="checkbox"
           options={MostlyReceiveGradeOptions}
           onChange={handleMostlyReceiveGradechange}
@@ -272,7 +272,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="152. Were you ever identified as having a learning disability, or placed in any special education classes?"
+          title="153. Were you ever identified as having a learning disability, or placed in any special education classes?"
           type="radio"
           options={LearningDisabilityOptions}
           onChange={handleLearningDisabilitychange}
@@ -295,7 +295,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="153. Did you graduate high school?"
+          title="154. Did you graduate high school?"
           type="radio"
           options={GraduateHighSchoolOptions}
           onChange={handleGraduateHighSchoolchange}
@@ -317,7 +317,7 @@ const EducationHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="154. Did you go to college"
+          title="155. Did you go to college"
           type="radio"
           options={GoToCollegeOptions}
           onChange={handleGoToCollegechange}

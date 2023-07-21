@@ -259,7 +259,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="128. Have you been diagnosed by a healthcare provider with any of the following conditions?"
+          title="129. Have you been diagnosed by a healthcare provider with any of the following conditions?"
           type="checkbox"
           options={DiagnosedHealthcareProviderOptions}
           onChange={handleDiagnosedHealthcareProviderchange}
@@ -311,7 +311,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <TextField
-          title="129. Please list your general physical health medications, including your dosage for each medication:"
+          title="130. Please list your general physical health medications, including your dosage for each medication:"
           type="text"
           name="physicalHealthMedicationsLists"
           value={medicalHistoryValue?.physicalHealthMedicationsLists}
@@ -321,7 +321,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="130. Have your general medical medications produced any side effects?"
+          title="131. Have your general medical medications produced any side effects?"
           type="text"
           name="medicationsSideEffect"
           value={medicalHistoryValue?.medicationsSideEffect}
@@ -331,7 +331,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="131. Have you ever had any surgeries?"
+          title="132. Have you ever had any surgeries?"
           type="radio"
           options={SurgeriesOptions}
           onChange={handleSurgerieschange}
@@ -354,7 +354,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="132. Do your treatment providers have any plans for your future medical care?"
+          title="133. Do your treatment providers have any plans for your future medical care?"
           type="radio"
           options={FutureMedicalPlanOptions}
           onChange={handleFutureMedicalPlanchange}
@@ -377,7 +377,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <TextField
-          title="133. Your current primary care physician or nurse practitioner is (Name, Facility, City):"
+          title="134. Your current primary care physician or nurse practitioner is (Name, Facility, City):"
           type="text"
           name="currentPrimarycarePractitioner"
           value={medicalHistoryValue?.currentPrimarycarePractitioner}
@@ -389,7 +389,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              134. Past primary care physician or nurse practitioners (Name,
+              135. Past primary care physician or nurse practitioners (Name,
               Facility, City)?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
@@ -442,7 +442,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <TextField
-          title="135. List all of the hospitals you have ever been in for medical reasons (and when you were in this hospital):"
+          title="136. List all of the hospitals you have ever been in for medical reasons (and when you were in this hospital):"
           type="text"
           name="hospitalListEverBeen"
           value={medicalHistoryValue?.hospitalListEverBeen}
@@ -462,7 +462,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
         /> */}
 
         <CardField
-          title="136. Do you have any allergies or intolerances to medication or food?"
+          title="137. Do you have any allergies or intolerances to medication or food?"
           type="radio"
           options={AllergiesMedicationOptions}
           onChange={handleAllergiesMedicationchange}

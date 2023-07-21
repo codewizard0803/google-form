@@ -14,6 +14,8 @@ const GlobalContextProvider = ({ children }) => {
     birth: "",
     email: "",
     phoneNumber: "",
+    firstName: "",
+    lastName: "",
     pregnant: null,
   });
 

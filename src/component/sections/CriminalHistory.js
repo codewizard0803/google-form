@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import { toast } from "react-toastify";
@@ -8,10 +10,8 @@ import TextField from "../common/TextField";
 import validateCriminalHistory from "../../validation/validateCriminalHistory";
 
 const CriminalHistory = ({ currentSection, setCurrentSection }) => {
-  const {
-    globalCriminalHistory,
-    setGlobalCriminalHistory,
-  } = useGlobalContext();
+  const { globalCriminalHistory, setGlobalCriminalHistory } =
+    useGlobalContext();
 
   const [criminalHistoryValue, setCriminalHistoryValue] = useState({
     arrested: "",
@@ -97,7 +97,7 @@ const CriminalHistory = ({ currentSection, setCurrentSection }) => {
       </p>
       <form>
         <CardField
-          title="161. Have you ever been arrested?"
+          title="162. Have you ever been arrested?"
           type="radio"
           options={ArrestedOptions}
           onChange={handleArrestedchange}
