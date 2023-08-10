@@ -51,6 +51,15 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
     setSubstanceUseValue(globalSubStanceUse);
   }, [globalSubStanceUse]);
 
+  useEffect(
+    () =>
+      console.log(
+        substanceUseValue?.toleranceFollowingSubstances,
+        substanceUseValue?.withdrawalFollowingSubstances
+      ),
+    [substanceUseValue]
+  );
+
   const FollowingSubstancesOptions = [
     {
       label: "Caffeine (coffee, pills, soft drinks, etc)",
@@ -871,7 +880,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
         ];
       }
 
-      if (itemValue === "withdraws as manifested by either of the following") {
+      if (itemValue === "withdrawal as manifested by either of the following") {
         newwithdrawal = [
           "the characteristic withdrawal syndrome for alcohol or substances",
           "alcohol or substances (or a closely related substance, such as a benzodiazepine) is taken to relieve or avoid withdrawal symptoms",
@@ -947,7 +956,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
         !(
           newItem.filter(
             (item) =>
-              item === "withdrawal as manifested by either of the following:"
+              item === "withdrawal as manifested by either of the following"
           ).length > 0
         )
       ) {

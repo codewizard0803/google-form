@@ -521,9 +521,9 @@ const GAD = ({ currentSection, setCurrentSection }) => {
       name: "TraumaticEventExperienceOptionsFirst responder trauma",
     },
     {
-      label: "Traumatic loss of loved one",
-      value: "traumatic loss of loved one",
-      name: "TraumaticEventExperienceOptionsTraumatic loss of loved one",
+      label: "Traumatic loss of loved ones",
+      value: "traumatic loss of loved ones",
+      name: "TraumaticEventExperienceOptionsTraumatic loss of loved ones",
     },
     {
       label: "Military combat",

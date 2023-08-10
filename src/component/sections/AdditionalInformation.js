@@ -101,6 +101,7 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
         additionalValue: additionalValue,
       };
 
+      console.log("PHQ", PHQ9, "global", globalSubStanceUse);
       axios
         .post(`${APP_URL}/api/generateDoc`, data)
         .then(async (res) => {

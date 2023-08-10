@@ -303,7 +303,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Obsessive Compulsive Disorder",
-      value: "obsessive Compulsive Disorder",
+      value: "obsessive compulsive disorder",
       name: "DiagnosedMentalHealthOptionsObsessive Compulsive Disorder",
     },
     {
@@ -313,7 +313,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Mania or Hypomania",
-      value: "mania or Hypomania",
+      value: "mania or hypomania",
       name: "DiagnosedMentalHealthOptionsMania or Hypomania",
     },
     {

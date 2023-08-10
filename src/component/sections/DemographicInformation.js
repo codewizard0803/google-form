@@ -35,35 +35,35 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
   const checkedEthnicityOptions = [
     {
       label: "American Indian or Alaska Native",
-      value: "American Indian or Alaska Native",
+      value: "american indian or alaska native",
       name: "American Indian or Alaska Native",
     },
     {
       label: "Southeast Asian",
-      value: "Southeast Asian",
+      value: "southeast asian",
       name: "Southeast Asian",
     },
     {
       label: "Black or African American",
-      value: "Black or African American",
+      value: "black or african american",
       name: "Black or African American",
     },
     {
       label: "Native Hawaiian or Other Pacific Islander",
-      value: "Native Hawaiian or Other Pacific Islander",
+      value: "native hawaiian or other pacific islander",
       name: "Native Hawaiian or Other Pacific Islander",
     },
     {
       label: "Caucasian",
-      value: "Caucasian",
+      value: "caucasian",
       name: "Caucasian",
     },
     {
       label: "Hispanic or Latino or Spanish Origin",
-      value: "Hispanic or Latino or Spanish Origin",
+      value: "hispanic or latino or spanish Origin",
       name: "Hispanic or Latino or Spanish Origin",
     },
-    { label: "East Indian", value: "East Indian", name: "East Indian" },
+    { label: "East Indian", value: "east indian", name: "East Indian" },
     {
       label: "Prefer not to answer",
       value: "Prefer not to answer",
@@ -104,14 +104,14 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
   ];
 
   const maritalStatusOptions = [
-    { label: "Single", value: "Single", name: "maritalStatusSingle" },
-    { label: "Married", value: "Married", name: "maritalStatusMarried" },
-    { label: "Divorced", value: "Divorced", name: "maritalStatusDivorced" },
-    { label: "Separated", value: "Separated", name: "maritalStatusSeparated" },
-    { label: "Widowed", value: "Widowed", name: "maritalStatusWidowed" },
+    { label: "Single", value: "single", name: "maritalStatusSingle" },
+    { label: "Married", value: "married", name: "maritalStatusMarried" },
+    { label: "Divorced", value: "divorced", name: "maritalStatusDivorced" },
+    { label: "Separated", value: "separated", name: "maritalStatusSeparated" },
+    { label: "Widowed", value: "widowed", name: "maritalStatusWidowed" },
     {
       label: "Living together",
-      value: "Living together",
+      value: "living together",
       name: "maritalStatusLivingTogether",
     },
   ];
@@ -124,7 +124,7 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
   }, [demographicInformation]);
 
   const handleCheckboxEthnicityChange = (event) => {
-    const itemName = event.target.name;
+    const itemName = event.target.value;
     const isChecked = event.target.checked;
 
     let newCheckedItems = [
@@ -231,7 +231,7 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
             type="text"
             name="birth"
             value={demographicInformationValue?.birth}
-            placeholder="Your answer..."
+            placeholder="XXXX-XX-XX"
             onChange={handleChange}
             error={errors.birth}
           />
@@ -261,10 +261,10 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
                     <label>
                       <input
                         type="radio"
-                        value="Male"
+                        value="male"
                         className="mr-2"
                         checked={
-                          demographicInformationValue?.radioSexItem === "Male"
+                          demographicInformationValue?.radioSexItem === "male"
                         }
                         onChange={handleRadioSexChange}
                       />
@@ -275,16 +275,16 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
                     <label>
                       <input
                         type="radio"
-                        value="Female"
+                        value="female"
                         className="mr-2"
                         checked={
-                          demographicInformationValue?.radioSexItem === "Female"
+                          demographicInformationValue?.radioSexItem === "female"
                         }
                         onChange={handleRadioSexChange}
                       />
                       Female
                     </label>
-                    {demographicInformationValue?.radioSexItem === "Female" ? (
+                    {demographicInformationValue?.radioSexItem === "female" ? (
                       <RadioFollowUp
                         title="Are you pregnant, planning on getting pregnant, or
                           breastfeeding?"
@@ -300,11 +300,11 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
                     <label>
                       <input
                         type="radio"
-                        value="Prefer not to say"
+                        value="prefer not to say"
                         className="mr-2"
                         checked={
                           demographicInformationValue?.radioSexItem ===
-                          "Prefer not to say"
+                          "prefer not to say"
                         }
                         onChange={handleRadioSexChange}
                       />
