@@ -543,14 +543,15 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
           errors={errors.radioMedicationsBeforeInjuryItem}
         />
 
-        <CardField
+        <TextField
           title="26. What medications were you taking BEFORE the injury?"
-          type="radio"
-          options={medicationsNameBeforeInjuryOptions}
-          onChange={handleMedicationsNameBeforeInjuryChange}
-          checked={
+          type="text"
+          name="radioMedicationsNameBeforeInjuryItem"
+          onChange={handleChange}
+          value={
             employmentInjuryPhysicalValue?.radioMedicationsNameBeforeInjuryItem
           }
+          placeholder="Your answer..."
           errors={errors.radioMedicationsNameBeforeInjuryItem}
         />
 

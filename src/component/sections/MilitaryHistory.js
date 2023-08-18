@@ -171,7 +171,7 @@ const MilitaryHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="166. Have you ever enrolled in the military"
+          title="167. Have you ever enrolled in the military"
           type="radio"
           options={EnrolledMilitaryOptions}
           onChange={handleEnrolledMilitarychange}

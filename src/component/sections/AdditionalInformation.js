@@ -136,7 +136,7 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <TextField
-          title="190. Is there anything else you would like to share with the evaluating clinician before your visit begins?"
+          title="191. Is there anything else you would like to share with the evaluating clinician before your visit begins?"
           placeholder="Your answer"
           name="evaluatingClinician"
           value={additionalValue?.evaluatingClinician}
@@ -145,7 +145,7 @@ const AdditinalInformation = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="191. Please provide any other additional information not already covered above."
+          title="192. Please provide any other additional information not already covered above."
           placeholder="Your answer"
           name="yourAdditionalInformation"
           value={additionalValue?.yourAdditionalInformation}

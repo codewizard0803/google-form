@@ -32,6 +32,13 @@ const validateLongitudinalHistory = (value) => {
     errors.emotionalSymptomBecome = "";
   }
 
+  if (!value.emotionalSymptomDate.trim()) {
+    errors.emotionalSymptomDate = "See required fields above.";
+    isValid = false;
+  } else {
+    errors.emotionalSymptomDate = "";
+  }
+
   if (!value.feelEmotion.trim()) {
     errors.feelEmotion = "See required fields above.";
     isValid = false;

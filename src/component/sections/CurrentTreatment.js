@@ -441,7 +441,7 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardField
-          title="108. Do you currently take any psychiatric medications."
+          title="109. Do you currently take any psychiatric medications."
           type="radio"
           options={CurrentlyPsychiatricMedicationsOptions}
           onChange={handleCurrentlyPsychiatricMedicationschange}
@@ -553,7 +553,7 @@ const CurrentTreatment = ({ currentSection, setCurrentSection }) => {
         ) : null}
 
         <CardField
-          title="109. Are you currently in psychotherapy treatment?"
+          title="110. Are you currently in psychotherapy treatment?"
           type="radio"
           options={CurrentlyPsychotherapyTreatmentOptions}
           onChange={handleCurrentlyPsychotherapyTreatmentchange}

@@ -27,6 +27,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
     compareEmotionalSymptom: "",
     symptomsAffectedJob: "",
     describeSymptomsAffectedJob: "",
+    emotionalSymptomDate: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -190,8 +191,17 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
           error={errors.emotionalSymptomBecome}
         />
 
+        <TextField
+          title="59. On what date did your emotional symptoms become worse or better?"
+          placeholder="Your answer"
+          name="emotionalSymptomDate"
+          value={longitudinalHistoryValue?.emotionalSymptomDate}
+          onChange={handleChange}
+          error={errors.emotionalSymptomDate}
+        />
+
         <CardField
-          title="59. How often do you feel the above emotions?"
+          title="60. How often do you feel the above emotions?"
           type="radio"
           options={feelEmotionOptions}
           onChange={handleFeelEmotionChange}
@@ -213,7 +223,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              60. How would you rate your depressive, anxiety, or post trauma
+              61. How would you rate your depressive, anxiety, or post trauma
               symptoms <u>when they were most severe</u>, with zero to 1
               equaling no or minimal symptoms and 10 equaling the most severe
               symptoms imaginable?
@@ -272,7 +282,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              61. <u>Currently</u>, how do you rate your depressive, anxiety, or
+              62. <u>Currently</u>, how do you rate your depressive, anxiety, or
               post trauma symptoms on the same 1-10 scale?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
@@ -311,7 +321,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
           <CardContent>
             <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-              62. Have your emotional symptoms affected your ability to do your
+              63. Have your emotional symptoms affected your ability to do your
               job?
             </Typography>
             <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>

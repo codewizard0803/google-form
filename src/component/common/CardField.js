@@ -32,7 +32,7 @@ const CardCheckField = ({
             "border-red-500 border": errors,
           })}
         >
-          {options.map((item, index) => (
+          {options?.map((item, index) => (
             <div className="text-left" key={index}>
               <label key={item.value}>
                 <input

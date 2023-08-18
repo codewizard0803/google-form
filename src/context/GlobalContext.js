@@ -110,6 +110,7 @@ const GlobalContextProvider = ({ children }) => {
     compareEmotionalSymptom: "",
     symptomsAffectedJob: "",
     describeSymptomsAffectedJob: "",
+    emotionalSymptomDate: "",
   });
 
   const [PHQ9, setPHQ9] = useState({
