@@ -76,7 +76,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Heart Disease",
-      value: "heart Disease",
+      value: "heart disease",
       name: "DiagnosedHealthcareProviderOptionsHeart Disease",
     },
     {

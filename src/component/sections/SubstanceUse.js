@@ -72,9 +72,9 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       name: "FollowingSubstancesOptionsAlcohol",
     },
     {
-      label: "Tobaco or nicotine products",
-      value: "tobaco or nicotine products",
-      name: "FollowingSubstancesOptionsTobaco or nicotine products",
+      label: "Tobacco or nicotine products",
+      value: "tobacco or nicotine products",
+      name: "FollowingSubstancesOptionsTobacco or nicotine products",
     },
     {
       label: "Cocaine",
@@ -126,9 +126,9 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       name: "CurrentlySubstanceOptionsAlcohol",
     },
     {
-      label: "Tobaco or nicotine products",
-      value: "tobaco or nicotine products",
-      name: "CurrentlySubstanceOptionsTobaco or nicotine products",
+      label: "Tobacco or nicotine products",
+      value: "tobacco or nicotine products",
+      name: "CurrentlySubstanceOptionsTobacco or nicotine products",
     },
     {
       label: "Cocaine",
@@ -195,9 +195,9 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       name: "EachSubstanceListOptionsAlcohol",
     },
     {
-      label: "Tobaco or nicotine products",
-      value: "tobaco or nicotine products",
-      name: "EachSubstanceListOptionsTobaco or nicotine products",
+      label: "Tobacco or nicotine products",
+      value: "tobacco or nicotine products",
+      name: "EachSubstanceListOptionsTobacco or nicotine products",
     },
     {
       label: "Cocaine",
@@ -248,9 +248,9 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       name: "EachSubstanceListStartedOldOptionsAlcohol",
     },
     {
-      label: "Tobaco or nicotine products",
-      value: "tobaco or nicotine products",
-      name: "EachSubstanceListStartedOldOptionsTobaco or nicotine products",
+      label: "Tobacco or nicotine products",
+      value: "tobacco or nicotine products",
+      name: "EachSubstanceListStartedOldOptionsTobacco or nicotine products",
     },
     {
       label: "Cocaine",
@@ -301,9 +301,9 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       name: "EachSubstanceLastOptionsAlcohol",
     },
     {
-      label: "Tobaco or nicotine products",
-      value: "tobaco or nicotine products",
-      name: "EachSubstanceLastOptionsTobaco or nicotine products",
+      label: "Tobacco or nicotine products",
+      value: "tobacco or nicotine products",
+      name: "EachSubstanceLastOptionsTobacco or nicotine products",
     },
     {
       label: "Cocaine",
@@ -354,9 +354,9 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       name: "ToleranceFollowingSubstancesOptionsAlcohol",
     },
     {
-      label: "Tobaco or nicotine products",
-      value: "tobaco or nicotine products",
-      name: "ToleranceFollowingSubstancesOptionsTobaco or nicotine products",
+      label: "Tobacco or nicotine products",
+      value: "tobacco or nicotine products",
+      name: "ToleranceFollowingSubstancesOptionsTobacco or nicotine products",
     },
     {
       label: "Cocaine",
@@ -407,9 +407,9 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
       name: "WithdrawalFollowingSubstancesOptionsAlcohol",
     },
     {
-      label: "Tobaco or nicotine products",
-      value: "tobaco or nicotine products",
-      name: "WithdrawalFollowingSubstancesOptionsTobaco or nicotine products",
+      label: "Tobacco or nicotine products",
+      value: "tobacco or nicotine products",
+      name: "WithdrawalFollowingSubstancesOptionsTobacco or nicotine products",
     },
     {
       label: "Cocaine",

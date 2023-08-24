@@ -173,12 +173,12 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   const LackSleepEnergyOptions = [
     {
       label: "High energy",
-      value: "high energy",
+      value: "high",
       name: "LackSleepEnergyOptionsHigh energy",
     },
     {
       label: "Normal energy",
-      value: "normal energy",
+      value: "normal",
       name: "LackSleepEnergyOptionsNormal energy",
     },
     {
@@ -467,8 +467,8 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
       name: "PrescribeThisMedicationOptionspsychiatric nurse practitioner",
     },
     {
-      label: "primacy care clinician",
-      value: "primacy care clinician",
+      label: "primary care clinician",
+      value: "primary care clinician",
       name: "PrescribeThisMedicationOptionsprimacy care clinician",
     },
     {

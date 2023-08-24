@@ -143,6 +143,7 @@ const GlobalContextProvider = ({ children }) => {
     hurtingAnyone: "",
     currentDepressiveSymptoms: "0",
     phqScore: "0",
+    fallASleep: "",
   });
 
   const [GAD7, setGAD7] = useState({

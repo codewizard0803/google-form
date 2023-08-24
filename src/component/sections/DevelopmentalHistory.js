@@ -143,19 +143,19 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
   const RelationshipPrimaryAdultsOptions = [
     {
       label: "Positive: stable, supportive, or loving",
-      value: "positive(stable, supportive, or loving)",
+      value: "positive (stable, supportive, or loving)",
       name: "RelationshipPrimaryAdultsOptionsPositive: stable, supportive, or loving",
     },
     {
       label:
         "Medium: some disruption in the relationship, some level of conflicts",
       value:
-        "medium(some disruption in the relationship, some level of conflicts)",
+        "medium (some disruption in the relationship, some level of conflicts)",
       name: "RelationshipPrimaryAdultsOptionsMedium: some disruption in the relationship, some level of conflicts",
     },
     {
       label: "poor: high level of instability and conflict",
-      value: "poor(high level of instability and conflict)",
+      value: "poor (high level of instability and conflict)",
       name: "RelationshipPrimaryAdultsOptionspoor: high level of instability and conflict",
     },
   ];
@@ -528,7 +528,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
           errors={errors.relationshipPrimaryAdults}
         />
 
-        <CardField
+        <TextField
           title="182. How many of these siblings were you raised by?"
           type="radio"
           options={HaveSiblingsOptions}

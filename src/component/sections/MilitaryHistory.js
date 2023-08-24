@@ -84,7 +84,7 @@ const MilitaryHistory = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Bad Conduct",
-      value: "bad Conduct",
+      value: "Bad Conduct",
       name: "DischargeStatusOptionsBad Conduct",
     },
     {

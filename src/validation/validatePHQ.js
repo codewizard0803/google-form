@@ -53,6 +53,12 @@ const validatePHQ = (value) => {
     isValid = false;
   } else if (
     value.troubleFallingAsleep !== "not at all" &&
+    value.fallASleep === ""
+  ) {
+    errors.fallASleep = "See required fields above.";
+    isValid = false;
+  } else if (
+    value.troubleFallingAsleep !== "not at all" &&
     value.fallAsleepLong === ""
   ) {
     errors.fallAsleepLong = "See required fields above.";

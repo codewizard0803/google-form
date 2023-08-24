@@ -35,41 +35,41 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
   const checkedEthnicityOptions = [
     {
       label: "American Indian or Alaska Native",
-      value: "american indian or alaska native",
+      value: "American Indian or Alaska native",
       name: "American Indian or Alaska Native",
     },
     {
       label: "Southeast Asian",
-      value: "southeast asian",
+      value: "Southeast Asian",
       name: "Southeast Asian",
     },
     {
       label: "Black or African American",
-      value: "black or african american",
+      value: "Black or African American",
       name: "Black or African American",
     },
     {
       label: "Native Hawaiian or Other Pacific Islander",
-      value: "native hawaiian or other pacific islander",
+      value: "Native Hawaiian or Other Pacific Islander",
       name: "Native Hawaiian or Other Pacific Islander",
     },
     {
       label: "Caucasian",
-      value: "caucasian",
+      value: "Caucasian",
       name: "Caucasian",
     },
     {
       label: "Hispanic or Latino or Spanish Origin",
-      value: "hispanic or latino or spanish Origin",
+      value: "Hispanic or Latino or Spanish Origin",
       name: "Hispanic or Latino or Spanish Origin",
     },
-    { label: "East Indian", value: "east indian", name: "East Indian" },
+    { label: "East Indian", value: "East Indian", name: "East Indian" },
     {
       label: "Prefer not to answer",
       value: "Prefer not to answer",
       name: "Prefer not to answer",
     },
-    { label: "Other", value: "other", name: "Other" },
+    { label: "Other", value: "Other", name: "Other" },
   ];
 
   const radioFemalePregnantOptions = [

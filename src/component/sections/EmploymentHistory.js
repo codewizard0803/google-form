@@ -172,7 +172,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Workers’ Compensation benefits",
-      value: "workers’ compensation benefits",
+      value: "Workers’ Compensation benefits",
       name: "CurrentSourcesIncomeOptionsWorkers’ Compensation benefits",
     },
     {
@@ -498,6 +498,7 @@ const EmploymentHistory = ({ currentSection, setCurrentSection }) => {
                           type="text"
                           className="focus:outline-none"
                           value={row.datesOfEmployment}
+                          placeholder="from ... to ..."
                           onChange={(e) =>
                             handleInputChange(e, index, "datesOfEmployment")
                           }

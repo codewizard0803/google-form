@@ -43,6 +43,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     hurtingAnyone: "",
     currentDepressiveSymptoms: "0",
     phqScore: "0",
+    fallASleep: "",
   });
 
   useEffect(() => {
@@ -51,6 +52,39 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     });
     setPHQValue(PHQ9);
   }, [PHQ9]);
+
+  const FallASleepOptions = [
+    {
+      label: "0-20 minutes",
+      value: "0-20 minutes",
+      name: "FallASleep0-20 minutes",
+    },
+    {
+      label: "20-60 minutes",
+      value: "20-60 minutes",
+      name: "FallASleep20-60 minutes",
+    },
+    {
+      label: "1-2 hours",
+      value: "1-2 hours",
+      name: "FallASleep1-2 hours",
+    },
+    {
+      label: "Several hours",
+      value: "several hours",
+      name: "FallASleepseveral hours",
+    },
+    {
+      label: "I am unable to sleep at all",
+      value: "I am unable to sleep at all",
+      name: "FallASleepI am unable to sleep at all",
+    },
+    {
+      label: "Other",
+      value: "other",
+      name: "FallASleepother",
+    },
+  ];
 
   const InterestThingOptions = [
     {
@@ -685,6 +719,13 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     });
   };
 
+  const handleFallASleepChange = (event) => {
+    setPHQValue({
+      ...PHQValue,
+      fallASleep: event.target.value,
+    });
+  };
+
   const handleAwakeSleepReasonChange = (event) => {
     setPHQValue({
       ...PHQValue,
@@ -950,6 +991,15 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
         {PHQValue?.troubleFallingAsleep !== "" &&
         PHQValue?.troubleFallingAsleep !== "not at all" ? (
           <div>
+            <div className="w-[68%] mx-auto mt-3">
+              <RadioFollowUp
+                title="How long does it take you to fall asleep?"
+                onChange={handleFallASleepChange}
+                options={FallASleepOptions}
+                checked={PHQValue?.fallASleep}
+                error={errors.fallASleep}
+              />
+            </div>
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
                 title="How many times do you wake up per night before the time you plan to wake up?"

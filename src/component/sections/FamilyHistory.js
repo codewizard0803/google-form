@@ -46,7 +46,7 @@ const FamilyHistory = ({ currentSection, setCurrentSection }) => {
     },
     {
       label: "Psychotic Disorder",
-      value: "psychotic Disorder",
+      value: "psychotic disorder",
       name: "FamilyPsychiatricConditionsOptionsPsychotic Disorder",
     },
     {

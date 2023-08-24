@@ -42,8 +42,8 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
   const feelEmotionOptions = [
     { label: "briefly", value: "briefly", name: "feelEmotionbriefly" },
     {
-      label: "part of some days,",
-      value: "part of some days,",
+      label: "part of some days",
+      value: "part of some days",
       name: "feelEmotionpart of some days,",
     },
     {
