@@ -1300,11 +1300,10 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
               />
             </div>
 
-            <div className="w-[68%] mx-auto mt-3">
+            {/* <div className="w-[68%] mx-auto mt-3">
               <div className="w-[95%] mx-auto p-3  shadow-lg ">
                 <p className="text-left text-[20px] mt-2">
-                  This treatment lasted from what date to what date?
-                </p>
+                List the names of the substance recovery treatment programs you entered and dates you were in these programs</p>
                 <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
                 <div className="mt-5 p-2 flex justify-between wrap-flex">
                   <div>
@@ -1354,11 +1353,21 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
                   </div>
                 </div>
               </div>
+            </div> */}
+
+            <div className="w-[68%] mx-auto mt-3">
+              <TextFollowUp
+                title="List the names of the substance recovery treatment programs you entered and dates you were in these programs"
+                onChange={handleChange}
+                name="treatmentLastedDateFrom"
+                value={substanceUseValue?.treatmentLastedDateFrom}
+                error={errors.treatmentLastedDateFrom}
+              />
             </div>
 
             <div className="w-[68%] mx-auto mt-3">
               <TextFollowUp
-                title="Following this treatment you remained clean and sober for how long?"
+                title="Following any of these treatment programs, how long did you remain clean and sober?"
                 onChange={handleChange}
                 name="remainedTreatmentClean"
                 value={substanceUseValue?.remainedTreatmentClean}
@@ -1367,6 +1376,16 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
             </div>
 
             <div className="w-[68%] mx-auto mt-3">
+              <TextFollowUp
+                title="These clean and sober period(s) lasted from when to when?"
+                onChange={handleChange}
+                name="cleanSoberLastedFrom"
+                value={substanceUseValue?.cleanSoberLastedFrom}
+                error={errors.cleanSoberLastedFrom}
+              />
+            </div>
+
+            {/* <div className="w-[68%] mx-auto mt-3">
               <div className="w-[95%] mx-auto p-3  shadow-lg ">
                 <p className="text-left text-[20px] mt-2">
                   This clean and sober period lasted from when to when?
@@ -1420,7 +1439,7 @@ const SubstanceUse = ({ currentSection, setCurrentSection }) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp

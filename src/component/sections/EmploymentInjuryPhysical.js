@@ -117,24 +117,24 @@ const EmploymentInjuryPhysical = ({ currentSection, setCurrentSection }) => {
   const currentDisabilityOptions = [
     {
       label: "Total Temporary",
-      value: "Total Temporary",
+      value: "total temporary",
       name: "currentDisabilityTotalTemporary",
     },
     {
-      label: "Partial Temp",
-      value: "partial Temp",
+      label: "Partial Temporary",
+      value: "partial temporary",
       name: "currentDisabilityPartialTemp",
     },
     {
       label: "Permanent",
-      value: "Permanent",
+      value: "permanent",
       name: "currentDisabilityPermanent",
     },
     { label: "SSI", value: "SSI", name: "currentDisabilitySSI" },
     { label: "SSDI", value: "SSDI", name: "currentDisabilitySSDI" },
     {
       label: "State Disability",
-      value: "State Disability",
+      value: "state disability",
       name: "currentDisabilityStateDisability",
     },
   ];

@@ -60,6 +60,13 @@ const validateMedicalHistory = (value, global) => {
     errors.medicationsSideEffect = "";
   }
 
+  if (!value.medicationsSideEffectList.trim()) {
+    errors.medicationsSideEffectList = "See required fields above.";
+    isValid = false;
+  } else {
+    errors.medicationsSideEffectList = "";
+  }
+
   if (!value.futureMedicalPlan.trim()) {
     errors.futureMedicalPlan = "See required fields above.";
     isValid = false;

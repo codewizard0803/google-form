@@ -28,6 +28,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
     surgeries: "",
     surgeriesDateList: "",
     medicationsSideEffect: "",
+    medicationsSideEffectList: "",
     futureMedicalPlan: "",
     futureMedicalPlanList: "",
     currentPrimarycarePractitioner: "",
@@ -320,7 +321,7 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
           error={errors.physicalHealthMedicationsLists}
         />
 
-        <TextField
+        {/* <TextField
           title="132. Have your general medical medications produced any side effects?"
           type="text"
           name="medicationsSideEffect"
@@ -328,7 +329,61 @@ const MedicalHistory = ({ currentSection, setCurrentSection }) => {
           placeholder="Your answer"
           onChange={handleChange}
           error={errors.medicationsSideEffect}
-        />
+        /> */}
+
+        <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
+          <CardContent>
+            <Typography sx={{ fontSize: 20, textAlign: "left" }}>
+              132. Have your general medical medications produced any side
+              effects?
+            </Typography>
+            <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
+            <div className="form-group">
+              <input
+                type="text"
+                className={classnames(
+                  "mt-5 border-b-2 border-b-gray-300 w-full focus:outline-none focus:border-b-green-400 form-control form-control-lg",
+                  { "border-b-red-500": errors.medicationsSideEffect }
+                )}
+                placeholder="Your answer"
+                name="medicationsSideEffect"
+                value={medicalHistoryValue.medicationsSideEffect}
+                onChange={handleChange}
+              />
+              {errors.medicationsSideEffect && (
+                <div className="text-red-500 text-left text-[12px] mt-2">
+                  {errors.medicationsSideEffect}
+                </div>
+              )}
+
+              <div className="w-[95%] mx-auto p-3  shadow-lg ">
+                <p className="text-left text-[20px] mt-2">
+                  Please list the medications and side effects they produced.
+                </p>
+                <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
+                <div className="mt-5 p-2">
+                  <input
+                    type="text"
+                    className={classnames(
+                      "mt-2 border-b-2 border-b-gray-300 w-full focus:outline-none focus:border-b-green-400 form-control form-control-lg",
+                      { "border-b-red-500": errors.medicationsSideEffectList }
+                    )}
+                    name="medicationsSideEffectList"
+                    value={medicalHistoryValue.medicationsSideEffectList}
+                    onChange={handleChange}
+                    placeholder="Your answer"
+                  />
+                </div>
+
+                {errors.medicationsSideEffectList && (
+                  <div className="text-red-500 text-left text-[12px] mt-2">
+                    {errors.medicationsSideEffectList}
+                  </div>
+                )}
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         <CardField
           title="133. Have you ever had any surgeries?"

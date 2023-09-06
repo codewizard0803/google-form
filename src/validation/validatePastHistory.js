@@ -3,18 +3,26 @@
 const validatePastHistory = (value) => {
   let isValid = true;
   let errors = {};
+  let textErrors = {
+    describeSymptoms: [],
+  };
 
-  if (!value.previouslyExperiencedSymptom.trim()) {
+  if (value.previouslyExperiencedSymptom.length === 0) {
     errors.previouslyExperiencedSymptom = "See required fields above.";
     isValid = false;
-  } else if (
-    value.previouslyExperiencedSymptom !== "" &&
-    value.describeSymptoms === ""
-  ) {
-    errors.describeSymptoms = "See required fields above.";
-    isValid = false;
   } else {
-    errors.previouslyExperiencedSymptom = "";
+    const cond = value.previouslyExperiencedSymptom?.filter(
+      (item) => item.effect === ""
+    );
+
+    if (cond.length > 0) {
+      cond.map((item) => {
+        textErrors?.describeSymptoms.push({
+          [item.condition]: "See required fields above",
+        });
+        isValid = false;
+      });
+    }
   }
 
   if (!value.experienceMuchEnergy.trim()) {
@@ -220,7 +228,7 @@ const validatePastHistory = (value) => {
       isValid = false;
     }
 
-    if (!value.receivedTreatment.trim()) {
+    if (value.receivedTreatment.length === 0) {
       errors.receivedTreatment = "See required fields above.";
       isValid = false;
     }
@@ -326,6 +334,7 @@ const validatePastHistory = (value) => {
   return {
     isValid,
     errors,
+    textErrors,
   };
 };
 

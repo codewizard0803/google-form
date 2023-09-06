@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { Card, Typography, CardContent } from "@mui/material";
 
@@ -21,7 +23,7 @@ const TableCheckBox = ({ thead, tbody, onChange, title, checked }) => {
           </thead>
           <tbody>
             {tbody?.map((item, index) => (
-              <tr key={index} className="border-b border-gray-200">
+              <tr key={index} className="border-b border-gray-200 text-center">
                 {thead?.map((item2, index2) =>
                   index2 === 0 ? (
                     <td key={index2}>{item}</td>

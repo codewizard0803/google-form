@@ -124,7 +124,7 @@ const GlobalContextProvider = ({ children }) => {
     fallAsleepLong: "",
     wakeUpTimes: "",
     stayAwakeLong: "",
-    awakeSleepReason: "",
+    awakeSleepReason: [],
     totalSleepTimes: "",
     feelingEnergy: "",
     poorAppetite: "",
@@ -220,7 +220,7 @@ const GlobalContextProvider = ({ children }) => {
   });
 
   const [globalPastHistory, setGlobalPastHistory] = useState({
-    previouslyExperiencedSymptom: "",
+    previouslyExperiencedSymptom: [],
     describeSymptoms: "",
     experienceMuchEnergy: "",
     sleptFewer4Hours: "",
@@ -288,6 +288,7 @@ const GlobalContextProvider = ({ children }) => {
     surgeries: "",
     surgeriesDateList: "",
     medicationsSideEffect: "",
+    medicationsSideEffectList: "",
     futureMedicalPlan: "",
     futureMedicalPlanList: "",
     currentPrimarycarePractitioner: "",
@@ -412,6 +413,7 @@ const GlobalContextProvider = ({ children }) => {
     eachAffectEmotionalSymptoms: "",
     otherStressorsExperience: "",
     explainStressorsExperience: "",
+    currentLocation: "",
   });
 
   const [globalCriminalHistory, setGlobalCriminalHistory] = useState({

@@ -34,6 +34,7 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
     eachAffectEmotionalSymptoms: "",
     otherStressorsExperience: "",
     explainStressorsExperience: "",
+    currentLocation: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -514,15 +515,15 @@ const SocialHistory = ({ currentSection, setCurrentSection }) => {
               errors={errors.ownYourHome}
             />
 
-            {/* <TextField
-              title="Please describe the additional stressors in your life, not already covered above:"
+            <TextField
+              title="How long have you lived at your current location?"
               type="text"
-              name="describeAdditionalStressors"
-              value={socialHistoryValue?.describeAdditionalStressors}
+              name="currentLocation"
+              value={socialHistoryValue?.currentLocation}
               placeholder="Your answer..."
               onChange={handleChange}
-              error={errors.describeAdditionalStressors}
-            /> */}
+              error={errors.currentLocation}
+            />
           </div>
         ) : null}
 

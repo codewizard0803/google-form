@@ -53,8 +53,8 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
       name: "RaisedChilhoodOptionsbiological mother and father",
     },
     {
-      label: "biological motheronly",
-      value: "biological motheronly",
+      label: "biological mother only",
+      value: "biological mother only",
       name: "RaisedChilhoodOptionsbiological motheronly",
     },
     {
@@ -528,8 +528,8 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
           errors={errors.relationshipPrimaryAdults}
         />
 
-        <TextField
-          title="182. How many of these siblings were you raised by?"
+        <CardField
+          title="182. Do you have siblings?"
           type="radio"
           options={HaveSiblingsOptions}
           onChange={handleHaveSiblingsChange}
@@ -566,7 +566,7 @@ const DevelopmentalHistory = ({ currentSection, setCurrentSection }) => {
             <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
               <CardContent>
                 <Typography sx={{ fontSize: 20, textAlign: "left" }}>
-                  How many of these siblings were you raised by?
+                  How many of these siblings were you raised with?
                 </Typography>
                 <p className="h-0.5 bg-gray-400 w-full mt-2"></p>
                 <div className="mt-5">

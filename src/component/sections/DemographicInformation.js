@@ -90,7 +90,6 @@ const DemographicInformation = ({ currentSection, setCurrentSection }) => {
       value: "they/them/theirs",
       name: "PreferPronounThem",
     },
-    { label: "Hir", value: "hir", name: "PreferPronounHir" },
     {
       label: "Other non-binary",
       value: "other non-binary",

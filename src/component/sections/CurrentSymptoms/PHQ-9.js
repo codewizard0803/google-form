@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Typography, CardContent, Button } from "@mui/material";
 import { toast } from "react-toastify";
+import classnames from "classnames";
 
 import CardField from "../../common/CardField";
 import RadioFollowUp from "../../common/RadioFollowUp";
@@ -24,7 +25,7 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
     troubleFallingAsleep: "",
     wakeUpTimes: "",
     stayAwakeLong: "",
-    awakeSleepReason: "",
+    awakeSleepReason: [],
     totalSleepTimes: "",
     feelingEnergy: "",
     poorAppetite: "",
@@ -239,6 +240,46 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
       label: "2",
       value: "two",
       name: "WakeUpTimesOptions2",
+    },
+    {
+      label: "3",
+      value: "three",
+      name: "WakeUpTimesOptions3",
+    },
+    {
+      label: "4",
+      value: "four",
+      name: "WakeUpTimesOptions4",
+    },
+    {
+      label: "5",
+      value: "five",
+      name: "WakeUpTimesOptions5",
+    },
+    {
+      label: "6",
+      value: "six",
+      name: "WakeUpTimesOptions6",
+    },
+    {
+      label: "7",
+      value: "seven",
+      name: "WakeUpTimesOptions7",
+    },
+    {
+      label: "8",
+      value: "eight",
+      name: "WakeUpTimesOptions8",
+    },
+    {
+      label: "9",
+      value: "nine",
+      name: "WakeUpTimesOptions9",
+    },
+    {
+      label: "10",
+      value: "ten",
+      name: "WakeUpTimesOptions10",
     },
   ];
 
@@ -727,9 +768,20 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
   };
 
   const handleAwakeSleepReasonChange = (event) => {
+    const itemName = event.target.value;
+    const isChecked = event.target.checked;
+
+    let newCheckedItems = [...PHQValue?.awakeSleepReason];
+
+    if (isChecked) {
+      newCheckedItems.push(itemName);
+    } else {
+      newCheckedItems = newCheckedItems.filter((item) => item !== itemName);
+    }
+
     setPHQValue({
       ...PHQValue,
-      awakeSleepReason: event.target.value,
+      awakeSleepReason: newCheckedItems,
     });
   };
 
@@ -1000,15 +1052,43 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
                 error={errors.fallASleep}
               />
             </div>
-            <div className="w-[68%] mx-auto mt-3">
-              <RadioFollowUp
-                title="How many times do you wake up per night before the time you plan to wake up?"
-                onChange={handleWakeUpTimesChange}
-                options={WakeUpTimesOptions}
-                checked={PHQValue?.wakeUpTimes}
-                error={errors.wakeUpTimes}
-              />
-            </div>
+
+            <Card sx={{ width: "65%", margin: "auto", marginTop: 3 }}>
+              <CardContent>
+                <Typography sx={{ fontSize: 20, textAlign: "left" }}>
+                  How many times do you wake up per night before the time you
+                  plan to wake up?
+                </Typography>
+                <p className="h-0.5 bg-gray-400 w-100 mt-2"></p>
+                <div
+                  className={classnames("mt-5 p-2 flex justify-between", {
+                    "border-red-500 border": errors.wakeUpTimes,
+                  })}
+                >
+                  {WakeUpTimesOptions.map((item, index) => (
+                    <div className="text-left mt-1" key={index}>
+                      <label key={item.value}>
+                        <input
+                          type="radio"
+                          value={item.value}
+                          className="mr-2"
+                          checked={PHQValue?.wakeUpTimes === item.value}
+                          onChange={handleWakeUpTimesChange}
+                        />
+                        {item.label}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+
+                {errors.wakeUpTimes && (
+                  <div className="text-red-500 text-left text-[12px] mt-2">
+                    {errors.wakeUpTimes}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
                 title="If trouble staying asleep, when you wake up during the night, how long do you stay awake for?"
@@ -1018,15 +1098,14 @@ const PHQ = ({ currentSection, setCurrentSection }) => {
                 error={errors.stayAwakeLong}
               />
             </div>
-            <div className="w-[68%] mx-auto mt-3">
-              <RadioFollowUp
-                title="Do any of the following awaken you from sleep?"
-                onChange={handleAwakeSleepReasonChange}
-                options={AwakeSleepReasonOptions}
-                checked={PHQValue?.awakeSleepReason}
-                error={errors.awakeSleepReason}
-              />
-            </div>
+            <CardField
+              title="Do any of the following awaken you from sleep?"
+              type="checkbox"
+              onChange={handleAwakeSleepReasonChange}
+              options={AwakeSleepReasonOptions}
+              checked={PHQValue?.awakeSleepReason}
+              error={errors.awakeSleepReason}
+            />
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
                 title="What is the total number of hours you sleep per 24 hours?"

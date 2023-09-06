@@ -34,6 +34,11 @@ const validateSocialHistory = (value) => {
       isValid = false;
     }
 
+    if (!value.currentLocation.trim()) {
+      errors.currentLocation = "See required fields above.";
+      isValid = false;
+    }
+
     if (!value.describeAdditionalStressors.trim()) {
       errors.describeAdditionalStressors = "See required fields above.";
       isValid = false;

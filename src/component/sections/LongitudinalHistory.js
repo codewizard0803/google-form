@@ -183,7 +183,7 @@ const LongitudinalHistory = ({ currentSection, setCurrentSection }) => {
         />
 
         <TextField
-          title="58. Have your emotional symptoms become worse or better since they started or since a specific date or event?"
+          title="58. Have your emotional symptoms become worse, better, or stayed the same, since they started or since a specific date or event?"
           placeholder="Your answer"
           name="emotionalSymptomBecome"
           value={longitudinalHistoryValue?.emotionalSymptomBecome}

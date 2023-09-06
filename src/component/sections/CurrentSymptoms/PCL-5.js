@@ -1117,7 +1117,7 @@ const PCL = ({ currentSection, setCurrentSection }) => {
         />
 
         <CardField
-          title="104. Being “superalert” or watchful or on guard?"
+          title="104. Being “superalert”, watchful or on guard?"
           type="radio"
           options={BeingWatchfulOptions}
           onChange={handleBeingWatchfulChange}

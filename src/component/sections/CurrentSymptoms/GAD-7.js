@@ -939,7 +939,7 @@ const GAD = ({ currentSection, setCurrentSection }) => {
         </Card>
 
         <CardField
-          title={`86. Over the last <span style="text-decoration:underline">2 weeks</span>, how often have you been experience panic attacks, in which your heart races, you feel like you can't breathe, you shake or sweat?`}
+          title={`86. Over the last <span style="text-decoration:underline">2 weeks</span>, have you experienced panic attacks, in which your heart races, you feel like you can't breathe, you shake or sweat?`}
           type="radio"
           options={PanicAttacksOptions}
           onChange={handlePanicAttacksChange}

@@ -17,7 +17,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   const { globalPastHistory, setGlobalPastHistory } = useGlobalContext();
 
   const [pastHistoryValue, setPastHistoryValue] = useState({
-    previouslyExperiencedSymptom: "",
+    previouslyExperiencedSymptom: [],
     describeSymptoms: "",
     experienceMuchEnergy: "",
     sleptFewer4Hours: "",
@@ -56,7 +56,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     otherPsychotherapyTreatmentList: "",
     admittedPsychiatricHospital: "",
     psychiatricHospitalizationReason: [],
-    receivedTreatment: "",
+    receivedTreatment: [],
     admittedHospitalName: "",
     hospitalizedLong: "",
     hospitalizedDate: "",
@@ -79,6 +79,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   });
 
   const [errors, setErrors] = useState({});
+  const [textErrors, setTextErrors] = useState({});
 
   const PreviouslyExperiencedSymptomOptions = [
     {
@@ -282,7 +283,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
       name: "DiagnosedMentalHealthOptionsAutism Spectrum Disorder",
     },
     {
-      label: "Bipolar disorder",
+      label: "Bipolar Disorder",
       value: "bipolar disorder",
       name: "DiagnosedMentalHealthOptionsBipolar disorder",
     },
@@ -292,12 +293,12 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
       name: "DiagnosedMentalHealthOptionsDepression",
     },
     {
-      label: "Eating disorder",
+      label: "Eating Disorder",
       value: "eating disorder",
       name: "DiagnosedMentalHealthOptionsEating disorder",
     },
     {
-      label: "Mood disorder",
+      label: "Mood Disorder",
       value: "mood disorder",
       name: "DiagnosedMentalHealthOptionsMood disorder",
     },
@@ -307,7 +308,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
       name: "DiagnosedMentalHealthOptionsObsessive Compulsive Disorder",
     },
     {
-      label: "Personality disorder",
+      label: "Personality Disorder",
       value: "personality disorder",
       name: "DiagnosedMentalHealthOptionsPersonality disorder",
     },
@@ -322,13 +323,13 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
       name: "DiagnosedMentalHealthOptionsPanic attacks",
     },
     {
-      label: "Schizophrenia or other psychotic disorder",
+      label: "Schizophrenia or Other Psychotic Disorder",
       value: "schizophrenia or other psychotic disorder",
       name: "DiagnosedMentalHealthOptionsSchizophrenia or other psychotic disorder",
     },
     {
-      label: "Post-traumatic stress disorder",
-      value: "post-traumatic stress disorder",
+      label: "Post Traumatic Stress Disorder",
+      value: "post traumatic stress disorder",
       name: "DiagnosedMentalHealthOptionsPost-traumatic stress disorder",
     },
     {
@@ -755,10 +756,44 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   }, [globalPastHistory]);
 
   const handlePreviouslyExperiencedSymptomchange = (event) => {
+    const itemValue = event.target.value;
+    const isChecked = event.target.checked;
+
+    let newCheckedItems = [...pastHistoryValue?.previouslyExperiencedSymptom];
+
+    if (isChecked) {
+      newCheckedItems.push({
+        condition: itemValue,
+        effect: "",
+      });
+    } else {
+      newCheckedItems = newCheckedItems.filter(
+        (item) => item.condition !== itemValue
+      );
+    }
+
     setPastHistoryValue({
       ...pastHistoryValue,
-      previouslyExperiencedSymptom: event.target.value,
-      describeSymptoms: "",
+      previouslyExperiencedSymptom: newCheckedItems,
+    });
+  };
+
+  const handleSymtomsChange = (event) => {
+    const itemName = event.target.name;
+
+    const condition = PreviouslyExperiencedSymptomOptions.filter(
+      (item) => item.name === itemName
+    );
+
+    setPastHistoryValue({
+      ...pastHistoryValue,
+      previouslyExperiencedSymptom:
+        pastHistoryValue?.previouslyExperiencedSymptom.map((item) =>
+          item.condition === condition[0].value
+            ? { ...item, effect: event.target.value }
+            : item
+        ),
+      describeSymptoms: event.target.value,
     });
   };
 
@@ -938,13 +973,6 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
     });
   };
 
-  const handleSymtomsChange = (event) => {
-    setPastHistoryValue({
-      ...pastHistoryValue,
-      describeSymptoms: event.target.value,
-    });
-  };
-
   const handlePsychiatricMedicationChange = (event) => {
     const itemName = event.target.name;
     const condition = PastPsychiatricMedicationOptions?.filter(
@@ -1035,7 +1063,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
       ...pastHistoryValue,
       admittedPsychiatricHospital: event.target.value,
       psychiatricHospitalizationReason: [],
-      receivedTreatment: "",
+      receivedTreatment: [],
       admittedHospitalName: "",
       hospitalizedDate: "",
       hospitalizedLong: "",
@@ -1063,9 +1091,20 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   };
 
   const handleReceivedTreatmentChange = (event) => {
+    const itemValue = event.target.value;
+    const isChecked = event.target.checked;
+
+    let newCheckedItems = [...pastHistoryValue?.receivedTreatment];
+
+    if (isChecked) {
+      newCheckedItems.push(itemValue);
+    } else {
+      newCheckedItems = newCheckedItems.filter((item) => item !== itemValue);
+    }
+
     setPastHistoryValue({
       ...pastHistoryValue,
-      receivedTreatment: event.target.value,
+      receivedTreatment: newCheckedItems,
     });
   };
 
@@ -1143,8 +1182,10 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
   const handleNextClick = (event) => {
     event.preventDefault();
 
-    const { isValid, errors } = validatePastHistory(pastHistoryValue);
+    const { isValid, errors, textErrors } =
+      validatePastHistory(pastHistoryValue);
     setErrors(errors);
+    setTextErrors(textErrors);
 
     setGlobalPastHistory(pastHistoryValue);
     setCurrentSection(currentSection + 1);
@@ -1167,16 +1208,15 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
 
       <form>
         <CardTextFollowUp
-          type="radio"
+          type="checkbox"
           title="111. Have you ever previously experienced any of the following symptoms"
           options={PreviouslyExperiencedSymptomOptions}
           onChange={handlePreviouslyExperiencedSymptomchange}
           checked={pastHistoryValue?.previouslyExperiencedSymptom}
           errors={errors.previouslyExperiencedSymptom}
           title2={PreviouslyExperiencedSymptomTitle}
-          value={pastHistoryValue?.describeSymptoms}
           onChange2={handleSymtomsChange}
-          errors2={errors.describeSymptoms}
+          errors2={textErrors?.describeSymptoms}
         />
 
         <CardField
@@ -1431,7 +1471,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
 
             <div className="w-[68%] mx-auto mt-3">
               <RadioFollowUp
-                title="Did a psychiatrist, psychiatric nurse practitionaer, or primacy care clinician prescribe this medication to you?"
+                title="Did a psychiatrist, psychiatric nurse practitioner, or primary care clinician prescribe this medication to you?"
                 options={PrescribeThisMedicationOptions}
                 onChange={handlePrescribeThisMedicationChange}
                 checked={pastHistoryValue?.prescribeThisMedication}
@@ -1534,7 +1574,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
 
             <div className="w-[68%] mx-auto mt-3">
               <TextFollowUp
-                title="Please list the names of your past psychotherapists and dates you saw them."
+                title="Please list the names of your past psychotherapists and time periods you saw them."
                 onChange={handleChange}
                 name="pastPsychotherapistsDate"
                 value={pastHistoryValue?.pastPsychotherapistsDate}
@@ -1579,7 +1619,7 @@ const PastHistory = ({ currentSection, setCurrentSection }) => {
             <div>
               <CardField
                 title="Please list the treatment you received during the psychiatric hospitalization"
-                type="radio"
+                type="checkbox"
                 onChange={handleReceivedTreatmentChange}
                 options={ReceivedTreatmentOptions}
                 checked={pastHistoryValue?.receivedTreatment}
